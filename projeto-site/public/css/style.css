@@ -19,7 +19,7 @@ p, li{
 
 /* NAVBAR */
 header, .navbar{
-    background-color: #353d41;
+    background-color: #000000;
 }
 
 #nav-container{
@@ -28,12 +28,13 @@ header, .navbar{
 }
 
 #logo{
-    width: 75px;
+    width: 40px;
 }
 
 .navbar-brand{
     padding: 0;
     color: #fff;
+    margin-left: 6%;
 }
 
 .navbar-brand:hover{
@@ -51,6 +52,10 @@ header, .navbar{
 
 .navbar-expand-lg .navbar-nav .nav-link{
     padding: 1rem .8rem;
+    text-transform: uppercase;
+}
+.navbar-nav{
+    margin-right: 10%;
 }
 
 /* SLIDER */
@@ -70,6 +75,7 @@ header, .navbar{
 #mainSlider .carousel-caption h2 {
     font-size: 50px;
     margin-bottom: 30px;
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.91);
 }
 
 #mainSlider .carousel-caption p {
@@ -77,6 +83,7 @@ header, .navbar{
     font-weight: 300px;
     margin-bottom: 100px;
     color: #fff;
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.91);
 }
 
 .main-btn{
@@ -147,7 +154,7 @@ header, .navbar{
 
 /* SERVIÇOS */
 
-.service-box {
+/* .service-box {
     text-align: center;
     margin-bottom: 50px;
     cursor: auto;
@@ -170,7 +177,7 @@ header, .navbar{
 
 .service-box:hover > i, .service-box:hover > h4{
     color: #1acff8;
-}
+} */
 
 /* DADOS */
 
@@ -247,7 +254,7 @@ header, .navbar{
 
 /* PORTFOLIO */
 
-.project-box{
+/* .project-box{
     margin-bottom: 30px;
 }
 
@@ -275,7 +282,7 @@ header, .navbar{
     color: #fff;
     background-color: #1acff8;
     border-color: #1acff8;
-}
+} */
 
 /* NEWSLETTER */
 #news-area{
