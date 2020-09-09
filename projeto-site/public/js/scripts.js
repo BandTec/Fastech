@@ -4,16 +4,16 @@ $(document).ready(function () {
     let containerA = document.getElementById('circleA');
 
     let circleA = new ProgressBar.Circle(containerA, {
-        color: '#1acff8',
+        color: '#3b5998',
         strokeWidth: 8,
-        duration: 1400,
+        duration: 1900,
         from: { color: '#AAA' },
-        to: { color: '#1acff8' },
+        to: { color: '#3b5998' },
 
         step: function (state, circle) {
             circle.path.setAttribute('stroke', state.color);
 
-            let value = Math.round(circle.value() * 60);
+            let value = Math.round(circle.value() * 7800);
 
             circle.setText(value);
 
@@ -24,16 +24,16 @@ $(document).ready(function () {
     let containerB = document.getElementById('circleB');
 
     let circleB = new ProgressBar.Circle(containerB, {
-        color: '#1acff8',
+        color: '#3b5998',
         strokeWidth: 8,
-        duration: 1600,
+        duration: 800,
         from: { color: '#AAA' },
-        to: { color: '#1acff8' },
+        to: { color: '#3b5998' },
 
         step: function (state, circle) {
             circle.path.setAttribute('stroke', state.color);
 
-            let value = Math.round(circle.value() * 254);
+            let value = Math.round(circle.value() * 4);
 
             circle.setText(value);
 
@@ -44,16 +44,16 @@ $(document).ready(function () {
     let containerC = document.getElementById('circleC');
 
     let circleC = new ProgressBar.Circle(containerC, {
-        color: '#1acff8',
+        color: '#3b5998',
         strokeWidth: 8,
-        duration: 1000,
+        duration: 1300,
         from: { color: '#AAA' },
-        to: { color: '#1acff8' },
+        to: { color: '#3b5998' },
 
         step: function (state, circle) {
             circle.path.setAttribute('stroke', state.color);
 
-            let value = Math.round(circle.value() * 32);
+            let value = Math.round(circle.value() * 18);
 
             circle.setText(value);
 
@@ -64,16 +64,16 @@ $(document).ready(function () {
     let containerD = document.getElementById('circleD');
 
     let circleD = new ProgressBar.Circle(containerD, {
-        color: '#1acff8',
+        color: '#3b5998',
         strokeWidth: 8,
-        duration: 1800,
+        duration: 1400,
         from: { color: '#AAA' },
-        to: { color: '#1acff8' },
+        to: { color: '#3b5998' },
 
         step: function (state, circle) {
             circle.path.setAttribute('stroke', state.color);
 
-            let value = Math.round(circle.value() * 7804);
+            let value = Math.round(circle.value() * 1526);
 
             circle.setText(value);
 
