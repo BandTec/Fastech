@@ -8,18 +8,18 @@ module.exports = {
     storage: ":memory:"
   },
   production: {
-    username: 'adminbandtec',
-    password: 'b@ndtec2018',
-    database: 'gf2018',
-    host: 'testexyzwtrtwr.database.windows.net',
-    dialect: 'mssql',
+    username: 'convidado',
+    password: 'convidadoprod',
+    database: 'fastech',
+    host: 'ferreiraserver.ddns.net',
+    dialect: 'mysql',
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {
       options: {
         encrypt: true
       }
     },
-    pool: { 
+    pool: {
       max: 5,
       min: 1,
       acquire: 5000,
@@ -28,4 +28,4 @@ module.exports = {
     }
   }
 };
- 
+

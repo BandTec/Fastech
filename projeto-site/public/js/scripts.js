@@ -180,3 +180,68 @@ $(document).ready(function () {
 
 
 });
+
+/*----------------------- Login / Register ------------------ */
+
+function btn_cadastre_click() {
+    div_login.style.display = "none";
+    div_register.style.display = "flex";
+}
+
+function btn_voltar_click() {
+    div_login.style.display = "flex";
+    div_register.style.display = "none";
+}
+
+/*---------------------- POST Login -----------------------*/
+
+function entrar() {
+    var formulario = new URLSearchParams(new FormData(form_login));
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        body: formulario
+    }).then(resposta => {
+
+        if (resposta.ok) {
+
+            resposta.json().then(json => {
+
+                sessionStorage.login_usuario_meuapp = json.login;
+                sessionStorage.nome_usuario_meuapp = json.nome;
+
+                window.location.href = '/teste.html';
+            });
+
+        } else {
+            console.log('Erro de login!');
+        }
+    });
+
+    return false;
+}
+
+/*---------------- POST Register ---------------------*/
+
+function cadastrar() {
+    var formulario = new URLSearchParams(new FormData(form_cadastro));
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        body: formulario
+    }).then(function (response) {
+
+        if (response.ok) {
+
+            window.location.href = '/teste.html';
+
+        } else {
+
+            console.log('Erro de cadastro!');
+            response.text().then(function (resposta) {
+                div_erro.innerHTML = resposta;
+            });
+
+        }
+    });
+
+    return false;
+}
