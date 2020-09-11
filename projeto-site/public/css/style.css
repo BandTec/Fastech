@@ -264,6 +264,9 @@ header, .navbar{
     margin-right: 15px;
 }
 
+#about-area .card{
+    border: none;
+}
 /* SERVIÇOS */
 
 /* .service-box {
