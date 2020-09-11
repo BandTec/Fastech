@@ -50,7 +50,7 @@ header, .navbar{
 }
 
 #navbar-links a:hover{
-    color: var(--color-blue);
+    border-bottom: 1px solid var(--color-blue);
     cursor: pointer;
 }
 
@@ -111,6 +111,10 @@ header, .navbar{
     border: 3px solid var(--color-blue);
 }
 
+.btn-modal{
+    background-color: var(--color-blue);
+}
+
 .carousel-indicators .active{
     background-color: var(--color-blue);
 }
@@ -130,18 +134,18 @@ header, .navbar{
     align-content: center;
 }
 
-.login label {
-    color: whitesmoke;
-}
 
-.login input {
-    margin: 1% 0 4% 0;
-}
+
 
 .login button.btn_entrar {
-    margin: 4% 0 3% 0;
-    background-color: rgb(0, 63, 99);
+    margin: 4% 0% 3% 25%;
+    background-color:  rgb(75, 75, 75);
+    color: rgb(0, 63, 99); 
+    color: #fff;
     border-radius: 5px;
+    width: 50%;
+    border: none;
+    text-transform: uppercase;
 }
 
 .login button.btn_entrar:hover {
@@ -150,8 +154,13 @@ header, .navbar{
 }
 
 .login button.btn_cadastre {
-    background-color:  rgb(75, 75, 75);
-    color: rgb(0, 63, 99); 
+    margin: 4% 0% 3% 25%;
+    background-color: rgb(0, 63, 99);
+    border-radius: 5px;
+    color: #fff;
+    width: 50%;
+    border: none;
+    text-transform: uppercase;
 }
 
 .login button.btn_cadastre:hover {
@@ -174,33 +183,46 @@ header, .navbar{
     align-content: center;
 }
 
-.register label {
-    color: whitesmoke;
-}
 
-.register input {
+.register input, .login input {
     margin: 1% 0 4% 0;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+    text-align: center;
 }
 
 .register button.btn_cadastre {
-    margin: 4% 0 3% 0;
+    margin: 4% 0% 3% 25%;
     background-color: rgb(0, 63, 99);
     border-radius: 5px;
+    color: #fff;
+    width: 50%;
+    border: none;
+    text-transform: uppercase;
 }
 
 .register button.btn_cadastre:hover{
-    background-color: rgb(75, 75, 75);
-    color: rgb(0, 63, 99); 
+    border: 2px solid #fff;
+    color: #fff; 
 }
 
 .register button.btn_voltar {
+    margin: 4% 0% 3% 25%;
     background-color:  rgb(75, 75, 75);
     color: rgb(0, 63, 99); 
+    color: #fff;
+    border-radius: 5px;
+    width: 50%;
+    border: none;
+    text-transform: uppercase;
 }
 
 .register button.btn_voltar:hover {
-    background-color: rgb(0, 63, 99);
-    color: rgb(117, 116, 116); 
+    border: 2px solid #fff;
+    color: #fff; 
 }
 
 /* TIME */
@@ -224,11 +246,11 @@ header, .navbar{
 /* ABOUT */
 
 #about-area{
-    background-color: #F9F9F9;
+    background-color: #000;
 }
 
 .main-title{
-    color: #444;
+    color: #fff;
     margin: 0 0 65px 0;
     font-size: 40px;
     text-align: center;
@@ -236,7 +258,7 @@ header, .navbar{
 
 .main-title::after{
     content: "";
-    border-top: 2px solid #333;
+    border-top: 2px solid #fff;
     width: 15%;
     position: absolute;
     top: 60px;
@@ -245,7 +267,7 @@ header, .navbar{
 
 .about-title{
     font-size: 17px;
-    color: #444;
+    color: #fff;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -266,33 +288,12 @@ header, .navbar{
 
 #about-area .card{
     border: none;
-}
-/* SERVIÇOS */
-
-/* .service-box {
-    text-align: center;
-    margin-bottom: 50px;
-    cursor: auto;
+    background-color: #000;
 }
 
-.service-box i, .service-box h4{
-    transition: .5s;
+#about-area .card-text{
+    color: #fff;
 }
-
-.service-box i{
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #444;
-}
-
-.service-box h4{
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.service-box:hover > i, .service-box:hover > h4{
-    color: var(--color-blue);
-} */
 
 /* DADOS */
 
@@ -310,178 +311,23 @@ header, .navbar{
     text-align: center;
     font-size: 26px;
     margin-top: 20px;
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.91);
 }
 
 /* TEAM */
+#team-area, #team-area .card{
+    background-color: #000;
+}
 
+#team-area .card-text, #team-area .card-title{
+    color: #fff;
+}
 
 .card-body{
     text-align: center;
 }
 
-/* TRABALHE CONOSCO */
-#apply-area{
-    height: 500px;
-}
 
-#apply-area .container-fluid, #apply-area .row{
-    height: 100%;
-}
-
-#apply-box, .apply-box{
-    text-align: center;
-    padding: 70px 50px;
-}
-
-#company-img{
-    background-image: url('../img/empresa.jpg');
-    background-size: cover;
-    height: 100%;
-}
-
-#pattern-img h4, #pattern-img p{
-    color: #fff;
-}
-
-#pattern-img h4{
-    margin-top: 8%;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-#pattern-img p{
-    margin-bottom: 20px;
-}
-
-#apply-btn{
-    display: block;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: transparent;
-    border: #fff 3px solid;
-    transition: .5s;
-}
-
-#apply-btn:hover{
-    border-color: var(--color-blue);
-    background-color: var(--color-blue);
-}
-
-/* PORTFOLIO */
-
-/* .project-box{
-    margin-bottom: 30px;
-}
-
-#filter-btn-box{
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-#portfolio-area .filter-btn{
-    color: #444;
-    border: 1px #444 solid;
-    background-color: transparent;
-    text-transform: none;
-    margin: 0 15px;
-    min-width: 100px;
-    width: auto;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 20px;
-    transition: .5s;
-    outline: none;
-}
-
-#portfolio-area .filter-btn.active, #portfolio-area .filter-btn:hover{
-    color: #fff;
-    background-color: var(--color-blue);
-    border-color: var(--color-blue);
-} */
-
-/* NEWSLETTER */
-#news-area{
-    text-align: center;
-    background-color: #f9f9f9;
-}
-
-#news-area p{
-    font-size: 18px;
-    margin-bottom: 40px;
-}
-
-#email-input {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border: var(--color-blue) 1px solid;
-    display: inline;
-    box-sizing: border-box;
-    width: 40%;
-    height: 40px;
-}
-
-#news-btn{
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: var(--color-blue) 1px solid;
-    background-color: var(--color-blue);
-    text-transform: uppercase;
-    color: #fff;
-    height: 40px;
-    padding: 0 30px;
-    margin-left: -130px;
-    position: absolute;
-    transition: .5s;
-}
-
-#news-btn:hover{
-    background-color: #fff;
-    color: var(--color-blue);
-}
-
-/* CALL TO ACTION */
-#call-area{
-    background-color: black;
-    text-transform: uppercase;
-}
-
-#call-area .container{
-    padding: 40px 100px;
-
-}
-
-#call-area .row{
-    display: block;
-    text-align: center;
-   
-}
-
-#call-area p {
-    color: #fff;
-    font-weight: bold;
-    margin-left: 30px;
-    font-size: 20px;
-    width: auto;
-    letter-spacing: 2px;
-    margin-bottom: 0;
-    display: inline;
-    height: 60px;
-    line-height: 60px;
-}
-
-#call-area #call-btn{
-    background-color: #fff;
-    color: var(--color-blue);
-    outline: none;
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 30px;
-    width: auto;
-    letter-spacing: 3px;
-    border: 2px solid transparent;
-    
-}
 
 /* FOOTER */
 
@@ -520,39 +366,39 @@ header, .navbar{
     font-size: 22px;
 }
 
-#contact-form input[type='text'], #contact-form input[type='text'], #contact-form input[type='email'], #contact-form textarea{
+#contact-form input, #contact-form textarea{
     background-color: transparent;
     margin-bottom: 15px;
     border: none;
-    border-radius: 0;
     border-bottom: 3px solid #fff;
-    margin-inline-start: auto;
-    
+    outline: none;
+    color: #fff;
+}
+
+#contact-form input:focus, #contact-form textarea:focus{
+    border-bottom: 3px solid var(--color-blue);
 }
 
 
 
 #contact-form .main-btn{
-    width: 120px;
+    outline: none;
     height: 50px;
     transition: .5s;
     text-align: center;
     cursor: pointer;
     border: 2px solid var(--color-blue);
-    border-radius: 20px;
+    border-radius: 10px;
     
 }
-#contact-form:focus{
- box-shadow: none;
- border-bottom: 2px solid #000000;
-}
+
 #contact-form .main-btn:hover{
     color: var(--color-blue);
 }
 
 /* COPYRIGTH */
 #copy-area{
-    background-color: #f9f9f9;
+    background-color: #000;
 }
 
 #copy-area .container{
@@ -566,7 +412,7 @@ header, .navbar{
 
 #copy-area .container a{
    font-weight: bold;
-   color: #444; 
+   color: #fff; 
    transition: .5s;
 }
 
@@ -627,10 +473,7 @@ header, .navbar{
         font-size: 12px;
     }
 
-    /* APPLY */
-    #apply-area .apply-box{
-        padding: 50px 70px;
-    }
+    
 
     /* NEWS */
     #news-area p{
@@ -698,45 +541,6 @@ header, .navbar{
         width: 50%;
     }
 
-    /* APPLY */
-    #apply-area{
-        height: auto;
-    }
-
-    #company-img{
-        display: none;
-    }
-
-    /* FILTER */
-
-    #portfolio-area .filter-btn{
-        margin-bottom: 20px;
-    }
-
-    .project-box{
-        width: 50%;
-    }
-
-    /* NEWS */
-    #news-area .main-title{
-        font-size: 24px;
-    }
-
-    #news-area p{
-        font-size: 16px;
-    }
-
-    #email-input{
-        width: 80%;
-    }
-
-    /* CALL TO ACTION */
-    #call-area p, #call-area #call-btn{
-        font-size: 13px;
-        letter-spacing: 0;
-        margin: 0;
-        width: 55%;
-    }
 
     /* CONTACT */
     .contact-box{

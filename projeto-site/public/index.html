@@ -66,7 +66,7 @@
                         <a class="nav-item nav-link" id="team-menu">Time</a>
                         <!-- <a class="nav-item nav-link" id="portfolio-menu">Projetos</a> -->
                         <a class="nav-item nav-link" id="contact-menu">Fale conosco</a>
-                        <a class="nav-item nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Entrar</a>
+                        <a class="nav-item nav-link btn-modal" data-toggle="modal" data-target=".bd-example-modal-lg">Entrar</a>
                     </div>
                 </div>
             </nav>
@@ -79,9 +79,9 @@
                 <div id="div_login" class="content-login">
                     <div class="login">
                         <form id="form_login" method="post" onsubmit="return entrar()">>
-                            <label for="email">Email:</label>
+                            <!-- <label for="email">Email:</label> -->
                             <input id="email" name="login" type="text" placeholder="Digite seu email">
-                            <label for="senha">Senha:</label>
+                            <!-- <label for="senha">Senha:</label> -->
                             <input id="senha" name="senha" type="password" placeholder="Digite sua senha">
                             <button class="btn_entrar">Entrar</button>
                             <button onclick="btn_cadastre_click()" class="btn_cadastre">Cadastre-se</button>
@@ -91,11 +91,11 @@
                 <div id="div_register" style="display: none;" class="content-register">
                     <div class="register">
                         <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                            <label for="nome">Nome:</label>
+                            <!-- <label for="nome">Nome:</label> -->
                             <input id="nome" name="nome" type="text" placeholder="Digite seu nome">
-                            <label for="email">Email:</label>
+                            <!-- <label for="email">Email:</label> -->
                             <input id="email" name="login" type="text" placeholder="Digite seu email">
-                            <label for="senha">Senha:</label>
+                            <!-- <label for="senha">Senha:</label> -->
                             <input id="senha" name="senha" type="password" placeholder="Digite sua senha">
                             <button class="btn_cadastre">Cadastre-se</button>
                             <button onclick="btn_voltar_click()" class="btn_voltar">Voltar</button>
@@ -200,52 +200,7 @@
                 </div>
             </div>
 
-            <!-- SERVIÇOS -->
-            <!-- <div id="services-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <h3 class="main-title">Nossas especialidades</h3>
-                        </div>
-
-                        <div class="col-md-4 service-box">
-                            <i class="fas fa-mobile-alt"></i>
-                            <h4>Aplicativos nativos</h4>
-                            <p>Utilizamos o real poder dos dispositivos movéis construindo aplicativos nativos.</p>
-                        </div>
-
-                        <div class="col-md-4 service-box">
-                            <i class="fas fa-shopping-cart"></i>
-                            <h4>E-commerces</h4>
-                            <p>Temos uma plataforma própia de e-commerce que se adapta a qualquer tipo de negócio (B2C e
-                                B2B).</p>
-                        </div>
-                        <div class="col-md-4 service-box">
-                            <i class="fas fa-paint-brush"></i>
-                            <h4>Design criativo</h4>
-                            <p>Nossos designers são especializados em UI/UX e também possuem vasta experiência no
-                                mercado de software.</p>
-                        </div>
-                        <div class="col-md-4 service-box">
-                            <i class="fab fa-google"></i>
-                            <h4>Experts em SEO</h4>
-                            <p>Com nosso serviços de marketing seu site será melhor posicionado no Google e venderá
-                                mais.</p>
-                        </div>
-                        <div class="col-md-4 service-box">
-                            <i class="fas fa-hands-helping"></i>
-                            <h4>Suporte 24/7</h4>
-                            <p>Você sempre terá alguém da equipe de suporte disponível, em diferentes plataformas.</p>
-                        </div>
-                        <div class="col-md-4 service-box">
-                            <i class="fas fa-server"></i>
-                            <h4>Experiência em servidores</h4>
-                            <p>Garantimos uptime e também rápido tempo de resposta do seu site para seu ciente.</p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
+           
             <!-- DADOS -->
             <div id="data-area">
                 <div class="container">
@@ -320,90 +275,7 @@
                     </div>
                 </div>
 
-                <!-- TRABALHE CONOSCO -->
-                <div id="apply-area">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6 apply-box" id="company-img"></div>
-                            <div class="col-md-6 apply-box" id="pattern-img">
-                                <h4>Gosta de desafio</h4>
-                                <p>Temos areas pra todos: UI, UX, P.O, ScrumMaster.</p>
-                                <p>Clique abaixo e cadastre-se.</p>
-                                <p>Aqui você terá oportunidade de crescer geometricamente.</p>
 
-                                <a href="#" class="main-btn" id="apply-btn">Saiba mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PORTFOLIO -->
-                <!-- <div id="portfolio-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4 class="main-title">Conheça nossos projetos</h4>
-                        </div>
-                        <div class="col-md-12" id="filter-btn-box">
-                            <button class="main-btn filter-btn active" id="all-btn">Todos</button>
-                            <button class="main-btn filter-btn" id="dev-btn">Desenvolvimento</button>
-                            <button class="main-btn filter-btn" id="dsg-btn">Design</button>
-                            <button class="main-btn filter-btn" id="seo-btn">SEO</button>
-                        </div>
-
-                        <div class="col-md-4 project-box dev">
-                            <img src="./img/proj1.jpg" class="img-fluid" alt="Projeto 1">
-                        </div>
-                        <div class="col-md-4 project-box dsg">
-                            <img src="./img/proj2.jpg" class="img-fluid" alt="Projeto 2">
-                        </div>
-                        <div class="col-md-4 project-box seo">
-                            <img src="./img/proj3.jpg" class="img-fluid" alt="Projeto 3">
-                        </div>
-                        <div class="col-md-4 project-box dev">
-                            <img src="./img/proj4.jpg" class="img-fluid" alt="Projeto 4">
-                        </div>
-                        <div class="col-md-4 project-box dsg">
-                            <img src="./img/proj5.jpg" class="img-fluid" alt="Projeto 5">
-                        </div>
-                        <div class="col-md-4 project-box seo">
-                            <img src="./img/proj6.jpg" class="img-fluid" alt="Projeto 6">
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-                <!-- NEWSLETTER -->
-                <div id="news-area">
-                    <div class="container">
-                        <div class="col-md-12">
-                            <h4 class="main-title">Fique por dentro das novidades</h4>
-                        </div>
-                        <p>Assine nossa lista de emails, e receba nossos conteúdos sobre desenvolvimento de software.
-                        </p>
-
-                        <form action="">
-                            <input name="email" id="email-input" class="form-control" type="email"
-                                placeholder="Seu melhor email">
-                            <input type="submit" id="news-btn" value="Inscrever">
-                        </form>
-                    </div>
-                </div>
-
-<<<<<<< HEAD
-            <!-- CALL TO ACTION -->
-            
-=======
-                <!-- CALL TO ACTION -->
-                <div id="call-area">
-                    <div class="container">
-                        <div class="row">
-                            <p>Deseja fazer um orçamento sem compromisso?</p>
-                            <button class="main-btn" id="call-btn">Orçar</button>
-                        </div>
-                    </div>
-                </div>
->>>>>>> b77d8455d00cf22ceba9d04503f016c89e6fedf7
             </div>
     </main>
 
@@ -413,7 +285,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="main-title" style="color: white;">Entre em contato conosco</h3>
+                        <h3 class="main-title">Entre em contato conosco</h3>
                     </div>
 
                     
@@ -424,7 +296,7 @@
                             <input type="text" class="form-control" placeholder="Assunto" name="subject">
                             <textarea class="form-control" rows="3" placeholder="Sua mensagem..."
                                 name="message"></textarea>
-                            <input type="submmit" class="main-btn" value="Enviar">
+                            <button class="main-btn">Enviar</button>
                         </form>
                     </div>
                     <iframe class = "col-md-6"src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d58516.6342980323!2d-46.696633566150226!3d-23.558038700459207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e2!4m5!1s0x94ce59d2b063f663%3A0xc567c0d16d0bc582!2sBandtec%20Digital%20School%20-%20Rua%20Haddock%20Lobo%2C%20595%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001414-001!3m2!1d-23.5581213!2d-46.661614!4m4!1s0x94ce59d2b063f663%3A0xc567c0d16d0bc582!3m2!1d-23.5581213!2d-46.661614!5e0!3m2!1spt-BR!2sbr!4v1599786000073!5m2!1spt-BR!2sbr" width="600" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>

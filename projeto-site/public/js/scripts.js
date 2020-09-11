@@ -4,7 +4,7 @@ $(document).ready(function () {
     let containerA = document.getElementById('circleA');
 
     let circleA = new ProgressBar.Circle(containerA, {
-        color: '#3b5998',
+        color: '#fff',
         strokeWidth: 8,
         duration: 1900,
         from: { color: '#AAA' },
@@ -24,7 +24,7 @@ $(document).ready(function () {
     let containerB = document.getElementById('circleB');
 
     let circleB = new ProgressBar.Circle(containerB, {
-        color: '#3b5998',
+        color: '#fff',
         strokeWidth: 8,
         duration: 800,
         from: { color: '#AAA' },
@@ -44,7 +44,7 @@ $(document).ready(function () {
     let containerC = document.getElementById('circleC');
 
     let circleC = new ProgressBar.Circle(containerC, {
-        color: '#3b5998',
+        color: '#fff',
         strokeWidth: 8,
         duration: 1300,
         from: { color: '#AAA' },
@@ -64,7 +64,7 @@ $(document).ready(function () {
     let containerD = document.getElementById('circleD');
 
     let circleD = new ProgressBar.Circle(containerD, {
-        color: '#3b5998',
+        color: '#fff',
         strokeWidth: 8,
         duration: 1400,
         from: { color: '#AAA' },
@@ -101,8 +101,8 @@ $(document).ready(function () {
 
     // Parallax
     setTimeout(function () {
-        $('#data-area').parallax({ imageSrc: './img/cidadeparallax.png' });
-        $('#apply-area').parallax({ imageSrc: './img/pattern.png' });
+        $('#data-area').parallax({ imageSrc: './img/cidadeparallax.jpg' });
+       
     }, 250);
 
     // Filtro do portfolio
