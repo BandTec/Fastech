@@ -101,7 +101,8 @@ $(document).ready(function () {
 
     // Parallax
     setTimeout(function () {
-        $('#data-area').parallax({ imageSrc: './img/cidadeparallax.jpg' });
+        $('#data-area').parallax({ imageSrc: './img/teamparallax.jpg' });
+        $('#service-area').parallax({ imageSrc: './img/serviceparallax.png' });
        
     }, 250);
 

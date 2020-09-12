@@ -327,6 +327,20 @@ header, .navbar{
     text-align: center;
 }
 
+/* SERVICE */
+#service-area p, #service-area{
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.91);
+    text-align: center;
+}
+
+#service-area .fas , #service-area .fab{
+    font-size: 50px;
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.91);
+    color: var(--color-blue);
+}
+
 
 
 /* FOOTER */
