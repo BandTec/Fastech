@@ -81,8 +81,8 @@ $(document).ready(function () {
         }
     });
 
+    
     // Iniciando o loader quando o usuário chegar na função
-
     let dataAreaOffSet = $('#data-area').offset();
     let stop = 0;
 
@@ -103,7 +103,7 @@ $(document).ready(function () {
     setTimeout(function () {
         $('#data-area').parallax({ imageSrc: './img/teamparallax.jpg' });
         $('#service-area').parallax({ imageSrc: './img/serviceparallax.png' });
-       
+
     }, 250);
 
     // Filtro do portfolio

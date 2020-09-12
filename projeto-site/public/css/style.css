@@ -23,7 +23,8 @@ p, li{
 
 /* NAVBAR */
 header, .navbar{
-    background-color: #000000;
+    background-color: #000;
+    height: 58px;
 }
 
 #nav-container{
@@ -32,7 +33,7 @@ header, .navbar{
 }
 
 #logo{
-    width: 40px;
+    width: 30px;
 }
 
 .navbar-brand{
@@ -50,7 +51,7 @@ header, .navbar{
 }
 
 #navbar-links a:hover{
-    border-bottom: 1px solid var(--color-blue);
+    border-bottom: 3px solid var(--color-blue);
     cursor: pointer;
 }
 
@@ -328,6 +329,9 @@ header, .navbar{
 }
 
 /* SERVICE */
+#service-area p{
+    margin: 10px;
+}
 #service-area p, #service-area{
     font-size: 20px;
     color: #fff;
