@@ -12,13 +12,13 @@ CREATE TABLE Usuario(
 	fOREIGN KEY(fkestabelecimentoUsuario) REFERENCES Estabelecimento(idEstabelecimento)
 );
 
-CREATE TABLE Totem (
-	idTotem INT PRIMARY KEY IDENTITY(1,1),
-	cpuTotem TINYINT,
-	memoriaTotem TINYINT,
-	discoTotem TINYINT,
-	fkestabelecimentoTotem INT,
-	fOREIGN KEY(fkestabelecimentoTotem) REFERENCES Estabelecimento(idEstabelecimento)
+CREATE TABLE Maquina (
+	idMaquina INT PRIMARY KEY IDENTITY(1,1),
+	cpuMaquina TINYINT,
+	memoriaMaquina TINYINT,
+	discoMaquina TINYINT,
+	fkestabelecimentoMaquina INT,
+	fOREIGN KEY(fkestabelecimentoMaquina) REFERENCES Estabelecimento(idEstabelecimento)
 
 );
 
