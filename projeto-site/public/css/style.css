@@ -23,7 +23,8 @@ p, li{
 
 /* NAVBAR */
 header, .navbar{
-    background-color: #000000;
+    background-color: #000;
+    height: 58px;
 }
 
 #nav-container{
@@ -32,7 +33,7 @@ header, .navbar{
 }
 
 #logo{
-    width: 40px;
+    width: 30px;
 }
 
 .navbar-brand{
@@ -50,7 +51,7 @@ header, .navbar{
 }
 
 #navbar-links a:hover{
-    border-bottom: 1px solid var(--color-blue);
+    border-bottom: 3px solid var(--color-blue);
     cursor: pointer;
 }
 
@@ -70,6 +71,22 @@ header, .navbar{
 
 #mainSlider .carousel-inner, #mainSlider .carousel-item{
     height: 90vh;
+
+
+}
+
+#mainSlider .carousel-item  img  {
+    filter: grayscale(45%); 
+
+  
+}
+
+#totemImg{
+    margin-top: -17%;
+}
+
+#mainSlider .carousel-item  img {
+    filter: grayscale(45%); 
 }
 
 #mainSlider .carousel-caption {
@@ -80,14 +97,18 @@ header, .navbar{
     font-size: 50px;
     margin-bottom: 30px;
     text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.91);
+    text-align: center;
+    text-justify: auto;
+    text-rendering: auto;
 }
 
 #mainSlider .carousel-caption p {
     font-size: 22px;
     font-weight: 300px;
     margin-bottom: 100px;
-    color: #fff;
-    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.91);
+    color:  rgba(255, 255, 255, 0.986) ;
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.904);
+    text-align: left;
 }
 
 /*------- Login / Register -----------*/
@@ -327,6 +348,23 @@ header, .navbar{
     text-align: center;
 }
 
+/* SERVICE */
+#service-area p{
+    margin: 10px;
+}
+#service-area p, #service-area{
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.91);
+    text-align: center;
+}
+
+#service-area .fas , #service-area .fab{
+    font-size: 50px;
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.91);
+    color: var(--color-blue);
+}
+
 
 
 /* FOOTER */
@@ -431,9 +469,12 @@ header, .navbar{
     }
 
     /* SLIDER */
-    #mainSlider .carousel-inner, #mainSlider .carousel-item{
+    #mainSlider .carousel-inner, #mainSlider .carousel-item {
         height: auto;
+        filter: contrast(20%);
+        
     }
+
 
     #mainSlider .carousel-caption h2{
         font-size: 28px;
