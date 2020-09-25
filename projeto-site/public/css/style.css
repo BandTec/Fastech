@@ -71,22 +71,17 @@ header, .navbar{
 
 #mainSlider .carousel-inner, #mainSlider .carousel-item{
     height: 90vh;
-
-
+    filter: grayscale(39%);
 }
 
 #mainSlider .carousel-item  img  {
-    filter: grayscale(45%); 
-
-  
+    zoom: 100%;   
+    filter: contrast(1);
+    color-adjust: exact;
 }
 
 #totemImg{
     margin-top: -17%;
-}
-
-#mainSlider .carousel-item  img {
-    filter: grayscale(45%); 
 }
 
 #mainSlider .carousel-caption {
@@ -94,20 +89,20 @@ header, .navbar{
 }
 
 #mainSlider .carousel-caption h2 {
-    font-size: 50px;
+    font-size: 55px;
     margin-bottom: 30px;
-    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.91);
+    text-shadow: 3px 2px 5px rgb(0, 0, 0);
     text-align: center;
     text-justify: auto;
     text-rendering: auto;
 }
 
 #mainSlider .carousel-caption p {
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 300px;
     margin-bottom: 100px;
     color:  rgba(255, 255, 255, 0.986) ;
-    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.904);
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.959);
     text-align: left;
 }
 
@@ -203,7 +198,6 @@ header, .navbar{
     flex-direction: column;
     align-content: center;
 }
-
 
 .register input, .login input {
     margin: 1% 0 4% 0;
@@ -416,8 +410,6 @@ header, .navbar{
 #contact-form input:focus, #contact-form textarea:focus{
     border-bottom: 3px solid var(--color-blue);
 }
-
-
 
 #contact-form .main-btn{
     outline: none;
