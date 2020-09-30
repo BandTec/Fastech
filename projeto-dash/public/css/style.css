@@ -37,6 +37,7 @@ body{
 .sidebar ul li a{
     color: var(--blue-deafult);
     transition: .2s;
+    text-shadow: 3px 3px 2px black;
 }
 
 #logoff a{
@@ -68,4 +69,26 @@ body{
     width: 25%;
     float: right;
     margin-top: -50px;
+}
+
+/* MODAL */
+
+.modal-body .row{
+    margin-left: 10px;
+}
+
+.modal-body label{
+    text-transform: uppercase;
+    text-shadow: 0px 1px 2px black;
+}
+.modal-body b{
+    margin-left: 10px;
+}
+
+.modal-title{
+   color: #3b5998;
+}
+
+.modal-footer .btn{
+    background-color: #3b5998;
 }
