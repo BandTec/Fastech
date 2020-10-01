@@ -1,0 +1,94 @@
+:root{
+    --background-dark: #333;
+    --blue-deafult: #3B5998;
+    --secundary-bg-dark: #515151;
+    --color-theme: #6C718A;
+    --out-color: #FE4242;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #333;
+}
+
+.sidebar{
+    background-color: var(--secundary-bg-dark);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 23% 5%;
+    transform: translate(-50%,-50%);
+    position: fixed;
+}
+
+.sidebar ul li:nth-child(1){
+    padding-top: 0%;
+}
+
+.sidebar ul li{
+    font-size: 2em;
+    padding-top: 95%;
+    list-style: none;
+}
+
+.sidebar ul li a{
+    color: var(--blue-deafult);
+    transition: .2s;
+    text-shadow: 3px 3px 2px black;
+}
+
+#logoff a{
+    color: var(--out-color);
+}
+
+.sidebar ul li a:hover{
+    opacity: .5;
+}
+
+/* WELCOME */
+
+.welcome{
+    background-color: var(--blue-deafult);
+    width: 40%;
+    height: 100px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 3% 15%;
+    position: relative;
+}
+
+.welcome .title, .welcome .description{
+    color: #fff;
+    float: left;
+}
+
+.welcome img{
+    width: 25%;
+    float: right;
+    margin-top: -50px;
+}
+
+/* MODAL */
+
+.modal-body .row{
+    margin-left: 10px;
+}
+
+.modal-body label{
+    text-transform: uppercase;
+    text-shadow: 0px 1px 2px black;
+}
+.modal-body b{
+    margin-left: 10px;
+}
+
+.modal-title{
+   color: #3b5998;
+}
+
+.modal-footer .btn{
+    background-color: #3b5998;
+}
