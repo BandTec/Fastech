@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fastech</title>
-    
+
 
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -39,11 +39,16 @@
 <body>
     <div class="sidebar">
         <ul>
-            <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="#"><i class="fas fa-home"></i></a></li>
-            <li data-toggle="tooltip" data-placement="right" title="Gráficos"><a href="#"><i class="fas fa-chart-pie"></i></a></li>
-            <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="#"><i class="fas fa-comments"></i></a></li>
-            <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="#"><i class="fas fa-cog"></i></a></li>
-            <li id="logoff" data-toggle="tooltip" data-placement="right" title="Sair"><a href="#"><i class="fas fa-power-off"></i></a></li>
+            <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="#"><i
+                        class="fas fa-home"></i></a></li>
+            <li data-toggle="tooltip" data-placement="right" title="Gráficos"><a href="#"><i
+                        class="fas fa-chart-pie"></i></a></li>
+            <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="#"><i
+                        class="fas fa-comments"></i></a></li>
+            <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="#"><i
+                        class="fas fa-cog"></i></a></li>
+            <li id="logoff" data-toggle="tooltip" data-placement="right" title="Sair"><a href="#"><i
+                        class="fas fa-power-off"></i></a></li>
         </ul>
     </div>
 
@@ -54,6 +59,361 @@
         <div class="title">Olá, <b id="nome_usuario">Fred Flinstone</b></div> <br>
         <div class="description">Você está em <b id="estabelecimento">Burguer King</b> <i class="fas fa-plus"></i></div>
     </div>
+
+    <div id="main-container">
+        <div class="container">
+            <div class="row">
+                <h2 class="title">Média geral</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title"> CPU </div>
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title"> Memória </div>
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title"> Disco </div>
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MACHINES -->
+    <div id="machines-container">
+        <div class="container">
+            <div class="row">
+                <h2 class="title">Suas máquinas</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <div class="card" id="status_danger">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 1
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" id="status_warning">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 2
+                                <i class="fas fa-exclamation-circle"></i>
+
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" id="status_good">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 3
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" id="status_warning">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 4
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <div class="card" id="status_danger">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 1
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" id="status_warning">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 2
+                                <i class="fas fa-exclamation-circle"></i>
+
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" id="status_good">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 3
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" id="status_warning">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 4
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <div class="card" id="status_warning">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 1
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" id="status_warning">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 2
+                                <i class="fas fa-exclamation-circle"></i>
+
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" id="status_warning">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 3
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card" id="status_warning">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 4
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="datas">
+                                <div class="row">
+                                    CPU: <b id="data_cpu">59%</b>
+                                </div>
+                                <div class="row">
+                                    Memória: <b id="data_memory">74%</b>
+                                </div>
+                                <div class="row">
+                                    Disco: <b id="data_disk">25%</b>
+                                </div>
+                            </div>
+                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
+                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -91,6 +451,7 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
+
     </div>
   </div>
 </body>
