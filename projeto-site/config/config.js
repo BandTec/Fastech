@@ -8,11 +8,11 @@ module.exports = {
     storage: ":memory:"
   },
   production: {
-    username: 'convidado',
-    password: 'convidadoprod',
+    username: 'fastech_prod',
+    password: 'fastech_prod',
     database: 'fastech',
     host: 'ferreiraserver.ddns.net',
-    dialect: 'mysql',
+    dialect: 'mssql',
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {
       options: {
