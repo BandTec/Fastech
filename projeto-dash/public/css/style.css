@@ -69,3 +69,107 @@ body{
     float: right;
     margin-top: -50px;
 }
+
+
+/* AVG GENERAL */
+#main-container{
+    margin-left: 4%;
+}
+
+#main-container .title{
+    color: #fff;
+    margin: 20px 0px 30px 40px;
+}
+
+#main-container .card{
+    margin-left: 10%;
+    padding: 10px;
+    background-color: var(--secundary-bg-dark);
+    border: 1px solid var(--color-theme);
+}
+
+#main-container .card .card-body .card-title{
+    color: #fff;
+    font-weight: bold;
+}
+#main-container .card .card-body i{
+    display: block;
+    text-align: center;
+    font-size: 3em;
+}
+
+
+/* MACHINES */
+
+#status_warning{
+    border: 1px solid yellow;
+}
+
+#status_warning .fa-exclamation-circle{
+    color: yellow;
+}
+
+#status_danger{
+    border: 1px solid red;
+}
+
+#status_danger .fa-exclamation-circle{
+    color: red;
+}
+
+#status_good{
+    border: 1px solid green;
+}
+
+#status_good .fa-exclamation-circle{
+    color: green;
+}
+
+#machines-container .fa-exclamation-circle{
+    position: relative;
+    top: -40px;
+    right: -55px;
+}
+
+#machines-container{
+    margin-left: 4%;
+}
+
+#machines-container .title{
+    color: #fff;
+    margin: 20px 0px 30px 40px;
+    text-align: center;
+}
+
+#machines-container .title .fas{
+    color: var(--out-color);
+}
+
+#machines-container .card{
+    margin-left: 10%;
+    margin-top: 20px;
+    padding: 20px;
+    padding-bottom: 0px;
+    background-color: var(--secundary-bg-dark);
+    color: #fff;
+    text-align: center;
+}
+
+#machines-container .datas{
+    background-color: #6b6a6a;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+#machines-container .card-body .row {
+    margin: 5px;
+}
+
+#machines-container .card-body .row b{
+    margin-left: 30px;
+}
+
+#machines-container .card-body a i{
+    margin-top: 30px;
+}
+
