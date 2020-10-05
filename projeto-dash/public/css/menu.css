@@ -1,0 +1,40 @@
+:root{
+    --background-dark: #333;
+    --blue-deafult: #3B5998;
+    --secundary-bg-dark: #515151;
+    --color-theme: #6C718A;
+    --out-color: #FE4242;
+}
+
+.sidebar{
+    background-color: var(--secundary-bg-dark);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 23% 5%;
+    transform: translate(-50%,-50%);
+    position: fixed;
+}
+
+.sidebar ul li:nth-child(1){
+    padding-top: 0%;
+}
+
+.sidebar ul li{
+    font-size: 2em;
+    padding-top: 95%;
+    list-style: none;
+}
+
+.sidebar ul li a{
+    color: var(--blue-deafult);
+    transition: .2s;
+    text-shadow: 3px 3px 2px black;
+}
+
+#logoff a{
+    color: var(--out-color);
+}
+
+.sidebar ul li a:hover{
+    opacity: .5;
+}

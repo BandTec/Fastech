@@ -15,90 +15,6 @@ body{
     background-color: #333;
 }
 
-.sidebar{
-    background-color: var(--secundary-bg-dark);
-    border-radius: 5px;
-    padding: 20px;
-    margin: 23% 5%;
-    transform: translate(-50%,-50%);
-    position: fixed;
-}
-
-.sidebar ul li:nth-child(1){
-    padding-top: 0%;
-}
-
-.sidebar ul li{
-    font-size: 2em;
-    padding-top: 95%;
-    list-style: none;
-}
-
-.sidebar ul li a{
-    color: var(--blue-deafult);
-    transition: .2s;
-    text-shadow: 3px 3px 2px black;
-}
-
-#logoff a{
-    color: var(--out-color);
-}
-
-.sidebar ul li a:hover{
-    opacity: .5;
-}
-
-/* WELCOME */
-
-.welcome{
-    background-color: var(--blue-deafult);
-    width: 40%;
-    height: 100px;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 3% 15%;
-    position: relative;
-}
-
-.welcome .title, .welcome .description{
-    color: #fff;
-    float: left;
-}
-
-.welcome img{
-    width: 25%;
-    float: right;
-    margin-top: -50px;
-}
-
-/* AVG GENERAL */
-#main-container{
-    margin-left: 4%;
-}
-
-#main-container .title{
-    color: #fff;
-    margin: 20px 0px 30px 40px;
-}
-
-#main-container .card{
-    margin-left: 10%;
-    padding: 10px;
-    background-color: var(--secundary-bg-dark);
-    border: 1px solid var(--color-theme);
-}
-
-#main-container .card .card-body .card-title{
-    color: #fff;
-    font-weight: bold;
-}
-#main-container .card .card-body i{
-    display: block;
-    text-align: center;
-    font-size: 3em;
-}
-
-
 /* MACHINES */
 
 #status_warning{
@@ -196,3 +112,51 @@ body{
     background-color: #3b5998;
 }
 
+/* HELP */
+
+#main-container h1, #main-container h3{
+    color: #fff;
+}
+
+#main-container form input[type=text]{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    margin:2%;
+    outline: none;
+    color: #fff;
+    padding: 5px;
+    transition: .2s linear;
+}
+
+#main-container form textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    margin: 2%;
+    margin-top: 32%;
+    outline: none;
+    color: #fff;
+    padding: 0;
+    transition: .2s linear;
+}
+
+#main-container form input[type=submit]{
+    background-color: var(--blue-deafult);
+    border: none;
+    margin:2%;
+    outline: none;
+    color: #fff;
+    padding: 5px;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s linear;
+}
+
+#main-container form input[type=text]:focus, #main-container form textarea:focus{
+    border-bottom: 2px solid var(--blue-deafult);
+}
+
+#main-container form input[type=submit]:hover{
+    opacity: .5;
+}
