@@ -32,6 +32,8 @@
 
 
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/welcome.css">
     <link rel="shortcut icon" href="./img/Fastech_logo.png" type="image/x-icon">
 
 </head>
@@ -39,13 +41,13 @@
 <body>
     <div class="sidebar">
         <ul>
-            <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="#"><i
+            <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="./index.html"><i
                         class="fas fa-home"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Gráficos"><a href="#"><i
                         class="fas fa-chart-pie"></i></a></li>
-            <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="#"><i
+            <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="./help.html"><i
                         class="fas fa-comments"></i></a></li>
-            <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="#"><i
+            <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="./settings.html"><i
                         class="fas fa-cog"></i></a></li>
             <li id="logoff" data-toggle="tooltip" data-placement="right" title="Sair"><a href="#"><i
                         class="fas fa-power-off"></i></a></li>
@@ -58,6 +60,47 @@
         <img src="./img/analista.svg" alt="Você aqui">
         <div class="title">Olá, <b id="nome_usuario">Fred Flinstone</b></div> <br>
         <div class="description">Você está em <b id="estabelecimento">Burguer King</b> <i class="fas fa-plus"></i></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Perfil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <label>Nome: </label>
+                        <b id="name">Jorge</b>
+                    </div>
+                    <div class="row">
+                        <label>CPF: </label>
+                        <b id="cpf">499.914.138-80</b>
+                    </div>
+                    <div class="row">
+                        <label>Email: </label>
+                        <b id="email">jorge.barbosa@bandtec.com.br</b>
+                    </div>
+                    <div class="row">
+                        <label>Empresa: </label>
+                        <b id="company">easynvest</b>
+                    </div>
+                    <div class="row">
+                        <label>Cargo: </label>
+                        <b id="office">Desenvolvedor</b>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <div id="main-container">
@@ -415,47 +458,10 @@
         </div>
 
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Perfil</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-                <div class="row">
-                    <label >Nome: </label>
-                    <b id="name">Jorge</b>
-                </div>
-                <div class="row">
-                    <label >CPF: </label>
-                    <b id="cpf">499.914.138-80</b>
-                </div>
-                <div class="row">
-                    <label >Email: </label>
-                    <b id="email">jorge.barbosa@bandtec.com.br</b>
-                </div>
-                <div class="row">
-                    <label >Empresa: </label>
-                    <b id="company">easynvest</b>
-                </div>
-                <div class="row">
-                    <label >Cargo: </label> 
-                    <b id="office">Desenvolvedor</b>        
-                </div>
-          </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
 
-    </div>
-  </div>
 </body>
 
 <script src="./js/tooltip.js"></script>
 <script src="./js/modal.js"></script>
+
 </html>

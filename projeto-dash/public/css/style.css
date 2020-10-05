@@ -1,104 +1,65 @@
-:root{
-    --background-dark: #333;
+:root {
+    --background: #333333;
     --blue-deafult: #3B5998;
-    --secundary-bg-dark: #515151;
-    --color-theme: #6C718A;
+    --secundary-bg: #515151;
     --out-color: #FE4242;
+    --color-text: #FFFFFF;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
-    background-color: #333;
+body {
+    background-color: var(--background);
 }
 
-.sidebar{
-    background-color: var(--secundary-bg-dark);
+
+.sidebar {
+    background-color: var(--secundary-bg);
     border-radius: 5px;
     padding: 20px;
     margin: 23% 5%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     position: fixed;
 }
 
-.sidebar ul li:nth-child(1){
+.sidebar ul li:nth-child(1) {
     padding-top: 0%;
 }
 
-.sidebar ul li{
+.sidebar ul li {
     font-size: 2em;
     padding-top: 95%;
     list-style: none;
 }
 
-.sidebar ul li a{
+.sidebar ul li a {
     color: var(--blue-deafult);
     transition: .2s;
     text-shadow: 3px 3px 2px black;
 }
 
-#logoff a{
+#logoff a {
     color: var(--out-color);
 }
 
-.sidebar ul li a:hover{
+.sidebar ul li a:hover {
     opacity: .5;
 }
 
+
 /* WELCOME */
 
-.welcome{
+.welcome {
     background-color: var(--blue-deafult);
     width: 40%;
     height: 100px;
     border-radius: 10px;
     padding: 20px;
     margin: 3% 15%;
-    position: relative;
 }
-
-.welcome .title, .welcome .description{
-    color: #fff;
-    float: left;
-}
-
-.welcome img{
-    width: 25%;
-    float: right;
-    margin-top: -50px;
-}
-
-/* AVG GENERAL */
-#main-container{
-    margin-left: 4%;
-}
-
-#main-container .title{
-    color: #fff;
-    margin: 20px 0px 30px 40px;
-}
-
-#main-container .card{
-    margin-left: 10%;
-    padding: 10px;
-    background-color: var(--secundary-bg-dark);
-    border: 1px solid var(--color-theme);
-}
-
-#main-container .card .card-body .card-title{
-    color: #fff;
-    font-weight: bold;
-}
-#main-container .card .card-body i{
-    display: block;
-    text-align: center;
-    font-size: 3em;
-}
-
-
 /* MACHINES */
 
 #status_warning{
@@ -145,6 +106,10 @@ body{
     color: var(--out-color);
 }
 
+.welcome .title, .welcome .description {
+    color: #fff;
+    float: left;
+}
 #machines-container .card{
     margin-left: 10%;
     margin-top: 20px;
@@ -165,6 +130,14 @@ body{
     margin: 5px;
 }
 
+
+.welcome img {
+    width: 25%;
+    float: right;
+    margin-top: -50px;
+}
+
+
 #machines-container .card-body .row b{
     margin-left: 30px;
 }
@@ -176,23 +149,192 @@ body{
 
 /* MODAL */
 
-.modal-body .row{
+.modal-body .row {
     margin-left: 10px;
 }
 
-.modal-body label{
+.modal-body label {
     text-transform: uppercase;
     text-shadow: 0px 1px 2px black;
 }
-.modal-body b{
+
+.modal-body b {
     margin-left: 10px;
 }
 
-.modal-title{
-   color: #3b5998;
+.modal-title {
+    color: var(--blue-deafult);
+}
+
+.modal-footer .btn {
+    background-color: var(--blue-deafult);
+}
+
+
+/* SETTINGS */
+
+#settings-container .container {
+    margin-left: 14%;
+}
+
+#settings-container .title {
+    color: var(--color-text);
+}
+
+#settings-container p {
+    color: var(--color-text);
+    font-size: 19px;
+    margin-left: 15px;
+}
+
+#settings-container img {
+    width: 450px;
+    box-shadow: 8px 8px 5px black;
+}
+
+#settings-container .theme {
+    margin-bottom: 20px;
+}
+
+.card-header #telegram, .card-header #slack{
+    margin-left: 70%;
+}
+
+.card-header .fab{
+    font-size: 30px;
+    text-shadow: 3px 3px 2px black;
+}
+
+.card-body .card-text{
+    color: #212529;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 22px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--blue-deafult);
+}
+
+.card-header #slack input:checked+.slider {
+    background-color: #960bdec9;
+}
+
+.card-header #telegram input:checked+.slider {
+    background-color: #1e65ff;
+}
+
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--blue-deafult);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 .modal-footer .btn{
     background-color: #3b5998;
 }
 
+/* HELP */
+
+#main-container h1, #main-container h3{
+    color: #fff;
+}
+
+#main-container form input[type=text]{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    margin:2%;
+    outline: none;
+    color: #fff;
+    padding: 5px;
+    transition: .2s linear;
+}
+
+#main-container form textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    margin: 2%;
+    margin-top: 32%;
+    outline: none;
+    color: #fff;
+    padding: 0;
+    transition: .2s linear;
+}
+
+#main-container form input[type=submit]{
+    background-color: var(--blue-deafult);
+    border: none;
+    margin:2%;
+    outline: none;
+    color: #fff;
+    padding: 5px;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s linear;
+}
+
+#main-container form input[type=text]:focus, #main-container form textarea:focus{
+    border-bottom: 2px solid var(--blue-deafult);
+}
+
+#main-container form input[type=submit]:hover{
+    opacity: .5;
+
+}

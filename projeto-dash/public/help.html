@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastech</title>
+
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- SCRIPTS -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/3db2c990f7.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/welcome.css">
+    <link rel="shortcut icon" href="./img/Fastech_logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="sidebar">
+        <ul>
+            <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="./index.html"><i
+                        class="fas fa-home"></i></a></li>
+            <li data-toggle="tooltip" data-placement="right" title="Gráficos"><a href="#"><i
+                        class="fas fa-chart-pie"></i></a></li>
+            <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="./help.html"><i
+                        class="fas fa-comments"></i></a></li>
+            <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="./settings.html"><i
+                        class="fas fa-cog"></i></a></li>
+            <li id="logoff" data-toggle="tooltip" data-placement="right" title="Sair"><a href="#"><i
+                        class="fas fa-power-off"></i></a></li>
+        </ul>
+    </div>
+
+    <!-- WELCOME -->
+    <div class="welcome" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+
+        <img src="./img/analista.svg" alt="Você aqui">
+        <div class="title">Olá, <b id="nome_usuario">Fred Flinstone</b></div> <br>
+        <div class="description">Você está em <b id="estabelecimento">Burguer King</b> <i class="fas fa-plus"></i></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Perfil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <label>Nome: </label>
+                        <b id="name">Jorge</b>
+                    </div>
+                    <div class="row">
+                        <label>CPF: </label>
+                        <b id="cpf">499.914.138-80</b>
+                    </div>
+                    <div class="row">
+                        <label>Email: </label>
+                        <b id="email">jorge.barbosa@bandtec.com.br</b>
+                    </div>
+                    <div class="row">
+                        <label>Empresa: </label>
+                        <b id="company">easynvest</b>
+                    </div>
+                    <div class="row">
+                        <label>Cargo: </label>
+                        <b id="office">Desenvolvedor</b>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FORMULÁRIO -->
+    <div id="main-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Precisa de ajuda?</h1>
+                </div>
+            </div>
+            <form action="." id="help_form">
+
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" class="col-12" id="name_help_form" placeholder="Seu nome">
+                        <input type="text" class="col-12" id="email_help_form" placeholder="Seu email">
+                        <input type="text" class="col-12" id="empresa_help_form" placeholder="Empresa em que trabalha">
+                        <input type="text" class="col-12" id="assunto_help_form" placeholder="Assunto do contato">
+                    </div>
+                    <div class="col-6">
+                        <textarea class="col-12" type="text" id="mensagem_help_form"
+                            placeholder="Escreva sua mensagem"></textarea>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <input class="col-6" type="submit" value="Enviar mensagem">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
