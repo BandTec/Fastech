@@ -39,13 +39,13 @@
 <body>
     <div class="sidebar">
         <ul>
-            <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="#"><i
+            <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="./index.html"><i
                         class="fas fa-home"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Gráficos"><a href="#"><i
                         class="fas fa-chart-pie"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="#"><i
                         class="fas fa-comments"></i></a></li>
-            <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="#"><i
+            <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="./settings.html"><i
                         class="fas fa-cog"></i></a></li>
             <li id="logoff" data-toggle="tooltip" data-placement="right" title="Sair"><a href="#"><i
                         class="fas fa-power-off"></i></a></li>
@@ -108,24 +108,69 @@
             </div>
 
             <div class="row">
+                <p>Tema Escuro</p>
                 <div class="col-3">
                     <label class="switch">
-                        <input type="checkbox" checked>
+                        <input id="switch_theme" type="checkbox" checked onclick="theme()">
                         <span class="slider round"></span>
                     </label>
                 </div>
             </div>
+            <div class="theme row">
+                <div class="col-8">
+                    <img id="imgTheme" src="./img/dashboard-color-theme-white.png" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <h2 class="title">Notificações</h2>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <p>Status: <b id="statusSlack">Ativado</b></p> 
+                    <div class="card text-white bg-dark mb-3" style="max-width: 23rem;">
+                        <div class="card-header"><i class="fab fa-slack"></i>
+
+                            <label id="slack" class="switch">
+                                <input id="switch_slack" type="checkbox" checked onclick="theme()">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Slack</h5>
+                          <p class="card-text">Se o status estiver ativo você recebera mensagens de alertas no número cadastrado via Slack.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <p>Status: <b id="satusTelegram">Ativado</b> </p> 
+                    <div class="card text-white bg-primary mb-3" style="max-width: 23rem;">
+                        <div class="card-header"><i class="fab fa-telegram"></i>
+
+                            <label id="telegram" class="switch">
+                                <input id="switch_telegram" type="checkbox" checked onclick="theme()">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="card-body">
+                          <h5 class="card-title">Telegram</h5>
+                          <p class="card-text">Se o status estiver ativo você recebera mensagens de alertas no número cadastrado via Telegram.</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+
+
         </div>
 
 
-        <!-- <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-    </label> -->
+
 
 </body>
 
 <script src="./js/tooltip.js"></script>
 <script src="./js/modal.js"></script>
+<script src="./js/theme.js"></script>
 
 </html>
