@@ -15,6 +15,7 @@ body {
     background-color: var(--background);
 }
 
+
 .sidebar {
     background-color: var(--secundary-bg);
     border-radius: 5px;
@@ -58,19 +59,91 @@ body {
     border-radius: 10px;
     padding: 20px;
     margin: 3% 15%;
-    position: relative;
+}
+/* MACHINES */
+
+#status_warning{
+    border: 1px solid yellow;
 }
 
-.welcome .title,
-.welcome .description {
+#status_warning .fa-exclamation-circle{
+    color: yellow;
+}
+
+#status_danger{
+    border: 1px solid red;
+}
+
+#status_danger .fa-exclamation-circle{
+    color: red;
+}
+
+#status_good{
+    border: 1px solid green;
+}
+
+#status_good .fa-exclamation-circle{
+    color: green;
+}
+
+#machines-container .fa-exclamation-circle{
+    position: relative;
+    top: -40px;
+    right: -55px;
+}
+
+#machines-container{
+    margin-left: 4%;
+}
+
+#machines-container .title{
+    color: #fff;
+    margin: 20px 0px 30px 40px;
+    text-align: center;
+}
+
+#machines-container .title .fas{
+    color: var(--out-color);
+}
+
+.welcome .title, .welcome .description {
     color: #fff;
     float: left;
 }
+#machines-container .card{
+    margin-left: 10%;
+    margin-top: 20px;
+    padding: 20px;
+    padding-bottom: 0px;
+    background-color: var(--secundary-bg-dark);
+    color: #fff;
+    text-align: center;
+}
+
+#machines-container .datas{
+    background-color: #6b6a6a;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+#machines-container .card-body .row {
+    margin: 5px;
+}
+
 
 .welcome img {
     width: 25%;
     float: right;
     margin-top: -50px;
+}
+
+
+#machines-container .card-body .row b{
+    margin-left: 30px;
+}
+
+#machines-container .card-body a i{
+    margin-top: 30px;
 }
 
 
@@ -207,6 +280,61 @@ input:checked+.slider:before {
     border-radius: 34px;
 }
 
+
 .slider.round:before {
     border-radius: 50%;
+}
+
+.modal-footer .btn{
+    background-color: #3b5998;
+}
+
+/* HELP */
+
+#main-container h1, #main-container h3{
+    color: #fff;
+}
+
+#main-container form input[type=text]{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    margin:2%;
+    outline: none;
+    color: #fff;
+    padding: 5px;
+    transition: .2s linear;
+}
+
+#main-container form textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    margin: 2%;
+    margin-top: 32%;
+    outline: none;
+    color: #fff;
+    padding: 0;
+    transition: .2s linear;
+}
+
+#main-container form input[type=submit]{
+    background-color: var(--blue-deafult);
+    border: none;
+    margin:2%;
+    outline: none;
+    color: #fff;
+    padding: 5px;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s linear;
+}
+
+#main-container form input[type=text]:focus, #main-container form textarea:focus{
+    border-bottom: 2px solid var(--blue-deafult);
+}
+
+#main-container form input[type=submit]:hover{
+    opacity: .5;
+
 }
