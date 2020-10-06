@@ -55,7 +55,7 @@
     </div>
 
     <!-- WELCOME -->
-    <div class="welcome" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <div class="welcome" type="button" class="btn btn-primary" data-toggle="modal" data-target="#profileModal">
 
         <img src="./img/analista.svg" alt="Você aqui">
         <div class="title">Olá, <b id="nome_usuario">Fred Flinstone</b></div> <br>
@@ -63,12 +63,12 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Perfil</h5>
+                    <h5 class="modal-title" id="profileModalLabel">Perfil</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -149,7 +149,7 @@
 
             <div class="row">
                 <div class="col-3">
-                    <div class="card" id="status_danger">
+                    <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
                         <div class="card-body">
 
                             <div class="card-title">
@@ -167,14 +167,15 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-3">
-                    <div class="card" id="status_warning">
+                    <div class="card" id="status_danger" data-toggle="modal" data-target="#machineModal">
+
                         <div class="card-body">
 
                             <div class="card-title">
@@ -193,14 +194,15 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-3">
-                    <div class="card" id="status_good">
+                    <div class="card" id="status_danger" data-toggle="modal" data-target="#machineModal">
+
                         <div class="card-body">
 
                             <div class="card-title">
@@ -218,14 +220,15 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-3">
-                    <div class="card" id="status_warning">
+                    <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
+
                         <div class="card-body">
 
                             <div class="card-title">
@@ -243,8 +246,8 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
@@ -252,7 +255,8 @@
 
             <div class="row">
                 <div class="col-3">
-                    <div class="card" id="status_danger">
+                    <div class="card" id="status_good" data-toggle="modal" data-target="#machineModal">
+
                         <div class="card-body">
 
                             <div class="card-title">
@@ -270,14 +274,15 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-3">
-                    <div class="card" id="status_warning">
+                    <div class="card" id="status_good" data-toggle="modal" data-target="#machineModal">
+
                         <div class="card-body">
 
                             <div class="card-title">
@@ -296,14 +301,15 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-3">
-                    <div class="card" id="status_good">
+                    <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
+
                         <div class="card-body">
 
                             <div class="card-title">
@@ -321,14 +327,15 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-3">
-                    <div class="card" id="status_warning">
+                    <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
+
                         <div class="card-body">
 
                             <div class="card-title">
@@ -346,8 +353,8 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
@@ -355,7 +362,8 @@
 
             <div class="row">
                 <div class="col-3">
-                    <div class="card" id="status_warning">
+                    <div class="card" id="status_danger" data-toggle="modal" data-target="#machineModal">
+
                         <div class="card-body">
 
                             <div class="card-title">
@@ -373,14 +381,15 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-3">
-                    <div class="card" id="status_warning">
+                    <div class="card" id="status_good" data-toggle="modal" data-target="#machineModal">
+
                         <div class="card-body">
 
                             <div class="card-title">
@@ -399,14 +408,15 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-3">
-                    <div class="card" id="status_warning">
+                    <div class="card" id="status_danger" data-toggle="modal" data-target="#machineModal">
+
                         <div class="card-body">
 
                             <div class="card-title">
@@ -424,14 +434,15 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-3">
-                    <div class="card" id="status_warning">
+                    <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
+
                         <div class="card-body">
 
                             <div class="card-title">
@@ -449,8 +460,8 @@
                                     Disco: <b id="data_disk">25%</b>
                                 </div>
                             </div>
-                            <a data-toggle="tooltip" data-placement="top" title="Ver mais" href="#"
-                                class="btn_plus_machine"><i class="fas fa-chevron-down"></i></a>
+                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
+                                title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
@@ -458,6 +469,89 @@
         </div>
 
 
+        <!-- Modal -->
+        <div class="modal fade" id="machineModal" tabindex="-1" role="dialog" aria-labelledby="machineModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="machineModalLabel">Dados</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <h6>Informações sobre </h6>
+                            <b id="name">nome da maquina</b>
+                        </div>
+                        <h6>Dados da máquina</h6>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-body" data-toggle="tooltip" data-placement="top" title="CPU">
+
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-body" data-toggle="tooltip" data-placement="top" title="Memória">
+
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-body" data-toggle="tooltip" data-placement="top" title="Disco">
+
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6>Dados de testes</h6>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-body" data-toggle="tooltip" data-placement="top" title="CPU">
+
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-body" data-toggle="tooltip" data-placement="top" title="Memória">
+
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-body" data-toggle="tooltip" data-placement="top" title="Disco">
+
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    </div>
 
 </body>
 

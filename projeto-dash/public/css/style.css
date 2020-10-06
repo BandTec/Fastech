@@ -16,50 +16,6 @@ body {
 }
 
 
-.sidebar {
-    background-color: var(--secundary-bg);
-    border-radius: 5px;
-    padding: 20px;
-    margin: 23% 5%;
-    transform: translate(-50%, -50%);
-    position: fixed;
-}
-
-.sidebar ul li:nth-child(1) {
-    padding-top: 0%;
-}
-
-.sidebar ul li {
-    font-size: 2em;
-    padding-top: 95%;
-    list-style: none;
-}
-
-.sidebar ul li a {
-    color: var(--blue-deafult);
-    transition: .2s;
-    text-shadow: 3px 3px 2px black;
-}
-
-#logoff a {
-    color: var(--out-color);
-}
-
-.sidebar ul li a:hover {
-    opacity: .5;
-}
-
-
-/* WELCOME */
-
-.welcome {
-    background-color: var(--blue-deafult);
-    width: 40%;
-    height: 100px;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 3% 15%;
-}
 /* MACHINES */
 
 #status_warning{
@@ -106,10 +62,6 @@ body {
     color: var(--out-color);
 }
 
-.welcome .title, .welcome .description {
-    color: #fff;
-    float: left;
-}
 #machines-container .card{
     margin-left: 10%;
     margin-top: 20px;
@@ -130,22 +82,27 @@ body {
     margin: 5px;
 }
 
-
-.welcome img {
-    width: 25%;
-    float: right;
-    margin-top: -50px;
+#machineModal{
+    padding: 80px;
 }
 
+#machineModal h6{
+    color: var(--blue-deafult);
+}
+
+#machineModal .card{
+    padding: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
 #machines-container .card-body .row b{
     margin-left: 30px;
 }
 
-#machines-container .card-body a i{
+#machines-container .card-body .fa-chevron-down{
     margin-top: 30px;
 }
-
 
 /* MODAL */
 
