@@ -248,7 +248,7 @@ input:checked+.slider:before {
 
 /* HELP */
 
-#main-container h1, #main-container h3{
+#main-container h1{
     color: #fff;
 }
 
@@ -292,6 +292,59 @@ input:checked+.slider:before {
 }
 
 #main-container form input[type=submit]:hover{
+    opacity: .5;
+
+}
+
+
+/* GRAPHS */
+/* FILTERS */
+
+#filters-container h1{
+    color: #fff;
+    margin: 20px 0px 30px 40px;
+}
+
+#filters-container form select, #filters-container form input[type=date] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    margin:2%;
+    margin-left: 60px;
+    outline: none;
+    color: #fff;
+    padding: 5px;
+    transition: .2s linear;
+}
+
+#filters-container form option{
+    color: #000;
+}
+
+#filters-container form i{
+    color: #fff;
+    font-size: 8em;
+    margin-left: 150px;
+    margin-top: 30px;
+}
+
+#filters-container form input[type=submit]{
+    background-color: var(--blue-deafult);
+    border: none;
+    margin:2%;
+    margin-left: 30%;
+    transform: translate(-50%, -50%);
+    outline: none;
+    color: #fff;
+    padding: 5px;
+    transition: .2s linear;
+}
+
+#filters-container form input[type=text]:focus, #filters-container form textarea:focus{
+    border-bottom: 2px solid var(--blue-deafult);
+}
+
+#filters-container form input[type=submit]:hover{
     opacity: .5;
 
 }
