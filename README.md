@@ -1,11 +1,14 @@
 # Fastech 
-![Fastech](https://github.com/BandTec/Fastech/blob/master/projeto-site/public/img/icon.png).
+
 Esse projeto tem como intuito elevar os conhecimento de seus integrantes e evoluirmos como pessoa e buscar o melhor como alunos representando a **BandTec** e, principalmente como profissionais de tecnologia.
+
+
+<center>![Fastech](https://github.com/BandTec/Fastech/blob/master/projeto-site/public/img/icon.png)</center>
 
 ## Contextualização
 Notamos que com o avanço da tecnologia temos que, cada vez, mais que conviver com a automação de trabalhos manuais, desde fábricas de carro a exames médicos, e com o caixa de restaurantes não seria diferente, mas eles não acompanharam o exponencial crescimento da tecnologia. Vemos isso quando paramos para analisar os tempos de atendimento entre o toten e o caixa normal, onde temos uma diferença gritante de qualidade e velocidade de atendimento.
 
-### Problematização
+## Problematização
 Não é segredo pra ninguém que nem sempre todas as empresas acompanham a volatilidade da tecnologia e aplicam isso com perfeição, vemos isso quando vemos que há clientes insastifeitos com os postos de auto atendimento em estabelicimento fast food
 
 ## No que pensamos
@@ -17,8 +20,9 @@ Não é segredo pra ninguém que nem sempre todas as empresas acompanham a volat
 
 Um ProtoPersona serve para um time indentificar quem vai ser seu consumidor principal, como ele se comporta, suas dores e suas caractrísticas.
 
-![ProtoPersona](https://github.com/BandTec/Fastech/blob/master/documenta%C3%A7%C3%A3o/StoryBoard/StoryBoardV3.PNG).
+![ProtoPersona](https://github.com/BandTec/Fastech/blob/master/documenta%C3%A7%C3%A3o/Proto-Persona/gabriel-simple.png)
 
+![ProtoPersona](https://github.com/BandTec/Fastech/blob/master/documenta%C3%A7%C3%A3o/Proto-Persona/mauricio-simple.png)
 ## StoryBoard
 
 StoryBoard é um organizador gráfico que, com uma série de ilustrações ou imagens arranjadas em sequência, conseguem traçar uma pré vizualização do projeto e da ideia que temos do projeto.
@@ -55,24 +59,20 @@ O Business Process Model and Notation, é uma notação da metodologia de gerenc
 ![BPMN](https://github.com/BandTec/Fastech/blob/master/documenta%C3%A7%C3%A3o/BPMN/fastechBPMN%20Diagram.png).
 
 ## Modelo Lógico do banco de dados
-
+O modelo entidade relacionamento é um modelo de dados para descrever os dado ou aspectos de informação de um domínio de negócio ou seus requisitos de processo, de uma maneira abstrata que em última análise se presta a ser implementada em um banco de dados
 ![ Modelo lógico](https://github.com/BandTec/Fastech/blob/master/documenta%C3%A7%C3%A3o/Banco%20de%20dados/Modelagem%20L%C3%B3gica/3-modelo_l%C3%B3gico.jpeg).
-
-
-
-
 
 ## Autores
 
-* **Diego Kurman** -  [Diego Kurman](https://github.com/diego-kurman)
+* [Diego Kurman](https://github.com/diego-kurman)
 
-* **Igor Rafael** - [Igor Rafael](https://github.com/igor-ferreira-bezerra)
+* [Igor Rafael](https://github.com/igor-ferreira-bezerra)
 
-* **José Lucas** - [José Lucas](https://github.com/jose-lucas-mq)
+* [José Lucas](https://github.com/jose-lucas-mq)
 
-* **Jorge Lucas** - [Jorge Lucas](https://github.com/jorge-lsb)
+* [Jorge Lucas](https://github.com/jorge-lsb)
 
-* **Maycon Gomes** - [Maycon Gomes](https://github.com/mayconmaiabandtec)
+* [Maycon Gomes](https://github.com/mayconmaiabandtec)
 
 
 Acesse a lista de autores em: [contributors](https://github.com/BandTec/Fastech/graphs/contributors) para ver a colaboração de cada um dos integrantes.
