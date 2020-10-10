@@ -3,7 +3,7 @@
 Esse projeto tem como intuito elevar os conhecimento de seus integrantes e evoluirmos como pessoa e buscar o melhor como alunos representando a **BandTec** e, principalmente como profissionais de tecnologia.
 
 
-<center>![Fastech](https://github.com/BandTec/Fastech/blob/master/projeto-site/public/img/icon.png)</center>
+![Fastech](https://github.com/BandTec/Fastech/blob/master/projeto-site/public/img/icon.png)
 
 ## Contextualização
 Notamos que com o avanço da tecnologia temos que, cada vez, mais que conviver com a automação de trabalhos manuais, desde fábricas de carro a exames médicos, e com o caixa de restaurantes não seria diferente, mas eles não acompanharam o exponencial crescimento da tecnologia. Vemos isso quando paramos para analisar os tempos de atendimento entre o toten e o caixa normal, onde temos uma diferença gritante de qualidade e velocidade de atendimento.
