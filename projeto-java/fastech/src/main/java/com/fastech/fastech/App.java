@@ -1,4 +1,3 @@
-
 package com.fastech.fastech;
 
 import java.sql.Connection;
@@ -14,17 +13,12 @@ import java.sql.ResultSet;
 public class App {
 
     public static void main(String[] args) {
+        Database conn = new Database();
 
-        String   host = "ferreiraserver.ddns.net";
-        Integer  port = 1433;
-        String   database = "fastech";
-        String   user = "fastech_prod"; 
-        String   password = "Fastech_1";
-        
         System.out.println("Connect to SQL Server and demo Create, Read, Update and Delete operations.");
 
         //Update the username and password below
-        String connectionUrl = "jdbc:sqlserver://"+host+":"+port+";databaseName="+database+";user="+user+";password="+password;
+        String connectionUrl = conn.ConnectionDatabase();
 
         try {
             // Load SQL Server JDBC driver and establish connection.
