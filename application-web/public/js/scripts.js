@@ -16,8 +16,6 @@ $(document).ready(function () {
             let value = Math.round(circle.value() * 7800);
 
             circle.setText(value);
-
-
         }
     });
 
@@ -81,7 +79,7 @@ $(document).ready(function () {
         }
     });
 
-    
+
     // Iniciando o loader quando o usuário chegar na função
     let dataAreaOffSet = $('#data-area').offset();
     let stop = 0;
@@ -206,11 +204,9 @@ function entrar() {
         if (resposta.ok) {
 
             resposta.json().then(json => {
-
-                sessionStorage.login_usuario_meuapp = json.login;
-                sessionStorage.nome_usuario_meuapp = json.nome;
-
-                window.location.href = '/teste.html';
+                sessionStorage.user_login = json.loginUser;
+                sessionStorage.user_name = json.nameUser;
+                window.location.href = './dashboard/index.html';
             });
 
         } else {

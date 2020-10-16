@@ -18,7 +18,6 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/login.css">
 
     <!-- SCRIPTS -->
 
@@ -93,11 +92,12 @@
                     <div class="register">
                         <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
                             <!-- <label for="nome">Nome:</label> -->
-                            <input id="nome" name="nome" type="text" placeholder="Digite seu nome">
+                            <input id="registerNome" name="registerNome" type="text" placeholder="Digite seu nome">
                             <!-- <label for="email">Email:</label> -->
-                            <input id="email" name="login" type="text" placeholder="Digite seu email">
+                            <input id="registerEmail" name="registerLogin" type="text" placeholder="Digite seu email">
                             <!-- <label for="senha">Senha:</label> -->
-                            <input id="senha" name="senha" type="password" placeholder="Digite sua senha">
+                            <input id="registerSenha" name="registerSenha" type="password"
+                                placeholder="Digite sua senha">
                             <button class="btn_cadastre">Cadastre-se</button>
                             <button onclick="btn_voltar_click()" class="btn_voltar">Voltar</button>
                         </form>
@@ -124,7 +124,8 @@
                         <div class="carousel-caption d-md-block">
                             <h2>Acreditamos em você!</h2>
                             <p>Todo grande negócio possui pequenas engrenagem, cada uma com sua importância, se alguma
-                                delas não estiver nos padrões, seu negócio pode não funcionar tão bem, cuide das suas engrenagens, como cuida do
+                                delas não estiver nos padrões, seu negócio pode não funcionar tão bem, cuide das suas
+                                engrenagens, como cuida do
                                 seu negócio, confie na fastech para que elas continuem girando.</p>
                             <!-- <a href="#" class="main-btn">Ver portfólio</a> -->
                         </div>
@@ -145,7 +146,7 @@
 
 
                     <div class="carousel-item">
-                        <img  src="./img/study-group.jpg" class="d-block w-100" alt="Manutenção de software">
+                        <img src="./img/study-group.jpg" class="d-block w-100" alt="Manutenção de software">
 
                         <div class="carousel-caption d-md-block">
                             <h2>Somos seu parceiro</h2>

@@ -9,7 +9,7 @@ module.exports = {
   },
   production: {
     username: 'fastech_prod',
-    password: 'fastech_prod',
+    password: 'Fastech_1',
     database: 'fastech',
     host: 'ferreiraserver.ddns.net',
     dialect: 'mssql',
