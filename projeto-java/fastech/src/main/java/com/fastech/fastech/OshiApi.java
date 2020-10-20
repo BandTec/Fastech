@@ -5,6 +5,9 @@
  */
 package com.fastech.fastech;
 
+import com.fastech.hardware.info.InfoCpu;
+import com.fastech.hardware.info.InfoDisk;
+import com.fastech.hardware.info.InfoMemory;
 import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
@@ -27,51 +30,21 @@ public class OshiApi {
 
     private static final Logger logger = LoggerFactory.getLogger(OshiApi.class);
 
-    static List<String> oshi = new ArrayList<>();
+    public static List<String> oshi = new ArrayList<>();
 
     public static void main(String[] args) {
         SystemInfo si = new SystemInfo();
         OperatingSystem os = si.getOperatingSystem();
         HardwareAbstractionLayer hal = si.getHardware();
-        
-        printMemory(hal.getMemory());
-        printDisks(hal.getDiskStores());
-        printProcessor(hal.getProcessor());
-        
-        
+
+        InfoCpu.printProcessor(hal.getProcessor());
+        InfoDisk.printDisks(hal.getDiskStores());
+        InfoMemory.printMemory(hal.getMemory());
+
         System.out.println(os.toString());
         for (int i = 0; i < oshi.size(); i++) {
             System.out.println(oshi.get(i));
         }
-    }
-    private static void printProcessor(CentralProcessor processor) {
-        oshi.add(processor.toString());
-    }
-    
-
-    private static void printMemory(GlobalMemory memory) {
-        oshi.add("Physical Memory: \n " + memory.toString());
-        VirtualMemory vm = memory.getVirtualMemory();
-        oshi.add("Virtual Memory: \n " + vm.toString());
-        List<PhysicalMemory> pmList = memory.getPhysicalMemory();
-        if (!pmList.isEmpty()) {
-            oshi.add("Physical Memory: ");
-            for (PhysicalMemory pm : pmList) {
-                oshi.add(" " + pm.toString());
-            }
-        }
-    }
-    private static void printDisks(List<HWDiskStore> list) {
-        oshi.add("Disks:");
-        for (HWDiskStore disk : list) {
-            oshi.add(" " + disk.toString());
-
-            List<HWPartition> partitions = disk.getPartitions();
-            for (HWPartition part : partitions) {
-                oshi.add(" |-- " + part.toString());
-            }
-        }
-
     }
 
 }
