@@ -3,32 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fastech.fastech;
+package fastech.core;
 
-import com.fastech.hardware.info.InfoCpu;
-import com.fastech.hardware.info.InfoDisk;
-import com.fastech.hardware.info.InfoMemory;
+import fastech.taking.data.InfoCpu;
+import fastech.taking.data.InfoDisk;
+import fastech.taking.data.InfoListProcessors;
+import fastech.taking.data.InfoMemory;
 import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import oshi.SystemInfo;
-import oshi.hardware.CentralProcessor;
-import oshi.hardware.GlobalMemory;
-import oshi.hardware.HWDiskStore;
-import oshi.hardware.HWPartition;
 import oshi.hardware.HardwareAbstractionLayer;
-import oshi.hardware.PhysicalMemory;
-import oshi.hardware.VirtualMemory;
 import oshi.software.os.OperatingSystem;
 
 /**
  *
  * @author Cliente
  */
-public class OshiApi {
+public class fastechTakingData {
 
-    private static final Logger logger = LoggerFactory.getLogger(OshiApi.class);
+    private static final Logger logger = LoggerFactory.getLogger(fastechTakingData.class);
 
     public static List<String> oshi = new ArrayList<>();
 
@@ -40,6 +35,7 @@ public class OshiApi {
         InfoCpu.printProcessor(hal.getProcessor());
         InfoDisk.printDisks(hal.getDiskStores());
         InfoMemory.printMemory(hal.getMemory());
+        InfoListProcessors.printProcesses(os, hal.getMemory());
 
         System.out.println(os.toString());
         for (int i = 0; i < oshi.size(); i++) {

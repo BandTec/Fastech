@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fastech.hardware.info;
+package fastech.taking.data;
 
+import static fastech.core.fastechTakingData.oshi;
 import java.util.List;
 import oshi.SystemInfo;
 import oshi.hardware.HWDiskStore;
