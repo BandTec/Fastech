@@ -3,9 +3,7 @@ CREATE TABLE Establishment(
 	city VARCHAR(45),
     zipCode CHAR (9),
     street VARCHAR (45),
-    EstablishmentNumber varchar (5)
-    
-    
+    EstablishmentNumber varchar (5)  
 );
 
 CREATE TABLE Usuario(
@@ -13,7 +11,7 @@ CREATE TABLE Usuario(
 	nameUser VARCHAR(45),
 	loginUser VARCHAR(45),
 	passwordUser VARCHAR(45),
-	fkestablishmentUser INT,
+	fkEstablishmentUser INT,
 	fOREIGN KEY(fkEstablishmentUser) REFERENCES Establishment(idEstablishment)
 );
 
@@ -34,7 +32,7 @@ CREATE TABLE Test(
 	memoryTest TINYINT,
 	discTest TINYINT,
 	pingTest TINYINT,
-	fkEstablishmentTest INT,
+	fkTestMachine INT,
 	fOREIGN KEY(fkTestMachine) REFERENCES Machine(idMachine)
 );
 CREATE TABLE Datas (
@@ -43,6 +41,6 @@ CREATE TABLE Datas (
 	cpuData TINYINT,
 	menoryData TINYINT,
 	discData TINYINT,
-	fkEstablishmentData INT,
-	fOREIGN KEY(fkDatasMachine) REFERENCES Machine(idMachine)
+	fkMachineData INT,
+	fOREIGN KEY(fkMachineData) REFERENCES Machine(idMachine)
 );
