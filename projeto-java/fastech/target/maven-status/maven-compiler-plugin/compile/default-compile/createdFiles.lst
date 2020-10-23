@@ -1,5 +1,13 @@
-com\fastech\fastech\Database.class
-com\fastech\fastech\App.class
-com\fastech\fastech\OshiApi.class
-TelaLogin\LoginJava$1.class
+fastech\taking\data\InfoMemory.class
+TelaLogin\LoginJava$5.class
+TelaLogin\LoginJava$4.class
+TelaLogin\LoginJava$3.class
+fastech\taking\data\InfoDisk.class
+fastech\core\fastechTakingData.class
+fastech\taking\data\InfoCpu.class
+fastech\taking\data\InfoListProcessors.class
+TelaLogin\LoginJava$2.class
 TelaLogin\LoginJava.class
+fastech\database\Database.class
+fastech\database\App.class
+TelaLogin\LoginJava$1.class
