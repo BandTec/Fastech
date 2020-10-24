@@ -12,6 +12,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- SCRIPTS -->
+    <script src="/js/script.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -49,7 +50,8 @@
                         class="fas fa-comments"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="./settings.html"><i
                         class="fas fa-cog"></i></a></li>
-            <li id="logoff" data-toggle="tooltip" data-placement="right" title="Sair"><a href="#"><i
+
+            <li onclick="logoff()" id="logoff" data-toggle="tooltip" data-placement="right" title="Sair"><a href="#"><i
                         class="fas fa-power-off"></i></a></li>
         </ul>
     </div>
@@ -58,7 +60,7 @@
     <div class="welcome" type="button" class="btn btn-primary" data-toggle="modal" data-target="#profileModal">
 
         <img src="./img/analista.svg" alt="Você aqui">
-        <div class="title">Olá, <b id="nome_usuario">Fred Flinstone</b></div> <br>
+        <div class="title">Olá, <b id="nome_usuario"></b></div> <br>
         <div class="description">Você está em <b id="estabelecimento">Burguer King</b> <i class="fas fa-plus"></i></div>
     </div>
 
@@ -76,7 +78,10 @@
                 <div class="modal-body">
                     <div class="row">
                         <label>Nome: </label>
-                        <b id="name">Jorge</b>
+                        <<<<<<< HEAD <b id="name">Jorge</b>
+                            =======
+                            <b id="user_name">Jorge</b>
+                            >>>>>>> feature/oshi-api
                     </div>
                     <div class="row">
                         <label>CPF: </label>
@@ -557,5 +562,8 @@
 
 <script src="./js/tooltip.js"></script>
 <script src="./js/modal.js"></script>
+<<<<<<< HEAD=======<script src="./js/script.js">
+    </script>
+    >>>>>>> feature/oshi-api
 
 </html>

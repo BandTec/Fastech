@@ -16,8 +16,6 @@ $(document).ready(function () {
             let value = Math.round(circle.value() * 7800);
 
             circle.setText(value);
-
-
         }
     });
 
@@ -81,7 +79,7 @@ $(document).ready(function () {
         }
     });
 
-    
+
     // Iniciando o loader quando o usuário chegar na função
     let dataAreaOffSet = $('#data-area').offset();
     let stop = 0;
@@ -206,11 +204,9 @@ function entrar() {
         if (resposta.ok) {
 
             resposta.json().then(json => {
-
-                sessionStorage.login_usuario_meuapp = json.login;
-                sessionStorage.nome_usuario_meuapp = json.nome;
-
-                window.location.href = '/teste.html';
+                sessionStorage.user_login = json.loginUser;
+                sessionStorage.user_name = json.nameUser;
+                window.location.href = './dashboard/index.html';
             });
 
         } else {
@@ -224,6 +220,7 @@ function entrar() {
 /*---------------- POST Register ---------------------*/
 
 function cadastrar() {
+    aguardar();
     var formulario = new URLSearchParams(new FormData(form_cadastro));
     fetch("/usuarios/cadastrar", {
         method: "POST",
@@ -232,10 +229,14 @@ function cadastrar() {
 
         if (response.ok) {
 
-            window.location.href = '/teste.html';
+            resposta.json().then(json => {
+                sessionStorage.user_login = json.loginUser;
+                sessionStorage.user_name = json.nameUser;
+                window.location.href = 'http://127.0.0.1:3030';
+            });
 
         } else {
-
+            finalizar_aguardar();
             console.log('Erro de cadastro!');
             response.text().then(function (resposta) {
                 div_erro.innerHTML = resposta;
@@ -245,4 +246,12 @@ function cadastrar() {
     });
 
     return false;
+}
+
+function aguardar() {
+    // document.getElementsByClassName("btn_entrar").disabled = true;
+}
+
+function finalizar_aguardar() {
+    document.getElementsByClassName("btn_entrar").disabled = false;
 }
