@@ -8,8 +8,8 @@ module.exports = {
     storage: ":memory:"
   },
   production: {
-    username: 'fastech_prod',
-    password: 'Fastech_1',
+    username: 'SA',
+    password: 'Igorserver0401',
     database: 'fastech',
     host: 'ferreiraserver.ddns.net',
     dialect: 'mssql',
