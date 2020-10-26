@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 window.document.onload = loginUser();
 
 function loginUser() {
@@ -24,7 +23,6 @@ function printUser(user) {
     nome_usuario.innerHTML = user.name;
     name.innerHTML = user.name;
     email.innerHTML = user.login;
-=======
 let user = {
     'name': sessionStorage.user_name,
     'login': sessionStorage.user_login
@@ -74,5 +72,4 @@ function validar_sessao() {
 
 function finalizar_sessao() {
     fetch(`/usuarios/sair/${user.login}`, { cache: 'no-store' });
->>>>>>> feature/oshi-api
-}
+}}
