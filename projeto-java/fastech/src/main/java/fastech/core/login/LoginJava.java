@@ -67,6 +67,8 @@ public class LoginJava extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 102));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\fastech\\resources\\icon.png")); // NOI18N
+
         jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 0, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -79,11 +81,11 @@ public class LoginJava extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(176, 176, 176))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(164, 164, 164))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +134,7 @@ public class LoginJava extends javax.swing.JFrame {
         btnLogin.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
-        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnLoginMouseClicked(evt);
@@ -151,8 +153,12 @@ public class LoginJava extends javax.swing.JFrame {
         });
         jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 389, 160, 50));
         jPanel2.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 245, -1, -1));
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 227, -1, -1));
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\fastech\\resources\\user.png")); // NOI18N
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 227, -1, 30));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\fastech\\resources\\Vector.png")); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, 20));
 
         jSenha.setText("Enter password...");
         jSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -183,7 +189,8 @@ public class LoginJava extends javax.swing.JFrame {
           
        
        if(textLogin.getText().equals("Teste") && jSenha.getText().equals("Bandtec123")){
-        JOptionPane.showMessageDialog(null, "Seja bem vindo");
+       new TelaAdicional().setVisible(true);
+       this.setVisible(false);
        }else{
              LoginJava loguinJava = this;
 
@@ -217,7 +224,7 @@ public class LoginJava extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
-    
+   
     }//GEN-LAST:event_btnLoginMouseClicked
 
     private void textLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textLoginActionPerformed
