@@ -463,7 +463,7 @@ header, .navbar{
     /* SLIDER */
     #mainSlider .carousel-inner, #mainSlider .carousel-item {
         height: auto;
-        filter: contrast(20%);
+        
         
     }
 
@@ -486,6 +486,22 @@ header, .navbar{
     /* ABOUT */
     #about-area img{
         margin-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100px;
+        height: 100px;
+        align-content: space-between
+    }
+
+
+    #team-area .container .row .card{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100px;
+        height: 100px;
+        align-content: space-between
     }
 
     /* DADOS */
