@@ -11,7 +11,7 @@ import java.util.Arrays;
  *
  * @author igor
  */
-public class TesteOshi {
+public class TesteOshi   {
     public static void main(String[] args) {
         Oshi oshi = new Oshi();
         

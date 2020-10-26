@@ -305,7 +305,7 @@ public class TelaAdicional extends javax.swing.JFrame {
             .addGroup(menuHideLayout.createSequentialGroup()
                 .addGap(71, 71, 71)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         menu.add(menuHide, java.awt.BorderLayout.CENTER);
@@ -331,7 +331,7 @@ public class TelaAdicional extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(jLabel2)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         viewLayout.setVerticalGroup(
             viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,12 +343,12 @@ public class TelaAdicional extends javax.swing.JFrame {
                     .addGroup(viewLayout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         getContentPane().add(view, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(800, 457));
+        setSize(new java.awt.Dimension(827, 435));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
