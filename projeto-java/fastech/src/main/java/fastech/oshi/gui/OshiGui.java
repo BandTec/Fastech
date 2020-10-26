@@ -1,5 +1,7 @@
 package fastech.oshi.gui;
 
+import java.util.List;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,14 +13,14 @@ package fastech.oshi.gui;
  * @author igor
  */
 public class OshiGui extends javax.swing.JFrame {
-
+    
+    Oshi oshi = new Oshi();
     /**
      * Creates new form OshiGui
      */
     public OshiGui() {
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,8 +58,29 @@ public class OshiGui extends javax.swing.JFrame {
         lblProcPid = new javax.swing.JLabel();
         lblProcName = new javax.swing.JLabel();
         lblProcMem = new javax.swing.JLabel();
+        lblProcPid1 = new javax.swing.JLabel();
+        lblProcPid2 = new javax.swing.JLabel();
+        lblProcPid3 = new javax.swing.JLabel();
+        lblProcPid4 = new javax.swing.JLabel();
+        lblProcCpu1 = new javax.swing.JLabel();
+        lblProcCpu2 = new javax.swing.JLabel();
+        lblProcCpu3 = new javax.swing.JLabel();
+        lblProcCpu4 = new javax.swing.JLabel();
+        lblProcMem1 = new javax.swing.JLabel();
+        lblProcMem2 = new javax.swing.JLabel();
+        lblProcMem3 = new javax.swing.JLabel();
+        lblProcMem4 = new javax.swing.JLabel();
+        lblProcName1 = new javax.swing.JLabel();
+        lblProcName2 = new javax.swing.JLabel();
+        lblProcName3 = new javax.swing.JLabel();
+        lblProcName4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 102));
 
@@ -183,7 +206,7 @@ public class OshiGui extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 94, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -233,7 +256,6 @@ public class OshiGui extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel7)
@@ -244,22 +266,45 @@ public class OshiGui extends javax.swing.JFrame {
                         .addGap(58, 58, 58))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel6)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(199, Short.MAX_VALUE))))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(lblProcPid, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblProcCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblProcCpu4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblProcPid, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblProcPid1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblProcPid2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblProcPid3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblProcPid4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblProcCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblProcCpu1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblProcCpu2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblProcCpu3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addComponent(lblProcMem, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lblProcMem, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblProcMem1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblProcMem2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblProcMem3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProcMem4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(lblProcName, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblProcName, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProcName1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProcName2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProcName3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProcName4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -275,14 +320,50 @@ public class OshiGui extends javax.swing.JFrame {
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(lblProcCpu1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcCpu2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcCpu3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblProcCpu4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblProcCpu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblProcName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblProcMem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblProcPid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(lblProcPid, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcPid1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcPid3, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcPid2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblProcPid4, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(lblProcMem, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcMem1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcMem2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcMem3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblProcMem4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(lblProcName, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcName1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcName2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblProcName3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblProcName4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -334,7 +415,11 @@ public class OshiGui extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        printValues();
+    }//GEN-LAST:event_formWindowOpened
+
+            /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -369,6 +454,130 @@ public class OshiGui extends javax.swing.JFrame {
         });
     }
 
+    public void printValues() {
+        printValueCpu();
+        printValueMemory();
+        printValueDisk();
+        printProcCpu();
+        printProcPid();
+        printProcMem();
+        printProcName();
+    }
+    
+    public void printValueCpu() {
+        Integer valueCpu = oshi.getValuesProcessor();
+        jpbValueCpu.setValue(valueCpu);
+    }
+    
+    public void printValueMemory() {
+        Integer valueMemory = oshi.getValuesMemory();
+        jpbValueMemory.setValue(valueMemory);
+    }
+    
+    public void printValueDisk() {
+        Integer valueDisk = oshi.getValuesFileSystem();
+        jpbValueDisk.setValue(valueDisk);
+    }
+    
+    public void printProcCpu() {
+        List<String> procCpu = oshi.getValuesProcCpu();
+        lblProcCpu.setText("");
+        String text = "";
+        for(int i = 0; i < 5; i++) {
+            switch (i) {
+                case 0:
+                    lblProcCpu.setText(procCpu.get(i));
+                    break;
+                case 1:
+                    lblProcCpu1.setText(procCpu.get(i));
+                    break;
+                case 2:
+                    lblProcCpu2.setText(procCpu.get(i));
+                    break;
+                case 3:
+                    lblProcCpu3.setText(procCpu.get(i));
+                    break;
+                case 4:
+                    lblProcCpu4.setText(procCpu.get(i));
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    public void printProcPid() {
+        List<String> procPid = oshi.getValuesProcPid();
+        String text = "";
+        for(int i = 0; i < 5; i++) {
+            switch (i) {
+                case 0:
+                    lblProcPid.setText(procPid.get(i));
+                    break;
+                case 1:
+                    lblProcPid1.setText(procPid.get(i));
+                    break;
+                case 2:
+                    lblProcPid2.setText(procPid.get(i));
+                    break;
+                case 3:
+                    lblProcPid3.setText(procPid.get(i));
+                    break;
+                case 4:
+                    lblProcPid4.setText(procPid.get(i));
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    public void printProcMem() {
+        List<String> procMem = oshi.getValuesProcMem();
+        for(int i = 0; i < 5; i++) {
+            switch (i) {
+                case 0:
+                    lblProcMem.setText(procMem.get(i));
+                    break;
+                case 1:
+                    lblProcMem1.setText(procMem.get(i));
+                    break;
+                case 2:
+                    lblProcMem2.setText(procMem.get(i));
+                    break;
+                case 3:
+                    lblProcMem3.setText(procMem.get(i));
+                    break;
+                case 4:
+                    lblProcMem4.setText(procMem.get(i));
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    public void printProcName() {
+        List<String> procName = oshi.getValuesProcName();
+        for(int i = 0; i < 5; i++) {
+            switch (i) {
+                case 0:
+                    lblProcName.setText(procName.get(i));
+                    break;
+                case 1:
+                    lblProcName1.setText(procName.get(i));
+                    break;
+                case 2:
+                    lblProcName2.setText(procName.get(i));
+                    break;
+                case 3:
+                    lblProcName3.setText(procName.get(i));
+                    break;
+                case 4:
+                    lblProcName4.setText(procName.get(i));
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
@@ -392,9 +601,25 @@ public class OshiGui extends javax.swing.JFrame {
     private javax.swing.JProgressBar jpbValueDisk;
     private javax.swing.JProgressBar jpbValueMemory;
     private javax.swing.JLabel lblProcCpu;
+    private javax.swing.JLabel lblProcCpu1;
+    private javax.swing.JLabel lblProcCpu2;
+    private javax.swing.JLabel lblProcCpu3;
+    private javax.swing.JLabel lblProcCpu4;
     private javax.swing.JLabel lblProcMem;
+    private javax.swing.JLabel lblProcMem1;
+    private javax.swing.JLabel lblProcMem2;
+    private javax.swing.JLabel lblProcMem3;
+    private javax.swing.JLabel lblProcMem4;
     private javax.swing.JLabel lblProcName;
+    private javax.swing.JLabel lblProcName1;
+    private javax.swing.JLabel lblProcName2;
+    private javax.swing.JLabel lblProcName3;
+    private javax.swing.JLabel lblProcName4;
     private javax.swing.JLabel lblProcPid;
+    private javax.swing.JLabel lblProcPid1;
+    private javax.swing.JLabel lblProcPid2;
+    private javax.swing.JLabel lblProcPid3;
+    private javax.swing.JLabel lblProcPid4;
     private javax.swing.JLabel lblValueCpu;
     private javax.swing.JLabel lblValueDisk;
     private javax.swing.JLabel lblValueMemory;
