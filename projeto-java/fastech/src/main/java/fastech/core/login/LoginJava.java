@@ -67,7 +67,7 @@ public class LoginJava extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 102));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\fastech\\resources\\icon.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\resources\\icon.png")); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 0, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -154,10 +154,10 @@ public class LoginJava extends javax.swing.JFrame {
         jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 389, 160, 50));
         jPanel2.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 245, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\fastech\\resources\\user.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\resources\\user.png")); // NOI18N
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 227, -1, 30));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\fastech\\resources\\Vector.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\resources\\Vector.png")); // NOI18N
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, 20));
 
         jSenha.setText("Enter password...");

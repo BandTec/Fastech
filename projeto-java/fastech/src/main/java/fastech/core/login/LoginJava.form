@@ -74,7 +74,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\mmaia\Documents\Fastech\projeto-java\fastech\src\main\java\fastech\resources\icon.png"/>
+              <Image iconType="2" name="C:\Users\mmaia\Documents\Fastech\projeto-java\fastech\src\main\java\resources\icon.png"/>
             </Property>
           </Properties>
         </Component>
@@ -215,7 +215,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\mmaia\Documents\Fastech\projeto-java\fastech\src\main\java\fastech\resources\user.png"/>
+              <Image iconType="2" name="C:\Users\mmaia\Documents\Fastech\projeto-java\fastech\src\main\java\resources\user.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -227,7 +227,7 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\mmaia\Documents\Fastech\projeto-java\fastech\src\main\java\fastech\resources\Vector.png"/>
+              <Image iconType="2" name="C:\Users\mmaia\Documents\Fastech\projeto-java\fastech\src\main\java\resources\Vector.png"/>
             </Property>
           </Properties>
           <Constraints>
