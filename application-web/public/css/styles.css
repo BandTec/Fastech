@@ -56,6 +56,138 @@ header, .navbar {
   border-bottom: 3px solid #ffffff;
 }
 
+/* LOGIN E CADASTRO */
+.main-btn{
+  background-color: var(--color-blue);
+  color: #fff;
+  text-transform: uppercase;
+  width: 200px;
+  height: 60px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 3x solid transparent;
+  transition: .5ms;
+}
+
+.main-btn:hover{
+  text-decoration: none;
+  color: #fff;
+  background-color: transparent;
+  border: 3px solid var(--color-blue);
+}
+
+.btn-modal{
+  background-color: var(--color-blue);
+}
+
+.carousel-indicators .active{
+  background-color: var(--color-blue);
+}
+
+.content-login {
+  height: 50vh;
+  background-color: rgb(27, 27, 27);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login form {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+
+
+
+.login button.btn_entrar {
+  margin: 4% 0% 3% 25%;
+  background-color:  rgb(75, 75, 75);
+  color: rgb(0, 63, 99); 
+  color: #fff;
+  border-radius: 5px;
+  width: 50%;
+  border: none;
+  text-transform: uppercase;
+}
+
+.login button.btn_entrar:hover {
+  background-color: rgb(75, 75, 75);
+  color: rgb(0, 63, 99); 
+}
+
+.login button.btn_cadastre {
+  margin: 4% 0% 3% 25%;
+  background-color: rgb(0, 63, 99);
+  border-radius: 5px;
+  color: #fff;
+  width: 50%;
+  border: none;
+  text-transform: uppercase;
+}
+
+.login button.btn_cadastre:hover {
+  background-color: rgb(0, 63, 99);
+  color: rgb(117, 116, 116); 
+}
+
+.content-register {
+  height: 70vh;
+  background-color: rgb(27, 27, 27);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register form {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.register input, .login input {
+  margin: 1% 0 4% 0;
+  border: none;
+  border-bottom: 2px solid #fff;
+  background-color: transparent;
+  outline: none;
+  color: #fff;
+  text-align: center;
+}
+
+.register button.btn_cadastre {
+  margin: 4% 0% 3% 25%;
+  background-color: rgb(0, 63, 99);
+  border-radius: 5px;
+  color: #fff;
+  width: 50%;
+  border: none;
+  text-transform: uppercase;
+}
+
+.register button.btn_cadastre:hover{
+  border: 2px solid #fff;
+  color: #fff; 
+}
+
+.register button.btn_voltar {
+  margin: 4% 0% 3% 25%;
+  background-color:  rgb(75, 75, 75);
+  color: rgb(0, 63, 99); 
+  color: #fff;
+  border-radius: 5px;
+  width: 50%;
+  border: none;
+  text-transform: uppercase;
+}
+
+.register button.btn_voltar:hover {
+  border: 2px solid #fff;
+  color: #fff; 
+}
 
 
 /* Slider */
@@ -628,6 +760,17 @@ header, .navbar {
   .contact-box {
     border: none;
     margin-bottom: 0;
+  }
+
+  /* LOGIN E CCADASTRO */
+
+  .btn_entrar, .btn_voltar{
+    width: 60% !important;
+  }
+
+  .btn_cadastre{
+    width: 100% !important;
+    margin: 0px !important;
   }
 
 }

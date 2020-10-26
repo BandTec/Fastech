@@ -28,24 +28,6 @@ let user = {
     'login': sessionStorage.user_login
 };
 
-validarUser();
-
-function validarUser() {
-    for (x in user) {
-        if (user[x] == null || user[x] == undefined || user[x] == "") {
-            redirecionar_login()
-        }
-    }
-    printUser();
-}
-
-function printUser() {
-    nome_usuario.innerHTML = user.name;
-    user_name.innerHTML = user.name;
-    email.innerHTML = user.login;
-    validar_sessao();
-}
-
 function redirecionar_login() {
     window.location.href = '/';
 }
