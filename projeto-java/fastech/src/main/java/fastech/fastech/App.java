@@ -1,4 +1,4 @@
-package com.fastech.fastech;
+package fastech.fastech;
 
 import java.sql.Connection;
 import java.sql.Statement;
