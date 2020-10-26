@@ -1,3 +1,28 @@
+window.document.onload = loginUser();
+
+function loginUser() {
+    console.log(sessionStorage.user_name)
+    let user = {
+        "name": sessionStorage.user_name,
+        "login": sessionStorage.user_login
+    }
+    validateUser(user.name, user.login);
+}
+
+function validateUser(user) {
+    for (x in user) {
+        if (user[x] == null || user[x] == undefined || user[x] == "") {
+            window.location.href = "http://127.0.0.1:3000";
+        }
+    }
+    console.log(user);
+    printUser(user);
+}
+
+function printUser(user) {
+    nome_usuario.innerHTML = user.name;
+    name.innerHTML = user.name;
+    email.innerHTML = user.login;
 let user = {
     'name': sessionStorage.user_name,
     'login': sessionStorage.user_login
@@ -47,4 +72,4 @@ function validar_sessao() {
 
 function finalizar_sessao() {
     fetch(`/usuarios/sair/${user.login}`, { cache: 'no-store' });
-}
+}}

@@ -19,7 +19,7 @@ router.post('/autenticar', function (req, res, next) {
 		model: Usuario
 	}).then(resultado => {
 		console.log(`Encontrados: ${resultado.length}`);
-
+		console.log(resultado[0].dataValues.loginUser);
 		if (resultado.length == 1) {
 			sessoes.push(resultado[0].dataValues.loginUser);
 			console.log('sessoes: ', sessoes);

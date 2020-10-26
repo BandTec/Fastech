@@ -1,5 +1,4 @@
 package fastech.database;
-
 import fastech.database.Database;
 import java.sql.Connection;
 import java.sql.Statement;
