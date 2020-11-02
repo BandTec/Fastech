@@ -48,3 +48,25 @@
     text-align: center;
     font-size: 3em;
 }
+
+
+/* RESPONSIVIDADE */
+@media only screen and (max-width: 1080px){
+    .welcome{
+        width: 60%;
+    }
+
+    .welcome img{
+        margin-top: -10px;
+    }
+}
+
+@media only screen and (max-width: 620px){
+    .welcome{
+        width: 80%;
+    }
+
+    .welcome img{
+        margin-top: -10px;
+    }
+}

@@ -50,10 +50,6 @@
                         class="fas fa-comments"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="./settings.html"><i
                         class="fas fa-cog"></i></a></li>
-<<<<<<< HEAD:application-web/public/dashboard/index.html
-=======
-
->>>>>>> master:projeto-dash/public/index.html
             <li onclick="logoff()" id="logoff" data-toggle="tooltip" data-placement="right" title="Sair"><a href="#"><i
                         class="fas fa-power-off"></i></a></li>
         </ul>
@@ -81,14 +77,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <label>Nome: </label>
-<<<<<<< HEAD:application-web/public/dashboard/index.html
                         <b id="user_name">Jorge</b>
-=======
-                        <<<<<<< HEAD <b id="name">Jorge</b>
-                            =======
-                            <b id="user_name">Jorge</b>
-                            >>>>>>> feature/oshi-api
->>>>>>> master:projeto-dash/public/index.html
                     </div>
                     <div class="row">
                         <label>CPF: </label>
@@ -122,7 +111,7 @@
             </div>
 
             <div class="row">
-                <div class="col-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title"> CPU </div>
@@ -131,7 +120,7 @@
                     </div>
                 </div>
 
-                <div class="col-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title"> Memória </div>
@@ -140,7 +129,7 @@
                     </div>
                 </div>
 
-                <div class="col-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title"> Disco </div>
@@ -160,7 +149,7 @@
             </div>
 
             <div class="row">
-                <div class="col-3">
+                <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
                         <div class="card-body">
 
@@ -185,301 +174,7 @@
                     </div>
                 </div>
 
-                <div class="col-3">
-                    <div class="card" id="status_danger" data-toggle="modal" data-target="#machineModal">
-
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 2
-                                <i class="fas fa-exclamation-circle"></i>
-
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card" id="status_danger" data-toggle="modal" data-target="#machineModal">
-
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 3
-                                <i class="fas fa-exclamation-circle"></i>
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
-
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 4
-                                <i class="fas fa-exclamation-circle"></i>
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-3">
-                    <div class="card" id="status_good" data-toggle="modal" data-target="#machineModal">
-
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 1
-                                <i class="fas fa-exclamation-circle"></i>
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card" id="status_good" data-toggle="modal" data-target="#machineModal">
-
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 2
-                                <i class="fas fa-exclamation-circle"></i>
-
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
-
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 3
-                                <i class="fas fa-exclamation-circle"></i>
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
-
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 4
-                                <i class="fas fa-exclamation-circle"></i>
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-3">
-                    <div class="card" id="status_danger" data-toggle="modal" data-target="#machineModal">
-
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 1
-                                <i class="fas fa-exclamation-circle"></i>
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card" id="status_good" data-toggle="modal" data-target="#machineModal">
-
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 2
-                                <i class="fas fa-exclamation-circle"></i>
-
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card" id="status_danger" data-toggle="modal" data-target="#machineModal">
-
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 3
-                                <i class="fas fa-exclamation-circle"></i>
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
-
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 4
-                                <i class="fas fa-exclamation-circle"></i>
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+               
 
         <!-- Modal -->
         <div class="modal fade" id="machineModal" tabindex="-1" role="dialog" aria-labelledby="machineModalLabel"
@@ -561,20 +256,12 @@
 
         </div>
     </div>
-
     </div>
     </div>
-
+<br><br>
+<br><br>
 </body>
-
-<script src="./js/tooltip.js"></script>
-<script src="./js/modal.js"></script>
-<<<<<<< HEAD:application-web/public/dashboard/index.html
-<script src="./js/script.js"></script>
-=======
-<<<<<<< HEAD=======<script src="./js/script.js">
-    </script>
-    >>>>>>> feature/oshi-api
->>>>>>> master:projeto-dash/public/index.html
-
+    <script src="./js/tooltip.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/script.js"> </script>
 </html>

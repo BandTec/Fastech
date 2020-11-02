@@ -348,3 +348,13 @@ input:checked+.slider:before {
     opacity: .5;
 
 }
+
+
+
+/* RESPONSIVIDADE */
+@media only screen and (max-width: 820px){
+    #main-container .card{
+        margin: 20px;
+        margin-left: 0;
+    }
+}

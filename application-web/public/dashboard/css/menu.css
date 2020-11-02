@@ -38,3 +38,39 @@
 .sidebar ul li a:hover{
     opacity: .5;
 }
+
+/* RESPONSIVIDADE */
+
+@media only screen and (max-width: 1080px){
+    .sidebar{
+        width: 100%;
+        height: 70px;
+        margin: 0px;
+        bottom: 0;
+        position: fixed;
+        transform: translate(0%,0%);
+        z-index: 100;
+
+    }
+
+    .sidebar ul li:nth-child(1){
+        margin-left: 25%;
+    }
+
+    .sidebar ul li{
+        font-size: 1.7em;
+        display: inline-block;
+        padding-top: 0%;
+        margin-right: 9%;
+    }
+}
+
+@media only screen and (max-width: 620px){
+    .sidebar{
+        height: 70px;
+    }
+
+    .sidebar ul li:nth-child(1){
+        margin-left: 15%;
+    }
+}
