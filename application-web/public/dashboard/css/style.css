@@ -331,8 +331,8 @@ input:checked+.slider:before {
 #filters-container form input[type=submit]{
     background-color: var(--blue-deafult);
     border: none;
-    margin:2%;
-    margin-left: 30%;
+    margin: 7%;
+    margin-left: 50%;
     transform: translate(-50%, -50%);
     outline: none;
     color: #fff;
