@@ -1,31 +1,23 @@
-window.document.onload = loginUser();
-
+let user_name;
+let user_login;
 function loginUser() {
-    console.log(sessionStorage.user_name)
-    let user = {
-        "name": sessionStorage.user_name,
-        "login": sessionStorage.user_login
-    }
-    validateUser(user.name, user.login);
+    user_name = sessionStorage.user_name;
+    user_login = sessionStorage.user_login;
+    validateUser();
 }
 
-function validateUser(user) {
-    for (x in user) {
-        if (user[x] == null || user[x] == undefined || user[x] == "") {
-            window.location.href = "http://127.0.0.1:3000";
-        }
+function validateUser() {
+    if (user_login == null || user_login == undefined || user_login == "") {
+        window.location.href = '/';
     }
-    console.log(user);
-    printUser(user);
+    validar_sessao();
+    printUser();
 }
 
-function printUser(user) {
-    nome_usuario.innerHTML = user.name;
-    name.innerHTML = user.name;
-    email.innerHTML = user.login;
-let user = {
-    'name': sessionStorage.user_name,
-    'login': sessionStorage.user_login
+function printUser() {
+    nome_usuario.innerHTML = user_name;
+    nome.innerHTML = user_name;
+    email.innerHTML = user_login;
 };
 
 function redirecionar_login() {
@@ -39,7 +31,7 @@ function logoff() {
 }
 
 function validar_sessao() {
-    fetch(`/usuarios/sessao/${user.login}`, { cache: 'no-store' })
+    fetch(`/usuarios/sessao/${user_login}`, { cache: 'no-store' })
         .then(resposta => {
             if (resposta.ok) {
                 resposta.text().then(texto => {
@@ -53,5 +45,5 @@ function validar_sessao() {
 }
 
 function finalizar_sessao() {
-    fetch(`/usuarios/sair/${user.login}`, { cache: 'no-store' });
-}}
+    fetch(`/usuarios/sair/${user_login}`, { cache: 'no-store' });
+}
