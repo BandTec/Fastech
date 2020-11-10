@@ -200,16 +200,8 @@ function btn_voltar_click() {
 /*---------------------- POST Login -----------------------*/
 
 function entrar() {
-  if(email.value == "diego.kurman@fastech.com.br" && senha.value == "12345678"){
-    window.location.href = './dashboard/index.html';
-  }else{
-    window.location.reload();
-  }
-
-  
-
-
-  /*var formulario = new URLSearchParams(new FormData(form_login));
+  aguardar();
+  var formulario = new URLSearchParams(new FormData(form_login));
   fetch("/usuarios/autenticar", {
       method: "POST",
       body: formulario
@@ -224,11 +216,12 @@ function entrar() {
           });
 
       } else {
+          finalizar_aguardar();
           console.log('Erro de login!');
       }
   });
 
-  return false;*/
+  return false;
 }
 
 /*---------------- POST Register ---------------------*/
@@ -239,20 +232,18 @@ function cadastrar() {
   fetch("/usuarios/cadastrar", {
       method: "POST",
       body: formulario
-  }).then(function (response) {
+  }).then(resposta => {
 
-      if (response.ok) {
-
-          resposta.json().then(json => {
-              sessionStorage.user_login = json.loginUser;
-              sessionStorage.user_name = json.nameUser;
-              window.location.href = 'http://127.0.0.1:3030';
-          });
-
+      if (resposta.ok) { 
+        resposta.json().then(json => {
+          sessionStorage.user_login = json.loginUser;
+          sessionStorage.user_name = json.nameUser;
+          window.location.href = './dashboard/index.html';
+      });
       } else {
           finalizar_aguardar();
           console.log('Erro de cadastro!');
-          response.text().then(function (resposta) {
+          resposta.text().then(function (resposta) {
               console.log(resposta)
           });
 
@@ -263,9 +254,12 @@ function cadastrar() {
 }
 
 function aguardar() {
-  // document.getElementsByClassName("btn_entrar").disabled = true;
+   document.getElementsByClassName("btn_entrar").disabled = true;
+   document.getElementsByClassName("btn_cadastro").disabled = true;
 }
 
 function finalizar_aguardar() {
+  new Promise(resolve => setTimeout(resolve, 1000));
   document.getElementsByClassName("btn_entrar").disabled = false;
+  document.getElementsByClassName("btn_cadastro").disabled = false;
 }

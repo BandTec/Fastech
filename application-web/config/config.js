@@ -8,10 +8,10 @@ module.exports = {
     storage: ":memory:"
   },
   production: {
-    username: 'SA',
-    password: 'Igorserver0401',
+    username: 'fastech_prod',
+    password: 'Fast_2810',
     database: 'fastech',
-    host: 'ferreiraserver.ddns.net',
+    host: 'fastech.database.windows.net',
     dialect: 'mssql',
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {
