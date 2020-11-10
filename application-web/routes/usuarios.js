@@ -39,19 +39,36 @@ router.post('/autenticar', function (req, res, next) {
 /* Cadastrar usuário */
 router.post('/cadastrar', function (req, res, next) {
 	console.log('Criando um usuário');
-
+		var user_nome = req.body.registerNome;
+		var user_login = req.body.registerLogin;
+		var user_senha = req.body.registerSenha;
 	Usuario.create({
-		nome: req.body.nome,
-		login: req.body.login,
-		senha: req.body.senha,
+		nome: user_nome,
+		login: user_login,
+		senha: user_senha,
 		fkestabelecimento: 1
-	}).then(resultado => {
-		console.log(`Registro criado: ${resultado}`)
-		res.send(resultado);
+	}).then( () => {
+		let instrucaoSql = `select * from usuario where loginUser='${user_login}' and passwordUser='${user_senha}'`;
+		console.log(instrucaoSql);
+
+		sequelize.query(instrucaoSql, {
+			model: Usuario
+		}).then(resultado => {
+			console.log(`Encontrados: ${resultado.length}`);
+			console.log(resultado[0].dataValues.loginUser);
+			if (resultado.length == 1) {
+				sessoes.push(resultado[0].dataValues.loginUser);
+				console.log('sessoes: ', sessoes);
+				res.json(resultado[0]);
+			} 
+		}).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+		});
 	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
-	});
+	});	
 });
 
 

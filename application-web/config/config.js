@@ -9,9 +9,9 @@ module.exports = {
   },
   production: {
     username: 'fastech_prod',
-    password: 'Fastech_1',
+    password: 'Fast_2810',
     database: 'fastech',
-    host: 'ferreiraserver.ddns.net',
+    host: 'fastech.database.windows.net',
     dialect: 'mssql',
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {

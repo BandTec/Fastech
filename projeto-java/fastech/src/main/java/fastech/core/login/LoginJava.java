@@ -65,9 +65,9 @@ public class LoginJava extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel1.setBackground(new java.awt.Color(25, 29, 74));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\fastech\\resources\\icon.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 0, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,8 +103,9 @@ public class LoginJava extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbSair.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        lbSair.setForeground(new java.awt.Color(0, 51, 102));
+        lbSair.setForeground(new java.awt.Color(25, 29, 74));
         lbSair.setText("X");
+        lbSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbSair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbSairMouseClicked(evt);
@@ -113,7 +114,7 @@ public class LoginJava extends javax.swing.JFrame {
         jPanel2.add(lbSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 0, 20, 22));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel1.setForeground(new java.awt.Color(25, 29, 74));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Login");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 52, 336, -1));
@@ -130,11 +131,11 @@ public class LoginJava extends javax.swing.JFrame {
         });
         jPanel2.add(textLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 227, 320, 29));
 
-        btnLogin.setBackground(new java.awt.Color(0, 51, 102));
+        btnLogin.setBackground(new java.awt.Color(25, 29, 74));
         btnLogin.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
-        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnLoginMouseClicked(evt);
@@ -154,11 +155,11 @@ public class LoginJava extends javax.swing.JFrame {
         jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 389, 160, 50));
         jPanel2.add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 245, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\fastech\\resources\\user.png")); // NOI18N
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 227, -1, 30));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user.png"))); // NOI18N
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 30, 40));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\fastech\\resources\\Vector.png")); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, 20));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Vector.png"))); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 20, 30));
 
         jSenha.setText("Enter password...");
         jSenha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
