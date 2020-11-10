@@ -5,8 +5,12 @@
  */
 package fastech.core.login;
 
+import fastech.oshi.gui.OshiGui;
 import java.awt.Color;
+import java.awt.GraphicsEnvironment;
 import java.awt.Point;
+import java.awt.event.MouseEvent;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -23,6 +27,8 @@ public class TelaAdicional extends javax.swing.JFrame {
         initComponents();
     }
 
+    
+    static boolean maximized = true;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -76,6 +82,7 @@ public class TelaAdicional extends javax.swing.JFrame {
                 formMousePressed(evt);
             }
         });
+        getContentPane().setLayout(new java.awt.BorderLayout());
 
         header.setBackground(new java.awt.Color(5, 10, 46));
         header.setPreferredSize(new java.awt.Dimension(800, 50));
@@ -95,6 +102,7 @@ public class TelaAdicional extends javax.swing.JFrame {
 
         close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete_32px.png"))); // NOI18N
+        close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         close.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeMouseClicked(evt);
@@ -119,6 +127,7 @@ public class TelaAdicional extends javax.swing.JFrame {
 
         fullMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         fullMax.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/full_screen_32px.png"))); // NOI18N
+        fullMax.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         fullMax.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 fullMaxMouseClicked(evt);
@@ -223,9 +232,11 @@ public class TelaAdicional extends javax.swing.JFrame {
 
         buttonSeting2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         buttonSeting2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/settings_32px.png"))); // NOI18N
+        buttonSeting2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuIcon.add(buttonSeting2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 50, 50));
 
         setting3.setBackground(new java.awt.Color(5, 10, 46));
+        setting3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setting3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 setting3MouseEntered(evt);
@@ -235,23 +246,23 @@ public class TelaAdicional extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user_35px.png"))); // NOI18N
         jLabel5.setText("jLabel5");
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout setting3Layout = new javax.swing.GroupLayout(setting3);
         setting3.setLayout(setting3Layout);
         setting3Layout.setHorizontalGroup(
             setting3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, setting3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+            .addGroup(setting3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         setting3Layout.setVerticalGroup(
             setting3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, setting3Layout.createSequentialGroup()
-                .addGap(0, 15, Short.MAX_VALUE)
-                .addComponent(jLabel5))
+            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         menuIcon.add(setting3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 50, 50));
@@ -284,7 +295,13 @@ public class TelaAdicional extends javax.swing.JFrame {
 
         buttonSeting3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         buttonSeting3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/combo_chart_35px.png"))); // NOI18N
-        menuIcon.add(buttonSeting3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 40, 50));
+        buttonSeting3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonSeting3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonSeting3MouseClicked(evt);
+            }
+        });
+        menuIcon.add(buttonSeting3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 50, 50));
 
         menu.add(menuIcon, java.awt.BorderLayout.LINE_START);
 
@@ -383,7 +400,18 @@ public class TelaAdicional extends javax.swing.JFrame {
 
     private void fullMaxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fullMaxMouseClicked
         
+        if(maximized){
+            
+            TelaAdicional.this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            TelaAdicional.this.setMaximizedBounds(env.getMaximumWindowBounds());
+            maximized = false;
+        }else{
         
+            setExtendedState(JFrame.NORMAL);
+                  
+        maximized = true;
+        }
        
         
     }//GEN-LAST:event_fullMaxMouseClicked
@@ -430,6 +458,13 @@ public class TelaAdicional extends javax.swing.JFrame {
         point.y = evt.getY();
 
     }//GEN-LAST:event_formMousePressed
+
+    private void buttonSeting3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSeting3MouseClicked
+  
+        new OshiGui().setVisible(true);
+       this.setVisible(false);
+        
+    }//GEN-LAST:event_buttonSeting3MouseClicked
 
     /**
      * @param args the command line arguments
