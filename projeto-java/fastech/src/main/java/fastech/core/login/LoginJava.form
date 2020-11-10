@@ -74,7 +74,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\mmaia\Documents\Fastech\projeto-java\fastech\src\main\java\resources\icon.png"/>
+              <Image iconType="3" name="/img/icon.png"/>
             </Property>
           </Properties>
         </Component>
@@ -215,24 +215,24 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\mmaia\Documents\Fastech\projeto-java\fastech\src\main\java\resources\user.png"/>
+              <Image iconType="3" name="/img/user.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="14" y="227" width="-1" height="30"/>
+              <AbsoluteConstraints x="20" y="220" width="30" height="40"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\mmaia\Documents\Fastech\projeto-java\fastech\src\main\java\resources\Vector.png"/>
+              <Image iconType="3" name="/img/Vector.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="20" y="320" width="-1" height="20"/>
+              <AbsoluteConstraints x="20" y="310" width="20" height="30"/>
             </Constraint>
           </Constraints>
         </Component>

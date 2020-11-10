@@ -51,14 +51,16 @@ public class TelaAdicional extends javax.swing.JFrame {
         lineHideSettingto = new javax.swing.JPanel();
         buttonSeting2 = new javax.swing.JLabel();
         setting3 = new javax.swing.JPanel();
-        buttonSeting3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         setting = new javax.swing.JPanel();
         buttonSeting = new javax.swing.JLabel();
+        buttonSeting3 = new javax.swing.JLabel();
         menuHide = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         view = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -92,16 +94,16 @@ public class TelaAdicional extends javax.swing.JFrame {
         buttonClose.setLayout(new java.awt.BorderLayout());
 
         close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        close.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\resources\\delete_32px.png")); // NOI18N
+        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete_32px.png"))); // NOI18N
         close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 closeMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 closeMouseExited(evt);
-            }
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                closeMouseClicked(evt);
             }
         });
         buttonClose.add(close, java.awt.BorderLayout.CENTER);
@@ -116,16 +118,16 @@ public class TelaAdicional extends javax.swing.JFrame {
         buttonMax.setLayout(new java.awt.BorderLayout());
 
         fullMax.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        fullMax.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\resources\\full_screen_32px.png")); // NOI18N
+        fullMax.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/full_screen_32px.png"))); // NOI18N
         fullMax.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fullMaxMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 fullMaxMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 fullMaxMouseExited(evt);
-            }
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                fullMaxMouseClicked(evt);
             }
         });
         buttonMax.add(fullMax, java.awt.BorderLayout.CENTER);
@@ -177,7 +179,7 @@ public class TelaAdicional extends javax.swing.JFrame {
         });
 
         buttonmenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        buttonmenu.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\resources\\back_32px.png")); // NOI18N
+        buttonmenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back_32px.png"))); // NOI18N
 
         javax.swing.GroupLayout hideMenuLayout = new javax.swing.GroupLayout(hideMenu);
         hideMenu.setLayout(hideMenuLayout);
@@ -185,15 +187,11 @@ public class TelaAdicional extends javax.swing.JFrame {
             hideMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(hideMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(buttonmenu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(buttonmenu, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
         );
         hideMenuLayout.setVerticalGroup(
             hideMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(hideMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(buttonmenu)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(buttonmenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         menuIcon.add(hideMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 50, 50));
@@ -224,8 +222,8 @@ public class TelaAdicional extends javax.swing.JFrame {
         menuIcon.add(lineHideSettingto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 50, -1));
 
         buttonSeting2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        buttonSeting2.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\resources\\combo_chart_35px.png")); // NOI18N
-        menuIcon.add(buttonSeting2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 50, 50));
+        buttonSeting2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/settings_32px.png"))); // NOI18N
+        menuIcon.add(buttonSeting2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 50, 50));
 
         setting3.setBackground(new java.awt.Color(5, 10, 46));
         setting3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -237,8 +235,8 @@ public class TelaAdicional extends javax.swing.JFrame {
             }
         });
 
-        buttonSeting3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        buttonSeting3.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\resources\\user_35px.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/user_35px.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
 
         javax.swing.GroupLayout setting3Layout = new javax.swing.GroupLayout(setting3);
         setting3.setLayout(setting3Layout);
@@ -246,17 +244,17 @@ public class TelaAdicional extends javax.swing.JFrame {
             setting3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, setting3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buttonSeting3)
-                .addContainerGap())
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
         setting3Layout.setVerticalGroup(
             setting3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, setting3Layout.createSequentialGroup()
                 .addGap(0, 15, Short.MAX_VALUE)
-                .addComponent(buttonSeting3))
+                .addComponent(jLabel5))
         );
 
-        menuIcon.add(setting3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 50, 50));
+        menuIcon.add(setting3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 50, 50));
 
         setting.setBackground(new java.awt.Color(5, 10, 46));
         setting.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -282,14 +280,17 @@ public class TelaAdicional extends javax.swing.JFrame {
         menuIcon.add(setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 50, -1));
 
         buttonSeting.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        buttonSeting.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\resources\\settings_32px.png")); // NOI18N
         menuIcon.add(buttonSeting, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 40, 40));
+
+        buttonSeting3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buttonSeting3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/combo_chart_35px.png"))); // NOI18N
+        menuIcon.add(buttonSeting3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 40, 50));
 
         menu.add(menuIcon, java.awt.BorderLayout.LINE_START);
 
         menuHide.setBackground(new java.awt.Color(25, 29, 74));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\resources\\icon.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon.png"))); // NOI18N
 
         javax.swing.GroupLayout menuHideLayout = new javax.swing.GroupLayout(menuHide);
         menuHide.setLayout(menuHideLayout);
@@ -315,12 +316,16 @@ public class TelaAdicional extends javax.swing.JFrame {
         view.setBackground(new java.awt.Color(73, 128, 242));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\mmaia\\Documents\\Fastech\\projeto-java\\fastech\\src\\main\\java\\resources\\house_127px.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/house_127px.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Seja bem vindo !");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Emoji", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Powerd by: Fastech");
 
         javax.swing.GroupLayout viewLayout = new javax.swing.GroupLayout(view);
         view.setLayout(viewLayout);
@@ -332,6 +337,9 @@ public class TelaAdicional extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel2)
                 .addContainerGap(46, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel6))
         );
         viewLayout.setVerticalGroup(
             viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -343,7 +351,8 @@ public class TelaAdicional extends javax.swing.JFrame {
                     .addGroup(viewLayout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addComponent(jLabel6))
         );
 
         getContentPane().add(view, java.awt.BorderLayout.CENTER);
@@ -474,6 +483,8 @@ public class TelaAdicional extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPanel lineHideMenu;
