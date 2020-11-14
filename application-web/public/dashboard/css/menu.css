@@ -10,7 +10,7 @@
     background-color: var(--secundary-bg-dark);
     border-radius: 5px;
     padding: 20px;
-    margin: 23% 5%;
+    margin: 23% 8%;
     transform: translate(-50%,-50%);
     position: fixed;
 }
@@ -40,6 +40,11 @@
 }
 
 /* RESPONSIVIDADE */
+@media only screen and (max-width: 1440px){
+    .sidebar{
+        margin: 23% 4%;
+    }
+}
 
 @media only screen and (max-width: 1080px){
     .sidebar{
@@ -50,6 +55,7 @@
         position: fixed;
         transform: translate(0%,0%);
         z-index: 100;
+        border-radius: 0;
 
     }
 
@@ -72,5 +78,27 @@
 
     .sidebar ul li:nth-child(1){
         margin-left: 15%;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .sidebar ul li:nth-child(1){
+        margin-left: 4%;
+    }
+
+    .sidebar ul li{
+        font-size: 1.6em;
+        margin-right: 11%;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .sidebar ul li:nth-child(1){
+        margin-left: 5%;
+    }
+
+    .sidebar ul li{
+        font-size: 1.6em;
+        margin-right: 8%;
     }
 }

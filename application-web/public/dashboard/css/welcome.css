@@ -1,31 +1,41 @@
-
+:root {
+    --background: #333333;
+    --blue-deafult: #3B5998;
+    --secundary-bg: #515151;
+    --out-color: #FE4242;
+    --color-text: #FFFFFF;
+}
 /* WELCOME */
-
 .welcome{
-    background-color: var(--blue-deafult);
-    width: 40%;
-    height: 100px;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 3% 15%;
+    width: 100%;
+    color: var(--color-text);
     position: relative;
+    margin-top: 3%;
 }
 
-.welcome .title, .welcome .description{
-    color: #fff;
-    float: left;
+#logo img{
+    width: 30%; 
+    margin-left: 30%;   
 }
 
-.welcome img{
-    width: 25%;
-    float: right;
-    margin-top: -50px;
+.fa-user{
+    display: none;
 }
+
+.welcome h5{
+    font-size: 1.2em;
+    margin-left: 65%;
+    cursor: pointer;
+}
+
+.welcome h5 .fa-chevron-down{
+    padding: 10px;
+}
+
+
+
 
 /* AVG GENERAL */
-#main-container{
-    margin-left: 4%;
-}
 
 #main-container .title{
     color: #fff;
@@ -33,7 +43,6 @@
 }
 
 #main-container .card{
-    margin-left: 10%;
     padding: 10px;
     background-color: var(--secundary-bg-dark);
     border: 1px solid var(--color-theme);
@@ -49,24 +58,34 @@
     font-size: 3em;
 }
 
-
-/* RESPONSIVIDADE */
 @media only screen and (max-width: 1080px){
-    .welcome{
-        width: 60%;
-    }
-
-    .welcome img{
-        margin-top: -10px;
+    .welcome h5{
+        font-size: 1em;
+        margin-left: 65%;
     }
 }
 
-@media only screen and (max-width: 620px){
-    .welcome{
-        width: 80%;
+@media only screen and (max-width: 820px){
+    .welcome h5{
+        margin-left: 50%;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .welcome h5{
+        margin-left: 20%;
+    }
+}
+
+@media only screen and (max-width: 380px){
+    .welcome h5{
+        display: none;
     }
 
-    .welcome img{
-        margin-top: -10px;
+    .fa-user{
+        display: block;
+        font-size: 1.5em;
+        margin-left: 45%;
+        padding: 5%;
     }
 }
