@@ -23,8 +23,8 @@
 }
 
 .welcome h5{
-    font-size: 1.2em;
-    margin-left: 65%;
+    font-size: 1.1em;
+    margin-left: 60%;
     cursor: pointer;
 }
 
@@ -61,7 +61,7 @@
 @media only screen and (max-width: 1080px){
     .welcome h5{
         font-size: 1em;
-        margin-left: 65%;
+        margin-left: 48%;
     }
 }
 
@@ -71,9 +71,15 @@
     }
 }
 
-@media only screen and (max-width: 425px){
+@media only screen and (max-width: 768px){
     .welcome h5{
-        margin-left: 20%;
+        margin-left: 45%;
+    }
+}
+
+@media only screen and (max-width: 460px){
+    .welcome h5{
+        margin-left: 15%;
     }
 }
 
