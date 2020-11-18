@@ -6,6 +6,8 @@
 package fastech.logger;
 
 import fastech.taking.data.InfoListProcessors;
+import fastech.taking.data.InfoCpu;
+import fastech.taking.data.InfoMemory;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -19,8 +21,8 @@ public class loggerJava {
     private boolean firstStart = true;
     private Toolbox tb = new Toolbox();
 
-    public void gravarLinha(String linha, String data) throws IOException {
-        data = tb.data();
+    public void gravarLinha(String linha) throws IOException {
+        String data = tb.data();
         BufferedWriter arquivo = new BufferedWriter(new FileWriter("logs/" + data + ".log", true));
         try {
             arquivo.newLine();
@@ -50,7 +52,16 @@ public class loggerJava {
     }
     
         public void inicio() throws IOException {
-/*
+            
+            InfoCpu cpu = new InfoCpu();
+            InfoListProcessors proc = new InfoListProcessors();
+            InfoMemory mem = new InfoMemory();
+            gravarLinha("==========================");
+            gravarLinha(String.format("        Início da aplicação - %s %s ", tb.data(), tb.horas()));      
+            gravarLinha(" =========================================== ");
+            
+           
+            /*
             
             arrumar este trecho da próxima vez que mexer
             
