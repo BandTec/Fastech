@@ -1,6 +1,6 @@
 :root {
     --background: #333333;
-    --blue-deafult: #3B5998;
+    --blue-deafult: rgb(59, 89, 152);
     --secundary-bg: #515151;
     --out-color: #FE4242;
     --color-text: #FFFFFF;
@@ -46,6 +46,8 @@
     padding: 10px;
     background-color: var(--secundary-bg-dark);
     border: 1px solid var(--color-theme);
+    text-align: center;
+    align-items: center;
 }
 
 #main-container .card .card-body .card-title{
