@@ -14,14 +14,14 @@ public class TesteDatabase {
         Connection config = new Connection();
         JdbcTemplate con = new JdbcTemplate(config.getDatasource());
 
-        List nome = con.queryForList("select nameUser, idUser from Usuario where idUser = 1;");
+        List nome = con.queryForList("select * from Collaborator where idCollaborator = 1;");
         System.out.println(nome);
 
-        List<Usuario> showUsuarios = con.query("Select * From Usuario;",
-                new BeanPropertyRowMapper(Usuario.class));
+        List<Collaborator> showCollaborators = con.query("Select * From Collaborator;",
+                new BeanPropertyRowMapper(Collaborator.class));
 
-        for (Usuario u : showUsuarios) {
-            System.out.println(u);
+        for (Collaborator c : showCollaborators) {
+            System.out.println(c);
         }
     }
 }
