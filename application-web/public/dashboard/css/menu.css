@@ -20,7 +20,7 @@
 }
 
 .sidebar ul li{
-    font-size: 2em;
+    font-size: 1.8em;
     padding-top: 95%;
     list-style: none;
 }
@@ -64,7 +64,7 @@
     }
 
     .sidebar ul li{
-        font-size: 1.7em;
+        font-size: 1.6em;
         display: inline-block;
         padding-top: 0%;
         margin-right: 9%;
@@ -83,22 +83,22 @@
 
 @media only screen and (max-width: 425px){
     .sidebar ul li:nth-child(1){
-        margin-left: 4%;
+        margin-left: 4% !important;
     }
 
     .sidebar ul li{
-        font-size: 1.6em;
+        font-size: 1.4em;
         margin-right: 11%;
     }
 }
 
 @media only screen and (max-width: 375px){
     .sidebar ul li:nth-child(1){
-        margin-left: 5%;
+        margin-left: 5% !important;
     }
 
     .sidebar ul li{
-        font-size: 1.6em;
+        font-size: 1.4em;
         margin-right: 8%;
     }
 }

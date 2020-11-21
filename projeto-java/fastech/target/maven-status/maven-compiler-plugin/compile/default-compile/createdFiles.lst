@@ -7,6 +7,7 @@ fastech/oshi/gui/OshiGui$11.class
 fastech/core/login/LoginJava$1.class
 fastech/core/login/TelaAdicional$8.class
 fastech/oshi/gui/Oshi.class
+fastech/logger/loggerJava.class
 fastech/core/login/TelaAdicional$1.class
 fastech/oshi/gui/OshiGui$5.class
 fastech/oshi/gui/OshiTeste.class
@@ -16,8 +17,10 @@ fastech/core/login/LoginJava$2.class
 fastech/oshi/gui/OshiGui$6.class
 fastech/core/login/LoginJava$9.class
 fastech/oshi/gui/OshiGui$3.class
+fastech/logger/Toolbox.class
 fastech/core/login/TelaAdicional$4.class
 fastech/core/login/LoginJava$5.class
+fastech/logger/Validacao.class
 fastech/core/login/TelaAdicional$7.class
 fastech/core/login/TelaAdicional$10.class
 fastech/oshi/gui/OshiGui$9.class

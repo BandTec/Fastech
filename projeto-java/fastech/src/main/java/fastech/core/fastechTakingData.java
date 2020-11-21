@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fastech.core;
-
 import fastech.taking.data.InfoCpu;
 import fastech.taking.data.InfoDisk;
 import fastech.taking.data.InfoListProcessors;
@@ -19,7 +13,7 @@ import oshi.software.os.OperatingSystem;
 
 /**
  *
- * @author Cliente
+ * @author Jorge
  */
 public class fastechTakingData {
 
