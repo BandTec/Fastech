@@ -1,0 +1,27 @@
+:root {
+    --background: #333333;
+    --blue-deafult: #3B5998;
+    --secundary-bg: #515151;
+    --out-color: #FE4242;
+    --color-text: #FFFFFF;
+}
+
+.round{
+    min-height: 200px;
+    margin-top: 30px;
+    position: relative;
+    margin-bottom: 20px;
+    top: 50%;
+    left: 40%;
+    transform: translate(-25%);
+}
+
+.round strong{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    margin-top: -5%;
+    transform: translate(-100%);
+    font-size: 1.2em;
+    color: var(--color-text);
+}
