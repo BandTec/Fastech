@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package fastech.taking.data;
+package fastech.services;
 
-import static fastech.core.fastechTakingData.oshi;
+import static fastech.controller.fastechTakingData.oshi;
 import java.util.List;
 import oshi.SystemInfo;
 import oshi.hardware.GlobalMemory;
@@ -16,7 +11,7 @@ import oshi.util.FormatUtil;
 
 /**
  *
- * @author Cliente
+ * @author Jorge
  */
 public class InfoListProcessors {
     

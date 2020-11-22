@@ -1,8 +1,9 @@
-package fastech.core;
-import fastech.taking.data.InfoCpu;
-import fastech.taking.data.InfoDisk;
-import fastech.taking.data.InfoListProcessors;
-import fastech.taking.data.InfoMemory;
+package fastech.controller;
+
+import fastech.services.InfoCpu;
+import fastech.services.InfoDisk;
+import fastech.services.InfoListProcessors;
+import fastech.services.InfoMemory;
 import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;

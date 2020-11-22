@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fastech.taking.data;
+package fastech.services;
 
-import static fastech.core.fastechTakingData.oshi;
+import static fastech.controller.fastechTakingData.oshi;
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
 import oshi.hardware.HardwareAbstractionLayer;
@@ -13,7 +13,7 @@ import oshi.software.os.OperatingSystem;
 
 /**
  *
- * @author Aluno
+ * @author Jorge
  */
 public class InfoCpu {
 
