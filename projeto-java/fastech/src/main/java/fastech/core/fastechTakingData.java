@@ -1,5 +1,4 @@
 package fastech.core;
-
 import fastech.taking.data.InfoCpu;
 import fastech.taking.data.InfoDisk;
 import fastech.taking.data.InfoListProcessors;
@@ -14,7 +13,7 @@ import oshi.software.os.OperatingSystem;
 
 /**
  *
- * @author Cliente
+ * @author Jorge
  */
 public class fastechTakingData {
 
