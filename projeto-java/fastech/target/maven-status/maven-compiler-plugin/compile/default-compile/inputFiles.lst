@@ -1,23 +1,23 @@
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\logger\loggerJava.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\LinusDashboardProcessor.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\LoginLinus.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\database\Connection.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\OshiTeste.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\SelectMachine.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\model\Model.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\Views.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\taking\data\InfoMemory.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\LinusDashboardMemory.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\core\fastechTakingData.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\taking\data\InfoCpu.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\controller\Controller.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\taking\data\InfoListProcessors.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\logger\Validacao.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\LinusDashboardHome.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\taking\data\InfoDisk.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\database\Collaborator.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\services\Services.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\TesteOshi.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\Oshi.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\database\TesteDatabase.java
-C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\logger\Toolbox.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/oshi/gui/TesteOshi.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/logger/Validacao.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/database/TesteDatabase.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/view/LinusDashboardHome.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/taking/data/InfoCpu.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/view/LoginLinus.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/controller/Controller.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/model/Model.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/logger/loggerJava.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/core/fastechTakingData.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/taking/data/InfoMemory.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/view/LinusDashboardMemory.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/view/LinusDashboardProcessor.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/services/Services.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/database/Collaborator.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/database/Connection.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/oshi/gui/Oshi.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/oshi/gui/OshiTeste.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/view/Views.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/taking/data/InfoListProcessors.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/view/SelectMachine.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/taking/data/InfoDisk.java
+/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/logger/Toolbox.java
