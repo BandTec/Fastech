@@ -1,16 +1,16 @@
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/oshi/gui/TesteOshi.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/logger/Validacao.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/taking/data/InfoCpu.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/oshi/gui/OshiGui.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/database/Database.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/logger/loggerJava.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/core/fastechTakingData.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/taking/data/InfoMemory.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/oshi/gui/Oshi.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/oshi/gui/OshiTeste.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/core/login/TelaAdicional.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/taking/data/InfoListProcessors.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/core/login/LoginJava.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/taking/data/InfoDisk.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/logger/Toolbox.java
-/home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/database/App.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\logger\loggerJava.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\core\login\LinusDashboardHome.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\OshiTeste.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\taking\data\InfoMemory.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\core\fastechTakingData.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\taking\data\InfoCpu.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\core\login\SelectMachine.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\taking\data\InfoListProcessors.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\logger\Validacao.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\core\login\LoginLinus.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\database\App.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\taking\data\InfoDisk.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\TesteOshi.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\Oshi.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\database\Database.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\logger\Toolbox.java
