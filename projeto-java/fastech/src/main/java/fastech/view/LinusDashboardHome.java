@@ -5,18 +5,27 @@
  */
 package fastech.view;
 
+import fastech.oshi.gui.Oshi;
+import java.util.List;
+
 /**
  *
  * @author Jose Lucas
  */
 public class LinusDashboardHome extends javax.swing.JFrame {
-
+    Oshi oshi = new Oshi();
     /**
      * Creates new form LinusDashboard
      */
     public LinusDashboardHome() {
         initComponents();
+        printValues();
     }
+    
+    /*private void LinusDashboardHome(java.awt.event.WindowEvent evt) {                                  ;
+        printValues();
+    } */
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,15 +45,42 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        jpbValueCpu = new javax.swing.JProgressBar();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        jpbValueMemory = new javax.swing.JProgressBar();
         jPanel5 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
+        jpbValueDisk = new javax.swing.JProgressBar();
         jPanel6 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        lblProcPid = new javax.swing.JLabel();
+        lblProcCpu = new javax.swing.JLabel();
+        lblProcName = new javax.swing.JLabel();
+        lblProcMem = new javax.swing.JLabel();
+        lblProcPid1 = new javax.swing.JLabel();
+        lblProcPid2 = new javax.swing.JLabel();
+        lblProcPid3 = new javax.swing.JLabel();
+        lblProcPid4 = new javax.swing.JLabel();
+        lblProcName1 = new javax.swing.JLabel();
+        lblProcName2 = new javax.swing.JLabel();
+        lblProcName3 = new javax.swing.JLabel();
+        lblProcName4 = new javax.swing.JLabel();
+        lblProcCpu1 = new javax.swing.JLabel();
+        lblProcCpu2 = new javax.swing.JLabel();
+        lblProcCpu3 = new javax.swing.JLabel();
+        lblProcCpu4 = new javax.swing.JLabel();
+        lblProcMem1 = new javax.swing.JLabel();
+        lblProcMem2 = new javax.swing.JLabel();
+        lblProcMem3 = new javax.swing.JLabel();
+        lblProcMem4 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -94,6 +130,11 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("Processador");
 
+        jpbValueCpu.setBackground(new java.awt.Color(51, 102, 255));
+        jpbValueCpu.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        jpbValueCpu.setForeground(new java.awt.Color(0, 0, 0));
+        jpbValueCpu.setStringPainted(true);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -104,6 +145,11 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel25)
                 .addContainerGap(87, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jpbValueCpu, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,6 +159,11 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(135, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addContainerGap(83, Short.MAX_VALUE)
+                    .addComponent(jpbValueCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(54, 54, 54)))
         );
 
         jPanel4.setBackground(new java.awt.Color(102, 102, 102));
@@ -123,16 +174,25 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Memória");
 
+        jpbValueMemory.setBackground(new java.awt.Color(51, 102, 255));
+        jpbValueMemory.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        jpbValueMemory.setForeground(new java.awt.Color(0, 0, 0));
+        jpbValueMemory.setStringPainted(true);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel22)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel22)
+                        .addGap(0, 120, Short.MAX_VALUE))
+                    .addComponent(jpbValueMemory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,6 +201,8 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel9)
                     .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addComponent(jpbValueMemory, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -152,16 +214,25 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Disco");
 
+        jpbValueDisk.setBackground(new java.awt.Color(51, 102, 255));
+        jpbValueDisk.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        jpbValueDisk.setForeground(new java.awt.Color(0, 0, 0));
+        jpbValueDisk.setStringPainted(true);
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel26)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel26)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jpbValueDisk, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,6 +241,8 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel11)
                     .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
+                .addComponent(jpbValueDisk, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -181,6 +254,106 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("Processos");
 
+        jLabel29.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("NOME");
+
+        jLabel30.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("PID");
+
+        jLabel32.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setText("CPU %");
+
+        jLabel33.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.setText("MEM %");
+
+        lblProcPid.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcPid.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcPid.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcCpu.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcCpu.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcCpu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcName.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcName.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcMem.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcMem.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcMem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcPid1.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcPid1.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcPid1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcPid2.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcPid2.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcPid2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcPid3.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcPid3.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcPid3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcPid4.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcPid4.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcPid4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcName1.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcName1.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcName2.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcName2.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcName2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcName3.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcName3.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcName3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcName4.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcName4.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcName4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcCpu1.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcCpu1.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcCpu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcCpu2.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcCpu2.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcCpu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcCpu3.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcCpu3.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcCpu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcCpu4.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcCpu4.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcCpu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcMem1.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcMem1.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcMem1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcMem2.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcMem2.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcMem2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcMem3.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcMem3.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcMem3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblProcMem4.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
+        lblProcMem4.setForeground(new java.awt.Color(255, 255, 255));
+        lblProcMem4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -189,9 +362,55 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel28)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel28)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblProcPid)
+                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblProcPid1)
+                    .addComponent(lblProcPid4)
+                    .addComponent(lblProcPid3)
+                    .addComponent(lblProcPid2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProcName)
+                    .addComponent(lblProcName1)
+                    .addComponent(lblProcName2)
+                    .addComponent(lblProcName3)
+                    .addComponent(lblProcName4))
+                .addGap(193, 193, 193)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(lblProcCpu2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblProcMem2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblProcCpu1)
+                            .addComponent(lblProcCpu))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblProcMem, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblProcMem1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblProcCpu3)
+                            .addComponent(lblProcCpu4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblProcMem4)
+                            .addComponent(lblProcMem3))))
+                .addGap(43, 43, 43))
         );
+
+        jPanel6Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel29, jLabel30, jLabel32, jLabel33, lblProcCpu, lblProcCpu1, lblProcCpu2, lblProcCpu3, lblProcCpu4, lblProcMem, lblProcMem1, lblProcMem2, lblProcMem3, lblProcMem4, lblProcName, lblProcName1, lblProcName2, lblProcName3, lblProcName4, lblProcPid, lblProcPid1, lblProcPid2, lblProcPid3, lblProcPid4});
+
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -199,8 +418,46 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel10)
                     .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProcPid)
+                    .addComponent(lblProcCpu)
+                    .addComponent(lblProcMem)
+                    .addComponent(lblProcName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProcPid1)
+                    .addComponent(lblProcName1)
+                    .addComponent(lblProcCpu1)
+                    .addComponent(lblProcMem1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProcPid2)
+                    .addComponent(lblProcName2)
+                    .addComponent(lblProcCpu2)
+                    .addComponent(lblProcMem2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProcPid3)
+                    .addComponent(lblProcName3)
+                    .addComponent(lblProcCpu3)
+                    .addComponent(lblProcMem3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblProcPid4)
+                    .addComponent(lblProcName4)
+                    .addComponent(lblProcCpu4)
+                    .addComponent(lblProcMem4))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
+
+        jPanel6Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel29, jLabel30, jLabel32, jLabel33, lblProcCpu, lblProcCpu1, lblProcCpu2, lblProcCpu3, lblProcCpu4, lblProcMem, lblProcMem1, lblProcMem2, lblProcMem3, lblProcMem4, lblProcName, lblProcName1, lblProcName2, lblProcName3, lblProcName4, lblProcPid, lblProcPid1, lblProcPid2, lblProcPid3, lblProcPid4});
 
         jPanel7.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -385,9 +642,9 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
+                                .addGap(29, 29, 29)
                                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29)
                                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -420,7 +677,7 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -473,6 +730,131 @@ public class LinusDashboardHome extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void printValues() {
+        printValueCpu();
+        printValueMemory();
+        printValueDisk();
+        printProcCpu();
+        printProcPid();
+        printProcMem();
+        printProcName();
+    }
+    
+    public void printValueCpu() {
+        Integer valueCpu = oshi.getValuesProcessor();
+        jpbValueCpu.setValue(valueCpu);
+    }
+    
+    public void printValueMemory() {
+        Integer valueMemory = oshi.getValuesMemory();
+        jpbValueMemory.setValue(valueMemory);
+    }
+    
+    public void printValueDisk() {
+        Integer valueDisk = oshi.getValuesFileSystem();
+        jpbValueDisk.setValue(valueDisk);
+    }
+    
+    public void printProcCpu() {
+        List<String> procCpu = oshi.getValuesProcCpu();
+        lblProcCpu.setText("");
+        String text = "";
+        for(int i = 0; i < 5; i++) {
+            switch (i) {
+                case 0:
+                    lblProcCpu.setText(procCpu.get(i) + "%");
+                    break;
+                case 1:
+                    lblProcCpu1.setText(procCpu.get(i) + "%");
+                    break;
+                case 2:
+                    lblProcCpu2.setText(procCpu.get(i)  + "%");
+                    break;
+                case 3:
+                    lblProcCpu3.setText(procCpu.get(i) + "%");
+                    break;
+                case 4:
+                    lblProcCpu4.setText(procCpu.get(i) + "%");
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    public void printProcPid() {
+        List<String> procPid = oshi.getValuesProcPid();
+        String text = "";
+        for(int i = 0; i < 5; i++) {
+            switch (i) {
+                case 0:
+                    lblProcPid.setText(procPid.get(i));
+                    break;
+                case 1:
+                    lblProcPid1.setText(procPid.get(i));
+                    break;
+                case 2:
+                    lblProcPid2.setText(procPid.get(i));
+                    break;
+                case 3:
+                    lblProcPid3.setText(procPid.get(i));
+                    break;
+                case 4:
+                    lblProcPid4.setText(procPid.get(i));
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    public void printProcMem() {
+        List<String> procMem = oshi.getValuesProcMem();
+        for(int i = 0; i < 5; i++) {
+            switch (i) {
+                case 0:
+                    lblProcMem.setText(procMem.get(i) + "%");
+                    break;
+                case 1:
+                    lblProcMem1.setText(procMem.get(i) + "%");
+                    break;
+                case 2:
+                    lblProcMem2.setText(procMem.get(i) + "%");
+                    break;
+                case 3:
+                    lblProcMem3.setText(procMem.get(i) + "%");
+                    break;
+                case 4:
+                    lblProcMem4.setText(procMem.get(i) + "%");
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    public void printProcName() {
+        List<String> procName = oshi.getValuesProcName();
+        for(int i = 0; i < 5; i++) {
+            switch (i) {
+                case 0:
+                    lblProcName.setText(procName.get(i));
+                    break;
+                case 1:
+                    lblProcName1.setText(procName.get(i));
+                    break;
+                case 2:
+                    lblProcName2.setText(procName.get(i));
+                    break;
+                case 3:
+                    lblProcName3.setText(procName.get(i));
+                    break;
+                case 4:
+                    lblProcName4.setText(procName.get(i));
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -496,7 +878,11 @@ public class LinusDashboardHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -510,6 +896,29 @@ public class LinusDashboardHome extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JProgressBar jpbValueCpu;
+    private javax.swing.JProgressBar jpbValueDisk;
+    private javax.swing.JProgressBar jpbValueMemory;
+    private javax.swing.JLabel lblProcCpu;
+    private javax.swing.JLabel lblProcCpu1;
+    private javax.swing.JLabel lblProcCpu2;
+    private javax.swing.JLabel lblProcCpu3;
+    private javax.swing.JLabel lblProcCpu4;
+    private javax.swing.JLabel lblProcMem;
+    private javax.swing.JLabel lblProcMem1;
+    private javax.swing.JLabel lblProcMem2;
+    private javax.swing.JLabel lblProcMem3;
+    private javax.swing.JLabel lblProcMem4;
+    private javax.swing.JLabel lblProcName;
+    private javax.swing.JLabel lblProcName1;
+    private javax.swing.JLabel lblProcName2;
+    private javax.swing.JLabel lblProcName3;
+    private javax.swing.JLabel lblProcName4;
+    private javax.swing.JLabel lblProcPid;
+    private javax.swing.JLabel lblProcPid1;
+    private javax.swing.JLabel lblProcPid2;
+    private javax.swing.JLabel lblProcPid3;
+    private javax.swing.JLabel lblProcPid4;
     private javax.swing.JLabel lbl_name_user;
     // End of variables declaration//GEN-END:variables
 }
