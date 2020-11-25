@@ -5,9 +5,9 @@
  */
 package fastech.logger;
 
-import fastech.taking.data.InfoListProcessors;
-import fastech.taking.data.InfoCpu;
-import fastech.taking.data.InfoMemory;
+import fastech.services.InfoListProcessors;
+import fastech.services.InfoCpu;
+import fastech.services.InfoMemory;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

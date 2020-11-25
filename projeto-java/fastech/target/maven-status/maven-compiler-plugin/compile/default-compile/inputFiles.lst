@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/oshi/gui/TesteOshi.java
 /home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/logger/Validacao.java
 /home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/database/TesteDatabase.java
@@ -21,3 +22,29 @@
 /home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/view/SelectMachine.java
 /home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/taking/data/InfoDisk.java
 /home/dublefe/Documentos/Faculdade/Projetos/Fastech/projeto-java/fastech/src/main/java/fastech/logger/Toolbox.java
+=======
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\logger\loggerJava.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\controller\Controller.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\services\InfoDisk.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\Data.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\TesteOshi.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\Collaborator.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\Oshi.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\Test.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\controller\fastechTakingData.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\Component.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\controller\TesteDatabase.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\Machine.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\services\Connection.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\core\login\TelaAdicional.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\OshiGui.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\services\InfoListProcessors.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\OshiTeste.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\services\InfoCpu.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\CompanyBranch.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\logger\Validacao.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\view\Views.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\core\login\LoginJava.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\logger\Toolbox.java
+C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\services\InfoMemory.java
+>>>>>>> development
