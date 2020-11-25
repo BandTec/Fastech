@@ -1,3 +1,36 @@
+<<<<<<< HEAD
+fastech/taking/data/InfoListProcessors.class
+fastech/view/Views.class
+fastech/taking/data/InfoCpu.class
+fastech/view/SelectMachine$2.class
+fastech/database/Connection.class
+fastech/model/Model.class
+fastech/services/Services.class
+fastech/oshi/gui/Oshi.class
+fastech/view/LinusDashboardProcessor$1.class
+fastech/view/LoginLinus$2.class
+fastech/view/LinusDashboardMemory.class
+fastech/logger/loggerJava.class
+fastech/view/SelectMachine.class
+fastech/oshi/gui/TesteOshi.class
+fastech/oshi/gui/OshiTeste.class
+fastech/database/Collaborator.class
+fastech/taking/data/InfoDisk.class
+fastech/view/SelectMachine$1.class
+fastech/view/LinusDashboardHome.class
+fastech/core/fastechTakingData.class
+fastech/logger/Toolbox.class
+fastech/taking/data/InfoMemory.class
+fastech/view/LinusDashboardProcessor.class
+fastech/view/LinusDashboardHome$1.class
+fastech/view/LoginLinus.class
+fastech/logger/Validacao.class
+fastech/view/LoginLinus$3.class
+fastech/view/LoginLinus$1.class
+fastech/database/TesteDatabase.class
+fastech/controller/Controller.class
+fastech/view/LinusDashboardMemory$1.class
+=======
 fastech\services\Connection.class
 fastech\core\login\LoginJava$7.class
 fastech\oshi\gui\OshiGui$5.class
@@ -52,3 +85,4 @@ fastech\core\login\LoginJava$5.class
 fastech\oshi\gui\OshiGui$3.class
 fastech\model\Test.class
 fastech\core\login\TelaAdicional$2.class
+>>>>>>> development
