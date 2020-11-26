@@ -3,9 +3,9 @@ package fastech.controller;
 import fastech.model.Collaborator;
 import fastech.model.GlobalVars;
 import fastech.model.Machine;
+import fastech.model.Types;
 import fastech.services.Connection;
 import fastech.services.TakingDataServices;
-import java.awt.Component;
 import java.util.List;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -109,23 +109,68 @@ public class Controller {
         globalVars.setFkComponent(components);
 
     }
-
-    public void insertDataCpu() {
+    
+    public void insertData(String nameType) {
+        setGlobalVarComponentList();
         
+        Integer idType = selectTypeData(nameType);
+        Integer idComponent = selectIdComponent(idType);
+        Integer valueComponent = selectValuesComponent(idType);
+        String insertData = String.format("insert into Data(dtMoment,value,Component_idComponent,Component_fkMachine) Values(CONVERT(DATETIME,'%s',120),?,?,?);",
+                tkDataServices.dateNow());
+
+        con.update(insertData, valueComponent, idComponent, globalVars.getFkMachine());
+    }
+    
+    public Integer selectTypeData(String nameType) {
+        String getIdType = "SELECT * FROM Types WHERE NameType = ?;";
+        Integer idType = 0;
+        List<Types> listIdType = con.query(getIdType,
+                new BeanPropertyRowMapper(Types.class), nameType);
+
+        for(Types t : listIdType) {
+            idType = t.getIdType();
+        }
+
+        return idType;
+    }
+
+    public Integer selectIdComponent(Integer idType) {
+        Integer idComponent = 0;
+        for (fastech.model.Component c : globalVars.getFkComponent()) {
+            if (c.getFkType().equals(idType)) {
+
+                idComponent = c.getIdComponent();
+            }
+        }
+
+        return idComponent;
+
+    }
+    
+    public Integer selectValuesComponent(Integer idType) {
+        switch (idType) {
+            case 1: 
+                return tkDataServices.getCpuUsage();
+            case 2:
+                return tkDataServices.getMemory();
+            case 3:
+                return tkDataServices.getAvailableDiskSpace();
+        }
+        System.out.println("Logger");
+        return null;
+    }
+    
+    public void insertDataCpu() {
+
         setGlobalVarComponentList();
 
-        globalVars.getFkComponent().forEach((fastech.model.Component c) -> {
+        String insertCpuUsage = String.format("insert into Data(dtMoment,value,Component_idComponent,Component_fkMachine) Values('2020-11-25 23:53:00',50,1,2);");
 
-            if (c.getFkType().equals(1)) {
+        Integer value = tkDataServices.getCpuUsage();
 
-                String insertCpuUsage = String.format("insert into Data(dtMoment,value,Component_idComponent,Component_fkMachine) Values('2020-11-25 23:53:00',50,1,2);");
-
-//                Integer value = tkDataServices.getCpuUsage();
-
-//                con.update(insertCpuUsage, value, c.getIdComponent(), globalVars.getFkMachine());
-                con.update(insertCpuUsage);
-            }
-        });
+//        con.update(insertCpuUsage, value, c.getIdComponent(), globalVars.getFkMachine());
+        con.update(insertCpuUsage);
 
     }
 
