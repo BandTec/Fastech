@@ -9,6 +9,7 @@ public class Component {
     private Integer idComponent;
     private String name;
     private Integer fkMachine;
+    private Integer fkType;
 
     @Override
     public String toString() {
@@ -16,6 +17,7 @@ public class Component {
                 + "idComponent=" + idComponent
                 + ", name=" + name
                 + ", fkMachine=" + fkMachine
+                + ", fkType=" + fkType
                 + '}';
     }
 
@@ -42,7 +44,14 @@ public class Component {
     public void setFkMachine(Integer fkMachine) {
         this.fkMachine = fkMachine;
     }
-    
+
+    public Integer getFkType() {
+        return fkType;
+    }
+
+    public void setFkType(Integer fkType) {
+        this.fkType = fkType;
+    }
     
 
 }

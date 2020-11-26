@@ -4,14 +4,19 @@ import fastech.controller.Controller;
 
 /**
  *
- * @author Jorge 
+ * @author Jorge
  */
 public class Views {
+
     public static void main(String[] args) {
         Controller c = new Controller();
-        
-        c.login("leila.sousa@bandtec.com.br", "12345");
-        
-        c.insertCpu();
+
+//        c.login("igor.ferreira@fastech.com.br", "123456");
+
+//        c.setGlobalMachine("XPTO");
+
+        c.insertDataCpu();
+
+
     }
 }

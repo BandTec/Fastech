@@ -1,5 +1,7 @@
 package fastech.model;
 
+import java.util.List;
+
 /**
  *
  * @author Jorge
@@ -7,13 +9,7 @@ package fastech.model;
 public class GlobalVars {
     private Integer fkCompany;
     private Integer fkMachine;
-    private Integer fkComponent;
-
-    public GlobalVars(Integer fkCompany, Integer fkMachine, Integer fkComponent) {
-        this.fkCompany = fkCompany;
-        this.fkMachine = fkMachine;
-        this.fkComponent = fkComponent;
-    }
+    private List<Component> fkComponent;    
 
     public Integer getFkCompany() {
         return fkCompany;
@@ -31,13 +27,12 @@ public class GlobalVars {
         this.fkMachine = fkMachine;
     }
 
-    public Integer getFkComponent() {
+    public List<Component> getFkComponent() {
         return fkComponent;
     }
 
-    public void setFkComponent(Integer fkComponent) {
+    public void setFkComponent(List<Component> fkComponent) {
         this.fkComponent = fkComponent;
-    }
-    
+    } 
     
 }
