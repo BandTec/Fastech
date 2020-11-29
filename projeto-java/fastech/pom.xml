@@ -58,7 +58,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>fastech.view.LoginLinus</mainClass>
+                            <mainClass>fastech.view.Views</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -68,7 +68,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>fastech.view.LoginLinus</mainClass>
+                            <mainClass>fastech.view.Views</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
