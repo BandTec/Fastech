@@ -47,12 +47,12 @@ public class Controller {
     }
 
     public List<Machine> showAllMachine() {
-        System.out.println("FkC " + globalVars.getFkCompany());
+
         String selectAllMachines = "select * from Machine M where M.fkCompanyBranch = ?;";
 
         List<Machine> machines = con.query(selectAllMachines,
                 new BeanPropertyRowMapper(Machine.class), globalVars.getFkCompany());
-        System.out.println(machines);
+
         if (machines.size() > 0) {
             return machines;
         } else {

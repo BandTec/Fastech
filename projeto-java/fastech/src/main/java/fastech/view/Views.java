@@ -3,6 +3,7 @@ package fastech.view;
 import fastech.controller.Controller;
 import fastech.model.Machine;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -28,6 +29,7 @@ public class Views {
 
         if (listMachines.size() > 0) {
             System.out.println("Escolha o número da sua máquina:");
+            System.out.println("0 - Cadastrar máquina nova");
             Integer contador = 0;
             for (Machine m : listMachines) {
                 contador++;
@@ -36,13 +38,20 @@ public class Views {
             }
             Integer choiceMachine = Integer.valueOf(leitor.nextLine().trim());
 
-            Integer contadorMachine = 0;
-            for (Machine m : listMachines) {
-                contadorMachine++;
-                if (choiceMachine == contadorMachine) {
-                    c.setGlobalMachine(m.getName());
+            if (choiceMachine.equals(0)) {
+                System.out.println("Digite o nome da sua nova máquina:");
+                String newMachine = leitor.nextLine().trim();
+                c.registerMachine(newMachine);
+                
+            } else {
+                Integer contadorMachine = 0;
+                for (Machine m : listMachines) {
+                    contadorMachine++;
+                    if (Objects.equals(choiceMachine, contadorMachine)) {
+                        c.setGlobalMachine(m.getName());
 
-                    System.out.println("ok");
+                        System.out.println("ok");
+                    }
                 }
             }
         } else {
@@ -53,9 +62,11 @@ public class Views {
 
         c.setGlobalVarComponentList();
         
+        System.out.println("Para parar o monitoramento digite Ctrl + C");
+        
         Timer timer = new Timer();
-
-        Integer seg = 5000;
+        Integer seg = 1000;
+        Boolean run = true;
 
         TimerTask tarefa = new TimerTask() {
             @Override
@@ -63,11 +74,12 @@ public class Views {
                 c.insertData("Cpu");
                 c.insertData("Memory");
                 c.insertData("Disk");
-                
             }
         };
+        if(run) {
+            timer.scheduleAtFixedRate(tarefa, 0, seg);
+        }
         
-        timer.scheduleAtFixedRate(tarefa, 0, seg);
 //        c.setGlobalMachine("XPTO");
 //
 //        c.insertData("Disk");
