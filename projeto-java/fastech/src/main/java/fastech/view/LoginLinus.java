@@ -16,6 +16,9 @@ public class LoginLinus extends javax.swing.JFrame {
      */
     public LoginLinus() {
         initComponents();
+        
+        Uteis ut = new Uteis();
+        ut.insertIcon(this);
     }
 
     /**
