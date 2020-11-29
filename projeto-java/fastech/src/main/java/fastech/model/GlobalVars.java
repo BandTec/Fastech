@@ -34,5 +34,7 @@ public class GlobalVars {
     public void setFkComponent(List<Component> fkComponent) {
         this.fkComponent = fkComponent;
     } 
-    
+
+  
+
 }

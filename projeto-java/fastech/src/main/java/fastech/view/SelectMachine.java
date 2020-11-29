@@ -5,7 +5,10 @@
  */
 package fastech.view;
 
-import fastech.view.LinusDashboardHome;
+import fastech.controller.Controller;
+import fastech.model.GlobalVars;
+import fastech.model.Machine;
+import java.util.List;
 
 /**
  *
@@ -13,11 +16,14 @@ import fastech.view.LinusDashboardHome;
  */
 public class SelectMachine extends javax.swing.JFrame {
 
+    Controller controller = new Controller();
+
     /**
      * Creates new form SelectMachine
      */
     public SelectMachine() {
         initComponents();
+        showAllMachines();
     }
 
     /**
@@ -68,7 +74,6 @@ public class SelectMachine extends javax.swing.JFrame {
         jComboBox1.setBackground(new java.awt.Color(0, 0, 0));
         jComboBox1.setFont(new java.awt.Font("Corbel", 1, 14)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maquina 1", "Maquina 2", "Maquina 3", "Maquina 4", "Maquina 5" }));
         jComboBox1.setBorder(null);
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -155,18 +160,30 @@ public class SelectMachine extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void showAllMachines() {
+        System.out.println("dsasdsadas");
+        List<Machine> machines = controller.showAllMachine();
+        System.out.println(machines);
+        System.out.println("sdas");
+        for (Machine m : machines) {
+            System.out.println(m);
+            jComboBox1.addItem(m.getName());
+        }
+    }
+
     private void btn_login_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_userActionPerformed
-       LinusDashboardHome dashHome = new LinusDashboardHome();
-       
-       dashHome.setVisible(true);
-       this.setVisible(false);
+//       LinusDashboardHome dashHome = new LinusDashboardHome();
+//       
+//       dashHome.setVisible(true);
+//       this.setVisible(false);
     }//GEN-LAST:event_btn_login_userActionPerformed
 
     private void btn_insert_machineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_insert_machineActionPerformed
-        InsertMachine addMachine = new InsertMachine();
-        
-       addMachine.setVisible(true);
-       this.setVisible(false); 
+        InsertMachine insertMachine = new InsertMachine();
+
+        insertMachine.setVisible(true);
+        this.setVisible(false);
+
     }//GEN-LAST:event_btn_insert_machineActionPerformed
 
     /**

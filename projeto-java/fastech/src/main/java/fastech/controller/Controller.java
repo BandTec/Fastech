@@ -27,7 +27,7 @@ public class Controller {
     TakingDataServices tkDataServices = new TakingDataServices();
     GlobalVars globalVars = new GlobalVars();
 
-    public void login(String login, String passWord) {
+    public String login(String login, String passWord) {
 
         String selectLogin = "select * from Collaborator where login = ? and password = ?;";
 
@@ -39,29 +39,25 @@ public class Controller {
             collaborator.forEach((Collaborator c) -> {
                 globalVars.setFkCompany(c.getFkCompanyBranch());
             });
-
+            return "OK";
         } else {
-
-            System.out.println("Error");
-
+            System.out.println("Logger login");
+            return "N/OK";
         }
     }
 
-    public void showAllMachine() {
-
-        String selectAllMachines = "select M.Name, M.idMachine, M.fkCompanyBranch from Machine M "
-                + "left join CompanyBranch C on M.fkCompanyBranch = C.idCompanyBranch "
-                + "where M.fkCompanyBranch = ?;";
+    public List<Machine> showAllMachine() {
+        System.out.println("FkC " + globalVars.getFkCompany());
+        String selectAllMachines = "select * from Machine M where M.fkCompanyBranch = ?;";
 
         List<Machine> machines = con.query(selectAllMachines,
                 new BeanPropertyRowMapper(Machine.class), globalVars.getFkCompany());
-
-        if (!(machines.size() > 0)) {
-            System.out.println("Erro");
-        }
-
-        for (Machine m : machines) {
-            System.out.println(m);
+        System.out.println(machines);
+        if (machines.size() > 0) {
+            return machines;
+        } else {
+            System.out.println("Logger showAllMachine");
+            return null;
         }
     }
 
@@ -75,6 +71,7 @@ public class Controller {
         idMachine.forEach((Machine m) -> {
             globalVars.setFkMachine(m.getIdMachine());
         });
+        System.out.println(globalVars.getFkMachine());
     }
 
     public void registerMachine(String nameMachine) {
@@ -101,18 +98,18 @@ public class Controller {
 
     public void setGlobalVarComponentList() {
 
-        String selectComponet = "select * from Component;";
+        String selectComponet = "select * from Component where fkMachine = ?;";
 
         List<fastech.model.Component> components = con.query(selectComponet,
-                new BeanPropertyRowMapper(fastech.model.Component.class));
+                new BeanPropertyRowMapper(fastech.model.Component.class),globalVars.getFkMachine());
 
         globalVars.setFkComponent(components);
 
     }
-    
+
     public void insertData(String nameType) {
-        setGlobalVarComponentList();
-        
+//        setGlobalVarComponentList();
+
         Integer idType = selectTypeData(nameType);
         Integer idComponent = selectIdComponent(idType);
         Integer valueComponent = selectValuesComponent(idType);
@@ -121,14 +118,14 @@ public class Controller {
 
         con.update(insertData, valueComponent, idComponent, globalVars.getFkMachine());
     }
-    
+
     public Integer selectTypeData(String nameType) {
         String getIdType = "SELECT * FROM Types WHERE NameType = ?;";
         Integer idType = 0;
         List<Types> listIdType = con.query(getIdType,
                 new BeanPropertyRowMapper(Types.class), nameType);
 
-        for(Types t : listIdType) {
+        for (Types t : listIdType) {
             idType = t.getIdType();
         }
 
@@ -147,10 +144,10 @@ public class Controller {
         return idComponent;
 
     }
-    
+
     public Integer selectValuesComponent(Integer idType) {
         switch (idType) {
-            case 1: 
+            case 1:
                 return tkDataServices.getCpuUsage();
             case 2:
                 return tkDataServices.getMemory();
@@ -160,40 +157,4 @@ public class Controller {
         System.out.println("Logger");
         return null;
     }
-    
-    public void insertDataCpu() {
-
-        setGlobalVarComponentList();
-
-        String insertCpuUsage = String.format("insert into Data(dtMoment,value,Component_idComponent,Component_fkMachine) Values('2020-11-25 23:53:00',50,1,2);");
-
-        Integer value = tkDataServices.getCpuUsage();
-
-//        con.update(insertCpuUsage, value, c.getIdComponent(), globalVars.getFkMachine());
-        con.update(insertCpuUsage);
-
-    }
-
-    public void insertDataMemory() {
-
-        String insertMemoryUsage = String.format("insert into Data(dtMoment,value,Component_idComponent,Component_fkMachine) Values(CONVERT(DATETIME,'%s',120),?,?,?);",
-                tkDataServices.dateNow());
-
-        Integer value = tkDataServices.getMemory();
-
-        con.update(insertMemoryUsage, value, 2, globalVars.getFkMachine());
-
-    }
-
-    public void insertDataFileSystem() {
-
-        String insertDiskUsage = String.format("insert into Data(dtMoment,value,Component_idComponent,Component_fkMachine) Values(CONVERT(DATETIME,'%s',120),?,?,?);",
-                tkDataServices.dateNow());
-
-        Integer value = tkDataServices.getAvailableDiskSpace();
-
-        con.update(insertDiskUsage, value, 3, globalVars.getFkMachine());
-
-    }
-
 }

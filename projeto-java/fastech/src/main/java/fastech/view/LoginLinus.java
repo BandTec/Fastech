@@ -5,12 +5,14 @@
  */
 package fastech.view;
 
+import fastech.controller.Controller;
+
 /**
  *
  * @author jose.marinho
  */
 public class LoginLinus extends javax.swing.JFrame {
-
+    Controller controller = new Controller();
     /**
      * Creates new form LoginLinus
      */
@@ -175,14 +177,22 @@ public class LoginLinus extends javax.swing.JFrame {
 
     private void btn_validate_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_validate_loginActionPerformed
         String login = lbl_email_user.getText();
-        String passwd = lbl_password_user.getText();
+        String passwd = new String(lbl_password_user.getPassword()).trim();
         
-        if(login.equals("Teste") && passwd.equals("urubu100")){
-            SelectMachine machines = new SelectMachine();
+        String controllerLogin;
+        controllerLogin = controller.login(login, passwd);
             
-            machines.setVisible(true);
+        if(controllerLogin.equals("OK")) {
+            SelectMachine selectMachine = new SelectMachine();
+            selectMachine.setVisible(true);
             this.setVisible(false);
+        } else if (controllerLogin.equals("N/OK")) {
+            
+        } else {
+            System.out.println("Erro");
         }
+        
+            
     }//GEN-LAST:event_btn_validate_loginActionPerformed
 
     /**

@@ -175,15 +175,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Maquina 1"/>
-                <StringItem index="1" value="Maquina 2"/>
-                <StringItem index="2" value="Maquina 3"/>
-                <StringItem index="3" value="Maquina 4"/>
-                <StringItem index="4" value="Maquina 5"/>
-              </StringArray>
-            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
