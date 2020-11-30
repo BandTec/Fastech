@@ -7,6 +7,7 @@ package fastech.model;
 public class Collaborator {
 
     private Integer idCollaborator;
+    private String name;
     private String cpf;
     private String login;
     private String password;
@@ -17,6 +18,7 @@ public class Collaborator {
     public String toString() {
         return "Collaborator{"
                 + "idCollaborator=" + idCollaborator
+                + ", name=" + name
                 + ", cpf=" + cpf
                 + ", login=" + login
                 + ", password=" + password
@@ -32,6 +34,14 @@ public class Collaborator {
     public void setIdCollaborator(Integer idCollaborator) {
         this.idCollaborator = idCollaborator;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }   
 
     public String getCpf() {
         return cpf;
