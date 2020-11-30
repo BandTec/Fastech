@@ -299,7 +299,7 @@
     <!-- Modal -->
     <div class="modal fade" id="machineModal" tabindex="-1" role="dialog" aria-labelledby="machineModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="machineModalLabel">Dados</h5>
@@ -314,58 +314,10 @@
                     </div>
                     <h6>Dados da máquina</h6>
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-12">
                             <div class="card">
-                                <div class="card-body" data-toggle="tooltip" data-placement="top" title="CPU">
-
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-body" data-toggle="tooltip" data-placement="top" title="Memória">
-
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-body" data-toggle="tooltip" data-placement="top" title="Disco">
-
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h6>Dados de testes</h6>
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-body" data-toggle="tooltip" data-placement="top" title="CPU">
-
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-body" data-toggle="tooltip" data-placement="top" title="Memória">
-
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-4">
-                            <div class="card">
-                                <div class="card-body" data-toggle="tooltip" data-placement="top" title="Disco">
-
-                                    <i class="fas fa-chart-line"></i>
+                                <div class="card-body">
+                                    <canvas id="processor_history"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -434,6 +386,7 @@
 <script src="./js/tooltip.js"></script>
 <script src="./js/modal.js"></script>
 <script src="./js/theme.js"></script>
+<script src="./js/cpu_history.js"></script>
 <!-- <script>loginUser()</script> -->
 
 </html>

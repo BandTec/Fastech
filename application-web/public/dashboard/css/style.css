@@ -19,7 +19,20 @@ body {
 }
 
 
+
 /* MACHINES */
+
+#machine_good{
+    color: #FFF;
+}
+
+#machine_warning{
+    color: yellow;
+}
+
+#machine_danger{
+    color: #FE4242;
+}
 
 #status_warning{
     border: 1px solid yellow;
@@ -81,10 +94,6 @@ body {
     margin: 5px;
 }
 
-#machineModal{
-    padding: 80px;
-}
-
 #machineModal h6{
     color: var(--blue-deafult);
 }
@@ -103,7 +112,15 @@ body {
     margin-top: 30px;
 }
 
+.map{
+    text-align: center;
+    font-size: 1.5em;
+}
+
 /* MODAL */
+.modal{
+    margin: 0 auto;
+}
 
 .modal-body .row {
     margin-left: 10px;
@@ -124,6 +141,11 @@ body {
 
 .modal-footer .btn {
     background-color: var(--blue-deafult);
+}
+
+#machineModal.modal .card, .modal .card-body {
+    border: none;
+    background-color: transparent !important;
 }
 
 
