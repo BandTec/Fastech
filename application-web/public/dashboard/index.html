@@ -43,8 +43,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/welcome.css">
-    <link rel="stylesheet" href="./css/graphs.css">
-    <link rel="shortcut icon" href="./img/Fastech_logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/Fastech_logo.png">
 
 </head>
 
@@ -156,37 +155,24 @@
 
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
+                    <div class="card-body">
 
-                            <div class="map col-12">
-                                <span class="notification col-md-3">
-                                    <span>
-                                        <h5>Bom</h5>
-                                        <i class="fas fa-laptop"></i>
-                                    </span>
-                                    <span class="badge good">3</span>
-                                </span>
+                        <div href="#" class="notification">
+                            <p>Perigo</p>
+                            <span class="badge">3</span>
+                            <i class="fa fa-laptop" aria-hidden="true"></i>
+                        </div>
 
-                                <span class="notification col-md-3">
-                                    <span>
-                                        <h5>Alerta</h5>
+                        <div href="#" class="notification">
+                            <p>Atenção</p>
+                            <span class="badge">3</span>
+                            <i class="fa fa-laptop" aria-hidden="true"></i>
+                        </div>
 
-                                        <i class="fas fa-laptop"></i>
-                                    </span>
-                                    <span class="badge warning">21</span>
-                                </span>
-
-                                <span class="notification">
-                                    <span>
-                                        <h5>Perigo</h5>
-
-                                        <i class="fas fa-laptop col-md-3"></i>
-                                    </span>
-                                    <span class="badge bad">21</span>
-                                </span>
-                            </div>
-
+                        <div href="#" class="notification">
+                            <p>Bom</p>
+                            <span class="badge">3</span>
+                            <i class="fa fa-laptop" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -201,21 +187,29 @@
                 <h2 class="title">Suas máquinas</h2>
             </div>
 
-            <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
+                    <div class="card-body">
 
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
-                        <div class="card-body">
-
-                            <div class="card-title">
-                                maquina 1
-
-                            </div>
-
-                            <i class="fas fa-plus" data-toggle="tooltip" data-placement="top" title="Ver mais"></i>
+                        <div class="card-title">
+                            maquina 1
+                            <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
                         </div>
+                        <div class="datas">
+                            <div class="row">
+                                CPU: <b id="data_cpu">59%</b>
+                            </div>
+                            <div class="row">
+                                Memória: <b id="data_memory">74%</b>
+                            </div>
+                            <div class="row">
+                                Disco: <b id="data_disk">25%</b>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top" title="" aria-hidden="true" data-original-title="Ver mais"></i><span class="sr-only">Ver mais</span>
                     </div>
                 </div>
+            </div>
 
 
 
