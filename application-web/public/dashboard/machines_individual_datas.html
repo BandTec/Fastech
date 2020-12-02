@@ -53,7 +53,7 @@
         <ul>
             <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="./index.html"><i
                         class="fas fa-home"></i></a></li>
-            <li data-toggle="tooltip" title="Gráficos"><a href="#"><i class="fas fa-search"></i></a></li>
+            <li data-toggle="modal" data-target="#search_machine"><a href="#"><i class="fas fa-search"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="./help.html"><i
                         class="fas fa-comments"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="./settings.html"><i
@@ -63,6 +63,34 @@
         </ul>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="search_machine" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Pesquisa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form action="#">
+                            <label for="name_machine">Nome da máquina</label>
+                            <input type="text" id="name_machine">
+
+                            <label id="error"></label>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="search_action">Buscar <i class="fas fa-search"></i> </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <!-- WELCOME -->
     <div class="container">
         <div class="welcome">
@@ -77,6 +105,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel"
@@ -126,6 +156,7 @@
 
                 <div class="row">
                     <h2 class="title" id="name_machine">Nome da maquina</h2>
+                    <i class="fas fa-plug" style="color: green;"></i>
                 </div>
 
                 <nav class="nav_tabs">
@@ -134,22 +165,26 @@
                             <input type="radio" name="tabs" class="rd_tabs" id="cpu" checked>
                             <label for="cpu">Processador <i class="fas fa-microchip"></i></label>
                             <div class="content">
+                                <div class="row">
 
-                                <div class="info_hardware">
-                                    Nome: ogho <br>
-                                    Marca: AMD <br>
-                                    Clock: 1.2Ghz <br>
-                                    Etc: hvbkhadvc
-                                </div>
+                                    <div class="info_hardware">
+                                        Nome: ogho <br>
+                                        Marca: AMD <br>
+                                        Clock: 1.2Ghz <br>
+                                        Etc: hvbkhadvc
+                                    </div>
 
-                                <div class="usable">
-                                    aqui vai ser a bolinha com o uso de cpu
+                                    <div class="progress">
+                                        <div class="barOverflow">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <span>39</span>
+                                    </div>
+
                                 </div>
 
                                 <div class="chart">
-                                   Amidão, aqui vai o gráfico de linha compridao &emsp;
-                                   Amidão, aqui vai o gráfico de linha compridao 
-                                   
+                                    <canvas id="cpu_history"></canvas>
                                 </div>
 
                             </div>
@@ -159,22 +194,26 @@
                             <input type="radio" name="tabs" class="rd_tabs" id="memory">
                             <label for="memory">Memória <i class="fas fa-memory"></i></label>
                             <div class="content">
+                                <div class="row">
 
-                                <div class="info_hardware">
-                                    Nome: ogho <br>
-                                    Marca: AMD <br>
-                                    Clock: 1.2Ghz <br>
-                                    Etc: hvbkhadvc
-                                </div>
+                                    <div class="info_hardware">
+                                        Nome: ogho <br>
+                                        Marca: KingSton <br>
+                                        Total: 16 Gib <br>
+                                        Etc: hvbkhadvc
+                                    </div>
 
-                                <div class="usable">
-                                    aqui vai ser a bolinha com o uso de cpu
+                                    <div class="progress">
+                                        <div class="barOverflow">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <span>87</span>
+                                    </div>
+
                                 </div>
 
                                 <div class="chart">
-                                   Amidão, aqui vai o gráfico de linha compridao &emsp;
-                                   Amidão, aqui vai o gráfico de linha compridao 
-                                   
+                                    <canvas id="memory_history"></canvas>
                                 </div>
 
                             </div>
@@ -182,49 +221,28 @@
 
                         <li>
                             <input type="radio" name="tabs" class="rd_tabs" id="disk">
-                            <label for="disk">Armazenamento <i class="fas fa-hdd"></i></label>
+                            <label for="disk">Disco <i class="fas fa-hdd"></i></label>
                             <div class="content">
+                                <div class="row">
 
-                                <div class="info_hardware">
-                                    Nome: ogho <br>
-                                    Marca: AMD <br>
-                                    Clock: 1.2Ghz <br>
-                                    Etc: hvbkhadvc
-                                </div>
+                                    <div class="info_hardware">
+                                        Nome: ogho <br>
+                                        Marca: AMD <br>
+                                        Clock: 1.2Ghz <br>
+                                        Etc: hvbkhadvc
+                                    </div>
 
-                                <div class="usable">
-                                    aqui vai ser a bolinha com o uso de cpu
+                                    <div class="progress">
+                                        <div class="barOverflow">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <span>24</span>
+                                    </div>
+
                                 </div>
 
                                 <div class="chart">
-                                   Amidão, aqui vai o gráfico de linha compridao &emsp;
-                                   Amidão, aqui vai o gráfico de linha compridao 
-                                   
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li>
-                            <input type="radio" name="tabs" class="rd_tabs" id="the_getaway">
-                            <label for="the_getaway">Rede <i class="fas fa-network-wired"></i></label>
-                            <div class="content">
-
-                                <div class="info_hardware">
-                                    Nome: ogho <br>
-                                    Marca: AMD <br>
-                                    Clock: 1.2Ghz <br>
-                                    Etc: hvbkhadvc
-                                </div>
-
-                                <div class="usable">
-                                    aqui vai ser a bolinha com o uso de cpu
-                                </div>
-
-                                <div class="chart">
-                                   Amidão, aqui vai o gráfico de linha compridao &emsp;
-                                   Amidão, aqui vai o gráfico de linha compridao 
-                                   
+                                    <canvas id="disk_history"></canvas>
                                 </div>
 
                             </div>
@@ -236,7 +254,11 @@
         </section>
 
     </div>
-
+    <script src="./js/tooltip.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/cpu_machine.js"></script>
+    <script src="./js/memory_machine.js"></script>
+    <script src="./js/disk_machine.js"></script>
 </body>
 
 </html>
