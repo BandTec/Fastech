@@ -1,7 +1,7 @@
 :root {
-    --background: #333333;
+    --background: #1a1a1a;
     --blue-deafult: #3B5998;
-    --secundary-bg: #515151;
+    --secundary-bg: #333;
     --out-color: #FE4242;
     --color-text: #FFFFFF;
 }
@@ -40,12 +40,6 @@
 #main-container .title{
     color: #fff;
     margin: 20px 0px 30px 40px;
-}
-
-#main-container .card{
-    padding: 10px;
-    background-color: var(--secundary-bg-dark);
-    border: 1px solid var(--color-theme);
 }
 
 #main-container .card .card-body .card-title{

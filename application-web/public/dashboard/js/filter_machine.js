@@ -79,18 +79,18 @@ var cpu = {
     }
 }
 
-window.onload = function() {
-    var ctx = document.getElementById('processor_history').getContext('2d');
-    window.historico_cpu = new Chart(ctx, cpu);
-};
+// window.onload = function() {
+//     var ctx = document.getElementById('filter_history').getContext('2d');
+//     window.historico_cpu = new Chart(ctx, cpu);
+// };
 
-setInterval(() => {
-    var ctx = document.getElementById('processor_history').getContext('2d');
-    window.historico_cpu = new Chart(ctx, cpu);    
-}, 3000);
+// setInterval(() => {
+//     var ctx = document.getElementById('filter_history').getContext('2d');
+//     window.historico_cpu = new Chart(ctx, cpu);    
+// }, 3000);
 
-function randomize(){
-    return (Math.random()*100).toFixed(2);
-}
+// function randomize(){
+//     return (Math.random()*100).toFixed(2);
+// }
 
 

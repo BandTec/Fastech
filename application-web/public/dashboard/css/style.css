@@ -1,7 +1,7 @@
 :root {
-    --background: #333333;
+    --background: #1a1a1a;
     --blue-deafult: #3B5998;
-    --secundary-bg: #515151;
+    --secundary-bg: #333;
     --out-color: #FE4242;
     --color-text: #FFFFFF;
 }
@@ -12,28 +12,15 @@
 }
 
 body {
-    background-color: var(--background);
+    background-color: #1a1a1a;
     overflow-x: hidden;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Arial', sans-serif;
     letter-spacing: 2px;
 }
 
 
 
 /* MACHINES */
-
-#machine_good{
-    color: #FFF;
-}
-
-#machine_warning{
-    color: yellow;
-}
-
-#machine_danger{
-    color: #FE4242;
-}
-
 #status_warning{
     border: 1px solid yellow;
 }
@@ -112,9 +99,39 @@ body {
     margin-top: 30px;
 }
 
+
+.notification {
+    color: black;
+    text-decoration: none;
+    padding: 8%;
+    position: relative;
+    display: inline-block;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+  }
+ 
+  .notification .badge {
+    position: absolute;
+    top: -15px;
+    right: -16px;
+    padding: 35px;
+    border-radius: 50%;
+    background-color: var(--blue-deafult);
+    color: white;
+  }
+
+  .notification h5{
+    font-size: 1.2em;
+    }
+
 .map{
     text-align: center;
     font-size: 1.5em;
+    color: var(--color-text);
+}
+
+.map i{
+    font-size: 2em;
 }
 
 /* MODAL */
@@ -127,7 +144,6 @@ body {
 }
 
 .modal-body label {
-    text-transform: uppercase;
     text-shadow: 0px 1px 2px black;
 }
 
@@ -271,6 +287,12 @@ input:checked+.slider:before {
 
 #main-container h1{
     color: #fff;
+}
+
+#main-container .card{
+    border: none;
+    background-color: transparent;
+    padding: 10px;
 }
 
 #main-container form input[type=text]{

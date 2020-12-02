@@ -53,8 +53,8 @@
         <ul>
             <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="./index.html"><i
                         class="fas fa-home"></i></a></li>
-            <li data-toggle="tooltip" data-placement="right" title="Gráficos"><a href="./graphs.html"><i
-                        class="fas fa-chart-pie"></i></a></li>
+            <li data-toggle="tooltip" title="Gráficos"><a href="#"><i
+                        class="fas fa-search"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="./help.html"><i
                         class="fas fa-comments"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="./settings.html"><i
@@ -131,28 +131,32 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <div class="card-title"> <span id="companyBranch">nome da company branch</span> <i
-                                    class="fas fa-hamburger"></i></div>
-
                             <div class="map col-12">
-                                <i id="machine_danger" class="fas fa-laptop col-1" data-toggle="tooltip"
-                                    data-placement="top" title="Maquina 1"></i>
-                                <i id="machine_good" class="fas fa-laptop col-1" data-toggle="tooltip"
-                                    data-placement="top" title="Maquina 2"></i>
-                                <i id="machine_warning" class="fas fa-laptop col-1" data-toggle="tooltip"
-                                    data-placement="top" title="Maquina 3"></i>
-                                <i id="machine_good" class="fas fa-laptop col-1" data-toggle="tooltip"
-                                    data-placement="top" title="Maquina 4"></i>
-                                <i id="machine_warning" class="fas fa-laptop col-1" data-toggle="tooltip"
-                                    data-placement="top" title="Maquina 5"></i>
-                                <i id="machine_good" class="fas fa-laptop col-1" data-toggle="tooltip"
-                                    data-placement="top" title="Maquina 6"></i>
-                                <i id="machine_danger" class="fas fa-laptop col-1" data-toggle="tooltip"
-                                    data-placement="top" title="Maquina 7"></i>
-                                <i id="machine_good" class="fas fa-laptop col-1" data-toggle="tooltip"
-                                    data-placement="top" title="Maquina 8"></i>
-                                <i id="machine_warning" class="fas fa-laptop col-1" data-toggle="tooltip"
-                                    data-placement="top" title="Maquina 9"></i>
+                                <span class="notification col-md-3">
+                                    <span>
+                                        <h5>Bom</h5>
+                                        <i class="fas fa-laptop"></i>
+                                    </span>
+                                    <span class="badge good">3</span>
+                                </span>
+
+                                <span class="notification col-md-3">
+                                    <span>
+                                        <h5>Alerta</h5>
+
+                                        <i class="fas fa-laptop"></i>
+                                    </span>
+                                    <span class="badge warning">21</span>
+                                </span>
+
+                                <span class="notification">
+                                    <span>
+                                        <h5>Perigo</h5>
+
+                                        <i class="fas fa-laptop col-md-3"></i>
+                                    </span>
+                                    <span class="badge bad">21</span>
+                                </span>
                             </div>
 
                         </div>
@@ -170,17 +174,17 @@
             </div>
 
             <div class="row">
+
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
                         <div class="card-body">
 
                             <div class="card-title">
                                 maquina 1
-                                <i class="fas fa-exclamation-circle"></i>
+
                             </div>
-                           
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
+
+                            <i class="fas fa-plus" data-toggle="tooltip" data-placement="top" title="Ver mais"></i>
                         </div>
                     </div>
                 </div>
@@ -188,7 +192,7 @@
 
 
                 <!-- Modal -->
-                <div class="modal fade" id="machineModal" tabindex="-1" role="dialog"
+                <!-- <div class="modal fade" id="machineModal" tabindex="-1" role="dialog"
                     aria-labelledby="machineModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-xl" role="document">
                         <div class="modal-content col-10">
@@ -217,7 +221,7 @@
                         </div>
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <br><br>
@@ -228,7 +232,7 @@
 <script src="./js/tooltip.js"></script>
 <script src="./js/modal.js"></script>
 <script src="./js/script.js"> </script>
-<script src="./js/cpu_history.js"></script>
+<script src="./js/machine_history.js"></script>
 
 
 
