@@ -22,35 +22,16 @@ body {
 
 /* MACHINES */
 #status_warning{
-    border: 1px solid yellow;
-}
-
-#status_warning .fa-exclamation-circle{
-    color: yellow;
+    border-left: 2px solid #8d7f05;
 }
 
 #status_danger{
-    border: 1px solid red;
-}
-
-#status_danger .fa-exclamation-circle{
-    color: red;
+    border-left: 2px solid #790c0c;
 }
 
 #status_good{
-    border: 1px solid green;
+    border-left: 2px solid #055e11;
 }
-
-#status_good .fa-exclamation-circle{
-    color: green;
-}
-
-#machines-container .fa-exclamation-circle{
-    position: relative;
-    top: -40px;
-    right: -55px;
-}
-
 
 #machines-container .title{
     color: #fff;
@@ -63,7 +44,7 @@ body {
 }
 
 #machines-container .card{
-    margin-top: 20px;
+    
     padding: 20px;
     padding-bottom: 0px;
     background-color: var(--secundary-bg-dark);
@@ -71,11 +52,17 @@ body {
     text-align: center;
 }
 
-#machines-container .datas{
-    background-color: #6b6a6a;
-    padding: 3px;
-    border-radius: 5px;
-}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    text-align: left;
+    padding: 8px;
+  }
 
 #machines-container .card-body .row {
     margin: 5px;
@@ -117,7 +104,7 @@ body {
 }
 
 .notification {
-    background-color: #555;
+    background-color: var(--secundary-bg);
     color: white;
     text-decoration: none;
     position: relative;
@@ -129,14 +116,15 @@ body {
     padding-top: 15px;
   }  
 
-  .notification p{
-      margin-left: 37%;
+  .notification h5{
+      margin-left: 35%;
+      padding: 5px;
   }
 
   .notification i{
     margin-left: 25%;
     font-size: 100px;
-    text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
+    text-shadow: 3px 3px 2px var(--secundary-bg);
 }
   .notification .badge {
     position: absolute;
@@ -144,11 +132,27 @@ body {
     right: -10px;
     width: 50px;
     height: 50px;
-    background-color: red;
+    background-color: #790c0c;
     color: white;
     padding-top: 12px;
     font-size: 24px;
   }
+
+  .notification i{
+    text-shadow: 6px 4px 6px #000000;
+  }
+
+  .notification .danger{
+      color: #790c0c;
+  }
+
+    .notification .good{
+        color: #055e11;
+    }
+
+    .notification .warning{
+        color: #8d7f05;
+    }
 
 /* MODAL */
 .modal{
@@ -284,20 +288,6 @@ input:checked+.slider:before {
 }
 
 
-/* Rounded sliders */
-
-.slider.round {
-    border-radius: 34px;
-}
-
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-.modal-footer .btn{
-    background-color: #3b5998;
-}
 
 /* HELP */
 

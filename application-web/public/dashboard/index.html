@@ -98,7 +98,7 @@
                 <div id="logo">
                     <img src="./img/Fastech_logo.png" alt="">
                 </div>
-                <h5 data-toggle="modal" data-target="#profileModal">Olá, <b>nome do usuário</b><i
+                <h5 data-toggle="modal" data-target="#profileModal">Olá, <b id="user">nome do usuário</b><i
                         class="fas fa-chevron-down"></i></h5>
 
                 <i class="fas fa-user" data-toggle="modal" data-target="#profileModal"></i>
@@ -150,7 +150,7 @@
     <div id="main-container">
         <div class="container">
             <div class="row">
-                <h2 class="title">Visão geral das máquinas</h2>
+                <h2 class="title">Estado geral das máquinas</h2>
             </div>
 
             <div class="row">
@@ -158,21 +158,21 @@
                     <div class="card-body">
 
                         <div href="#" class="notification">
-                            <p>Perigo</p>
+                            <h5>Perigo</h5>
                             <span class="badge">3</span>
-                            <i class="fa fa-laptop" aria-hidden="true"></i>
+                            <i class="fa fa-laptop danger" aria-hidden="true"></i>
                         </div>
 
                         <div href="#" class="notification">
-                            <p>Atenção</p>
+                            <h5>Atenção</h5>
                             <span class="badge">3</span>
-                            <i class="fa fa-laptop" aria-hidden="true"></i>
+                            <i class="fa fa-laptop warning" aria-hidden="true"></i>
                         </div>
 
                         <div href="#" class="notification">
-                            <p>Bom</p>
+                            <h5>Bom</h5>
                             <span class="badge">3</span>
-                            <i class="fa fa-laptop" aria-hidden="true"></i>
+                            <i class="fa fa-laptop good" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -193,61 +193,32 @@
 
                         <div class="card-title">
                             maquina 1
-                            <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
                         </div>
                         <div class="datas">
-                            <div class="row">
-                                CPU: <b id="data_cpu">59%</b>
-                            </div>
-                            <div class="row">
-                                Memória: <b id="data_memory">74%</b>
-                            </div>
-                            <div class="row">
-                                Disco: <b id="data_disk">25%</b>
-                            </div>
+                            <table>
+                                <tr>
+                                  <th>CPU</th>
+                                  <th id="value_cpu">78</th>
+                                </tr>
+                                <tr>
+                                  <th>Memory</th>
+                                  <th id="value_memory">88</th>
+                                </tr>
+                                <tr>
+                                  <th>Disk</th>
+                                  <th id="value_disk">48</th>
+                                </tr>
+                              </table>
                         </div>
-                        <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top" title="" aria-hidden="true" data-original-title="Ver mais"></i><span class="sr-only">Ver mais</span>
+                        <i class="fas fa-plus" data-toggle="tooltip" data-placement="top" title=""
+                            aria-hidden="true" data-original-title="Redirecionar"></i><span class="sr-only">Redirecionar</span>
                     </div>
                 </div>
             </div>
-
-
-
-                <!-- Modal -->
-                <!-- <div class="modal fade" id="machineModal" tabindex="-1" role="dialog"
-                    aria-labelledby="machineModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl" role="document">
-                        <div class="modal-content col-10">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="machineModalLabel">Dados</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <h6>Informações sobre </h6>
-                                    <b id="name">nome da maquina</b>
-                                </div>
-                                <h6>Dados da máquina</h6>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <canvas id="processor_history"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div> -->
-            </div>
         </div>
-        <br><br>
-        <br><br>
+    </div>
+    <br><br>
+    <br><br>
 
 </body>
 <script src="./js/tooltip.js"></script>
