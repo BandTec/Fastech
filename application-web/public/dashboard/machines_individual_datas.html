@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fastech | Dashboard - Inicio</title>
+    <title>Fastech | Dashboard - Dados</title>
 
 
     <!-- BOOTSTRAP -->
@@ -43,7 +43,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/welcome.css">
-    <link rel="shortcut icon" href="./img/Fastech_logo.png">
+    <link rel="stylesheet" href="./css/datas_machines.css">
+    <link rel="shortcut icon" href="./img/Fastech_logo.png" type="image/x-icon">
 
 </head>
 
@@ -90,7 +91,6 @@
 
         </div>
     </div>
-
     <!-- WELCOME -->
     <div class="container">
         <div class="welcome">
@@ -105,6 +105,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel"
@@ -147,116 +149,116 @@
         </div>
     </div>
 
-    <div id="main-container">
-        <div class="container">
-            <div class="row">
-                <h2 class="title">Visão geral das máquinas</h2>
-            </div>
+    <div id="main-datas-machine">
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="card-body">
+        <section class="datas_machines" id="datas_machines">
+            <div class="container">
 
-                        <div href="#" class="notification">
-                            <p>Perigo</p>
-                            <span class="badge">3</span>
-                            <i class="fa fa-laptop" aria-hidden="true"></i>
-                        </div>
-
-                        <div href="#" class="notification">
-                            <p>Atenção</p>
-                            <span class="badge">3</span>
-                            <i class="fa fa-laptop" aria-hidden="true"></i>
-                        </div>
-
-                        <div href="#" class="notification">
-                            <p>Bom</p>
-                            <span class="badge">3</span>
-                            <i class="fa fa-laptop" aria-hidden="true"></i>
-                        </div>
-                    </div>
+                <div class="row">
+                    <h2 class="title" id="name_machine">Nome da maquina</h2>
+                    <i class="fas fa-plug" style="color: green;"></i>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- MACHINES -->
-    <div id="machines-container">
-        <div class="container">
-            <div class="row">
-                <h2 class="title">Suas máquinas</h2>
-            </div>
-
-            <div class="col-md-4 col-sm-12">
-                <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
-                    <div class="card-body">
-
-                        <div class="card-title">
-                            maquina 1
-                            <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
-                        </div>
-                        <div class="datas">
-                            <div class="row">
-                                CPU: <b id="data_cpu">59%</b>
-                            </div>
-                            <div class="row">
-                                Memória: <b id="data_memory">74%</b>
-                            </div>
-                            <div class="row">
-                                Disco: <b id="data_disk">25%</b>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top" title="" aria-hidden="true" data-original-title="Ver mais"></i><span class="sr-only">Ver mais</span>
-                    </div>
-                </div>
-            </div>
-
-
-
-                <!-- Modal -->
-                <!-- <div class="modal fade" id="machineModal" tabindex="-1" role="dialog"
-                    aria-labelledby="machineModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl" role="document">
-                        <div class="modal-content col-10">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="machineModalLabel">Dados</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
+                <nav class="nav_tabs">
+                    <ul>
+                        <li>
+                            <input type="radio" name="tabs" class="rd_tabs" id="cpu" checked>
+                            <label for="cpu">Processador <i class="fas fa-microchip"></i></label>
+                            <div class="content">
                                 <div class="row">
-                                    <h6>Informações sobre </h6>
-                                    <b id="name">nome da maquina</b>
-                                </div>
-                                <h6>Dados da máquina</h6>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <canvas id="processor_history"></canvas>
-                                            </div>
-                                        </div>
+
+                                    <div class="info_hardware">
+                                        Nome: ogho <br>
+                                        Marca: AMD <br>
+                                        Clock: 1.2Ghz <br>
+                                        Etc: hvbkhadvc
                                     </div>
+
+                                    <div class="progress">
+                                        <div class="barOverflow">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <span>39</span>
+                                    </div>
+
                                 </div>
+
+                                <div class="chart">
+                                    <canvas id="cpu_history"></canvas>
+                                </div>
+
                             </div>
-                        </div>
+                        </li>
 
-                    </div>
-                </div> -->
+                        <li>
+                            <input type="radio" name="tabs" class="rd_tabs" id="memory">
+                            <label for="memory">Memória <i class="fas fa-memory"></i></label>
+                            <div class="content">
+                                <div class="row">
+
+                                    <div class="info_hardware">
+                                        Nome: ogho <br>
+                                        Marca: KingSton <br>
+                                        Total: 16 Gib <br>
+                                        Etc: hvbkhadvc
+                                    </div>
+
+                                    <div class="progress">
+                                        <div class="barOverflow">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <span>87</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="chart">
+                                    <canvas id="memory_history"></canvas>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <input type="radio" name="tabs" class="rd_tabs" id="disk">
+                            <label for="disk">Disco <i class="fas fa-hdd"></i></label>
+                            <div class="content">
+                                <div class="row">
+
+                                    <div class="info_hardware">
+                                        Nome: ogho <br>
+                                        Marca: AMD <br>
+                                        Clock: 1.2Ghz <br>
+                                        Etc: hvbkhadvc
+                                    </div>
+
+                                    <div class="progress">
+                                        <div class="barOverflow">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <span>24</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="chart">
+                                    <canvas id="disk_history"></canvas>
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
             </div>
-        </div>
-        <br><br>
-        <br><br>
+        </section>
 
+    </div>
+    <script src="./js/tooltip.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/cpu_machine.js"></script>
+    <script src="./js/memory_machine.js"></script>
+    <script src="./js/disk_machine.js"></script>
 </body>
-<script src="./js/tooltip.js"></script>
-<script src="./js/modal.js"></script>
-<script src="./js/script.js"> </script>
-<script src="./js/machine_history.js"></script>
-
-
-
-<!-- <script>loginUser()</script> -->
 
 </html>

@@ -14,7 +14,7 @@
 body {
     background-color: #1a1a1a;
     overflow-x: hidden;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     letter-spacing: 2px;
 }
 
@@ -99,6 +99,22 @@ body {
     margin-top: 30px;
 }
 
+#search_machine .search_action{
+    background-color: var(--blue-deafult);
+    color: #ffffff;
+    font-size: 1.2em;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#search_machine .search_action:hover{
+    opacity: 0.8;
+}
+
+#search_machine .search_action input{
+    outline: none;
+}
 
 .notification {
     background-color: #555;

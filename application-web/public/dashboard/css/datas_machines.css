@@ -1,0 +1,134 @@
+:root {
+    --background: #1a1a1a;
+    --blue-deafult: #3B5998;
+    --secundary-bg: #333;
+    --out-color: #FE4242;
+    --color-text: #FFFFFF;
+}
+
+#datas_machines h2{
+    margin-top: 2%;
+    color: #FFFFFF;
+}
+
+.fa-plug{
+    color: #ffffff;
+    font-size: 1.3em;
+}
+
+.datas_machines{
+    float: left;
+    width: 100%;
+    padding-bottom: 5%;
+}
+
+.datas_machines .nav_tabs{
+    width: 100%;
+    height: 750px;
+    margin: 50px auto;
+    background-color: #fff;
+    position: relative;
+}
+
+.datas_machines .nav_tabs ul{
+    list-style: none;
+}
+
+.datas_machines .nav_tabs ul li{
+    float: left;
+    width: 33.333333%;
+    height: 30px;
+}
+
+.datas_machines .nav_tabs label{
+    padding: 2%;
+    background-color: #232323;
+    display: block;
+    color: #fff;
+    background-color: var(--blue-deafult);
+    cursor: pointer;
+    text-align: center;
+    transition: .3s;
+}
+
+.datas_machines .nav_tabs label:hover{
+    color: #232323;
+}
+
+.datas_machines .rd_tabs:checked ~ label{
+    border-bottom: #232323 3px solid;
+}
+
+.datas_machines .rd_tabs {
+    display: none;
+}
+
+.datas_machines .content{
+    display: none;
+    position: absolute;
+    height: auto;
+    padding: 20px;
+    width: 100%;
+    left: 0;
+}
+
+.datas_machines .content .row{
+    margin: 0 auto;
+}
+
+.datas_machines .rd_tabs:checked ~ .content{
+    display: block;
+}
+
+.datas_machines .content .info_hardware{
+    float: left;
+    margin-left: 6%;
+    font-size: 1.2em;
+    width: 20%;
+}
+
+
+.datas_machines .content .chart{
+    color: #FFFFFF;
+    background-color: transparent;
+    float: left;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+/* PROGRESS BAR  */
+.progress{
+    position: relative;
+    text-align: center;
+    height: auto;
+    background-color: transparent;
+    display: block;
+    margin-left: 48%;
+  }
+  .barOverflow{ 
+    position: relative;
+    width: 180px; height: 90px; 
+    margin-bottom: -14px; 
+    overflow: hidden;
+  }
+  .bar{
+    position: absolute;
+    top: 0; left: 0;
+    width: 180px; height: 180px; 
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 30px solid var(--secundary-bg);
+    border-bottom-color: var(--blue-deafult);  
+    border-right-color: var(--blue-deafult);
+  }
+
+  .progress span{
+      top: 50%;
+      transform: translate(50%, 50%);
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+  }
