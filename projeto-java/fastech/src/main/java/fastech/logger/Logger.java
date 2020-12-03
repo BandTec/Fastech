@@ -27,7 +27,6 @@ public class Logger {
         insert.write(String.format("\nActive user: %s", user));
         insert.write(String.format("\nSession date: %s", dataServices.dateNow()));
         insert.write("\n-----------------------------------------------");
-
         insert.close();
     }
 
