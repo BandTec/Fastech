@@ -1,10 +1,10 @@
 package fastech.controller;
 
 import fastech.model.Collaborator;
-import fastech.model.GlobalVars;
 import fastech.model.Machine;
 import fastech.model.Types;
 import fastech.services.Connection;
+import static fastech.services.ObjectGlobalVars.getGlobalVars;
 import fastech.services.TakingDataServices;
 import java.util.List;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -25,7 +25,6 @@ public class Controller {
     HardwareAbstractionLayer hal = si.getHardware();
     OperatingSystem os = si.getOperatingSystem();
     TakingDataServices tkDataServices = new TakingDataServices();
-    GlobalVars globalVars = new GlobalVars();
 
     public String login(String login, String passWord) {
 
@@ -38,7 +37,7 @@ public class Controller {
 
             collaborator.forEach((Collaborator c) -> {
                 Integer fk = c.getFkCompanyBranch();
-                globalVars.setFkCompany(fk);
+                getGlobalVars().setFkCompany(fk);
             });
             return "OK";
         } else {
@@ -52,7 +51,7 @@ public class Controller {
         String selectAllMachines = "select * from Machine M where M.fkCompanyBranch = ?;";
 
         List<Machine> machines = con.query(selectAllMachines,
-                new BeanPropertyRowMapper(Machine.class), globalVars.getFkCompany());
+                new BeanPropertyRowMapper(Machine.class), getGlobalVars().getFkCompany());
 
         if (machines.size() > 0) {
             return machines;
@@ -67,18 +66,18 @@ public class Controller {
         String getIdMachine = String.format("select top 1 idMachine from Machine m where m.Name = '%s' and m.fkCompanyBranch = ? order by idMachine desc;", nameMachine);
 
         List<Machine> idMachine = con.query(getIdMachine,
-                new BeanPropertyRowMapper(Machine.class), globalVars.getFkCompany());
+                new BeanPropertyRowMapper(Machine.class), getGlobalVars().getFkCompany());
 
         idMachine.forEach((Machine m) -> {
-            globalVars.setFkMachine(m.getIdMachine());
+            getGlobalVars().setFkMachine(m.getIdMachine());
         });
-        System.out.println(globalVars.getFkMachine());
+        System.out.println(getGlobalVars().getFkMachine());
     }
 
     public void registerMachine(String nameMachine) {
 
         String addMachine = String.format("insert into Machine(Name , fkCompanyBranch ) values ('%s', ?);", nameMachine);
-        con.update(addMachine, globalVars.getFkCompany());
+        con.update(addMachine, getGlobalVars().getFkCompany());
 
         setGlobalMachine(nameMachine);
 
@@ -89,10 +88,10 @@ public class Controller {
         addComponents.append(String.format("insert into Component (Name ,fkMachine ,fkType) values ('%s', ?, 4);", "Network"));
 
         con.update(addComponents.toString(),
-                globalVars.getFkMachine(),
-                globalVars.getFkMachine(),
-                globalVars.getFkMachine(),
-                globalVars.getFkMachine()
+                getGlobalVars().getFkMachine(),
+                getGlobalVars().getFkMachine(),
+                getGlobalVars().getFkMachine(),
+                getGlobalVars().getFkMachine()
         );
 
     }
@@ -102,14 +101,14 @@ public class Controller {
         String selectComponet = "select * from Component where fkMachine = ?;";
 
         List<fastech.model.Component> components = con.query(selectComponet,
-                new BeanPropertyRowMapper(fastech.model.Component.class),globalVars.getFkMachine());
+                new BeanPropertyRowMapper(fastech.model.Component.class),getGlobalVars().getFkMachine());
 
-        globalVars.setFkComponent(components);
+        getGlobalVars().setFkComponent(components);
 
     }
 
     public void insertData(String nameType) {
-//        setGlobalVarComponentList();
+    
 
         Integer idType = selectTypeData(nameType);
         Integer idComponent = selectIdComponent(idType);
@@ -117,7 +116,7 @@ public class Controller {
         String insertData = String.format("insert into Data(dtMoment,value,Component_idComponent,Component_fkMachine) Values(CONVERT(DATETIME,'%s',120),?,?,?);",
                 tkDataServices.dateNow());
 
-        con.update(insertData, valueComponent, idComponent, globalVars.getFkMachine());
+        con.update(insertData, valueComponent, idComponent, getGlobalVars().getFkMachine());
     }
 
     public Integer selectTypeData(String nameType) {
@@ -135,7 +134,7 @@ public class Controller {
 
     public Integer selectIdComponent(Integer idType) {
         Integer idComponent = 0;
-        for (fastech.model.Component c : globalVars.getFkComponent()) {
+        for (fastech.model.Component c : getGlobalVars().getFkComponent()) {
             if (c.getFkType().equals(idType)) {
 
                 idComponent = c.getIdComponent();
