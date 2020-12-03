@@ -5,8 +5,8 @@
  */
 package fastech.view;
 
-import fastech.controller.Controller;
 import fastech.model.Machine;
+import static fastech.services.ObjectController.getController;
 import java.util.List;
 
 /**
@@ -14,11 +14,9 @@ import java.util.List;
  * @author Jose Lucas
  */
 public class SelectMachine extends javax.swing.JFrame {
-    Controller controller;
 
-    public SelectMachine(Controller controller) {
+    public SelectMachine() {
         initComponents();
-        this.controller = controller;
         showAllMachines();
     }
 
@@ -158,7 +156,7 @@ public class SelectMachine extends javax.swing.JFrame {
 
     private void showAllMachines() {
         System.out.println("dsasdsadas");
-        List<Machine> machines = controller.showAllMachine();
+        List<Machine> machines = getController().showAllMachine();
         System.out.println(machines);
         System.out.println("sdas");
         for (Machine m : machines) {
@@ -168,10 +166,12 @@ public class SelectMachine extends javax.swing.JFrame {
     }
 
     private void btn_login_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_userActionPerformed
-//       LinusDashboardHome dashHome = new LinusDashboardHome();
-//       
-//       dashHome.setVisible(true);
-//       this.setVisible(false);
+       String nameMachine = jComboBox1.getSelectedItem().toString();
+       getController().setGlobalMachine(nameMachine);
+       
+       LinusDashboardHome dashHome = new LinusDashboardHome();
+       dashHome.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_btn_login_userActionPerformed
 
     private void btn_insert_machineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_insert_machineActionPerformed

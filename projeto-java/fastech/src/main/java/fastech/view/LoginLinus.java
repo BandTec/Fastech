@@ -5,14 +5,13 @@
  */
 package fastech.view;
 
-import fastech.controller.Controller;
+import static fastech.services.ObjectController.getController;
 
 /**
  *
  * @author jose.marinho
  */
 public class LoginLinus extends javax.swing.JFrame {
-    Controller controller = new Controller();
     /**
      * Creates new form LoginLinus
      */
@@ -194,10 +193,10 @@ public class LoginLinus extends javax.swing.JFrame {
         String passwd = new String(lbl_password_user.getPassword()).trim();
         
         String controllerLogin;
-        controllerLogin = controller.login(login, passwd);
+        controllerLogin = getController().login(login, passwd);
             
         if(controllerLogin.equals("OK")) {
-            SelectMachine selectMachine = new SelectMachine(controller);
+            SelectMachine selectMachine = new SelectMachine();
             selectMachine.setVisible(true);
             this.setVisible(false);
         } else{
