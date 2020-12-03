@@ -43,6 +43,7 @@ public class LoginLinus extends javax.swing.JFrame {
         btn_validate_login = new javax.swing.JButton();
         lbl_password_user = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
+        lblErrorLogin = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -98,6 +99,11 @@ public class LoginLinus extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/key.png"))); // NOI18N
 
+        lblErrorLogin.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblErrorLogin.setForeground(new java.awt.Color(255, 0, 0));
+        lblErrorLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblErrorLogin.setToolTipText("");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -127,8 +133,11 @@ public class LoginLinus extends javax.swing.JFrame {
                         .addGap(149, 149, 149)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)))
-                .addContainerGap(111, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(lblErrorLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +164,9 @@ public class LoginLinus extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addComponent(btn_validate_login, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95))
+                .addGap(29, 29, 29)
+                .addComponent(lblErrorLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,13 +197,11 @@ public class LoginLinus extends javax.swing.JFrame {
         controllerLogin = controller.login(login, passwd);
             
         if(controllerLogin.equals("OK")) {
-            SelectMachine selectMachine = new SelectMachine();
+            SelectMachine selectMachine = new SelectMachine(controller);
             selectMachine.setVisible(true);
             this.setVisible(false);
-        } else if (controllerLogin.equals("N/OK")) {
+        } else{
             
-        } else {
-            System.out.println("Erro");
         }
         
             
@@ -243,6 +252,7 @@ public class LoginLinus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblErrorLogin;
     private javax.swing.JTextField lbl_email_user;
     private javax.swing.JPasswordField lbl_password_user;
     // End of variables declaration//GEN-END:variables

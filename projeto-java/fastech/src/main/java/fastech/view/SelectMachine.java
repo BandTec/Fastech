@@ -6,7 +6,6 @@
 package fastech.view;
 
 import fastech.controller.Controller;
-import fastech.model.GlobalVars;
 import fastech.model.Machine;
 import java.util.List;
 
@@ -15,14 +14,11 @@ import java.util.List;
  * @author Jose Lucas
  */
 public class SelectMachine extends javax.swing.JFrame {
+    Controller controller;
 
-    Controller controller = new Controller();
-
-    /**
-     * Creates new form SelectMachine
-     */
-    public SelectMachine() {
+    public SelectMachine(Controller controller) {
         initComponents();
+        this.controller = controller;
         showAllMachines();
     }
 

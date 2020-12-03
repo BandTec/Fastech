@@ -37,7 +37,8 @@ public class Controller {
         if (collaborator.size() > 0) {
 
             collaborator.forEach((Collaborator c) -> {
-                globalVars.setFkCompany(c.getFkCompanyBranch());
+                Integer fk = c.getFkCompanyBranch();
+                globalVars.setFkCompany(fk);
             });
             return "OK";
         } else {

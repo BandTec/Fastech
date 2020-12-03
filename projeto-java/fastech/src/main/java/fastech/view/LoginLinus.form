@@ -87,8 +87,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                          <Component id="lblErrorLogin" min="-2" pref="227" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="111" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -123,7 +127,9 @@
                   </Group>
                   <EmptySpace pref="116" max="32767" attributes="0"/>
                   <Component id="btn_validate_login" min="-2" pref="46" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="lblErrorLogin" min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -260,6 +266,18 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/img/key.png"/>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblErrorLogin">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
       </SubComponents>
