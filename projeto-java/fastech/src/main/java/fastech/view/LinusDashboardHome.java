@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fastech.view;
-
-import fastech.oshi.gui.Oshi;
-import java.util.List;
 
 /**
  *
  * @author Jose Lucas
  */
 public class LinusDashboardHome extends javax.swing.JFrame {
-    Oshi oshi = new Oshi();
     
     /**
      * Creates new form LinusDashboard
@@ -660,128 +651,33 @@ public class LinusDashboardHome extends javax.swing.JFrame {
     
     
     public void printValues() {
-        printValueCpu();
-        printValueMemory();
-        printValueDisk();
-        printProcCpu();
-        printProcPid();
-        printProcMem();
-        printProcName();
+        
     }
     
     public void printValueCpu() {
-        Integer valueCpu = oshi.getValuesProcessor();
-        jpbValueCpu.setValue(valueCpu);
+        
+  
     }
     
     public void printValueMemory() {
-        Integer valueMemory = oshi.getValuesMemory();
-        jpbValueMemory.setValue(valueMemory);
+           
     }
     
     public void printValueDisk() {
-        Integer valueDisk = oshi.getValuesFileSystem();
-        jpbValueDisk.setValue(valueDisk);
+        
     }
     
     public void printProcCpu() {
-        List<String> procCpu = oshi.getValuesProcCpu();
-        lblProcCpu.setText("");
-        String text = "";
-        for(int i = 0; i < 5; i++) {
-            switch (i) {
-                case 0:
-                    lblProcCpu.setText(procCpu.get(i) + "%");
-                    break;
-                case 1:
-                    lblProcCpu1.setText(procCpu.get(i) + "%");
-                    break;
-                case 2:
-                    lblProcCpu2.setText(procCpu.get(i)  + "%");
-                    break;
-                case 3:
-                    lblProcCpu3.setText(procCpu.get(i) + "%");
-                    break;
-                case 4:
-                    lblProcCpu4.setText(procCpu.get(i) + "%");
-                    break;
-                default:
-                    break;
-            }
-        }
+        
     }
     public void printProcPid() {
-        List<String> procPid = oshi.getValuesProcPid();
-        String text = "";
-        for(int i = 0; i < 5; i++) {
-            switch (i) {
-                case 0:
-                    lblProcPid.setText(procPid.get(i));
-                    break;
-                case 1:
-                    lblProcPid1.setText(procPid.get(i));
-                    break;
-                case 2:
-                    lblProcPid2.setText(procPid.get(i));
-                    break;
-                case 3:
-                    lblProcPid3.setText(procPid.get(i));
-                    break;
-                case 4:
-                    lblProcPid4.setText(procPid.get(i));
-                    break;
-                default:
-                    break;
-            }
-        }
+        
     }
     public void printProcMem() {
-        List<String> procMem = oshi.getValuesProcMem();
-        for(int i = 0; i < 5; i++) {
-            switch (i) {
-                case 0:
-                    lblProcMem.setText(procMem.get(i) + "%");
-                    break;
-                case 1:
-                    lblProcMem1.setText(procMem.get(i) + "%");
-                    break;
-                case 2:
-                    lblProcMem2.setText(procMem.get(i) + "%");
-                    break;
-                case 3:
-                    lblProcMem3.setText(procMem.get(i) + "%");
-                    break;
-                case 4:
-                    lblProcMem4.setText(procMem.get(i) + "%");
-                    break;
-                default:
-                    break;
-            }
-        }
+        
     }
     public void printProcName() {
-        List<String> procName = oshi.getValuesProcName();
-        for(int i = 0; i < 5; i++) {
-            switch (i) {
-                case 0:
-                    lblProcName.setText(procName.get(i));
-                    break;
-                case 1:
-                    lblProcName1.setText(procName.get(i));
-                    break;
-                case 2:
-                    lblProcName2.setText(procName.get(i));
-                    break;
-                case 3:
-                    lblProcName3.setText(procName.get(i));
-                    break;
-                case 4:
-                    lblProcName4.setText(procName.get(i));
-                    break;
-                default:
-                    break;
-            }
-        }
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
