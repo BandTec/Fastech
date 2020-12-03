@@ -12,12 +12,13 @@ import static fastech.services.ObjectController.getController;
  * @author jose.marinho
  */
 public class LoginLinus extends javax.swing.JFrame {
+
     /**
      * Creates new form LoginLinus
      */
     public LoginLinus() {
         initComponents();
-        
+
         Uteis ut = new Uteis();
         ut.insertIcon(this);
     }
@@ -192,18 +193,19 @@ public class LoginLinus extends javax.swing.JFrame {
         String login = lbl_email_user.getText();
         String passwd = new String(lbl_password_user.getPassword()).trim();
         
-        String controllerLogin;
-        controllerLogin = getController().login(login, passwd);
-            
-        if(controllerLogin.equals("OK")) {
-            SelectMachine selectMachine = new SelectMachine();
-            selectMachine.setVisible(true);
-            this.setVisible(false);
-        } else{
-            
+        String controllerLogin  = "N/OK";
+        try {
+            controllerLogin = getController().login(login, passwd);
+        } finally {
+            if (controllerLogin.equals("OK")) {
+                SelectMachine selectMachine = new SelectMachine();
+                selectMachine.setVisible(true);
+                this.setVisible(false);
+            } else {
+
+            }
         }
-        
-            
+
     }//GEN-LAST:event_btn_validate_loginActionPerformed
 
     /**

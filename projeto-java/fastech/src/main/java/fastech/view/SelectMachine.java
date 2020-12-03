@@ -166,7 +166,8 @@ public class SelectMachine extends javax.swing.JFrame {
     }
 
     private void btn_login_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_userActionPerformed
-       String nameMachine = jComboBox1.getSelectedItem().toString();
+       String nameMachine = jComboBox1.getSelectedItem().toString().trim();
+        System.out.println(nameMachine);
        getController().setGlobalMachine(nameMachine);
        
        LinusDashboardHome dashHome = new LinusDashboardHome();
