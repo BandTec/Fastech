@@ -28,8 +28,12 @@
     <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
     <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
 
-    <!-- FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- FONT
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+
 
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/3db2c990f7.js" crossorigin="anonymous"></script>
@@ -38,7 +42,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/welcome.css">
-    <link rel="shortcut icon" href="./img/Fastech_logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/Fastech_logo.png">
 
 </head>
 
@@ -47,8 +51,7 @@
         <ul>
             <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="./index.html"><i
                         class="fas fa-home"></i></a></li>
-            <li data-toggle="tooltip" data-placement="right" title="Gráficos"><a href="./graphs.html"><i
-                        class="fas fa-chart-pie"></i></a></li>
+            <li data-toggle="modal" data-target="#search_machine"><a href="#"><i class="fas fa-search"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="./help.html"><i
                         class="fas fa-comments"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="./settings.html"><i
@@ -58,6 +61,35 @@
         </ul>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="search_machine" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Pesquisa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form action="#">
+                            <label for="name_machine">Nome da máquina</label>
+                            <input type="text" id="name_machine">
+
+                            <label id="error"></label>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="search_action">Buscar <i class="fas fa-search"></i> </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <!-- WELCOME -->
     <div class="container">
         <div class="welcome">
@@ -65,13 +97,13 @@
                 <div id="logo">
                     <img src="./img/Fastech_logo.png" alt="">
                 </div>
-                <h5 data-toggle="modal" data-target="#profileModal">Olá, <b id="user"></b><i class="fas fa-chevron-down"></i></h5>
-
+                <h5 data-toggle="modal" data-target="#profileModal">Olá, <b id="user">nome do usuário</b><i
+                        class="fas fa-chevron-down"></i></h5>
                 <i class="fas fa-user" data-toggle="modal" data-target="#profileModal"></i>
             </div>
         </div>
     </div>
-    
+
     <!-- Modal -->
     <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel"
         aria-hidden="true">
@@ -116,33 +148,29 @@
     <div id="main-container">
         <div class="container">
             <div class="row">
-                <h2 class="title">Média geral</h2>
+                <h2 class="title">Estado geral das máquinas</h2>
             </div>
 
             <div class="row">
-                <div class="col-md-4 col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title"> CPU </div>
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-12">
+                    <div class="card-body">
 
-                <div class="col-md-4 col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title"> Memória </div>
-                            <i class="fas fa-chart-line"></i>
+                        <div href="#" class="notification">
+                            <h5>Perigo</h5>
+                            <span class="badge">3</span>
+                            <i class="fa fa-laptop danger" aria-hidden="true"></i>
                         </div>
-                    </div>
-                </div>
 
-                <div class="col-md-4 col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-title"> Disco </div>
-                            <i class="fas fa-chart-line"></i>
+                        <div href="#" class="notification">
+                            <h5>Atenção</h5>
+                            <span class="badge">3</span>
+                            <i class="fa fa-laptop warning" aria-hidden="true"></i>
+                        </div>
+
+                        <div href="#" class="notification">
+                            <h5>Bom</h5>
+                            <span class="badge">3</span>
+                            <i class="fa fa-laptop good" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -157,127 +185,43 @@
                 <h2 class="title">Suas máquinas</h2>
             </div>
 
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
-                        <div class="card-body">
+            <div class="col-md-4 col-sm-12">
+                <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
+                    <div class="card-body">
 
-                            <div class="card-title">
-                                maquina 1
-                                <i class="fas fa-exclamation-circle"></i>
-                            </div>
-                            <div class="datas">
-                                <div class="row">
-                                    CPU: <b id="data_cpu">59%</b>
-                                </div>
-                                <div class="row">
-                                    Memória: <b id="data_memory">74%</b>
-                                </div>
-                                <div class="row">
-                                    Disco: <b id="data_disk">25%</b>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down" data-toggle="tooltip" data-placement="top"
-                                title="Ver mais"></i>
+                        <div class="card-title">
+                            maquina 1
                         </div>
-                    </div>
-                </div>
-
-
-
-                <!-- Modal -->
-                <div class="modal fade" id="machineModal" tabindex="-1" role="dialog"
-                    aria-labelledby="machineModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="machineModalLabel">Dados</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <h6>Informações sobre </h6>
-                                    <b id="name">nome da maquina</b>
-                                </div>
-                                <h6>Dados da máquina</h6>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <div class="card">
-                                            <div class="card-body" data-toggle="tooltip" data-placement="top"
-                                                title="CPU">
-
-                                                <i class="fas fa-chart-line"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-4">
-                                        <div class="card">
-                                            <div class="card-body" data-toggle="tooltip" data-placement="top"
-                                                title="Memória">
-
-                                                <i class="fas fa-chart-line"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-4">
-                                        <div class="card">
-                                            <div class="card-body" data-toggle="tooltip" data-placement="top"
-                                                title="Disco">
-
-                                                <i class="fas fa-chart-line"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h6>Dados de testes</h6>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <div class="card">
-                                            <div class="card-body" data-toggle="tooltip" data-placement="top"
-                                                title="CPU">
-
-                                                <i class="fas fa-chart-line"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-4">
-                                        <div class="card">
-                                            <div class="card-body" data-toggle="tooltip" data-placement="top"
-                                                title="Memória">
-
-                                                <i class="fas fa-chart-line"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-4">
-                                        <div class="card">
-                                            <div class="card-body" data-toggle="tooltip" data-placement="top"
-                                                title="Disco">
-
-                                                <i class="fas fa-chart-line"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="datas">
+                            <table>
+                                <tr>
+                                  <th>CPU</th>
+                                  <th id="value_cpu">78</th>
+                                </tr>
+                                <tr>
+                                  <th>Memory</th>
+                                  <th id="value_memory">88</th>
+                                </tr>
+                                <tr>
+                                  <th>Disk</th>
+                                  <th id="value_disk">48</th>
+                                </tr>
+                              </table>
                         </div>
+                        <i class="fas fa-plus" data-toggle="tooltip" data-placement="top" title=""
+                            aria-hidden="true" data-original-title="Redirecionar"></i><span class="sr-only">Redirecionar</span>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
     <br><br>
     <br><br>
+
 </body>
 <script src="./js/tooltip.js"></script>
 <script src="./js/modal.js"></script>
 <script src="./js/script.js"> </script>
 <script>setVars()</script>
+<script src="./js/machine_history.js"></script>
 </html>

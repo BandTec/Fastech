@@ -1,7 +1,7 @@
 :root{
     --background-dark: #333;
     --blue-deafult: #3B5998;
-    --secundary-bg-dark: #515151;
+    --secundary-bg-dark: #333;
     --color-theme: #6C718A;
     --out-color: #FE4242;
 }
@@ -10,7 +10,7 @@
     background-color: var(--secundary-bg-dark);
     border-radius: 5px;
     padding: 20px;
-    margin: 23% 8%;
+    margin: 23% 4%;
     transform: translate(-50%,-50%);
     position: fixed;
 }
@@ -20,7 +20,7 @@
 }
 
 .sidebar ul li{
-    font-size: 2em;
+    font-size: 2.4em;
     padding-top: 95%;
     list-style: none;
 }
@@ -37,6 +37,10 @@
 
 .sidebar ul li a:hover{
     opacity: .5;
+}
+
+.modal-body label{
+    text-transform: none;
 }
 
 /* RESPONSIVIDADE */
@@ -64,7 +68,7 @@
     }
 
     .sidebar ul li{
-        font-size: 1.7em;
+        font-size: 1.6em;
         display: inline-block;
         padding-top: 0%;
         margin-right: 9%;
@@ -83,22 +87,22 @@
 
 @media only screen and (max-width: 425px){
     .sidebar ul li:nth-child(1){
-        margin-left: 4%;
+        margin-left: 4% !important;
     }
 
     .sidebar ul li{
-        font-size: 1.6em;
+        font-size: 1.4em;
         margin-right: 11%;
     }
 }
 
 @media only screen and (max-width: 375px){
     .sidebar ul li:nth-child(1){
-        margin-left: 5%;
+        margin-left: 5% !important;
     }
 
     .sidebar ul li{
-        font-size: 1.6em;
+        font-size: 1.4em;
         margin-right: 8%;
     }
 }
