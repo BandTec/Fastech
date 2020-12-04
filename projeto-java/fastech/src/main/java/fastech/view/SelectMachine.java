@@ -24,6 +24,9 @@ public class SelectMachine extends javax.swing.JFrame {
     public SelectMachine() {
         initComponents();
         showAllMachines();
+        
+         Uteis ut = new Uteis();
+        ut.insertIcon(this);
     }
 
     /**
@@ -164,7 +167,7 @@ public class SelectMachine extends javax.swing.JFrame {
         System.out.println("dsasdsadas");
         List<Machine> machines = controller.showAllMachine();
         System.out.println(machines);
-        System.out.println("sdas");
+        
         for (Machine m : machines) {
             System.out.println(m);
             jComboBox1.addItem(m.getName());
@@ -172,10 +175,10 @@ public class SelectMachine extends javax.swing.JFrame {
     }
 
     private void btn_login_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_userActionPerformed
-//       LinusDashboardHome dashHome = new LinusDashboardHome();
-//       
-//       dashHome.setVisible(true);
-//       this.setVisible(false);
+       LinusDashboardHome dashHome = new LinusDashboardHome();
+       
+       dashHome.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_btn_login_userActionPerformed
 
     private void btn_insert_machineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_insert_machineActionPerformed
