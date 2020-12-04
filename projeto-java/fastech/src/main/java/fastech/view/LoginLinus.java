@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fastech.view;
 
 import static fastech.services.ObjectController.getController;
@@ -192,8 +187,8 @@ public class LoginLinus extends javax.swing.JFrame {
     private void btn_validate_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_validate_loginActionPerformed
         String login = lbl_email_user.getText();
         String passwd = new String(lbl_password_user.getPassword()).trim();
-        
-        String controllerLogin  = "N/OK";
+
+        String controllerLogin = "N/OK";
         try {
             controllerLogin = getController().login(login, passwd);
         } finally {

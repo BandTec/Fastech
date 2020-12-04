@@ -79,10 +79,5 @@ public class Views {
         if(run) {
             timer.scheduleAtFixedRate(tarefa, 0, seg);
         }
-        
-//        c.setGlobalMachine("XPTO");
-//
-//        c.insertData("Disk");
-        // TYPES "Cpu", "Memory", "Disk", OR SELECT * FROM Types;
     }
 }

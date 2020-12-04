@@ -26,7 +26,7 @@ public class Controller {
     OperatingSystem os = si.getOperatingSystem();
     TakingDataServices tkDataServices = new TakingDataServices();
     GlobalVars globalVars = new GlobalVars();
-    
+
     public String login(String login, String passWord) {
 
         String selectLogin = "select * from Collaborator where login = ? and password = ?;";
@@ -102,14 +102,13 @@ public class Controller {
         String selectComponet = "select * from Component where fkMachine = ?;";
 
         List<fastech.model.Component> components = con.query(selectComponet,
-                new BeanPropertyRowMapper(fastech.model.Component.class),globalVars.getFkMachine());
+                new BeanPropertyRowMapper(fastech.model.Component.class), globalVars.getFkMachine());
 
         globalVars.setFkComponent(components);
 
     }
 
     public void insertData(String nameType) {
-    
 
         Integer idType = selectTypeData(nameType);
         Integer idComponent = selectIdComponent(idType);
