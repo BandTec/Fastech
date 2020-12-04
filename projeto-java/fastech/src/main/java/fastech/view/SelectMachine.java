@@ -156,7 +156,6 @@ public class SelectMachine extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void showAllMachines() {
-        System.out.println("dsasdsadas");
         List<Machine> machines = getController().showAllMachine();
         System.out.println(machines);
 
