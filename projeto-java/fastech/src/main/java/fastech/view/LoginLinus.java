@@ -189,17 +189,17 @@ public class LoginLinus extends javax.swing.JFrame {
         String passwd = new String(lbl_password_user.getPassword()).trim();
 
         String controllerLogin = "N/OK";
-        try {
-            controllerLogin = getController().login(login, passwd);
-        } finally {
-            if (controllerLogin.equals("OK")) {
-                SelectMachine selectMachine = new SelectMachine();
-                selectMachine.setVisible(true);
-                this.setVisible(false);
-            } else {
 
-            }
+        controllerLogin = getController().login(login, passwd);
+
+        if (controllerLogin.equals("OK")) {
+            SelectMachine selectMachine = new SelectMachine();
+            selectMachine.setVisible(true);
+            this.setVisible(false);
+        } else {
+
         }
+
 
     }//GEN-LAST:event_btn_validate_loginActionPerformed
 
