@@ -37,7 +37,8 @@ public class Controller {
         if (collaborator.size() > 0) {
 
             collaborator.forEach((Collaborator c) -> {
-                globalVars.setFkCompany(c.getFkCompanyBranch());
+                Integer fk = c.getFkCompanyBranch();
+                globalVars.setFkCompany(fk);
             });
             return "OK";
         } else {
@@ -101,14 +102,13 @@ public class Controller {
         String selectComponet = "select * from Component where fkMachine = ?;";
 
         List<fastech.model.Component> components = con.query(selectComponet,
-                new BeanPropertyRowMapper(fastech.model.Component.class),globalVars.getFkMachine());
+                new BeanPropertyRowMapper(fastech.model.Component.class), globalVars.getFkMachine());
 
         globalVars.setFkComponent(components);
 
     }
 
     public void insertData(String nameType) {
-//        setGlobalVarComponentList();
 
         Integer idType = selectTypeData(nameType);
         Integer idComponent = selectIdComponent(idType);

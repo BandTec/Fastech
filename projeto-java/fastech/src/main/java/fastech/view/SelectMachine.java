@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fastech.view;
 
-import fastech.controller.Controller;
-import fastech.model.GlobalVars;
 import fastech.model.Machine;
+import static fastech.services.ObjectController.getController;
 import java.util.List;
 
 /**
@@ -16,17 +10,15 @@ import java.util.List;
  */
 public class SelectMachine extends javax.swing.JFrame {
 
-    Controller controller = new Controller();
-
-    /**
-     * Creates new form SelectMachine
-     */
     public SelectMachine() {
         initComponents();
-        showAllMachines();
         
-         Uteis ut = new Uteis();
+        Uteis ut = new Uteis();
         ut.insertIcon(this);
+        
+        showAllMachines();
+
+       
     }
 
     /**
@@ -165,9 +157,9 @@ public class SelectMachine extends javax.swing.JFrame {
 
     private void showAllMachines() {
         System.out.println("dsasdsadas");
-        List<Machine> machines = controller.showAllMachine();
+        List<Machine> machines = getController().showAllMachine();
         System.out.println(machines);
-        
+
         for (Machine m : machines) {
             System.out.println(m);
             jComboBox1.addItem(m.getName());
@@ -175,10 +167,17 @@ public class SelectMachine extends javax.swing.JFrame {
     }
 
     private void btn_login_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_userActionPerformed
-       LinusDashboardHome dashHome = new LinusDashboardHome();
-       
-       dashHome.setVisible(true);
-       this.setVisible(false);
+
+        LinusDashboardHome dashHome = new LinusDashboardHome();
+
+        String nameMachine = jComboBox1.getSelectedItem().toString().trim();
+        System.out.println(nameMachine);
+        getController().setGlobalMachine(nameMachine);
+        getController().setGlobalVarComponentList();
+
+
+        dashHome.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btn_login_userActionPerformed
 
     private void btn_insert_machineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_insert_machineActionPerformed
