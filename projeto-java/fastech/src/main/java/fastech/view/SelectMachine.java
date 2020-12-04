@@ -12,9 +12,13 @@ public class SelectMachine extends javax.swing.JFrame {
 
     public SelectMachine() {
         initComponents();
+        
         Uteis ut = new Uteis();
         ut.insertIcon(this);
+        
         showAllMachines();
+
+       
     }
 
     /**
@@ -152,10 +156,9 @@ public class SelectMachine extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void showAllMachines() {
-        System.out.println("dsasdsadas");
         List<Machine> machines = getController().showAllMachine();
         System.out.println(machines);
-        System.out.println("sdas");
+
         for (Machine m : machines) {
             System.out.println(m);
             jComboBox1.addItem(m.getName());
@@ -163,14 +166,17 @@ public class SelectMachine extends javax.swing.JFrame {
     }
 
     private void btn_login_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_userActionPerformed
-       String nameMachine = jComboBox1.getSelectedItem().toString().trim();
+
+        LinusDashboardHome dashHome = new LinusDashboardHome();
+
+        String nameMachine = jComboBox1.getSelectedItem().toString().trim();
         System.out.println(nameMachine);
-       getController().setGlobalMachine(nameMachine);
-       getController().setGlobalVarComponentList();
-       
-       LinusDashboardHome dashHome = new LinusDashboardHome();
-       dashHome.setVisible(true);
-       this.setVisible(false);
+        getController().setGlobalMachine(nameMachine);
+        getController().setGlobalVarComponentList();
+
+
+        dashHome.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btn_login_userActionPerformed
 
     private void btn_insert_machineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_insert_machineActionPerformed
