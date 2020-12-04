@@ -1,17 +1,33 @@
 package fastech.view;
 
+import static fastech.services.ObjectController.getController;
+import fastech.services.TakingDataServices;
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
  *
  * @author Jose Lucas
  */
 public class LinusDashboardHome extends javax.swing.JFrame {
+    TakingDataServices dataServices = new TakingDataServices();
     
-    /**
-     * Creates new form LinusDashboard
-     */
     public LinusDashboardHome() {
         initComponents();
-        printValues();
+        
+        Timer timer = new Timer();
+        Integer seg = 1000;
+        Boolean run = true;
+
+        TimerTask tarefa = new TimerTask() {
+            @Override
+            public void run() {
+                printValues();
+            }
+        };
+        if(run) {
+            timer.scheduleAtFixedRate(tarefa, 0, seg);
+        }
     }
     
     /*private void LinusDashboardHome(java.awt.event.WindowEvent evt) {                                  ;
@@ -345,17 +361,18 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel28)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel28)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblProcPid)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lblProcPid1)
-                    .addComponent(lblProcPid4)
-                    .addComponent(lblProcPid3)
-                    .addComponent(lblProcPid2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblProcPid1)
+                            .addComponent(lblProcPid2)
+                            .addComponent(lblProcPid3)
+                            .addComponent(lblProcPid4))
+                        .addGap(6, 6, 6)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblProcName)
@@ -426,7 +443,7 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                     .addComponent(lblProcMem3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblProcPid4)
+                    .addComponent(lblProcPid4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblProcName4)
                     .addComponent(lblProcCpu4)
                     .addComponent(lblProcMem4))
@@ -611,6 +628,46 @@ public class LinusDashboardHome extends javax.swing.JFrame {
        this.setVisible(false);
     }//GEN-LAST:event_btn_profileMouseClicked
 
+    public void printValues() {
+        printValueCpu();
+        printValueMemory();
+        printValueDisk();
+        printProcCpu();
+        printProcPid();
+        printProcMem();
+        printProcName();
+    }
+    
+    public void printValueCpu() {
+        Integer cpuValue = dataServices.getCpuUsage();
+        jpbValueCpu.setValue(cpuValue);
+        getController().insertData("Cpu");
+    }
+    
+    public void printValueMemory() {
+        Integer memoryValue = dataServices.getMemory();
+        jpbValueMemory.setValue(memoryValue);
+        getController().insertData("Memory");
+    }
+    
+    public void printValueDisk() {
+        Integer diskValue = dataServices.getAvailableDiskSpace();
+        jpbValueDisk.setValue(diskValue);
+        getController().insertData("Disk");
+    }
+    
+    public void printProcCpu() {
+        
+    }
+    public void printProcPid() {
+        
+    }
+    public void printProcMem() {
+        
+    }
+    public void printProcName() {
+       
+    }
     /**
      * @param args the command line arguments
      */
@@ -638,46 +695,13 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LinusDashboardHome().setVisible(true);
             }
         });
-    }
-    
-    
-    
-    
-    public void printValues() {
-        
-    }
-    
-    public void printValueCpu() {
-        
-  
-    }
-    
-    public void printValueMemory() {
-           
-    }
-    
-    public void printValueDisk() {
-        
-    }
-    
-    public void printProcCpu() {
-        
-    }
-    public void printProcPid() {
-        
-    }
-    public void printProcMem() {
-        
-    }
-    public void printProcName() {
-       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
