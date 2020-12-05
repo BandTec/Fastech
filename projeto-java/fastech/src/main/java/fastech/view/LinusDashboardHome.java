@@ -23,6 +23,12 @@ public class LinusDashboardHome extends javax.swing.JFrame {
 
     public LinusDashboardHome() {
         initComponents();
+
+        printValues();
+        
+         Uteis ut = new Uteis();
+        ut.insertIcon(this);
+
         
         Timer timer = new Timer();
         Integer seg = 1000;
@@ -37,7 +43,13 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         if (run) {
             timer.scheduleAtFixedRate(tarefa, 0, seg);
         }
+
     }
+    
+    private void LinusDashboardHome(java.awt.event.WindowEvent evt) {                                  ;
+        printValues();
+    }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
