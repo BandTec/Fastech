@@ -166,6 +166,7 @@ public class InsertMachine extends javax.swing.JFrame {
         
         getController().registerMachine(nome_machine);
         
+        
         LinusDashboardHome dashHome = new LinusDashboardHome();
         dashHome.setVisible(true);
         this.setVisible(false);        

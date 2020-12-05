@@ -29,7 +29,7 @@ public class Controller {
 
     public String login(String login, String passWord) {
 
-        String selectLogin = "select * from Collaborator where login = ? and password = ?;";
+         String selectLogin = "select * from Collaborator where login = ? and password = ?;";
 
         List<Collaborator> collaborator = con.query(selectLogin,
                 new BeanPropertyRowMapper(Collaborator.class), login, passWord);
@@ -94,9 +94,10 @@ public class Controller {
                 globalVars.getFkMachine(),
                 globalVars.getFkMachine()
         );
+        setGlobalVarComponentList();
 
     }
-
+    
     public void setGlobalVarComponentList() {
 
         String selectComponet = "select * from Component where fkMachine = ?;";
