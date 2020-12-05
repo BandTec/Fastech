@@ -17,18 +17,15 @@ import oshi.software.os.OperatingSystem;
 public class LinusDashboardHome extends javax.swing.JFrame {
 
     TakingDataServices dataServices = new TakingDataServices();
-    DefaultTableModel model;
     SystemInfo si = new SystemInfo();
     HardwareAbstractionLayer hal = si.getHardware();
     OperatingSystem os = si.getOperatingSystem();
 
     public LinusDashboardHome() {
-
         initComponents();
-        this.model = (DefaultTableModel) tblProcess.getModel();
-
+        
         Timer timer = new Timer();
-        Integer seg = 10000;
+        Integer seg = 1000;
         Boolean run = true;
 
         TimerTask tarefa = new TimerTask() {
@@ -446,21 +443,24 @@ public class LinusDashboardHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_profileMouseClicked
 
     public void printValues() {
-        model.setRowCount(0);
+        DefaultTableModel model = (DefaultTableModel) tblProcess.getModel();
         Integer cpuCount = si.getHardware().getProcessor().getLogicalProcessorCount();
         Long totalMem = si.getHardware().getMemory().getTotal();
+        Integer c = 0;
         for (OSProcess process : si.getOperatingSystem().getProcesses()) {
             if (process.getProcessID() > 0) {
-                
                 model.addRow(new Object[]{
                     process.getProcessID(),
                     String.format("%.1f%%", 10.0 * process.getProcessCpuLoadCumulative() / cpuCount),
                     String.format("%.1f%%", 10.0 * process.getResidentSetSize() / totalMem),
                     process.getName()
+
                 });
+                c++;
             }
+
         }
-        
+        model.setRowCount(c);
         printValueCpu();
         printValueMemory();
         printValueDisk();
