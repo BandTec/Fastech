@@ -22,15 +22,15 @@ body {
 
 /* MACHINES */
 #status_warning{
-    border-left: 2px solid #8d7f05;
+    border-left: 4px solid #8d7f05;
 }
 
 #status_danger{
-    border-left: 2px solid #790c0c;
+    border-left: 4px solid #790c0c;
 }
 
 #status_good{
-    border-left: 2px solid #055e11;
+    border-left: 4px solid #055e11;
 }
 
 #machines-container .title{
@@ -72,7 +72,7 @@ table {
     color: var(--blue-deafult);
 }
 
-#machineModal .card{
+#machines .card{
     padding: 0;
     text-align: center;
     margin-bottom: 20px;
