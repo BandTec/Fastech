@@ -1,23 +1,20 @@
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\controller\Controller.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\Types.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\Data.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\TesteOshi.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\view\LoginLinus.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\Collaborator.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\Oshi.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\GlobalVars.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\Test.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\view\Uteis.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\Component.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\view\InsertMachine.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\Machine.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\services\Connection.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\view\LinusDashboardHome.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\view\LinusDashboardProfile.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\oshi\gui\OshiTeste.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\model\CompanyBranch.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\logger\Validacao.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\view\Views.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\services\TakingDataServices.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\view\SelectMachine.java
-C:\Users\Cliente\Desktop\Fastech\projeto-java\fastech\src\main\java\fastech\logger\Toolbox.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\model\CompanyBranch.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\model\GlobalVars.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\model\Types.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\LoginLinus.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\Uteis.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\SelectMachine.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\Views.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\InsertMachine.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\LinusDashboardProfile.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\model\Data.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\controller\Controller.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\model\Machine.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\services\ObjectController.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\logger\Logger.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\model\Component.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\services\Connection.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\view\LinusDashboardHome.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\services\TakingDataServices.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\model\Test.java
+C:\Users\josel\OneDrive\햞ea de Trabalho\work\Fastech\projeto-java\fastech\src\main\java\fastech\model\Collaborator.java

@@ -2,6 +2,8 @@ package fastech.view;
 
 import static fastech.services.ObjectController.getController;
 import fastech.services.TakingDataServices;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  *
@@ -9,17 +11,35 @@ import fastech.services.TakingDataServices;
  */
 public class LinusDashboardHome extends javax.swing.JFrame {
     TakingDataServices dataServices = new TakingDataServices();
-    /**
-     * Creates new form LinusDashboard
-     */
+    
     public LinusDashboardHome() {
         initComponents();
+
         printValues();
+        
+         Uteis ut = new Uteis();
+        ut.insertIcon(this);
+
+        
+        Timer timer = new Timer();
+        Integer seg = 1000;
+        Boolean run = true;
+
+        TimerTask tarefa = new TimerTask() {
+            @Override
+            public void run() {
+                printValues();
+            }
+        };
+        if(run) {
+            timer.scheduleAtFixedRate(tarefa, 0, seg);
+        }
+
     }
     
-    /*private void LinusDashboardHome(java.awt.event.WindowEvent evt) {                                  ;
+    private void LinusDashboardHome(java.awt.event.WindowEvent evt) {                                  ;
         printValues();
-    } */
+    }
     
 
     /**
@@ -682,7 +702,7 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
