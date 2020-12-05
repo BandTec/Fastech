@@ -44,7 +44,6 @@ body {
 }
 
 #machines-container .card{
-    
     padding: 20px;
     padding-bottom: 0px;
     background-color: var(--secundary-bg-dark);
@@ -72,7 +71,7 @@ table {
     color: var(--blue-deafult);
 }
 
-#machineModal .card{
+ .card{
     padding: 0;
     text-align: center;
     margin-bottom: 20px;
