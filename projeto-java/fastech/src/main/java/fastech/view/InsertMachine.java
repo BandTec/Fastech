@@ -168,10 +168,7 @@ public class InsertMachine extends javax.swing.JFrame {
         
         LinusDashboardHome dashHome = new LinusDashboardHome();
         dashHome.setVisible(true);
-        this.setVisible(false);
-        
-        
-        
+        this.setVisible(false);        
     }//GEN-LAST:event_btn_insert_machineActionPerformed
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
