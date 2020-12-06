@@ -119,6 +119,9 @@ public class Controller {
 
         con.update(insertData, valueComponent, idComponent, globalVars.getFkMachine());
     }
+    
+    
+    
 
     public Integer selectTypeData(String nameType) {
         String getIdType = "SELECT * FROM Types WHERE NameType = ?;";

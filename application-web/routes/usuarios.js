@@ -79,15 +79,17 @@ router.post('/cadastrar', function (req, res, next) {
 router.get('/user/:login', (req,res,next) => {
 	let login = req.params.login;
 	
-	let instrucaoSql = `select c.name, c.cpf, c.login, c.office, b.name as NameCompany  from Collaborator c
-	left join CompanyBranch b ON (b.idCompanyBranch = c.fkCompanyBranch) where c.login='${login}'`;
-	console.log(instrucaoSql);
+	let instrucaoSql = `SELECT c.name, c.cpf, c.login, c.office, b.idCompanyBranch as idCompany, b.name as NameCompany  
+						FROM Collaborator c
+						LEFT JOIN CompanyBranch b ON (b.idCompanyBranch = c.fkCompanyBranch) 
+						WHERE c.login='${login}'`;
 
 	sequelize.query(instrucaoSql, {
 		model: Usuario
 	}).then(resultado => {
 		console.log(`Encontrados: ${resultado.length}`);
 		if (resultado.length == 1) {
+			
 			res.json(resultado[0]);
 		} else if (resultado.length == 0) {
 			res.status(403).send('Login e/ou senha inválido(s)');
@@ -100,6 +102,7 @@ router.get('/user/:login', (req,res,next) => {
 		res.status(500).send(erro.message);
 	});
 });
+
 
 /* Verificação de usuário */
 router.get('/sessao/:login', function (req, res, next) {
