@@ -54,7 +54,6 @@ function showMachine() {
 }
 
 function showGoodCount(){
-    debugger;
     fetch(`/data/status_good/${var_id_company}`, { cache: 'no-store' })
     .then(res => {
         if(res.ok){
@@ -66,7 +65,6 @@ function showGoodCount(){
 }
 
 function showWarningCount(){
-    debugger;
     fetch(`/data/status_warning/${var_id_company}`, { cache: 'no-store' })
     .then(res => {
         if(res.ok){

@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/welcome.css">
     <link rel="stylesheet" href="./css/datas_machines.css">
-    <link rel="shortcut icon" href="./img/Fastech_logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
 
 </head>
 
@@ -96,7 +96,7 @@
         <div class="welcome">
             <div class="row">
                 <div id="logo">
-                    <img src="./img/Fastech_logo.png" alt="">
+                    <img src="./img/icon.png" alt="">
                 </div>
                 <h5 data-toggle="modal" data-target="#profileModal">Olá, <b>nome do usuário</b><i
                         class="fas fa-chevron-down"></i></h5>
@@ -156,33 +156,30 @@
 
                 <div class="row">
                     <h2 class="title" id="name_machine">Nome da maquina</h2>
-                    <i class="fas fa-plug" style="color: green;"></i>
+                    <i class="fas fa-wifi" style="color: green;"></i>
                 </div>
 
                 <nav class="nav_tabs">
                     <ul>
                         <li>
                             <input type="radio" name="tabs" class="rd_tabs" id="cpu" checked>
-                            <label for="cpu">Processador <i class="fas fa-microchip"></i></label>
+                            <label for="cpu"> <span id="title"> Processador </span> <i class="fas fa-microchip"></i></label>
                             <div class="content">
                                 <div class="row">
 
                                     <div class="info_hardware">
-                                        Nome: ogho <br>
-                                        Marca: AMD <br>
-                                        Clock: 1.2Ghz <br>
-                                        Etc: hvbkhadvc
+                                        
                                     </div>
 
                                     <div class="progress">
                                         <div class="barOverflow">
                                             <div class="bar"></div>
                                         </div>
-                                        <span>39</span>
+                                        <span id="nameCpu">39</span>
                                     </div>
-
+                                    
                                 </div>
-
+                                
                                 <div class="chart">
                                     <canvas id="cpu_history"></canvas>
                                 </div>
@@ -192,15 +189,12 @@
 
                         <li>
                             <input type="radio" name="tabs" class="rd_tabs" id="memory">
-                            <label for="memory">Memória <i class="fas fa-memory"></i></label>
+                            <label for="memory"> <span id="title"> Memória </span> <i class="fas fa-memory"></i></label>
                             <div class="content">
                                 <div class="row">
 
                                     <div class="info_hardware">
-                                        Nome: ogho <br>
-                                        Marca: KingSton <br>
-                                        Total: 16 Gib <br>
-                                        Etc: hvbkhadvc
+                                       
                                     </div>
 
                                     <div class="progress">
@@ -221,15 +215,12 @@
 
                         <li>
                             <input type="radio" name="tabs" class="rd_tabs" id="disk">
-                            <label for="disk">Disco <i class="fas fa-hdd"></i></label>
+                            <label for="disk"> <span id="title"> Disco </span> <i class="fas fa-hdd"></i></label>
                             <div class="content">
                                 <div class="row">
 
                                     <div class="info_hardware">
-                                        Nome: ogho <br>
-                                        Marca: AMD <br>
-                                        Clock: 1.2Ghz <br>
-                                        Etc: hvbkhadvc
+                                        
                                     </div>
 
                                     <div class="progress">
