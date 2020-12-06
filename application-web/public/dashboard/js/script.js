@@ -78,7 +78,6 @@ function showWarningCount(){
 }
 
 function showDangerCount(){
-    debugger;
     fetch(`/data/status_danger/${var_id_company}`, { cache: 'no-store' })
     .then(res => {
         if(res.ok){
@@ -104,6 +103,14 @@ function validateUser() {
         window.location.href = '/';
     }
 }
+
+setInterval(() => {
+    machines.innerHTML = '';
+    showMachine();
+    showGoodCount();
+    showWarningCount();
+    showDangerCount();
+}, 10*1000);
 
 function userPrint() {
 
