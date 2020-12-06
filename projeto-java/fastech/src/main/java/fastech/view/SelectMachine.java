@@ -12,13 +12,12 @@ public class SelectMachine extends javax.swing.JFrame {
 
     public SelectMachine() {
         initComponents();
-        
+
         Uteis ut = new Uteis();
         ut.insertIcon(this);
-        
+
         showAllMachines();
 
-       
     }
 
     /**
@@ -167,13 +166,11 @@ public class SelectMachine extends javax.swing.JFrame {
 
     private void btn_login_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_userActionPerformed
 
-        LinusDashboardHome dashHome = new LinusDashboardHome();
-
         String nameMachine = jComboBox1.getSelectedItem().toString().trim();
         System.out.println(nameMachine);
         getController().setGlobalMachine(nameMachine);
         getController().setGlobalVarComponentList();
-
+        LinusDashboardHome dashHome = new LinusDashboardHome();
 
         dashHome.setVisible(true);
         this.setVisible(false);

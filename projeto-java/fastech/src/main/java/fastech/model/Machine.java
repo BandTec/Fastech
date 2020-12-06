@@ -8,6 +8,7 @@ public class Machine {
 
     private Integer idMachine;
     private String name;
+    private String status;
     private Integer fkCompanyBranch;
 
     @Override
@@ -15,6 +16,7 @@ public class Machine {
         return "Machine{"
                 + "idMachine=" + idMachine
                 + ", name=" + name
+                + ", status=" + status
                 + ", fkCompanyBranch=" + fkCompanyBranch
                 + '}';
     }
@@ -33,6 +35,14 @@ public class Machine {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Integer getFkCompanyBranch() {
