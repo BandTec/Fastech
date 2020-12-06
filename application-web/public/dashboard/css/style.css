@@ -21,15 +21,15 @@ body {
 
 
 /* MACHINES */
-#status_warning{
+#Warning{
     border-left: 4px solid #8d7f05;
 }
 
-#status_danger{
+#Danger{
     border-left: 4px solid #790c0c;
 }
 
-#status_good{
+#Good{
     border-left: 4px solid #055e11;
 }
 
@@ -53,7 +53,7 @@ body {
 }
 
 
-table {
+/* table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -62,7 +62,7 @@ table {
   td, th {
     text-align: left;
     padding: 8px;
-  }
+  } */
 
 #machines-container .card-body .row {
     margin: 5px;

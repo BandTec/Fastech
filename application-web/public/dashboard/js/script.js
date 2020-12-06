@@ -34,7 +34,7 @@ function showMachine() {
 
                         machines.innerHTML += `
                         <div class="col-md-4 col-sm-12">
-                            <div class="card" id="status_good" data-toggle="modal" data-target="#machineModal">
+                            <div class="card" id="${json[i].Status}">
                                 <div class="card-body">
                 
                                     <div class="card-title">

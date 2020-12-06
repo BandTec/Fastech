@@ -9,7 +9,7 @@ var Usuario = require('../models').Usuario;
 router.get('/machine/:company', (req,res,next) => {
 	let companyId = req.params.company;
 	
-    let machineSelect = `SELECT m.Name as nameMachine, m.idMachine AS 'IdMachine' FROM Machine m, CompanyBranch cb 
+    let machineSelect = `SELECT m.Name as nameMachine, m.Status, m.idMachine AS 'IdMachine' FROM Machine m, CompanyBranch cb 
     WHERE m.fkCompanyBranch = cb.idCompanyBranch AND cb.idCompanyBranch = ${companyId}`;
 
 	sequelize.query(machineSelect, {
