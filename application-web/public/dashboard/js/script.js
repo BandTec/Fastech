@@ -48,9 +48,45 @@ function showMachine() {
                         </div>
                     `;
                     }
-                })
+                });
             }
         });
+}
+
+function showGoodCount(){
+    debugger;
+    fetch(`/data/status_good/${var_id_company}`, { cache: 'no-store' })
+    .then(res => {
+        if(res.ok){
+            res.json().then((json) => {
+                status_good.innerHTML = json[0].statusCount;
+            });
+        }
+    });
+}
+
+function showWarningCount(){
+    debugger;
+    fetch(`/data/status_warning/${var_id_company}`, { cache: 'no-store' })
+    .then(res => {
+        if(res.ok){
+            res.json().then((json) => {
+                status_warning.innerHTML = json[0].statusCount;
+            });
+        }
+    });
+}
+
+function showDangerCount(){
+    debugger;
+    fetch(`/data/status_danger/${var_id_company}`, { cache: 'no-store' })
+    .then(res => {
+        if(res.ok){
+            res.json().then((json) => {
+                status_danger.innerHTML = json[0].statusCount;
+            });
+        }
+    });
 }
 
 function loginUser() {
@@ -58,6 +94,9 @@ function loginUser() {
     validar_sessao();
     userPrint();
     showMachine();
+    showGoodCount();
+    showWarningCount();
+    showDangerCount();
 }
 
 function validateUser() {
