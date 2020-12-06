@@ -36,7 +36,7 @@ build/Release
 node_modules/
 jspm_packages/
 *.class
-*"https://hooks.slack.com/services/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"*
+*WebHook.java
 
 # TypeScript v1 declaration files
 typings/
