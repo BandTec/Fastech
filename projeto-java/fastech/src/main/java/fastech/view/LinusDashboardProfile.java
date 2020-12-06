@@ -5,6 +5,9 @@
  */
 package fastech.view;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Jose Lucas
@@ -179,9 +182,9 @@ public class LinusDashboardProfile extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbl1)
-                            .addComponent(lbl_name_user, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_name_user, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbl1))
                         .addGap(18, 18, 18)
                         .addComponent(lbl2))
                     .addComponent(lbl_office, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -234,7 +237,12 @@ public class LinusDashboardProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_profileMouseClicked
 
     private void btn_chartsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_chartsMouseClicked
-        LinusDashboardHome home = new LinusDashboardHome();
+        LinusDashboardHome home = null;
+        try {
+            home = new LinusDashboardHome();
+        } catch (Exception ex) {
+            Logger.getLogger(LinusDashboardProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
         home.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_chartsMouseClicked
@@ -275,26 +283,14 @@ public class LinusDashboardProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btn_charts;
-    private javax.swing.JLabel btn_charts1;
-    private javax.swing.JLabel btn_charts2;
     private javax.swing.JLabel btn_charts3;
     private javax.swing.JLabel btn_exit;
     private javax.swing.JLabel btn_profile;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;

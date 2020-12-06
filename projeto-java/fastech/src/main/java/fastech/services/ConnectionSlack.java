@@ -16,7 +16,7 @@ import org.json.JSONObject;
  * @author igor
  */
 public class ConnectionSlack {
-        private String url = "https://hooks.slack.com/services/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";
+        private String url = "https://hooks.slack.com/services/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";
 
     public void sendMessage(JSONObject message) throws Exception {
 

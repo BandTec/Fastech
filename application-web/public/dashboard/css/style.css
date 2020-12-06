@@ -21,16 +21,16 @@ body {
 
 
 /* MACHINES */
-#status_warning{
-    border-left: 2px solid #8d7f05;
+#Warning{
+    border-left: 4px solid #8d7f05;
 }
 
-#status_danger{
-    border-left: 2px solid #790c0c;
+#Danger{
+    border-left: 4px solid #790c0c;
 }
 
-#status_good{
-    border-left: 2px solid #055e11;
+#Good{
+    border-left: 4px solid #055e11;
 }
 
 #machines-container .title{
@@ -52,7 +52,7 @@ body {
 }
 
 
-table {
+/* table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -61,7 +61,7 @@ table {
   td, th {
     text-align: left;
     padding: 8px;
-  }
+  } */
 
 #machines-container .card-body .row {
     margin: 5px;
@@ -71,10 +71,11 @@ table {
     color: var(--blue-deafult);
 }
 
- .card{
+#machines .card{
     padding: 0;
     text-align: center;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 #machines-container .card-body .row b{

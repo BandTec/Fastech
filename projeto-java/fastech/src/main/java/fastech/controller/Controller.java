@@ -141,6 +141,9 @@ public class Controller {
 
         con.update(insertData, valueComponent, idComponent, globalVars.getMachine().getIdMachine());
     }
+    
+    
+    
 
     public Integer selectTypeData(String nameType) {
 
