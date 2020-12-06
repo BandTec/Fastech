@@ -9,6 +9,8 @@ import fastech.services.Connection;
 import fastech.services.TakingDataServices;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import oshi.SystemInfo;
@@ -74,15 +76,15 @@ public class Controller {
 
     public void setGlobalMachine(String nameMachine) {
 
-        String getIdMachine = String.format("select top 1 idMachine from Machine m where m.Name = '%s' and m.fkCompanyBranch = ? order by idMachine desc;", nameMachine);
+        String getIdMachine = String.format("select * from Machine m where m.Name = '%s' and m.fkCompanyBranch = ?;", nameMachine);
 
-        List<Machine> idMachine = con.query(getIdMachine,
+        List<Machine> listMachine = con.query(getIdMachine,
                 new BeanPropertyRowMapper(Machine.class), globalVars.getFkCompany());
 
-        idMachine.forEach((Machine m) -> {
-            globalVars.setFkMachine(m.getIdMachine());
-        });
-        System.out.println(globalVars.getFkMachine());
+        for (Machine m : listMachine) {
+            globalVars.setMachine(m);
+        }
+
     }
 
     public void registerMachine(String nameMachine) {
@@ -99,10 +101,10 @@ public class Controller {
         addComponents.append(String.format("insert into Component (Name ,fkMachine ,fkType) values ('%s', ?, 4);", "Network"));
 
         con.update(addComponents.toString(),
-                globalVars.getFkMachine(),
-                globalVars.getFkMachine(),
-                globalVars.getFkMachine(),
-                globalVars.getFkMachine()
+                globalVars.getMachine().getIdMachine(),
+                globalVars.getMachine().getIdMachine(),
+                globalVars.getMachine().getIdMachine(),
+                globalVars.getMachine().getIdMachine()
         );
         setGlobalVarComponentList();
 
@@ -113,10 +115,20 @@ public class Controller {
         String selectComponet = "select * from Component where fkMachine = ?;";
 
         List<fastech.model.Component> components = con.query(selectComponet,
-                new BeanPropertyRowMapper(fastech.model.Component.class), globalVars.getFkMachine());
+                new BeanPropertyRowMapper(fastech.model.Component.class), globalVars.getMachine().getIdMachine());
 
         globalVars.setFkComponent(components);
 
+        setListTypes();
+    }
+
+    public void setListTypes() {
+        String getIdType = "SELECT * FROM Types;";
+
+        List<Types> listTypes = con.query(getIdType,
+                new BeanPropertyRowMapper(Types.class));
+
+        globalVars.setListTypes(listTypes);
     }
 
     public void insertData(String nameType) throws Exception {
@@ -127,20 +139,17 @@ public class Controller {
         String insertData = String.format("insert into Data(dtMoment,value,Component_idComponent,Component_fkMachine) Values(CONVERT(DATETIME,'%s',120),?,?,?);",
                 tkDataServices.dateNow());
 
-        con.update(insertData, valueComponent, idComponent, globalVars.getFkMachine());
+        con.update(insertData, valueComponent, idComponent, globalVars.getMachine().getIdMachine());
     }
 
     public Integer selectTypeData(String nameType) {
-        String getIdType = "SELECT * FROM Types WHERE NameType = ?;";
-        Integer idType = 0;
-        List<Types> listIdType = con.query(getIdType,
-                new BeanPropertyRowMapper(Types.class), nameType);
 
-        for (Types t : listIdType) {
-            idType = t.getIdType();
+        for (Types t : globalVars.getListTypes()) {
+            if (t.getNameType().equals(nameType)) {
+                return t.getIdType();
+            }
         }
-
-        return idType;
+        return null;
     }
 
     public Integer selectIdComponent(Integer idType) {
@@ -160,14 +169,16 @@ public class Controller {
         String statusCurrent;
         if (((idType == 1 || idType == 2) && avg >= 90) || (idType == 3 && avg >= 85)) {
             statusCurrent = "Danger";
-            slackSendMessage("dds");
+            String messageDanger = String.format("@channel A maquina *%s* esta em "
+                    + "estado critico", globalVars.getMachine().getName());
+            slackSendMessage(messageDanger);
         } else if ((idType == 1 && avg >= 75) || (idType == 2 && avg >= 80) || (idType == 3 && avg >= 75)) {
             statusCurrent = "Warning";
         } else {
             statusCurrent = "Good";
         }
         String upDate = String.format("UPDATE Machine SET Status = '%s' WHERE idMachine = ?;", statusCurrent);
-        con.update(upDate, globalVars.getFkMachine());
+        con.update(upDate, globalVars.getMachine().getIdMachine());
     }
 
     public void setStatus(Integer value, Integer idType) throws Exception {

@@ -3,6 +3,8 @@ package fastech.view;
 import fastech.model.Machine;
 import static fastech.services.ObjectController.getController;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -170,7 +172,12 @@ public class SelectMachine extends javax.swing.JFrame {
         System.out.println(nameMachine);
         getController().setGlobalMachine(nameMachine);
         getController().setGlobalVarComponentList();
-        LinusDashboardHome dashHome = new LinusDashboardHome();
+        LinusDashboardHome dashHome = null;
+        try {
+            dashHome = new LinusDashboardHome();
+        } catch (Exception ex) {
+            Logger.getLogger(SelectMachine.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         dashHome.setVisible(true);
         this.setVisible(false);
