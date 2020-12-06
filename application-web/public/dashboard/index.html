@@ -117,7 +117,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <label>Nome: </label> 
+                        <label>Nome: </label>
                         <b id="user_name"></b>
                     </div>
                     <div class="row">
@@ -125,7 +125,7 @@
                         <b id="cpf"></b>
                     </div>
                     <div class="row">
-                        <label>Email: </label> 
+                        <label>Email: </label>
                         <b id="email"></b>
                     </div>
                     <div class="row">
@@ -133,7 +133,7 @@
                         <b id="company"></b>
                     </div>
                     <div class="row">
-                        <label>Cargo: </label> 
+                        <label>Cargo: </label>
                         <b id="office"></b>
                     </div>
                 </div>
@@ -185,33 +185,41 @@
                 <h2 class="title">Suas máquinas</h2>
             </div>
 
-            <div class="col-md-4 col-sm-12">
-                <div class="card" id="status_warning" data-toggle="modal" data-target="#machineModal">
-                    <div class="card-body">
+            <div class="row" id="machines">
 
-                        <div class="card-title">
-                            maquina 1
+                <div class="col-md-4 col-sm-12">
+                    <div class="card" id="status_warning">
+                        <div class="card-body">
+
+                            <div class="card-title">
+                                maquina 1
+                            </div>
+                            <!-- <div class="datas">
+                                <table>
+                                    <tr>
+                                        <th>CPU</th>
+                                        <th id="value_cpu">78</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Memory</th>
+                                        <th id="value_memory">88</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Disk</th>
+                                        <th id="value_disk">48</th>
+                                    </tr>
+                                </table>
+                            </div> -->
+                            <br>
+                            <i class="fas fa-plus" data-toggle="tooltip" data-placement="bottom" title=""
+                                aria-hidden="true" data-original-title="Redirecionar"></i><span
+                                class="sr-only">Redirecionar</span>
+                            
+
                         </div>
-                        <div class="datas">
-                            <table>
-                                <tr>
-                                  <th>CPU</th>
-                                  <th id="value_cpu">78</th>
-                                </tr>
-                                <tr>
-                                  <th>Memory</th>
-                                  <th id="value_memory">88</th>
-                                </tr>
-                                <tr>
-                                  <th>Disk</th>
-                                  <th id="value_disk">48</th>
-                                </tr>
-                              </table>
-                        </div>
-                        <i class="fas fa-plus" data-toggle="tooltip" data-placement="top" title=""
-                            aria-hidden="true" data-original-title="Redirecionar"></i><span class="sr-only">Redirecionar</span>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -224,4 +232,5 @@
 <script src="./js/script.js"> </script>
 <script>setVars()</script>
 <script src="./js/machine_history.js"></script>
+
 </html>
