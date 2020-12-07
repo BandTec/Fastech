@@ -1,6 +1,6 @@
 :root {
     --background: #1a1a1a;
-    --blue-deafult: #3B5998;
+    --blue-deafult: #252baf;
     --secundary-bg: #333;
     --out-color: #FE4242;
     --color-text: #FFFFFF;
@@ -8,7 +8,9 @@
 
 #datas_machines h2{
     margin-top: 2%;
+    margin-left: 5%;
     color: #FFFFFF;
+    font-size: 1.4em;
 }
 
 .fa-plug{
@@ -25,9 +27,10 @@
 .datas_machines .nav_tabs{
     width: 100%;
     height: 750px;
-    margin: 50px auto;
+    margin: 5% auto;
     background-color: #fff;
     position: relative;
+    max-width: 95%;
 }
 
 .datas_machines .nav_tabs ul{
@@ -74,6 +77,7 @@
 
 .datas_machines .content .row{
     margin: 0 auto;
+    height: 100px;
 }
 
 .datas_machines .rd_tabs:checked ~ .content{
@@ -95,7 +99,7 @@
     width: 100%;
     height: 500px;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 
@@ -131,4 +135,50 @@
       font-size: 2em;
       font-weight: bold;
       text-align: center;
+  }
+
+
+  /* responsividade */
+
+  @media only screen and (max-width: 1300px){
+    .datas_machines .nav_tabs {
+        max-width: 90%;
+
+    }
+  }
+
+  @media only screen and (max-width: 1080px){
+    .datas_machines .nav_tabs {
+        max-width: 95%;
+        height: 550px;
+    }
+
+    .progress{
+        margin-left: 40%;
+    }
+
+    .bar{
+        border-width: 20px ;
+    }
+  }
+
+  @media only screen and (max-width: 768px){
+    .datas_machines .nav_tabs {
+        min-width: 100%;
+        height: 450px;
+    }
+
+    .progress{
+        margin-left: 60%;
+    }
+  }
+
+  @media only screen and (max-width: 620px){
+    .progress{
+        margin-left: 0%;
+    }
+
+    #title{
+        display: none;
+    }
   }

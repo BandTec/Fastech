@@ -93,9 +93,11 @@ public class Controller {
         con.update(addMachine, globalVars.getFkCompany());
 
         setGlobalMachine(nameMachine);
+        
+        String nameCpu = tkDataServices.getNameProcessor();
 
         StringBuilder addComponents = new StringBuilder();
-        addComponents.append(String.format("insert into Component (Name ,fkMachine ,fkType) values ('%s', ?, 1);", "Cpu"));
+        addComponents.append(String.format("insert into Component (Name ,fkMachine ,fkType) values ('%s', ?, 1);", nameCpu));
         addComponents.append(String.format("insert into Component (Name ,fkMachine ,fkType) values ('%s', ?, 2);", "Memoria"));
         addComponents.append(String.format("insert into Component (Name ,fkMachine ,fkType) values ('%s', ?, 3);", "Disco"));
         addComponents.append(String.format("insert into Component (Name ,fkMachine ,fkType) values ('%s', ?, 4);", "Network"));
