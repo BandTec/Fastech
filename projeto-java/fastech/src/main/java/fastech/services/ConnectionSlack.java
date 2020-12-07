@@ -5,6 +5,7 @@
  */
 package fastech.services;
 
+import static fastech.services.WebHook.getWebhook;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
@@ -16,7 +17,7 @@ import org.json.JSONObject;
  * @author igor
  */
 public class ConnectionSlack {
-        private String url = "https://hooks.slack.com/services/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";
+        private String url = getWebhook();
 
     public void sendMessage(JSONObject message) throws Exception {
 
@@ -26,7 +27,7 @@ public class ConnectionSlack {
 
         con.setRequestMethod("POST");
         con.setDoOutput(true);
-
+        
         DataOutputStream wr = new DataOutputStream(con.getOutputStream());
         wr.writeBytes(message.toString());
 

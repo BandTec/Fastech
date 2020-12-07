@@ -44,7 +44,6 @@ body {
 }
 
 #machines-container .card{
-    
     padding: 20px;
     padding-bottom: 0px;
     background-color: var(--secundary-bg-dark);

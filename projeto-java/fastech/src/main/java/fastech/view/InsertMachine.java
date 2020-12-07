@@ -6,6 +6,8 @@
 package fastech.view;
 
 import static fastech.services.ObjectController.getController;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -167,7 +169,12 @@ public class InsertMachine extends javax.swing.JFrame {
         getController().registerMachine(nome_machine);
         
         
-        LinusDashboardHome dashHome = new LinusDashboardHome();
+        LinusDashboardHome dashHome = null;
+        try {
+            dashHome = new LinusDashboardHome();
+        } catch (Exception ex) {
+            Logger.getLogger(InsertMachine.class.getName()).log(Level.SEVERE, null, ex);
+        }
         dashHome.setVisible(true);
         this.setVisible(false);        
     }//GEN-LAST:event_btn_insert_machineActionPerformed
