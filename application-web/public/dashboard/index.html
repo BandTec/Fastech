@@ -75,7 +75,10 @@
                     <div class="row">
                         <form action="#">
                             <label for="name_machine">Nome da máquina</label>
+
                             <input type="text" id="name_machine">
+
+                            <input type="hidden" id="idMachine" value="">
 
                             <label id="error"></label>
 
@@ -83,7 +86,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="search_action">Buscar <i class="fas fa-search"></i> </button>
+                    <button type="button" onclick="searchMachine(name_machine.value)" class="search_action" data-dismiss="modal">Buscar <i class="fas fa-search"></i> </button>
                 </div>
             </div>
 
@@ -97,7 +100,7 @@
                 <div id="logo">
                     <img src="./img/icon.png" alt="">
                 </div>
-                <h5 data-toggle="modal" data-target="#profileModal">Olá, <b id="user">- - - - - </b><i
+                <h5 data-toggle="modal" data-target="#profileModal">Olá, <b id="user"> - - - - - </b><i
                         class="fas fa-chevron-down"></i></h5>
                 <i class="fas fa-user" data-toggle="modal" data-target="#profileModal"></i>
             </div>
@@ -138,7 +141,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
 
@@ -199,5 +202,4 @@
 <script src="./js/modal.js"></script>
 <script src="./js/script.js"> </script>
 <script>setVars();</script>
-
 </html>

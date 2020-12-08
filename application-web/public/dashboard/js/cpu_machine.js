@@ -7,13 +7,7 @@ var cpu = {
             backgroundColor: "#3B5998",
             borderColor: "#3B5998",
             data: [
-                randomize(),
-                randomize(),
-                randomize(),
-                randomize(),
-                randomize(),
-                randomize(),
-                randomize()
+                
             ],
             fill: false,
         }]
@@ -60,9 +54,5 @@ setInterval(() => {
     var ctx = document.getElementById('cpu_history').getContext('2d');
     window.historico_cpu = new Chart(ctx, cpu);    
 }, 3000);
-
-function randomize(){
-    return (Math.random()*100).toFixed(2);
-}
 
 

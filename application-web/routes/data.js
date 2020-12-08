@@ -26,6 +26,111 @@ router.get('/machine/:company', (req,res,next) => {
 	});
 });
 
+/* Pesquisando maquinas */
+router.get('/search/:name/:company', (req,res,next) => {
+	let companyId = req.params.company;
+	let nameMachine = req.params.name;
+	
+    let machineSelect = `SELECT m.Name as nameMachine, m.Status, m.idMachine AS 'IdMachine' FROM Machine m, CompanyBranch cb 
+    WHERE m.fkCompanyBranch = cb.idCompanyBranch AND cb.idCompanyBranch = ${companyId} AND m.Name LIKE '%${nameMachine}%' ;`;
+
+	sequelize.query(machineSelect, {
+		model: Usuario
+	}).then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		if (resultado.length > 0) {
+           
+            res.json(resultado);   		
+		} 
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
+
+/* Recuperando dados de maquinas */
+router.get('/datas_cpu/:company/:id', (req,res,next) => {
+	let companyId = req.params.company;
+	let idMachine = req.params.id;
+	
+    let machineSelect = `SELECT m.Name AS 'Name_Machine', t.NameType AS 'Type', d.Value AS 'Metrica', d.dtMoment AS 'Moment', c.Name AS 'Componente'
+	FROM Machine m
+		LEFT JOIN Component c ON c.fkMachine = m.idMachine 
+		LEFT JOIN [Data] d ON d.Component_idComponent = c.idComponent 
+		LEFT JOIN Types t ON t.idType = c.fkType 
+		LEFT JOIN CompanyBranch cb ON m.fkCompanyBranch = cb.idCompanyBranch
+	WHERE t.NameType = 'Cpu' AND cb.idCompanyBranch = ${companyId} AND m.idMachine = ${idMachine}
+		ORDER BY d.dtMoment DESC;`;
+
+	sequelize.query(machineSelect, {
+		model: Usuario
+	}).then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		if (resultado.length > 0) {
+           
+            res.json(resultado);   		
+		} 
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
+router.get('/datas_mem/:company/:id', (req,res,next) => {
+	let companyId = req.params.company;
+	let idMachine = req.params.id;
+	
+    let machineSelect = `SELECT m.Name AS 'Name_Machine', t.NameType AS 'Type', d.Value AS 'Metrica', d.dtMoment AS 'Moment', c.Name AS 'Componente'
+	FROM Machine m
+		LEFT JOIN Component c ON c.fkMachine = m.idMachine 
+		LEFT JOIN [Data] d ON d.Component_idComponent = c.idComponent 
+		LEFT JOIN Types t ON t.idType = c.fkType 
+		LEFT JOIN CompanyBranch cb ON m.fkCompanyBranch = cb.idCompanyBranch
+	WHERE t.NameType = 'Memory' AND cb.idCompanyBranch = ${companyId} AND m.idMachine = ${idMachine}
+		ORDER BY d.dtMoment DESC;`;
+
+	sequelize.query(machineSelect, {
+		model: Usuario
+	}).then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		if (resultado.length > 0) {
+           
+            res.json(resultado);   		
+		} 
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
+router.get('/datas_disk/:company/:id', (req,res,next) => {
+	let companyId = req.params.company;
+	let idMachine = req.params.id;
+	
+    let machineSelect = `SELECT m.Name AS 'Name_Machine', t.NameType AS 'Type', d.Value AS 'Metrica', d.dtMoment AS 'Moment', c.Name AS 'Componente'
+	FROM Machine m
+		LEFT JOIN Component c ON c.fkMachine = m.idMachine 
+		LEFT JOIN [Data] d ON d.Component_idComponent = c.idComponent 
+		LEFT JOIN Types t ON t.idType = c.fkType 
+		LEFT JOIN CompanyBranch cb ON m.fkCompanyBranch = cb.idCompanyBranch
+	WHERE t.NameType = 'Disk' AND cb.idCompanyBranch = ${companyId} AND m.idMachine = ${idMachine}
+		ORDER BY d.dtMoment DESC;`;
+
+	sequelize.query(machineSelect, {
+		model: Usuario
+	}).then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		if (resultado.length > 0) {
+           
+            res.json(resultado);   		
+		} 
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
 /* Recuperando maquinas com estado good */
 
 router.get('/status_good/:company', (req,res,next) => {

@@ -119,7 +119,7 @@ router.get('/sessao/:login', function (req, res, next) {
 
 	if (tem_sessao) {
 		let mensagem = `Usuário ${login} possui sessão ativa!`;
-		console.log(mensagem);
+		// console.log(mensagem);
 		res.send(mensagem);
 	} else {
 		res.sendStatus(403);
