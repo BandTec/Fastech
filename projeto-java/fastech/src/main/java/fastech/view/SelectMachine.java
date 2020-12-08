@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fastech.view;
 
-import fastech.controller.Controller;
-import fastech.model.GlobalVars;
 import fastech.model.Machine;
+import static fastech.services.ObjectController.getController;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,14 +12,14 @@ import java.util.List;
  */
 public class SelectMachine extends javax.swing.JFrame {
 
-    Controller controller = new Controller();
-
-    /**
-     * Creates new form SelectMachine
-     */
     public SelectMachine() {
         initComponents();
+
+        Uteis ut = new Uteis();
+        ut.insertIcon(this);
+
         showAllMachines();
+
     }
 
     /**
@@ -161,10 +157,9 @@ public class SelectMachine extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void showAllMachines() {
-        System.out.println("dsasdsadas");
-        List<Machine> machines = controller.showAllMachine();
+        List<Machine> machines = getController().showAllMachine();
         System.out.println(machines);
-        System.out.println("sdas");
+
         for (Machine m : machines) {
             System.out.println(m);
             jComboBox1.addItem(m.getName());
@@ -172,10 +167,20 @@ public class SelectMachine extends javax.swing.JFrame {
     }
 
     private void btn_login_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_userActionPerformed
-//       LinusDashboardHome dashHome = new LinusDashboardHome();
-//       
-//       dashHome.setVisible(true);
-//       this.setVisible(false);
+
+        String nameMachine = jComboBox1.getSelectedItem().toString().trim();
+        System.out.println(nameMachine);
+        getController().setGlobalMachine(nameMachine);
+        getController().setGlobalVarComponentList();
+        LinusDashboardHome dashHome = null;
+        try {
+            dashHome = new LinusDashboardHome();
+        } catch (Exception ex) {
+            Logger.getLogger(SelectMachine.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        dashHome.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btn_login_userActionPerformed
 
     private void btn_insert_machineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_insert_machineActionPerformed

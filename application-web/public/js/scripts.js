@@ -210,8 +210,7 @@ function entrar() {
       if (resposta.ok) {
 
           resposta.json().then(json => {
-              sessionStorage.user_login = json.loginUser;
-              sessionStorage.user_name = json.nameUser;
+              sessionStorage.user_login = json.login;
               window.location.href = './dashboard/index.html';
           });
 
@@ -236,8 +235,7 @@ function cadastrar() {
 
       if (resposta.ok) { 
         resposta.json().then(json => {
-          sessionStorage.user_login = json.loginUser;
-          sessionStorage.user_name = json.nameUser;
+          sessionStorage.user_login = json.login;
           window.location.href = './dashboard/index.html';
       });
       } else {

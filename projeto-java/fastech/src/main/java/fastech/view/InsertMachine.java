@@ -5,6 +5,10 @@
  */
 package fastech.view;
 
+import static fastech.services.ObjectController.getController;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Jose Lucas
@@ -16,6 +20,9 @@ public class InsertMachine extends javax.swing.JFrame {
      */
     public InsertMachine() {
         initComponents();
+
+        Uteis ut = new Uteis();
+        ut.insertIcon(this);
     }
 
     /**
@@ -30,10 +37,11 @@ public class InsertMachine extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btn_login_user = new javax.swing.JButton();
+        btn_insert_machine = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        lbl_password_user = new javax.swing.JPasswordField();
+        btn_back = new javax.swing.JButton();
+        lbl_name_machine = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,16 +53,16 @@ public class InsertMachine extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon.png"))); // NOI18N
 
-        btn_login_user.setBackground(new java.awt.Color(0, 48, 108));
-        btn_login_user.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
-        btn_login_user.setForeground(new java.awt.Color(255, 255, 255));
-        btn_login_user.setText("Entrar");
-        btn_login_user.setBorder(null);
-        btn_login_user.setBorderPainted(false);
-        btn_login_user.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_login_user.addActionListener(new java.awt.event.ActionListener() {
+        btn_insert_machine.setBackground(new java.awt.Color(0, 48, 108));
+        btn_insert_machine.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
+        btn_insert_machine.setForeground(new java.awt.Color(255, 255, 255));
+        btn_insert_machine.setText("Cadastrar");
+        btn_insert_machine.setBorder(null);
+        btn_insert_machine.setBorderPainted(false);
+        btn_insert_machine.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_insert_machine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_login_userActionPerformed(evt);
+                btn_insert_machineActionPerformed(evt);
             }
         });
 
@@ -64,34 +72,54 @@ public class InsertMachine extends javax.swing.JFrame {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/machine.png"))); // NOI18N
 
-        lbl_password_user.setBackground(new java.awt.Color(13, 14, 18));
-        lbl_password_user.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
-        lbl_password_user.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_password_user.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
-        lbl_password_user.setCaretColor(new java.awt.Color(255, 255, 255));
+        btn_back.setBackground(new java.awt.Color(0, 48, 108));
+        btn_back.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
+        btn_back.setForeground(new java.awt.Color(255, 255, 255));
+        btn_back.setText("Voltar");
+        btn_back.setBorder(null);
+        btn_back.setBorderPainted(false);
+        btn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_backActionPerformed(evt);
+            }
+        });
+
+        lbl_name_machine.setBackground(new java.awt.Color(13, 14, 18));
+        lbl_name_machine.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
+        lbl_name_machine.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_name_machine.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
+        lbl_name_machine.setCaretColor(new java.awt.Color(255, 255, 255));
+        lbl_name_machine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lbl_name_machineActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(93, 93, 93)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_insert_machine, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbl_password_user, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(153, 153, 153)
-                            .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel1))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(79, 79, 79)
-                            .addComponent(btn_login_user, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                            .addComponent(lbl_name_machine)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addGap(88, 88, 88)))
                 .addContainerGap(98, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,12 +134,14 @@ public class InsertMachine extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel9)
-                        .addGap(4, 4, 4)
-                        .addComponent(lbl_password_user, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(3, 3, 3)
+                        .addComponent(lbl_name_machine, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel11))
-                .addGap(153, 153, 153)
-                .addComponent(btn_login_user, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(97, 97, 97))
+                .addGap(96, 96, 96)
+                .addComponent(btn_insert_machine, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -132,12 +162,33 @@ public class InsertMachine extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_login_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_userActionPerformed
-        LinusDashboardHome telaAdicional = new LinusDashboardHome();
+    private void btn_insert_machineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_insert_machineActionPerformed
+        String nome_machine = lbl_name_machine.getText().trim();
+        
+        
+        getController().registerMachine(nome_machine);
+        
+        
+        LinusDashboardHome dashHome = null;
+        try {
+            dashHome = new LinusDashboardHome();
+        } catch (Exception ex) {
+            Logger.getLogger(InsertMachine.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        dashHome.setVisible(true);
+        this.setVisible(false);        
+    }//GEN-LAST:event_btn_insert_machineActionPerformed
 
-        telaAdicional.setVisible(true);
+    private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
+        LoginLinus login = new LoginLinus();
+
+        login.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btn_login_userActionPerformed
+    }//GEN-LAST:event_btn_backActionPerformed
+
+    private void lbl_name_machineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbl_name_machineActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lbl_name_machineActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,12 +226,13 @@ public class InsertMachine extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_login_user;
+    private javax.swing.JButton btn_back;
+    private javax.swing.JButton btn_insert_machine;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField lbl_password_user;
+    private javax.swing.JTextField lbl_name_machine;
     // End of variables declaration//GEN-END:variables
 }

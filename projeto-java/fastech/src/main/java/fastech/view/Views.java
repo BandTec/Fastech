@@ -7,6 +7,8 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -71,18 +73,25 @@ public class Views {
         TimerTask tarefa = new TimerTask() {
             @Override
             public void run() {
-                c.insertData("Cpu");
-                c.insertData("Memory");
-                c.insertData("Disk");
+                try {
+                    c.insertData("Cpu");
+                } catch (Exception ex) {
+                    Logger.getLogger(Views.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    c.insertData("Memory");
+                } catch (Exception ex) {
+                    Logger.getLogger(Views.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    c.insertData("Disk");
+                } catch (Exception ex) {
+                    Logger.getLogger(Views.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         };
         if(run) {
             timer.scheduleAtFixedRate(tarefa, 0, seg);
         }
-        
-//        c.setGlobalMachine("XPTO");
-//
-//        c.insertData("Disk");
-        // TYPES "Cpu", "Memory", "Disk", OR SELECT * FROM Types;
     }
 }

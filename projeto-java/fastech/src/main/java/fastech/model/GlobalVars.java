@@ -8,8 +8,9 @@ import java.util.List;
  */
 public class GlobalVars {
     private Integer fkCompany;
-    private Integer fkMachine;
-    private List<Component> fkComponent;    
+    private Machine machine;
+    private List<Component> fkComponent;
+    private List<Types> listTypes;
 
     public Integer getFkCompany() {
         return fkCompany;
@@ -19,12 +20,12 @@ public class GlobalVars {
         this.fkCompany = fkCompany;
     }
 
-    public Integer getFkMachine() {
-        return fkMachine;
+    public Machine getMachine() {
+        return machine;
     }
 
-    public void setFkMachine(Integer fkMachine) {
-        this.fkMachine = fkMachine;
+    public void setMachine(Machine machine) {
+        this.machine = machine;
     }
 
     public List<Component> getFkComponent() {
@@ -35,6 +36,13 @@ public class GlobalVars {
         this.fkComponent = fkComponent;
     } 
 
-  
+    public List<Types> getListTypes() {
+        return listTypes;
+    }
+
+    public void setListTypes(List<Types> listTypes) {
+        this.listTypes = listTypes;
+    }
+
 
 }

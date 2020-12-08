@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/welcome.css">
-    <link rel="shortcut icon" href="./img/Fastech_logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
 
 </head>
 
@@ -52,8 +52,7 @@
         <ul>
             <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="./index.html"><i
                         class="fas fa-home"></i></a></li>
-            <li data-toggle="tooltip" data-placement="right" title="Gráficos"><a href="./graphs.html"><i
-                        class="fas fa-chart-pie"></i></a></li>
+            <li data-toggle="modal" data-target="#search_machine"><a href="#"><i class="fas fa-search"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="./help.html"><i
                         class="fas fa-comments"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="./settings.html"><i
@@ -63,12 +62,41 @@
         </ul>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="search_machine" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Pesquisa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form action="#">
+                            <label for="name_machine">Nome da máquina</label>
+                            <input type="text" id="name_machine">
+
+                            <label id="error"></label>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="search_action">Buscar <i class="fas fa-search"></i> </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <!-- WELCOME -->
     <div class="container">
         <div class="welcome">
             <div class="row">
                 <div id="logo">
-                    <img src="./img/Fastech_logo.png" alt="">
+                    <img src="./img/icon.png" alt="">
                 </div>
                 <h5 data-toggle="modal" data-target="#profileModal">Olá, <b>nome do usuário</b><i
                         class="fas fa-chevron-down"></i></h5>
