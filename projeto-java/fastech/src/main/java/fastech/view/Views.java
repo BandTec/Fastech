@@ -2,6 +2,7 @@ package fastech.view;
 
 import fastech.controller.Controller;
 import fastech.model.Machine;
+import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -16,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class Views {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Controller c = new Controller();
         Scanner leitor = new Scanner(System.in);
 
