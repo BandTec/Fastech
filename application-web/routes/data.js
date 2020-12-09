@@ -54,7 +54,7 @@ router.get('/datas_cpu/:company/:id', (req,res,next) => {
 	let companyId = req.params.company;
 	let idMachine = req.params.id;
 	
-    let machineSelect = `SELECT m.Name AS 'Name_Machine', t.NameType AS 'Type', d.Value AS 'Metrica', d.dtMoment AS 'Moment', c.Name AS 'Componente'
+    let machineSelect = `SELECT TOP 8 m.Name AS 'Name_Machine', t.NameType AS 'Type', d.Value AS 'Metrica', d.dtMoment AS 'Moment', c.Name AS 'Componente'
 	FROM Machine m
 		LEFT JOIN Component c ON c.fkMachine = m.idMachine 
 		LEFT JOIN [Data] d ON d.Component_idComponent = c.idComponent 

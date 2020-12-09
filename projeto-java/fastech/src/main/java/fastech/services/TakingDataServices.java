@@ -69,5 +69,31 @@ public class TakingDataServices {
         String formattedDate = myDateObj.format(myFormatObj);
         return formattedDate;
     }
+    
+    // Ajustar o formato da hora by Carroça Gabriel
+    
+//    public PrintWriter gerarLogs() throws IOException {;
+//        LocalDate localDate = LocalDate.now();
+//        Integer ano = localDate.getYear();
+//        Integer mes = localDate.getMonthValue();
+//        Integer dia = localDate.getDayOfMonth();
+//        String data = ano + "-" + mes + "-" + dia;
+//        FileWriter  arq = new FileWriter("d:\\log " + data + ".txt",true);
+//
+//        SystemInfo si = new SystemInfo();
+//        OperatingSystem os = si.getOperatingSystem();
+//
+//        PrintWriter gravarArq = new PrintWriter(arq);
+//
+//        //testes:
+//        gravarArq.printf("\nLog session: ");
+//        gravarArq.printf("\nVersão da aplicação: v1.0");
+//        gravarArq.printf("\nSistema Operacional: " + os);
+//        System.out.println("gerando log....");
+//
+//        gravarArq.printf("\nretornando informações do SO\n");
+//        gravarArq.append("oi");
+//        arq.close();
+//        return gravarArq;
 
 }

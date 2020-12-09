@@ -1,3 +1,5 @@
+
+
 function setVars() {
     fetch(`/usuarios/user/${sessionStorage.user_login}`, { cache: 'no-store' })
         .then(res => {
@@ -109,18 +111,21 @@ function getDatas() {
                             }
                         });
                     });
-                    teste.innerHTML = `${json[0].Metrica}`;
+                    value_Cpu.innerHTML = `${json[0].Metrica}`;
 
                     cpu.data.labels = [];
                     cpu.data.datasets[0].data = [];
                     cpu.options.title.text = `${json[0].Name_Machine}`;
 
-                    for (i = 0; i < 20; i++) {
+                    for (i = 0; i < json.length; i++) {
                         cpu.data.labels.push(json[i].Moment);
+                        // cpu.data.labels.shift();
                         cpu.data.datasets[0].data.push(json[i].Metrica);
+
+                        increment++;
                     }
 
-                    updateCpu();
+                    plotCpu();
 
                 });
             }
@@ -291,7 +296,7 @@ function finalizar_sessao() {
 var cpu = {
     type: 'line',
     data: {
-        labels: ['momento 1', 'momento 2', 'momento 3', 'momento 3', 'momento 4', 'momento 6', 'momento 7'],
+        labels: [],
         datasets: [{
             label: 'Processador',
             backgroundColor: "#3B5998",
@@ -331,30 +336,68 @@ var cpu = {
     }
 }
 
-window.onload = function () {
-    var ctx = document.getElementById('cpu_history').getContext('2d');
-    window.historico_cpu = new Chart(ctx, cpu);
-};
 
-setInterval(() => {
-    var ctx = document.getElementById('cpu_history').getContext('2d');
-    window.historico_cpu = new Chart(ctx, cpu);
-}, 3000);
+function updateCpu() {
+    fetch(`/data/datas_cpu/${sessionStorage.id_company}/${sessionStorage.machineId}`).then(res => {
+        if (res.ok) {
+            res.json().then((json) => {
+               // debugger;
+                // cpu.data.labels = [];
+                // cpu.data.datasets[0].data = [];
+                cpu.options.title.text = `${json[0].Name_Machine}`;
+
+                $(".progress").each(function () {
+                    var $bar = $(this).find(".bar");
+                    var $val = $(this).find("span");
+                    var perc = parseInt(json[0].Metrica, 10);
+                    $({ p: json[0].Metrica }).animate({ p: perc }, {
+                        duration: 3000,
+                        easing: "swing",
+                        step: function (p) {
+                            $bar.css({
+                                transform: "rotate(" + (45 + (p * 1.8)) + "deg)", // 100%=180° so: ° = % * 1.8
+                                // 45 is to add the needed rotation to have the green borders at the bottom
+                            });
+                            $val.text(p | json[0].Metrica);
+                        }
+                    });
+                });
+                value_Cpu.innerHTML = `${json[0].Metrica}`;
+
+                if (increment < 8) {
+                    cpu.data.labels.push(json[0].Moment);
+                    cpu.data.datasets[0].data.push(json[0].Metrica);
+
+                    increment++;
+                } else {
+                    cpu.data.labels.shift();
+                    cpu.data.datasets[0].data.shift();
+
+                    cpu.data.labels.push(json[0].Moment);
+                    cpu.data.datasets[0].data.push(json[0].Metrica);
+                }
+
+                window.historico_cpu.update();
 
 
-function updateCpu(){
-    var ctx = document.getElementById('cpu_history').getContext('2d');
-        window.historico_cpu = new Chart(ctx, cpu);  
 
-    Chart.scaleService.updateScaleDefaults('linear', {
-        ticks: {
-            min: 0
+            });
+        } else {
+            console.log('Maquina não encontrado');
         }
     });
-    
-    setInterval(() => {
-        ctx = document.getElementById('cpu_history').getContext('2d');
-        window.historico_cpu = new Chart(ctx, cpu);    
-    }, 3000);
+
+
 }
+
+function plotCpu() {
+    var ctx = document.getElementById('cpu_history').getContext('2d');
+    window.historico_cpu = new Chart(ctx, cpu);
+}
+
+window.onload = plotCpu();
+
+setInterval(() => {
+    updateCpu();
+}, 1500);
 
