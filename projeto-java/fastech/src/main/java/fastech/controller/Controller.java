@@ -97,7 +97,7 @@ public class Controller {
         con.update(addMachine, globalVars.getFkCompany());
 
         setGlobalMachine(nameMachine);
-        
+
         String nameCpu = tkDataServices.getNameProcessor();
 
         StringBuilder addComponents = new StringBuilder();
@@ -173,12 +173,12 @@ public class Controller {
 
     public void upDateStatus(Double avg, Integer idType) throws Exception {
         String statusCurrent;
-        if (((idType == 1 || idType == 2) && avg >= 90) || (idType == 3 && avg >= 85)) {
+        if (((idType == 1 || idType == 2) && avg >= 90)) {
             statusCurrent = "Danger";
             String messageDanger = String.format("@channel A maquina *%s* esta em "
                     + "estado critico", globalVars.getMachine().getName());
             slackSendMessage(messageDanger);
-        } else if ((idType == 1 && avg >= 75) || (idType == 2 && avg >= 80) || (idType == 3 && avg >= 75)) {
+        } else if ((idType == 1 && avg >= 75) || (idType == 2 && avg >= 80)) {
             statusCurrent = "Warning";
         } else {
             statusCurrent = "Good";
@@ -228,7 +228,6 @@ public class Controller {
                 return valueCurrentMemory;
             case 3:
                 Integer valueCurrentDisk = tkDataServices.getAvailableDiskSpace();
-                upDateStatus(Double.valueOf(valueCurrentDisk), 3);
                 return valueCurrentDisk;
         }
         logger.registerLog("Error", "Erro ao buscar dados da maquina");
