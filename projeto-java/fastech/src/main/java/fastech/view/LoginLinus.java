@@ -21,6 +21,26 @@ public class LoginLinus extends javax.swing.JFrame {
         ut.insertIcon(this);
     }
 
+    public void logar(String login,String passwd) {
+        try {
+            String controllerLogin = "N/OK";
+
+            controllerLogin = getController().login(login, passwd);
+            if (controllerLogin.equals("OK")) {
+                SelectMachine selectMachine = new SelectMachine();
+                selectMachine.setVisible(true);
+                this.setVisible(false);
+                
+            } else {
+                lblErroLogin.setText(controllerLogin);
+                lbl_email_user.setText("");
+                lbl_password_user.setText("");
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(LoginLinus.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -36,7 +56,7 @@ public class LoginLinus extends javax.swing.JFrame {
         btn_validate_login = new javax.swing.JButton();
         lbl_password_user = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
-        lblErrorLogin = new javax.swing.JLabel();
+        lblErroLogin = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -92,19 +112,15 @@ public class LoginLinus extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/key.png"))); // NOI18N
 
-        lblErrorLogin.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblErrorLogin.setForeground(new java.awt.Color(255, 0, 0));
-        lblErrorLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblErrorLogin.setToolTipText("");
+        lblErroLogin.setFont(new java.awt.Font("Corbel", 0, 18)); // NOI18N
+        lblErroLogin.setForeground(new java.awt.Color(255, 0, 0));
+        lblErroLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblErroLogin.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
-                .addComponent(btn_validate_login, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -126,11 +142,14 @@ public class LoginLinus extends javax.swing.JFrame {
                         .addGap(149, 149, 149)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(lblErrorLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel1)))
+                .addContainerGap(111, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(lblErroLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_validate_login, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE))
+                .addGap(74, 74, 74))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,11 +174,11 @@ public class LoginLinus extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbl_password_user, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                .addGap(50, 50, 50)
+                .addComponent(lblErroLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btn_validate_login, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(lblErrorLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addGap(95, 95, 95))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -182,27 +201,11 @@ public class LoginLinus extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lbl_email_userActionPerformed
 
+
     private void btn_validate_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_validate_loginActionPerformed
-        try {
-            String login = lbl_email_user.getText();
-            String passwd = new String(lbl_password_user.getPassword()).trim();
-            
-            String controllerLogin = "N/OK";
-            
-            controllerLogin = getController().login(login, passwd);
-            
-            if (controllerLogin.equals("OK")) {
-                SelectMachine selectMachine = new SelectMachine();
-                selectMachine.setVisible(true);
-                this.setVisible(false);
-            } else {
-                
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(LoginLinus.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
+         String login = lbl_email_user.getText();
+         String passwd = new String(lbl_password_user.getPassword()).trim();
+         logar(login,passwd);
     }//GEN-LAST:event_btn_validate_loginActionPerformed
 
     /**
@@ -250,7 +253,7 @@ public class LoginLinus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblErrorLogin;
+    private javax.swing.JLabel lblErroLogin;
     private javax.swing.JTextField lbl_email_user;
     private javax.swing.JPasswordField lbl_password_user;
     // End of variables declaration//GEN-END:variables

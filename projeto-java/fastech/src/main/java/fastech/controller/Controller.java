@@ -7,6 +7,7 @@ import fastech.model.Machine;
 import fastech.model.Types;
 import static fastech.services.AppSlack.slackSendMessage;
 import fastech.services.Connection;
+import fastech.services.ConnectionAwsDataBase;
 import fastech.services.TakingDataServices;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,7 +33,9 @@ public class Controller {
     }
 
     Connection config = new Connection();
+    ConnectionAwsDataBase configAws = new ConnectionAwsDataBase();
     JdbcTemplate con = new JdbcTemplate(config.getDatasource());
+    JdbcTemplate conAws = new JdbcTemplate(configAws.getDatasourceAws());
     SystemInfo si = new SystemInfo();
     HardwareAbstractionLayer hal = si.getHardware();
     OperatingSystem os = si.getOperatingSystem();
@@ -47,18 +50,19 @@ public class Controller {
         List<Collaborator> collaborator = con.query(selectLogin,
                 new BeanPropertyRowMapper(Collaborator.class), login, passWord);
 
-        if (collaborator.size() > 0) {
+        if (!collaborator.isEmpty()) {
 
             collaborator.forEach((Collaborator c) -> {
                 Integer fk = c.getFkCompanyBranch();
                 globalVars.setFkCompany(fk);
             });
+            
             logger.loggingIn(login);
             return "OK";
         } else {
             logger.registerLog("Error", "Erro ao executar o login");
             System.out.println("Logger login");
-            return "N/OK";
+            return "USURIO OU SENHA ERRADA";
         }
     }
 
@@ -69,12 +73,12 @@ public class Controller {
         List<Machine> machines = con.query(selectAllMachines,
                 new BeanPropertyRowMapper(Machine.class), globalVars.getFkCompany());
 
-        if (machines.size() > 0) {
+        if (!machines.isEmpty()) {
             return machines;
         } else {
             logger.registerLog("Error", "Erro ao buscar por maquinas da empresa");
             System.out.println("Logger showAllMachine");
-            return null;
+            return machines;
         }
     }
 
@@ -88,13 +92,13 @@ public class Controller {
         for (Machine m : listMachine) {
             globalVars.setMachine(m);
         }
-
     }
 
-    public void registerMachine(String nameMachine) {
+    public void registerMachine(String nameMachine) throws IOException {
 
         String addMachine = String.format("insert into Machine(Name , fkCompanyBranch ) values ('%s', ?);", nameMachine);
         con.update(addMachine, globalVars.getFkCompany());
+        conAws.update(addMachine, globalVars.getFkCompany());
 
         setGlobalMachine(nameMachine);
 
@@ -112,6 +116,15 @@ public class Controller {
                 globalVars.getMachine().getIdMachine(),
                 globalVars.getMachine().getIdMachine()
         );
+
+        conAws.update(addComponents.toString(),
+                globalVars.getMachine().getIdMachine(),
+                globalVars.getMachine().getIdMachine(),
+                globalVars.getMachine().getIdMachine(),
+                globalVars.getMachine().getIdMachine()
+        );
+        logger.registerLog("Register", "Regitrando maquina " + nameCpu);
+
         setGlobalVarComponentList();
 
     }
@@ -146,6 +159,8 @@ public class Controller {
                 tkDataServices.dateNow());
 
         con.update(insertData, valueComponent, idComponent, globalVars.getMachine().getIdMachine());
+        conAws.update(insertData, valueComponent, idComponent, globalVars.getMachine().getIdMachine());
+
     }
 
     public Integer selectTypeData(String nameType) {
@@ -173,7 +188,7 @@ public class Controller {
 
     public void upDateStatus(Double avg, Integer idType) throws Exception {
         String statusCurrent;
-        if (((idType == 1 || idType == 2) && avg >= 90)) {
+        if (((idType == 1 || idType == 2) && avg >= 25)) {
             statusCurrent = "Danger";
             String messageDanger = String.format("@channel A maquina *%s* esta em "
                     + "estado critico", globalVars.getMachine().getName());
