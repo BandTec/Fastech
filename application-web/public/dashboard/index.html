@@ -158,22 +158,63 @@
                 <div class="col-12">
                     <div class="card-body">
                         <div class="row">
-                            <div class="notification col-md-3 col-sm-12">
+
+                            <div class="notification col-md-3 col-sm-12" onclick="showOnlyDanger()">
                                 <br>
                                 <span class="badge" id="status_danger">-</span>
                                 <i class="fa fa-laptop danger" aria-hidden="true"></i>
+                                <h5>Perigo</h5> 
+                                <h6>
+                                    <i class="fas fa-microchip" data-toggle="tooltip" data-placement="bottom" title="CPU: consumo maior que 90"></i>  
+                                    <span class = "responsive_consu">consumo maior que 90</span>
+                                    
+                                    <i class="fas fa-memory" data-toggle="tooltip" data-placement="bottom" title="RAM: consumo maior que 90"></i>                               
+                                    <span class = "responsive_consu">consumo maior que 90</span>
+
+
+                                </h6>
+
                             </div>
 
-                            <div class="notification col-md-3 col-sm-12">
+                            <div class="notification col-md-3 col-sm-12"  onclick="showOnlyWarning()">
                                 <br>
                                 <span class="badge" id="status_warning">-</span>
                                 <i class="fa fa-laptop warning" aria-hidden="true"></i>
+                                <h5>Alerta</h5>
+                                <h6>
+                                    <i class="fas fa-microchip" data-toggle="tooltip" data-placement="bottom" title="CPU: consumo maior que 75"></i> 
+                                    <span class = "responsive_consu">consumo maior que 75</span>
+
+                                    <i class="fas fa-memory" data-toggle="tooltip" data-placement="bottom" title="RAM: consumo maior que 75"></i>                               
+                                    <span class = "responsive_consu">consumo maior que 80</span>
+
+
+                                </h6>
+
                             </div>
 
-                            <div class="notification col-md-3 col-sm-12">
+                            <div class="notification col-md-3 col-sm-12"  onclick="showOnlyGood()">
                                 <br>
                                 <span class="badge" id="status_good">-</span>
                                 <i class="fa fa-laptop good" aria-hidden="true"></i>
+                                <h5>Normal</h5>
+                                <h6>
+                                    <i class="fas fa-microchip" data-toggle="tooltip" data-placement="bottom" title="CPU: consumo menor que 75"></i>  
+                                    <span class = "responsive_consu">consumo menor que 75</span>
+
+                                    <i class="fas fa-memory" data-toggle="tooltip" data-placement="bottom" title="RAM: consumo menor que 80"></i>                               
+                                    <span class = "responsive_consu">consumo menor que 80</span>
+
+
+                                </h6>
+
+                            </div>
+
+                            <div class="notification col-md-3 col-sm-12" onclick="showOnlyDangerDisk()">
+                                <br>
+                                <span class="badge" id="full_disk">-</span>
+                                <i class="fa fa-hdd danger" aria-hidden="true"></i>
+                                <h5>Pouco espaço em disco</h5>
                             </div>
                         </div>
                     </div>

@@ -51,18 +51,6 @@ body {
     text-align: center;
 }
 
-
-/* table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    text-align: left;
-    padding: 8px;
-  } */
-
 #machines-container .card-body .row {
     margin: 5px;
 }
@@ -76,10 +64,6 @@ body {
     text-align: center;
     margin-bottom: 20px;
     cursor: pointer;
-}
-
-#machines-container .card-body .row b{
-    margin-left: 30px;
 }
 
 #machines-container .card-body .fa-chevron-down{
@@ -104,21 +88,23 @@ body {
 }
 
 .notification {
-    background-color: var(--secundary-bg);
     color: white;
     text-decoration: none;
     position: relative;
-    display: inline-block;
     border-radius: 5px;
-    width: 27%;
-    height: 200px;
-    margin-left: 5%;
-    padding-top: 15px;
-  }  
-  .notification i{
-    margin-left: 25%;
-    font-size: 100px;
-    text-shadow: 6px 4px 6px #000000;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.notification h6 i{
+    font-size: 1em;
+    margin: 5px;
+}
+
+.notification .responsive_consu{
+    display: none;
 }
   .notification .badge {
     position: absolute;
@@ -134,14 +120,20 @@ body {
 
   .notification .danger{
       color: #790c0c;
+      font-size: 3em;
+      text-shadow: 6px 4px 6px #000000;
   }
 
     .notification .good{
         color: #055e11;
+        font-size: 3em;
+        text-shadow: 6px 4px 6px #000000;
     }
 
     .notification .warning{
         color: #8d7f05;
+        font-size: 3em;
+        text-shadow: 6px 4px 6px #000000;
     }
 
 /* MODAL */
@@ -388,11 +380,10 @@ input:checked+.slider:before {
 
 }
 
+
+
 /* responsividade */
 @media only screen and (max-width: 1080px){
-    .notification {
-        background-color: transparent;
-    } 
 
     .notification .badge {
         width: 40px;
@@ -400,10 +391,6 @@ input:checked+.slider:before {
         font-size: 18px;
         padding-top: 10px;
     }  
-
-    .notification i {
-        font-size: 85px;
-    }
 }
 
 
@@ -411,25 +398,26 @@ input:checked+.slider:before {
     #main-container .card{
         margin: 20px;
         margin-left: 0;
-    }    
-    
-    .notification i{
-        margin-left: 25%;
-        font-size: 90px;
+    }  
+
+    .notification{
+        margin: 2%;
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        background-color: var(--secundary-bg);
     }
 
     .notification .badge {
         width: 30px;
-        height: 30px;
-        padding-top: 5px;
+        height: auto;
+        padding: 5px;
     }   
+
+    .notification .responsive_consu{
+        display: inline;
+    }
      
+
 }
 
-@media only screen and (max-width: 620px){
-    .notification {
-        background-color: var(--secundary-bg);
-        width: 98%;
-        margin-bottom: 10px;   
-    }
-}

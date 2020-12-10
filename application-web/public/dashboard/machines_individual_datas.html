@@ -134,9 +134,8 @@
                 <nav class="nav_tabs">
                     <ul>
                         <li>
-                            <input type="radio" name="tabs" onclick="getDatas()" class="rd_tabs" id="cpu" checked>
-                            <label for="cpu"> <span id="title"> Processador </span> <i
-                                    class="fas fa-microchip"></i></label>
+                            <input type="radio" name="tabs" onclick="getCpu()" class="rd_tabs" id="cpu" checked>
+                            <label for="cpu"> <span id="title"> Processador </span> <i class="fas fa-microchip"></i></label>
                             <div class="content">
                                 <div class="row">
 
@@ -144,7 +143,7 @@
 
                                     </div>
 
-                                    <div class="progress">
+                                    <div class="progress" id="progress_cpu">
                                         <div class="barOverflow">
                                             <div class="bar"></div>
                                         </div>
@@ -161,7 +160,7 @@
                         </li>
 
                         <li>
-                            <input type="radio" name="tabs" onclick="getMemory()" class="rd_tabs" id="memory">
+                            <input type="radio" name="tabs" onclick="getMem()" class="rd_tabs" id="memory">
                             <label for="memory"> <span id="title"> Memória </span> <i class="fas fa-memory"></i></label>
                             <div class="content">
                                 <div class="row">
@@ -174,7 +173,7 @@
                                         <div class="barOverflow">
                                             <div class="bar"></div>
                                         </div>
-                                        <span>87</span>
+                                        <span id="value_Mem">87</span>
                                     </div>
 
                                 </div>
@@ -200,7 +199,7 @@
                                         <div class="barOverflow">
                                             <div class="bar"></div>
                                         </div>
-                                        <span>24</span>
+                                        <span id="value_Disk">24</span>
                                     </div>
 
                                 </div>
@@ -220,17 +219,16 @@
     </div>
     <script src="./js/tooltip.js"></script>
     <script src="./js/app.js"></script>
-    <!-- <script src="./js/cpu_machine.js"></script> -->
+
+    <script src="./js/cpu_machine.js"></script>
     <script src="./js/memory_machine.js"></script>
     <script src="./js/disk_machine.js"></script>
 
     <script src="./js/modal.js"></script>
     <script src="./js/script.js"> </script>
     <script>setVars();</script>
-    <script>getDatas();</script>
-            
-    <script>let increment = 0;</script>
-
+    <script>getCpu();</script>    
+ 
 
     
 </body>
