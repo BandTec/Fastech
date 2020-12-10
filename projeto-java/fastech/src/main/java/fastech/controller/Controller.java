@@ -188,7 +188,7 @@ public class Controller {
 
     public void upDateStatus(Double avg, Integer idType) throws Exception {
         String statusCurrent;
-        if (((idType == 1 || idType == 2) && avg >= 25)) {
+        if (((idType == 1 || idType == 2) && avg >= 90)) {
             statusCurrent = "Danger";
             String messageDanger = String.format("@channel A maquina *%s* esta em "
                     + "estado critico", globalVars.getMachine().getName());
