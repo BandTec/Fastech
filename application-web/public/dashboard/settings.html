@@ -29,8 +29,12 @@
     <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
     <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
 
-    <!-- FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- FONT
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+
 
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/3db2c990f7.js" crossorigin="anonymous"></script>
@@ -39,7 +43,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/welcome.css">
-    <link rel="shortcut icon" href="./img/Fastech_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/help.css">
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
 
 </head>
 
@@ -48,8 +53,7 @@
         <ul>
             <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="./index.html"><i
                         class="fas fa-home"></i></a></li>
-            <li data-toggle="tooltip" data-placement="right" title="Gráficos"><a href="./graphs.html"><i
-                        class="fas fa-chart-pie"></i></a></li>
+           
             <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="./help.html"><i
                         class="fas fa-comments"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="./settings.html"><i
@@ -59,20 +63,22 @@
         </ul>
     </div>
 
+    
     <!-- WELCOME -->
     <div class="container">
         <div class="welcome">
             <div class="row">
                 <div id="logo">
-                    <img src="./img/Fastech_logo.png" alt="">
+                    <img src="./img/icon.png" alt="">
                 </div>
-                <h5 data-toggle="modal" data-target="#profileModal">Olá, <b>nome do usuário</b><i
+                <h5 data-toggle="modal" data-target="#profileModal">Olá, <b id="user"> - - - - - </b><i
                         class="fas fa-chevron-down"></i></h5>
-
                 <i class="fas fa-user" data-toggle="modal" data-target="#profileModal"></i>
             </div>
         </div>
     </div>
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel"
@@ -88,27 +94,27 @@
                 <div class="modal-body">
                     <div class="row">
                         <label>Nome: </label>
-                        <b id="user_name">Jorge</b>
+                        <b id="user_name"></b>
                     </div>
                     <div class="row">
                         <label>CPF: </label>
-                        <b id="cpf">499.914.138-80</b>
+                        <b id="cpf"></b>
                     </div>
                     <div class="row">
                         <label>Email: </label>
-                        <b id="email">jorge.barbosa@bandtec.com.br</b>
+                        <b id="email"></b>
                     </div>
                     <div class="row">
                         <label>Empresa: </label>
-                        <b id="company">BandTec</b>
+                        <b id="company"></b>
                     </div>
                     <div class="row">
                         <label>Cargo: </label>
-                        <b id="office">Estagiario</b>
+                        <b id="office"></b>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
 
@@ -181,7 +187,7 @@
 
 <script src="./js/tooltip.js"></script>
 <script src="./js/modal.js"></script>
-<script src="./js/theme.js"></script>
-<!-- <script>loginUser()</script> -->
+<script src="./js/script.js"> </script>
+<script>setVars();</script>
 
 </html>

@@ -1,7 +1,7 @@
 :root {
-    --background: #333333;
-    --blue-deafult: #3B5998;
-    --secundary-bg: #515151;
+    --background: #1a1a1a;
+    --blue-deafult: #252baf;
+    --secundary-bg: #333;
     --out-color: #FE4242;
     --color-text: #FFFFFF;
 }
@@ -13,9 +13,13 @@
     margin-top: 3%;
 }
 
+#logo{
+    max-width: 20%;
+}
+
 #logo img{
-    width: 30%; 
-    margin-left: 30%;   
+    width: 50%; 
+    margin-left: 15%;   
 }
 
 .fa-user{
@@ -23,8 +27,8 @@
 }
 
 .welcome h5{
-    font-size: 1.2em;
-    margin-left: 65%;
+    font-size: 1.1em;
+    margin-left: 48%;
     cursor: pointer;
 }
 
@@ -42,42 +46,44 @@
     margin: 20px 0px 30px 40px;
 }
 
-#main-container .card{
-    padding: 10px;
-    background-color: var(--secundary-bg-dark);
-    border: 1px solid var(--color-theme);
-}
-
 #main-container .card .card-body .card-title{
     color: #fff;
     font-weight: bold;
 }
-#main-container .card .card-body i{
-    display: block;
-    text-align: center;
-    font-size: 3em;
-}
+
 
 @media only screen and (max-width: 1080px){
     .welcome h5{
         font-size: 1em;
-        margin-left: 65%;
+        margin-left: 45%;
     }
 }
 
 @media only screen and (max-width: 820px){
     .welcome h5{
-        margin-left: 50%;
+        margin-left: 40%;
     }
 }
 
-@media only screen and (max-width: 425px){
+@media only screen and (max-width: 768px){
     .welcome h5{
-        margin-left: 20%;
+        margin-left: 35%;
     }
 }
 
-@media only screen and (max-width: 380px){
+@media only screen and (max-width: 530px){
+    .welcome h5{
+        margin-left: 25%;
+    }
+}
+
+@media only screen and (max-width: 460px){
+    .welcome h5{
+        margin-left: 15%;
+    }
+}
+
+@media only screen and (max-width: 400px){
     .welcome h5{
         display: none;
     }
@@ -85,7 +91,10 @@
     .fa-user{
         display: block;
         font-size: 1.5em;
-        margin-left: 45%;
-        padding: 5%;
+        margin-left: 55%;
     }
+
+    #logo img{
+        width: 100%;
+    }    
 }

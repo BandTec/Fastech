@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
@@ -32,14 +32,21 @@
     <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
+    <!-- FONT
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/3db2c990f7.js" crossorigin="anonymous"></script>
-
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/welcome.css">
-    <link rel="shortcut icon" href="./img/Fastech_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/help.css">
+    <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -47,15 +54,46 @@
         <ul>
             <li data-toggle="tooltip" data-placement="right" title="Página inicial"><a href="./index.html"><i
                         class="fas fa-home"></i></a></li>
-            <li data-toggle="tooltip" data-placement="right" title="Gráficos"><a href="./graphs.html"><i
-                        class="fas fa-chart-pie"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Ajuda"><a href="./help.html"><i
                         class="fas fa-comments"></i></a></li>
             <li data-toggle="tooltip" data-placement="right" title="Configurações"><a href="./settings.html"><i
                         class="fas fa-cog"></i></a></li>
-            <li onclick="logoff()" id="logoff" data-toggle="tooltip" data-placement="right" title="Sair"><a href="#"><i
+            <li id="logoff" data-toggle="tooltip" data-placement="right" title="Sair"><a onclick="logoff()" href="#"><i
                         class="fas fa-power-off"></i></a></li>
         </ul>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="search_machine" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Pesquisa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form action="#">
+                            <label for="name_machine">Nome da máquina</label>
+
+                            <input type="text" id="name_machine">
+
+                            <input type="hidden" id="idMachine" value="">
+
+                            <label id="error"></label>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="searchMachine(name_machine.value)" class="search_action"
+                        data-dismiss="modal">Buscar <i class="fas fa-search"></i> </button>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <!-- WELCOME -->
@@ -63,11 +101,10 @@
         <div class="welcome">
             <div class="row">
                 <div id="logo">
-                    <img src="./img/Fastech_logo.png" alt="">
+                    <img src="./img/icon.png" alt="">
                 </div>
-                <h5 data-toggle="modal" data-target="#profileModal">Olá, <b>nome do usuário</b><i
+                <h5 data-toggle="modal" data-target="#profileModal">Olá, <b id="user"> - - - - - </b><i
                         class="fas fa-chevron-down"></i></h5>
-
                 <i class="fas fa-user" data-toggle="modal" data-target="#profileModal"></i>
             </div>
         </div>
@@ -87,32 +124,33 @@
                 <div class="modal-body">
                     <div class="row">
                         <label>Nome: </label>
-                        <b id="user_name">Jorge</b>
+                        <b id="user_name"></b>
                     </div>
                     <div class="row">
                         <label>CPF: </label>
-                        <b id="cpf">499.914.138-80</b>
+                        <b id="cpf"></b>
                     </div>
                     <div class="row">
                         <label>Email: </label>
-                        <b id="email">jorge.barbosa@bandtec.com.br</b>
+                        <b id="email"></b>
                     </div>
                     <div class="row">
                         <label>Empresa: </label>
-                        <b id="company">BandTec</b>
+                        <b id="company"></b>
                     </div>
                     <div class="row">
                         <label>Cargo: </label>
-                        <b id="office">Estagiario</b>
+                        <b id="office"></b>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
 
         </div>
     </div>
+
 
     <!-- FORMULÁRIO -->
     <div id="main-container">
@@ -149,6 +187,9 @@
     <br>
     <br>
 </body>
-<!-- <script>loginUser()</script> -->
+<script src="./js/tooltip.js"></script>
+<script src="./js/modal.js"></script>
+<script src="./js/script.js"> </script>
+<script>setVars();</script>
 
 </html>

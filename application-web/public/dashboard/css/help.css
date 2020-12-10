@@ -1,0 +1,13 @@
+:root {
+    --background: #1a1a1a;
+    --blue-deafult: #252baf;
+    --secundary-bg: #333;
+    --out-color: #FE4242;
+    --color-text: #FFFFFF;
+}
+
+@media only screen and (max-width: 1362px) {
+    .sidebar ul li:nth-child(1) {
+        margin-left: 32%;
+    }
+}
