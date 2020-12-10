@@ -9,8 +9,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <link rel="apple-touch-icon" sizes="180x180" href="../ydoc/images/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../ydoc/images/fastech-icone.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../ydoc/images/fastech-icone.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../ydoc/images/Fastech-icon-5.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../ydoc/images/Fastech-icon-5.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../ydoc/images/Fastech-icon-5.png" />
     <link rel="manifest" href="../ydoc/images/manifest.json" />
     <link rel="mask-icon" href="../ydoc/images/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="theme-color" content="#ffffff" />
@@ -42,12 +43,12 @@
                                     <a href="install.html" class="href">Dependências de instalação</a>
                                     <ul class="m-summary-list indent">
                                         <li class="item">
-                                            <a href="install.html#%e5%ae%89%e8%a3%85%e5%b7%a5%e5%85%b7" class="href">Ferramenta de instalação</a
+                                            <a href="install.html#ferramentas" class="href">Ferramenta de instalação</a
                         >
                       </li>
                       <li class="item">
                         <a
-                          href="install.html#%e5%ae%89%e8%a3%85-qscan"
+                          href="install.html#-qscan"
                           class="href"
                           >instalação Fastech</a
                         >
@@ -60,27 +61,27 @@
                     <a href="" class="href">Tutorial</a>
                                             <ul class="m-summary-list indent">
                                                 <li class="item">
-                                                    <a href="course.html#%e9%85%8d%e7%bd%ae" class="href">Configuração</a
+                                                    <a href="course.html#Configuracao" class="href">Configuração</a
                         >
                       </li>
                       <li class="item">
                         <div class="m-summary-block">
                           <a
-                            href="course.html#%e8%b0%83%e7%94%a8%e6%96%b9%e5%bc%8f"
+                            href="course.html#Metododechamada"
                             class="href"
                             >Método de chamada</a
                           >
                           <ul class="m-summary-list indent">
                             <li class="item">
                               <a
-                                href="course.html#%e8%b0%83%e7%94%a8%e6%96%b9%e5%bc%8f-%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%b0%83%e7%94%a8"
+                                href="course.html#perso"
                                 class="href"
                                 >Chamada de linha de comando</a
                               >
                             </li>
                             <li class="item">
                               <a
-                                href="course.html#%e8%b0%83%e7%94%a8%e6%96%b9%e5%bc%8f-%e4%bd%9c%e4%b8%ba-node-%e6%a8%a1%e5%9d%97%e4%bd%bf%e7%94%a8"
+                                href="course.html#operacional"
                                 class="href"
                                 >Use como um módulo do node</a
                               >
@@ -90,7 +91,7 @@
                       </li>
                       <li class="item">
                         <a
-                          href="course.html#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%a8%a1%e5%bc%8f"
+                          href="course.html#final"
                           class="href"
                           >Modo personalizado</a
                         >
@@ -149,7 +150,7 @@
         <header class="m-header" id="js-header">
           <div class="m-header-title js-logo">
             <a href="../index.html" target="_self"
-              ><img class="logo" width="36" src="../ydoc/images/fastech-logo.png" />
+              ><img class="logo" width="36" src="../ydoc/images/Fastech-icon-5.png" />
               <h6 class="name">Fastech</h6></a
             >
           </div>
@@ -166,7 +167,7 @@
                 <a class="href" href="index.html">Documentação</a>
                                                 </li>
                                                 <li class="item">
-                                                    <a class="href" href="../usage/index.html">Programa</a>
+                                                    <a class="href" href="../usage/index.html">Sobre</a>
                                                 </li>
                                                 <li class="item">
                                                     <a class="href" onclick="init()" id="login">Login | Cadastro</a>
@@ -230,14 +231,14 @@
                                                         <a href="usage.md#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%BC%8F">Modo personalizado</a
               >
             </p>
-            <h2 id="Método de chamada">Método de chamada</h2>
+            <h2 id="Metododechamada">Método de chamada</h2>
             <h3 id="Chamada de método de linha de comando">Chamada de linha de comando</h3>
             <p>Depois de instalar o QScan globalmente, você pode usar a linha de comando para chamá-lo e agora oferece suporte a três comandos：</p>
             <pre><code class="language-bash">Commands:
   doctor <span class="token punctuation">[</span>options<span class="token punctuation">]</span>  Verifique o ambiente operacional
   scan <span class="token punctuation">[</span>options<span class="token punctuation">]</span>    Leia o código QR
 </code></pre>
-            <h4>1. qscan doctor Verifique o ambiente operacional</h4>
+            <h4 id="operacional">1. qscan doctor Verifique o ambiente operacional</h4>
             <pre><code class="language-bash">Options:
   -c, --customModel <span class="token operator">&lt;</span>customModel<span class="token operator">></span>  Caminho do modo personalizado, vazio por padrão
   -r, --runConfig <span class="token operator">&lt;</span>runConfig<span class="token operator">></span>      Execute o caminho absoluto da configuração, o padrão é ~/.qscanrc
@@ -296,7 +297,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-            <h4>
+            <h4 >
               scan.clone({ newModelName, oldModelName, opts }) Faça uma cópia
               Model，Pode usar <code>opts</code> O objeto cobre algumas propriedades:
             </h4>
@@ -320,10 +321,10 @@ scan<span class="token punctuation">.</span><span class="token function">loadMod
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-            <h2 id="自定义模式">Modo personalizado</h2>
+            <h2 id="perso">Modo personalizado</h2>
             <p>
               QScan Fornece um modo personalizado, ao qual os usuários podem consultar
-              <a
+              <a id="final"
                 href="https://github.com/qunarcorp/qscan/blob/master/src/models/wx-default.js"
                 target="_blank"
                 >QScan Digitalize o código do WeChat Model</a
