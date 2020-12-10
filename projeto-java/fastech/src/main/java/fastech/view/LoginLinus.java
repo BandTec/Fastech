@@ -1,6 +1,9 @@
 package fastech.view;
 
 import static fastech.services.ObjectController.getController;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -180,19 +183,23 @@ public class LoginLinus extends javax.swing.JFrame {
     }//GEN-LAST:event_lbl_email_userActionPerformed
 
     private void btn_validate_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_validate_loginActionPerformed
-        String login = lbl_email_user.getText();
-        String passwd = new String(lbl_password_user.getPassword()).trim();
-
-        String controllerLogin = "N/OK";
-
-        controllerLogin = getController().login(login, passwd);
-
-        if (controllerLogin.equals("OK")) {
-            SelectMachine selectMachine = new SelectMachine();
-            selectMachine.setVisible(true);
-            this.setVisible(false);
-        } else {
-
+        try {
+            String login = lbl_email_user.getText();
+            String passwd = new String(lbl_password_user.getPassword()).trim();
+            
+            String controllerLogin = "N/OK";
+            
+            controllerLogin = getController().login(login, passwd);
+            
+            if (controllerLogin.equals("OK")) {
+                SelectMachine selectMachine = new SelectMachine();
+                selectMachine.setVisible(true);
+                this.setVisible(false);
+            } else {
+                
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(LoginLinus.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 

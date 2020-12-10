@@ -1,5 +1,6 @@
 package fastech.controller;
 
+import fastech.logger.Logger;
 import fastech.model.Collaborator;
 import fastech.model.GlobalVars;
 import fastech.model.Machine;
@@ -7,10 +8,9 @@ import fastech.model.Types;
 import static fastech.services.AppSlack.slackSendMessage;
 import fastech.services.Connection;
 import fastech.services.TakingDataServices;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import oshi.SystemInfo;
@@ -38,8 +38,9 @@ public class Controller {
     OperatingSystem os = si.getOperatingSystem();
     TakingDataServices tkDataServices = new TakingDataServices();
     GlobalVars globalVars = new GlobalVars();
+    Logger logger = new Logger();
 
-    public String login(String login, String passWord) {
+    public String login(String login, String passWord) throws IOException {
 
         String selectLogin = "select * from Collaborator where login = ? and password = ?;";
 
@@ -52,14 +53,16 @@ public class Controller {
                 Integer fk = c.getFkCompanyBranch();
                 globalVars.setFkCompany(fk);
             });
+            logger.loggingIn(login);
             return "OK";
         } else {
+            logger.registerLog("Error", "Erro ao executar o login");
             System.out.println("Logger login");
             return "N/OK";
         }
     }
 
-    public List<Machine> showAllMachine() {
+    public List<Machine> showAllMachine() throws IOException {
 
         String selectAllMachines = "select * from Machine M where M.fkCompanyBranch = ?;";
 
@@ -69,6 +72,7 @@ public class Controller {
         if (machines.size() > 0) {
             return machines;
         } else {
+            logger.registerLog("Error", "Erro ao buscar por maquinas da empresa");
             System.out.println("Logger showAllMachine");
             return null;
         }
@@ -93,7 +97,7 @@ public class Controller {
         con.update(addMachine, globalVars.getFkCompany());
 
         setGlobalMachine(nameMachine);
-        
+
         String nameCpu = tkDataServices.getNameProcessor();
 
         StringBuilder addComponents = new StringBuilder();
@@ -143,9 +147,6 @@ public class Controller {
 
         con.update(insertData, valueComponent, idComponent, globalVars.getMachine().getIdMachine());
     }
-    
-    
-    
 
     public Integer selectTypeData(String nameType) {
 
@@ -172,12 +173,12 @@ public class Controller {
 
     public void upDateStatus(Double avg, Integer idType) throws Exception {
         String statusCurrent;
-        if (((idType == 1 || idType == 2) && avg >= 90) || (idType == 3 && avg >= 85)) {
+        if (((idType == 1 || idType == 2) && avg >= 90)) {
             statusCurrent = "Danger";
             String messageDanger = String.format("@channel A maquina *%s* esta em "
                     + "estado critico", globalVars.getMachine().getName());
             slackSendMessage(messageDanger);
-        } else if ((idType == 1 && avg >= 75) || (idType == 2 && avg >= 80) || (idType == 3 && avg >= 75)) {
+        } else if ((idType == 1 && avg >= 75) || (idType == 2 && avg >= 80)) {
             statusCurrent = "Warning";
         } else {
             statusCurrent = "Good";
@@ -227,10 +228,9 @@ public class Controller {
                 return valueCurrentMemory;
             case 3:
                 Integer valueCurrentDisk = tkDataServices.getAvailableDiskSpace();
-                upDateStatus(Double.valueOf(valueCurrentDisk), 3);
                 return valueCurrentDisk;
         }
-        System.out.println("Logger");
+        logger.registerLog("Error", "Erro ao buscar dados da maquina");
         return null;
     }
 }
