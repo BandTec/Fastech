@@ -301,7 +301,7 @@ router.get('/only_good/:company', (req, res, next) => {
 router.get('/only_danger_disk/:company', (req, res, next) => {
 	let companyId = req.params.company;
 
-	let onlyDangerDisk = `SELECT m.Name as nameMachine, m.Status, m.idMachine FROM Machine m
+	let onlyDangerDisk = `SELECT m.Name as nameMachine, m.Status, m.idMachine AS 'IdMachine' FROM Machine m
 	LEFT JOIN CompanyBranch cb ON cb.idCompanyBranch = m.fkCompanyBranch 
 	LEFT JOIN Component c ON c.fkMachine = m.idMachine 
 	LEFT JOIN Types t ON c.fkType = t.idType 
