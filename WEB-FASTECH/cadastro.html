@@ -46,9 +46,20 @@
 
                     </div>
 
+
                     <div class="div-input-olho"><input id="pass2" onblur="Verifica()" type="password" name="confirma-senha" class="input-padrao" placeholder="Confirme sua senha" required minlength="4" /> </div>
+
+                    <div>
+                        <select class="combo-box" id=cbPais>
+                        <option value="" ></option>
+                        <option value="usa" >Usa</option>
+                        <option value="ca" selected="selected" >Canada</option>
+                        <option value="me" >Mexico</option>
+                    </select>
+                    </div>
+
                     <button id="btn_voltar" class="btn-links"> <a href="index.html"> Voltar</a> </button>
-                    <button id="btn_voltar" class="btn-links"> <a href="login.html"> Logar</a> </button>
+                    <button id="btn_logar" class="btn-links"> <a href="login.html"> Logar</a> </button>
 
                     <input type="submit" id="btn_entrar" value="Cadastrar" disabled class="btn-cadastro" />
                 </form>

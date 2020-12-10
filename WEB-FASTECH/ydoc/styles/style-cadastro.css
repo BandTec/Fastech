@@ -134,6 +134,11 @@ body {
     width: 343px;
 }
 
+.combo-box {
+    width: 343px;
+    margin-bottom: 4%;
+}
+
 .btn-links {
     width: 25%;
     height: 6vh;
