@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charSet="UTF-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../ydoc/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../ydoc/images/fastech-icone.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../ydoc/images/fastech-icone.png" />
+    <link rel="manifest" href="../ydoc/images/manifest.json" />
+    <link rel="mask-icon" href="../ydoc/images/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>Documentação de instalação</title>
+    <link rel="stylesheet" href="../ydoc/styles/style.css" />
+    <meta name="author" content="DK" />
+    <meta name="keywords" />
+    <meta name="description" content="qunar scan tool" />
+    <meta id="releativePath" content=".." />
+    <link rel="stylesheet" href="../ydoc/ydoc-plugin-search/search.css" />
+</head>
+
+<body>
+    <div class="g-doc">
+        <div class="m-aside">
+            <div class="m-summary" id="js-menu">
+                <div class="m-summary-content" id="js-menu-content">
+                    <div class="m-summary-block">
+                        <ul class="m-summary-list">
+                            <li class="item"><a href="index.html" class="href">Introdução</a></li>
+                        </ul>
+                    </div>
+                    <div class="m-summary-block">
+                        <ul class="m-summary-list">
+                            <li class="item">
+                                <div class="m-summary-block"><a href="" class="href">Dependências de instalação</a>
+                                    <ul class="m-summary-list indent">
+                                        <li class="item"><a href="install.html#%e5%ae%89%e8%a3%85%e5%b7%a5%e5%85%b7" class="href">Ferramenta de instalação</a></li>
+                                        <li class="item"><a href="install.html#%e5%ae%89%e8%a3%85-qscan" class="href">instalação Fastech</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="m-summary-block"><a href="course.html" class="href">Tutorial</a>
+                                    <ul class="m-summary-list indent">
+                                        <li class="item"><a href="course.html#%e9%85%8d%e7%bd%ae" class="href">Configuração</a></li>
+                                        <li class="item">
+                                            <div class="m-summary-block"><a href="course.html#%e8%b0%83%e7%94%a8%e6%96%b9%e5%bc%8f" class="href">Método de chamada</a>
+                                                <ul class="m-summary-list indent">
+                                                    <li class="item"><a href="course.html#%e8%b0%83%e7%94%a8%e6%96%b9%e5%bc%8f-%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%b0%83%e7%94%a8" class="href">Chamada de linha de comando</a></li>
+                                                    <li class="item"><a href="course.html#%e8%b0%83%e7%94%a8%e6%96%b9%e5%bc%8f-%e4%bd%9c%e4%b8%ba-node-%e6%a8%a1%e5%9d%97%e4%bd%bf%e7%94%a8" class="href">Use como um módulo do node</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="item"><a href="course.html#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%a8%a1%e5%bc%8f" class="href">Modo personalizado</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg>
+                <svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="aaa" fill="#fff" fill-rule="nonzero">
+                            <path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z"
+                                id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path>
+                        </g>
+                    </g>
+                    </svg>
+            </div>
+        </div>
+        <div class="m-main" id="js-panel">
+            <header class="m-header" id="js-header">
+                <div class="m-header-title js-logo">
+                    <a href="../index.html" target="_self"><img class="logo" width="36" src="../ydoc/images/fastech-logo.png
+                        " />
+                        <h6 class="name">Fastech</h6>
+                    </a>
+                </div>
+                <div>
+                    <div class="m-search">
+                        <div class="icon">&#xf0fd;</div>
+                        <input type="text" class="input js-input" placeholder="procurar por" />
+                        <div class="m-search-result js-search-result"></div>
+                    </div>
+                </div>
+                <nav class="m-header-nav js-nav">
+                    <ul class="m-header-items">
+                        <li class="item active"><a class="href" href="index.html">Documentação</a></li>
+                        <li class="item "><a class="href" href="../usage/index.html">Programa</a></li>
+                        <li class="item "><a class="href" onclick="init()" id="login">Login | Cadastro</a></li>
+                    </ul>
+                </nav>
+                <div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div>
+            </header>
+            <div class="m-content" id="js-content">
+                <div id="markdown-body" class="m-content-container markdown-body">
+                    <h1>instalação</h1>
+                    <p>Para usar o Linux, você precisa preparar alguns equipamentos e instalar algumas ferramentas com antecedência</p>
+                    <h2 id="Ferramenta de instalação">Ferramenta de instalação</h2>
+                    <p>QScan Confie nos seguintes equipamentos e ferramentas：</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>equipamento</th>
+                                <th>versão</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>macOS equipamento</td>
+                                <td>&gt;=v8.0</td>
+                            </tr>
+                            <tr>
+                                <td>Android equipamento</td>
+                                <td>&gt;=v4.4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ferramenta</th>
+                                <th>versão</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Node</td>
+                                <td>&gt;=v8.0</td>
+                            </tr>
+                            <tr>
+                                <td>Appium</td>
+                                <td>A última versão</td>
+                            </tr>
+                            <tr>
+                                <td>Android Aplicativo WeChat instalado no dispositivo</td>
+                                <td>v6.7.2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3 id="Ferramenta de instalação-1-node.js">1. instalação Node.js</h3>
+                    <p>Programa一: De <a href="https://nodejs.org/en/" target="_blank">Node.js</a> Baixe o pacote de instalação do site oficial</p>
+                    <p>Programa二: usar <a href="https://github.com/creationix/nvm" target="_blank">Node Version Manager(NVM)</a> instalação Node.js，Você pode instalá-lo por NVM :</p>
+                    <p>cURL:</p>
+                    <pre><code class="language-bash">$ <span class="token function">curl</span> -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
+</code></pre>
+                    <p>Wget:</p>
+                    <pre><code class="language-bash">$ <span class="token function">wget</span> -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
+</code></pre>
+                    <p>NVM Depois da instalação，Reinicie o terminal e execute o seguinte comando para instalar Node.js :</p>
+                    <pre><code class="language-bash">nvm <span class="token function">install</span> stable
+</code></pre>
+                    <h3 id="Ferramenta de instalação-2-appium">2. instalação Appium</h3>
+                    <p>Siga este tutorial para instalar：<a href="https://www.jianshu.com/p/4d2770f90bed" target="_blank">Mac Instalar em Appium Detalhado</a></p>
+                    <h3 id="Ferramenta de instalação-3-android-">3. Android Instale o aplicativo WeChat no dispositivo</h3>
+                    <p>instalação v6.7.2 Versão do WeChat</p>
+                    <h2 id="安装-qscan">instalação QScan</h2>
+                    <h3 id="安装-qscan-使用-npm-安装-qscan">usar NPM instalação Linus</h3>
+                    <h4>Instalação global</h4>
+                    <pre><code>npm install qscan [-g]
+</code></pre>
+                    <p>Depois que a instalação for concluída, você pode chamá-lo através da linha de comando，realizado <code>qscan -v</code> Visão QScan versão</p>
+                    <h4>Instale no projeto</h4>
+                    <pre><code>npm install qscan [--save-dev]
+</code></pre>
+                    <p>Instalar como dependência do projeto，Pode ser introduzido por meio de módulos</p>
+                </div>
+                <div class="m-content-container m-paging">
+                    <div class="m-paging-prev m-paging-item"><a href="index.html" class="href"><span class="ui-font-ydoc"></span>Documentação</a></div>
+                    <div class="m-paging-next m-paging-item"><a href="course.html" class="href">Tutorial<span class="ui-font-ydoc"></span></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div></div>
+    <script>
+        var $content = document.getElementById('js-content');
+        var $summaryItems = Array.prototype.slice.call(document.querySelectorAll('#js-menu .href'));
+        var $menu = document.getElementById('js-menu');
+        if ($menu && sessionStorage.menuScrollTop) {
+            $menu.scrollTop = sessionStorage.menuScrollTop;
+        }
+        // Quando a página é atualizada, mas o nome do caminho não é alterado, a área de conteúdo é restaurada para a altura da memória
+        if ($content && sessionStorage.contentScrollTop && window.location.pathname == sessionStorage.locationPathname) {
+            $content.scrollTop = sessionStorage.contentScrollTop;
+        }
+        sessionStorage.setItem('locationPathname', window.location.pathname);
+
+
+        // SCRIPT DO LOGIN  ABRINDO EM OUTRA ABA NO BROWSER 
+
+        function init() {
+            "use strict";
+            var btnlogin = window.document.getElementById("login");
+            btnlogin.addEventListener("click", function() {
+                window.open("../login.html", "login");
+            });
+        }
+        window.addEventListener("load", init);
+    </script>
+    <script src="../ydoc/scripts/plugins/dollar.min.js"></script>
+    <script src="../ydoc/scripts/plugins/responsive-nav.min.js"></script>
+    <script src="../ydoc/scripts/plugins/slideout.min.js"></script>
+    <script src="../ydoc/scripts/app.js"></script>
+    <script src="../ydoc/ydoc-plugin-search/core.js"></script>
+    <script src="../ydoc/ydoc-plugin-search/search.js"></script>
+    <script src="../search_json.js"></script>
+</body>
+
+</html>
