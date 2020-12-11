@@ -131,6 +131,37 @@ router.get('/datas_disk/:company/:id', (req, res, next) => {
 	});
 });
 
+
+
+/* informações de rede */
+router.get('/network/:company/:machine', (req, res, next) => {
+	let companyId = req.params.company;
+	let machineId = req.params.machine;
+
+	let statusGood = `SELECT d.Value AS 'Metrica'
+	FROM Machine m
+		LEFT JOIN Component c ON c.fkMachine = m.idMachine 
+		LEFT JOIN [Data] d ON d.Component_idComponent = c.idComponent 
+		LEFT JOIN Types t ON t.idType = c.fkType 
+		LEFT JOIN CompanyBranch cb ON m.fkCompanyBranch = cb.idCompanyBranch
+		WHERE t.idType = 4 AND cb.idCompanyBranch = ${companyId} AND m.idMachine = ${machineId}
+		ORDER BY d.dtMoment DESC;`;
+
+	sequelize.query(statusGood, {
+		model: Usuario
+	}).then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		if (resultado.length > 0) {
+
+			res.json(resultado);
+		}
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
+
 /* Recuperando maquinas com estado good */
 
 router.get('/status_good/:company', (req, res, next) => {

@@ -1,5 +1,4 @@
 function entrar() {
-    debugger;
     var formulario = new URLSearchParams(new FormData(form_login));
     fetch("/usuarios/autenticar", {
         method: "POST",
