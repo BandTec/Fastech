@@ -42,6 +42,7 @@ public class Controller {
     TakingDataServices tkDataServices = new TakingDataServices();
     GlobalVars globalVars = new GlobalVars();
     Logger logger = new Logger();
+    
 
     public String login(String login, String passWord) throws IOException {
 
@@ -49,10 +50,12 @@ public class Controller {
 
         List<Collaborator> collaborator = con.query(selectLogin,
                 new BeanPropertyRowMapper(Collaborator.class), login, passWord);
-
+        
+        
         if (!collaborator.isEmpty()) {
-
+            
             collaborator.forEach((Collaborator c) -> {
+                globalVars.setCollaborator(c);
                 Integer fk = c.getFkCompanyBranch();
                 globalVars.setFkCompany(fk);
             });
@@ -64,6 +67,10 @@ public class Controller {
             System.out.println("Logger login");
             return "USURIO OU SENHA ERRADA";
         }
+    }
+    
+    public Collaborator getCollaborator(){
+        return globalVars.getCollaborator();
     }
 
     public List<Machine> showAllMachine() throws IOException {
@@ -185,6 +192,19 @@ public class Controller {
         return idComponent;
 
     }
+    
+    public void getCollaborator(String login){
+        
+        String getCollaborator = "SELECT * FROM Collaborator c WHERE c.login= ?";
+         List<Collaborator> collaborator = con.query(getCollaborator,
+                new BeanPropertyRowMapper(Collaborator.class), login);
+         
+         
+        collaborator.forEach((Collaborator c) -> {
+                Integer fk = c.getFkCompanyBranch();
+                globalVars.setFkCompany(fk);
+            });
+    }
 
     public void upDateStatus(Double avg, Integer idType) throws Exception {
         String statusCurrent;
@@ -244,6 +264,9 @@ public class Controller {
             case 3:
                 Integer valueCurrentDisk = tkDataServices.getAvailableDiskSpace();
                 return valueCurrentDisk;
+            case 4:
+                Integer valueCurrentPing = tkDataServices.getPing();
+                return valueCurrentPing;    
         }
         logger.registerLog("Error", "Erro ao buscar dados da maquina");
         return null;
