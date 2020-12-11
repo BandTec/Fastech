@@ -1,0 +1,90 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fastech | Login</title>
+    <link href="./ydoc/styles/style-login.css" rel="stylesheet">
+    <link rel="script" href="./ydoc/scripts/validacoes.js">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="ydoc/images/Fastech-icon-5.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="ydoc/images/Fastech-icon-5.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="ydoc/images/Fastech-icon-5.png" />
+</head>
+
+<body>
+
+
+
+    <section class="container">
+        <div class="formulario pag-login">
+
+            <div class="box-login">
+                <h1 class="titulo-login">Fastech</h1>
+                <p class="line typing-animation-login">Por favor insira seu login!</p>
+
+                <div class="login-formu">
+                    <form id="form_login" method="#">
+
+                        <input placeholder="Usuário" type="text" class="input-padrao-login" id="email" name="login">
+                        <br>
+
+                        <p class="line typing-animation2-login">E agora digite sua senha!</p>
+
+                        <div class="blocoIcones">
+                            <img id="olho" class="icone-olho" src="./ydoc/images/olho-cinza.svg">
+                            <input onblur="olhoCinza()" onfocus="olhoAzul()" id="senha" name="senha" placeholder="Senha"
+                                type="password" class="input-padrao-login">
+                        </div>
+
+                        <button id="btn_voltar" class="btn-links"> <a href="index.html"> Voltar</a> </button>
+                        <button id="btn_cadastrar" class="btn-links"> <a href="cadastro.html"> Cadastrar</a> </button>
+
+                        <input type="submit" id="btn_entrar-login" class="g-home" onclick="entrar()" value="ENTRAR">
+
+                    </form>
+                </div>
+
+                <div class="extra">
+                    <div id="div_erro" class="msg_erro">
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
+
+<script>
+    // Ver senha
+    document.getElementById('olho').addEventListener('mousedown', function () {
+        document.getElementById('senha').type = 'text';
+        document.getElementById('olho').style.transformScale = (1);
+    });
+
+    document.getElementById('olho').addEventListener('mouseup', function () {
+        document.getElementById('senha').type = 'password';
+    });
+
+    // Para que o password não fique exposto apos mover a imagem.
+    document.getElementById('olho').addEventListener('mousemove', function () {
+        document.getElementById('senha').type = 'password';
+    });
+
+    function olhoAzul() {
+        document.getElementById('olho').src = "./ydoc/images/olho-azul.svg";
+    }
+
+    function olhoCinza() {
+        document.getElementById('olho').src = "./ydoc/images/olho-cinza.svg";
+    }
+</script>
+
+<script src="./js/scripts.js"></script>

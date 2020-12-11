@@ -1,351 +1,202 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
-  <title>Fastech</title>
-  <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
-  <!-- Estilos -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- Scripts (jQuery não pode ser o slim que vem do Boostrap) -->
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/bf7e05c402.js" crossorigin="anonymous"></script>
-  <!-- Progress Bar -->
-  <script src="js/progressbar.min.js"></script>
-  <!-- Parallax -->
-  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" sizes="180x180" href="ydoc/images/Fastech-icon-5.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="ydoc/images/Fastech-icon-5.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="ydoc/images/Fastech-icon-5.png" />
+    <link rel="manifest" href="ydoc/images/manifest.json" />
+    <link rel="mask-icon" href="ydoc/images/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>Fastech</title>
+    <link rel="stylesheet" href="ydoc/styles/style.css" />
+    <meta name="author" content="DK" />
+    <meta name="keywords" />
+    <meta name="description" content="qunar scan tool" />
+    <meta id="releativePath" content="" />
+    <link rel="stylesheet" href="ydoc/ydoc-plugin-search/search.css" />
 </head>
+
 <body>
-  <header>
-    <div class="container" id="nav-container">
-      <!-- add essa class -->
-      <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-        <a class="navbar-brand" href="index.html">
-          <img id="logo" src="img/hdcagency_logo 1.png" alt="hDC Agency"> Fastech
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" id="home-menu" href="#">INICIO</a>
-            <a class="nav-item nav-link" id="about-menu" href="#">SOBRE</a>
-            <a class="nav-item nav-link" id="services-menu" href="#">SERVIÇOS</a>
-            <a class="nav-item nav-link" id="team-menu" href="#">TIME</a>
-            <a class="nav-item nav-link" id="portfolio-menu" href="#">PROJETOS</a>
-            <a class="nav-item nav-link" id="contact-menu" href="#">CONTATO</a>
-            <a class="nav-item nav-link btn-modal" data-toggle="modal" data-target=".bd-example-modal-lg">ENTRAR</a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-          <div id="div_login" class="content-login">
-              <div class="login">
-                  <form id="form_login" method="dialog" action="#">
-                      <!-- <label for="email">Email:</label> -->
-                      <input id="email" name="login" type="text" placeholder="Digite seu email">
-                      <!-- <label for="senha">Senha:</label> -->
-                      <input id="senha" name="senha" type="password" placeholder="Digite sua senha">
-                      <button class="btn_entrar" onclick="entrar()">Entrar</button>
-                      <button onclick="btn_cadastre_click()" class="btn_cadastre">Cadastre-se</button>
-                  </form>
-              </div>
-          </div>
-          <div id="div_register" style="display: none;" class="content-register">
-              <div class="register">
-                  <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                      <!-- <label for="nome">Nome:</label> -->
-                      <input id="registerNome" name="registerNome" type="text" placeholder="Digite seu nome">
-                      <!-- <label for="email">Cpf:</label> -->
-                      <input id="registerCpf" name="registerCpf" type="text" placeholder="Digite seu cpf">
-                      <!-- <label for="email">Email:</label> -->
-                      <input id="registerEmail" name="registerLogin" type="text" placeholder="Digite seu email">
-                      <!-- <label for="senha">Senha:</label> -->
-                      <input id="registerSenha" name="registerSenha" type="password"
-                          placeholder="Digite sua senha">
-                      <button class="btn_cadastre btn_cadastro">Cadastre-se</button>
-                      <button onclick="btn_voltar_click()" class="btn_voltar">Voltar</button>
-                  </form>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-  <main>
-    <div class="container-fluid">
-      <!-- slider -->
-      <div id="mainSlider" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#mainSlider" data-slide-to="0" class="active"></li>
-          <li data-target="#mainSlider" data-slide-to="1"></li>
-          <li data-target="#mainSlider" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <svg class="d-block w-100" width="1920" height="930" viewBox="0 0 1920 930" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="1920" height="930" fill="#000000"/>
-              <text class="text-pop-up-top carousel-caption d-md-block" fill="#ffffff" font-size="175" font-family="Roboto" x="580" y="380">FASTECH</text>
-              </svg>
+    <div class="g-doc">
+        <div class="m-main" id="js-panel">
+            <header class="m-header" id="js-header">
+                <div class="m-header-title js-logo">
+                    <a href="" target="_self"><img class="logo" width="36" src="ydoc/images/Fastech-icon-5.png" />
+                        <h6 class="name">Fastech</h6>
+                    </a>
+                </div>
+                <div>
+                    <div class="m-search">
+                        <div class="icon">&#xf0fd;</div>
+                        <input type="text" class="input js-input" placeholder="procurar por" />
+                        <div class="m-search-result js-search-result"></div>
+                    </div>
+                </div>
+                <nav class="m-header-nav js-nav">
+                    <ul class="m-header-items">
+                        <li class="item">
+                            <a class="href" href="documents/index.html">Documentação</a>
+                        </li>
+                        <li class="item">
+                            <a class="href" href="usage/index.html">Sobre</a>
+                        </li>
+                        <li class="item">
+                            <a class="href" onclick="init()" id="login">Login | Cadastro</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div>
+            </header>
+            <div class="m-content" id="js-content">
+                <div class="g-home">
+                    <section class="m-section home">
+                        <div class="m-section-container">
+                            <div class="m-section-title">
+                                <h4 class="name">Ferramenta de Monitoramento de hardware altamente personalizável</h4>
+                                <p class="desc">Solução de monitoramento baseada na nossa API Linus.</p>
+                                <div class="m-section-btngroup">
+                                    <a href="./documents/index.html">
+                                        <div class="btn">Começar</div>
+                                    </a>
+                                    <a href="https://github.com/BandTec/Fastech">
+                                        <div class="btn btn-ghost">Github </div>
+                                    </a>
+                                </div>
+                                <p class="caption">Versão Atual: v0.1.0</p>
+                            </div>
+                            <div class="m-section-banner">
+                                <img src="./ydoc/images/Fast-banner@1x.png" alt="bg" srcset="./ydoc/images/Fast-banner@2x.png 2x" />
+                            </div>
+                        </div>
+                    </section>
+                    <section class="m-section feature">
+                        <div class="m-section-container">
+                            <div class="m-section-box">
+                                <div class="item">
+                                    <h6 class="title">Personalização</h6>
+                                    <p class="desc">
+                                        Nossos serviços são personalizado para oferecer oque o cliente necessita.
+                                    </p>
+                                </div>
+                                <div class="item">
+                                    <h6 class="title">Flexível</h6>
+                                    <p class="desc">
+                                        O Linus se adapta a diferentes sistemas operacionais
+                                    </p>
+                                </div>
+                                <div class="item">
+                                    <h6 class="title">Dashboard Preciso</h6>
+                                    <p class="desc">
+                                        Com nosso serviço de monitoramento suas maquinas estará sendo monitorada constantemente.
+                                    </p>
+                                </div>
+                                <div class="item">
+                                    <h6 class="title">Dados no Smartphone</h6>
+                                    <p class="desc">
+                                        Utilizamos o Slack e o telegram para enviar alertas de suas maquinas em tempo real.
+                                    </p>
+                                </div>
 
-          
-
-            
-          </div>
-          <div class="carousel-item">
-            <svg class="d-block w-100" width="1920" height="930" viewBox="0 0 1920 930" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="1920" height="930" fill="#000000"/>
-              <text class="text-focus-in texto-1 carousel-caption d-md-block" fill="#ffffff" font-size="65" font-family="Roboto" x="410" y="260">Está querendo tirar o projeto do papel?</text>
-              <text class="text-focus-in texto-2 carousel-caption d-md-block" fill="#ffffff" font-size="45" font-family="Roboto" x="410" y="350">Nossa equipe está pronta para lhe atender.</text>
-            </svg>
-             
-          </div>
-          <div class="carousel-item">
-            <svg class="d-block w-100" width="1920" height="930" viewBox="0 0 1920 930" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="1920" height="930" fill="#000000"/>
-              <text class="text-focus-in texto-3 carousel-caption d-md-block" fill="#ffffff" font-size="55" font-family="Roboto" x="390" y="260">Está buscando manutenção no seu software?</text>
-              <text class="text-focus-in texto-3 carousel-caption d-md-block" fill="#ffffff" font-size="265%" font-family="Roboto" x="07%" y="350">A Fastech conta com uma equipe altamente qualificados para resolver seu problema.</text>
-
-              
-            </svg>
-              
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <!-- Sobre a empresa -->
-      <div id="about-area">
-        <div class="container">
-            <div class="row">
-              <div class="col-12"> 
-                <h3 class="main-title">Sobre a FASTECH</h3>
-              </div>
-              <div class="col-md-6">
-                <img class="img-fluid" src="img/agencia.jpg" alt="Agência hDC">
-              </div>
-              <div class="col-md-6">
-                <h3 class="about-title">Uma empresa que pensa no futuro</h3>
-                <p>Nossos projetos são adaptados ao cliente e seu propósito.</p>
-                <p>Após a especificação do projetos os arquitetos de software definirão as melhores tecnologias para seu projeto.</p>
-                <p>E nossos Devs trabalharão na sua necessidades para impulsionar o negócio.</p>
-                <p>Veja outros diferenciais:</p>
-                <ul id="about-list">
-                  <li><i class="fas fa-check"></i> Utilização da API oshi p</li>
-                  <li><i class="fas fa-check"></i> Dashbord responsivo para todos os dispositivos</li>
-                  <li><i class="fas fa-check"></i> Integração com diversos sistemas Operacionais</li>
-                  <li><i class="fas fa-check"></i> Sistema diversificado de monitoramento</li>
-                  <li><i class="fas fa-check"></i> Desenvolvido com tecnologias atuais do mercado</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-      </div>
-      <!-- Serviços da empresa -->
-      <div id="services-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h3 class="main-title">Nossas especialidades</h3>
-            </div>
-            <div class="col-md-4 service-box">
-              <i class="fas fa-mobile-alt"></i>
-              <h4>Dados no Smartphone</h4>
-              <p>Utilizamos o Slack e o telegram para enviar alertas de suas maquinas em tempo real.</p>
-            </div>
-            <div class="col-md-4 service-box">
-              <i class="fas fa-columns"></i>"></i>
-              <h4>Plataforma</h4>
-              <p>Temos uma plataforma própria que se adapta a qualquer regra de negócio .</p>
-            </div>
-            <div class="col-md-4 service-box">
-              <i class="fas fa-paint-brush"></i>
-              <h4>Personalização</h4>
-              <p>Nossos serviços são personalizado para oferecer oque o cliente necessita.</p>
-            </div>
-            <div class="col-md-4 service-box">
-              <i class="fas fa-chart-bar"></i>
-              <h4>Dashboard Preciso</h4>
-              <p>Com nosso serviço de monitoramento suas maquinas estará sendo monitorada constantemente e precisamente.</p>
-            </div>
-            <div class="col-md-4 service-box">
-              <i class="fas fa-hands-helping"></i>
-              <h4>Suporte 24/7</h4>
-              <p>Você sempre terá alguem da equipe disponível para suporte, em diferentes plataformas.</p>
-            </div>
-            <div class="col-md-4 service-box">
-              <i class="fas fa-server"></i>
-              <h4>Experiência em servidores</h4>
-              <p>Garantimos uptime e também rápido tempo de resposta do seu site para o seu cliente.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Dados da empresa -->
-      <div id="data-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3 col-xs-6 circle-box">
-              <div id="circleA"></div>
-              <p>Projetos entregues</p>
-            </div>
-            <div class="col-md-3 col-xs-6 circle-box">
-              <div id="circleB"></div>
-              <p>Clientes Felizes</p>
-            </div>
-            <div class="col-md-3 col-xs-6 circle-box">
-              <div id="circleC"></div>
-              <p>Colaboradores</p>
-            </div>  
-            <div class="col-md-3 col-xs-6 circle-box">
-              <div id="circleD"></div>
-              <p>Cafézinhos</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Time -->
-      <div id="team-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h3 class="main-title">Nosso time</h3>
-            </div>
-            <div class="col-md-1" ></div>
-            <div class="col-md-2">
-              <div class="card">
-                <img src="img/diego.jpg" class="card-img-top" alt="Imagem de Perfil 1">
-                <div class="card-body">
-                  <h5 class="card-title">Diego K.</h5>
-                  <p class="card-text">Designer</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <footer class="m-footer">
+                    <div class="m-footer-container">
+                        <div class="m-footer-links">
+                            <div class="group">
+                                <p class="title">URL da equipe</p>
+                                <ul>
+                                    <li><a class="href" href="https://github.com/jorge-lsb">Jorge</a></li>
+                                    <li><a class="href" href="https://github.com/jose-lucas-mq">José</a></li>
+                                    <li><a class="href" href="https://github.com/igor-ferreira-bezerra">Igor</a></li>
+                                    <li><a class="href" href="https://github.com/mayconmaiabandtec">Maycon</a></li>
+                                    <li>
+                                        <a class="href" href="https://diego-kurman.github.io/meusite/">Diego</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="group">
+                  <p class="title">Repositório Git</p>
+                  <ul>
+                    <li>
+                      <a class="href" href="https://github.com/BandTec/Fastech"
+                        >Github</a
+                      >
+                    </li>
+                    <li>
+                      <a class="href" href="https://github.com/BandTec/Fastech/issues"
+                        >Github Issue</a
+                      >
+                    </li>
+                  </ul>
                 </div>
               </div>
+              <div class="m-footer-title">
+                <p class="copyright">
+                  © 2020 <a class="href" href="index.html">Fastech Team</a>
+                                        </p>
+                                        <p>
+                                            Construído por
+                                            <a class="href" href="https://github.com/diego-kurman">DK</a>
+                                        </p>
+                            </div>
+                        </div>
+                </footer>
+                </div>
             </div>
+        </div>
+        <div></div>
+        <script>
+            var $content = document.getElementById("js-content");
+            var $summaryItems = Array.prototype.slice.call(
+                document.querySelectorAll("#js-menu .href")
+            );
+            var $menu = document.getElementById("js-menu");
+            if ($menu && sessionStorage.menuScrollTop) {
+                $menu.scrollTop = sessionStorage.menuScrollTop;
+            }
+            // Quando a página é atualizada, mas o nome do caminho não é alterado, a área de c
+            //onteúdo é restaurada para a altura da memória
 
-            <div class="col-md-2">
-              <div class="card">
-                <img src="img/igor.jpg" class="card-img-top" alt="Imagem de Perfil 1">
-                <div class="card-body">
-                  <h5 class="card-title">Igor R.</h5>
-                  <p class="card-text">Dev Back End</p>
-                </div>
-              </div>
-            </div>
+            if (
+                $content &&
+                sessionStorage.contentScrollTop &&
+                window.location.pathname == sessionStorage.locationPathname
+            ) {
+                $content.scrollTop = sessionStorage.contentScrollTop;
+            }
+            sessionStorage.setItem("locationPathname", window.location.pathname);
 
-            <div class="col-md-2">
-              <div class="card">
-                <img src="img/maycon.jpg" class="card-img-top" alt="Imagem de Perfil 2">
-                <div class="card-body">
-                  <h5 class="card-title">Maycon G.</h5>
-                  <p class="card-text">DBA</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="card">
-                <img src="img/jorge.jpg" class="card-img-top" alt="Imagem de Perfil 3">
-                <div class="card-body">
-                  <h5 class="card-title">Jorge L.</h5>
-                  <p class="card-text">Dev Back End</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="card">
-                <img src="img/jose.jpg" class="card-img-top" alt="Imagem de Perfil 4">
-                <div class="card-body">
-                  <h5 class="card-title">José L.</h5>
-                  <p class="card-text">UX/UI Designer</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-1" ></div>
-          </div>
-        </div>
-      </div>
-      <!-- Newsletter -->
-      <div id="news-area">
-        <div class="container">
-          <div class="col-md-12">
-            <h3 class="main-title">Fique por dentro das novidades</h3>
-          </div>
-          <p>Assine nossa lista de e-mails, e receba nossos conteúdos sobre desenvolvimento de software</p>
-          <form action="">
-            <input type="text" class="form-control" id="email-input" name="email" placeholder="Seu melhor e-mail">
-            <input type="submit" id="news-btn" value="Inscrever">
-          </form>
-        </div>
-      </div>
-      <!-- Call to Action -->
-      <div id="call-area">
-        <div class="container">
-            <div class="row">
-              <p>Deseja fazer um orçamento sem compromisso?</p>
-              <button class="main-btn" id="call-btn">Orçar</button>
-            </div>
-          </div>
-      </div>
-    </div>
-  </main>
-  <!-- Rodapé -->
-  <footer>
-    <div id="contact-area">
-      <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="main-title">Entre em contato conosco</h3>
-            </div>
-            <div class="col-md-4 contact-box">
-              <i class="fas fa-phone"></i>
-              <p><span class="contact-tile"></span> (48)99999-9999</p>
-              <p><span class="contact-tile">Horários:</span> 8:00 - 19:00</p>
-            </div>
-            <div class="col-md-4 contact-box">
-              <i class="fas fa-envelope"></i>
-              <p><span class="contact-tile"></span> contato@Fastechcom.br</p>
-            </div>
-            <div class="col-md-4 contact-box">
-              <i class="fas fa-map-marker-alt"> <a href="https://www.w3schools.com"></a> </i>
-              <p><span class="contact-tile"></span> Rua Haddock Lobo, 595 - SP,</p>
-            </div>
-            <div class="col-md-6" id="msg-box">
-              <p>Ou nos deixe uma mensagem:</p>
-            </div>
-            <div class="col-md-6" id="contact-form">
-              <form action="">
-                <input type="text" class="form-control" placeholder="E-mail" name="email">
-                <input type="text" class="form-control" placeholder="Assunto" name="subject">
-                <textarea class="form-control" rows="3" placeholder="Sua mensagem..." name="message"></textarea>
-                <button class="main-btn" id="enviar">Enviar</button>
-              </form>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div id="copy-area">
-      <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-              <p class="lasttexto">Desenvolvido por <a href="https://www.horadecodar.com.br" target="_blank">FASTECH  </a> &copy; 2020</p>
-            </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Scripts do projeto -->
-  <script src="js/scripts.js"></script>
+
+            // SCRIPT DO LOGIN  ABRINDO EM OUTRA ABA NO BROWSER 
+
+            function init() {
+                "use strict";
+                var btnlogin = window.document.getElementById("login");
+                btnlogin.addEventListener("click", function() {
+                    window.open("login.html", "login");
+                });
+            }
+            window.addEventListener("load", init);
+        </script>
+        <script src="ydoc/scripts/plugins/dollar.min.js"></script>
+        <script src="ydoc/scripts/plugins/responsive-nav.min.js"></script>
+        <script src="ydoc/scripts/plugins/slideout.min.js"></script>
+        <script src="ydoc/scripts/app.js"></script>
+        <script src="ydoc/ydoc-plugin-search/core.js"></script>
+        <script src="ydoc/ydoc-plugin-search/search.js"></script>
+        <script src="search_json.js"></script>
 </body>
-</html> 
+
+</html>
