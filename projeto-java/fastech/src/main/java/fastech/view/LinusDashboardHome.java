@@ -491,7 +491,7 @@ public class LinusDashboardHome extends javax.swing.JFrame {
             if (process.getProcessID() > 0 && !(process.getName().isEmpty())) {
                 model.addRow(new Object[]{
                     process.getProcessID(),
-                    String.format("%.1f%%",100d * (process.getKernelTime() + process.getUserTime()) / process.getUpTime()),
+                    String.format("%.1f%%",10d * (process.getKernelTime() + process.getUserTime()) / process.getUpTime()),
                     String.format("%.1f%%", 100d * process.getResidentSetSize() / hal.getMemory().getTotal()),
                     process.getName()
                 });
