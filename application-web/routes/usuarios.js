@@ -12,16 +12,17 @@ router.post('/autenticar', function (req, res, next) {
 	var login = req.body.login; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
 
-	let instrucaoSql = `select * from usuario where loginUser='${login}' and passwordUser='${senha}'`;
+	let instrucaoSql = `select * from Collaborator where login='${login}' and password='${senha}'`;
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
 		model: Usuario
 	}).then(resultado => {
 		console.log(`Encontrados: ${resultado.length}`);
-		console.log(resultado[0].dataValues.loginUser);
+		console.log(resultado[0].dataValues.login);
+		console.log('Hello: ' + resultado);
 		if (resultado.length == 1) {
-			sessoes.push(resultado[0].dataValues.loginUser);
+			sessoes.push(resultado[0].dataValues.login);
 			console.log('sessoes: ', sessoes);
 			res.json(resultado[0]);
 		} else if (resultado.length == 0) {
@@ -39,28 +40,33 @@ router.post('/autenticar', function (req, res, next) {
 /* Cadastrar usuário */
 router.post('/cadastrar', function (req, res, next) {
 	console.log('Criando um usuário');
-		var user_nome = req.body.registerNome;
-		var user_login = req.body.registerLogin;
-		var user_senha = req.body.registerSenha;
+	var user_nome = req.body.registerNome;
+	var user_cpf = req.body.registerCpf;
+	var user_login = req.body.registerLogin;
+	var user_senha = req.body.registerSenha;
+	var user_company = req.body.registerCompany;
 	Usuario.create({
 		nome: user_nome,
+		cpf: user_cpf,
 		login: user_login,
 		senha: user_senha,
-		fkestabelecimento: 1
-	}).then( () => {
-		let instrucaoSql = `select * from usuario where loginUser='${user_login}' and passwordUser='${user_senha}'`;
+		office: 'Gerente',
+		fkestabelecimento: user_company
+	}).then(() => {
+		let instrucaoSql = `select * from Collaborator where login='${user_login}' and password='${user_senha}'`;
 		console.log(instrucaoSql);
 
 		sequelize.query(instrucaoSql, {
 			model: Usuario
 		}).then(resultado => {
 			console.log(`Encontrados: ${resultado.length}`);
-			console.log(resultado[0].dataValues.loginUser);
+			console.log(resultado)
+			console.log(resultado[0].dataValues.login);
 			if (resultado.length == 1) {
-				sessoes.push(resultado[0].dataValues.loginUser);
+				sessoes.push(resultado[0].dataValues.login);
 				console.log('sessoes: ', sessoes);
 				res.json(resultado[0]);
-			} 
+			}
 		}).catch(erro => {
 			console.error(erro);
 			res.status(500).send(erro.message);
@@ -68,7 +74,34 @@ router.post('/cadastrar', function (req, res, next) {
 	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
-	});	
+	});
+});
+
+router.get('/user/:login', (req,res,next) => {
+	let login = req.params.login;
+	
+	let instrucaoSql = `SELECT c.name, c.cpf, c.login, c.office, b.idCompanyBranch as idCompany, b.name as NameCompany  
+						FROM Collaborator c
+						LEFT JOIN CompanyBranch b ON (b.idCompanyBranch = c.fkCompanyBranch) 
+						WHERE c.login='${login}'`;
+
+	sequelize.query(instrucaoSql, {
+		model: Usuario
+	}).then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		if (resultado.length == 1) {
+			
+			res.json(resultado[0]);
+		} else if (resultado.length == 0) {
+			res.status(403).send('Login e/ou senha inválido(s)');
+		} else {
+			res.status(403).send('Mais de um usuário com o mesmo login e senha!');
+		}
+
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
 });
 
 
@@ -87,7 +120,7 @@ router.get('/sessao/:login', function (req, res, next) {
 
 	if (tem_sessao) {
 		let mensagem = `Usuário ${login} possui sessão ativa!`;
-		console.log(mensagem);
+		// console.log(mensagem);
 		res.send(mensagem);
 	} else {
 		res.sendStatus(403);
@@ -109,6 +142,25 @@ router.get('/sair/:login', function (req, res, next) {
 	sessoes = nova_sessoes;
 	res.send(`Sessão do usuário ${login} finalizada com sucesso!`);
 });
+
+/* empresas */
+router.get('/select_company', function (req, res, next) {
+	let instrucaoSql = `SELECT Name as 'nome', idCompanyBranch as 'codCompany' FROM CompanyBranch cb;`;
+
+	sequelize.query(instrucaoSql, {
+		model: Usuario
+	}).then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+	
+	
+});
+
+
 
 
 /* Recuperar todos os usuários */
