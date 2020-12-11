@@ -229,6 +229,9 @@ public class Controller {
                 Integer valueCurrentDisk = tkDataServices.getAvailableDiskSpace();
                 upDateStatus(Double.valueOf(valueCurrentDisk), 3);
                 return valueCurrentDisk;
+            case 4:
+                Integer valueCurrentPing = tkDataServices.getPing();
+                return valueCurrentPing;    
         }
         System.out.println("Logger");
         return null;
