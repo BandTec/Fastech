@@ -264,6 +264,9 @@ public class Controller {
             case 3:
                 Integer valueCurrentDisk = tkDataServices.getAvailableDiskSpace();
                 return valueCurrentDisk;
+            case 4:
+                Integer valueCurrentPing = tkDataServices.getPing();
+                return valueCurrentPing;    
         }
         logger.registerLog("Error", "Erro ao buscar dados da maquina");
         return null;
