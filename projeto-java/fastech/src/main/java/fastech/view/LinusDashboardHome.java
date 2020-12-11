@@ -362,6 +362,11 @@ public class LinusDashboardHome extends javax.swing.JFrame {
 
         btn_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit.png"))); // NOI18N
         btn_exit.setText("jLabel7");
+        btn_exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_exitMouseClicked(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 51, 51));
@@ -387,7 +392,7 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(btn_profile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -478,6 +483,10 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         profile.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_profileMouseClicked
+
+    private void btn_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_exitMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btn_exitMouseClicked
 
     public void printValues() throws Exception {
         DefaultTableModel model = (DefaultTableModel) tblProcess.getModel();

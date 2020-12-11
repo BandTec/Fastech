@@ -6,6 +6,7 @@
 package fastech.view;
 
 import static fastech.services.ObjectController.getController;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -163,20 +164,24 @@ public class InsertMachine extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_insert_machineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_insert_machineActionPerformed
-        String nome_machine = lbl_name_machine.getText().trim();
-        
-        
-        getController().registerMachine(nome_machine);
-        
-        
-        LinusDashboardHome dashHome = null;
-        try {
-            dashHome = new LinusDashboardHome();
-        } catch (Exception ex) {
+        try {                                                   
+            String nome_machine = lbl_name_machine.getText().trim();
+            
+            
+            getController().registerMachine(nome_machine);
+            
+            
+            LinusDashboardHome dashHome = null;
+            try {
+                dashHome = new LinusDashboardHome();
+            } catch (Exception ex) {
+                Logger.getLogger(InsertMachine.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            dashHome.setVisible(true);
+            this.setVisible(false);
+        } catch (IOException ex) {
             Logger.getLogger(InsertMachine.class.getName()).log(Level.SEVERE, null, ex);
         }
-        dashHome.setVisible(true);
-        this.setVisible(false);        
     }//GEN-LAST:event_btn_insert_machineActionPerformed
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed

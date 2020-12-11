@@ -2,6 +2,7 @@ package fastech.view;
 
 import fastech.model.Machine;
 import static fastech.services.ObjectController.getController;
+import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,7 +13,7 @@ import java.util.logging.Logger;
  */
 public class SelectMachine extends javax.swing.JFrame {
 
-    public SelectMachine() {
+    public SelectMachine() throws IOException {
         initComponents();
 
         Uteis ut = new Uteis();
@@ -72,6 +73,11 @@ public class SelectMachine extends javax.swing.JFrame {
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox1.setBorder(null);
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/machine.png"))); // NOI18N
 
@@ -156,14 +162,17 @@ public class SelectMachine extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void showAllMachines() {
+    private void showAllMachines() throws IOException {
         List<Machine> machines = getController().showAllMachine();
         System.out.println(machines);
 
-        for (Machine m : machines) {
-            System.out.println(m);
-            jComboBox1.addItem(m.getName());
+        if (!machines.isEmpty()) {
+            for (Machine m : machines) {
+                System.out.println(m);
+                jComboBox1.addItem(m.getName());
+            }
         }
+
     }
 
     private void btn_login_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_login_userActionPerformed
@@ -190,6 +199,10 @@ public class SelectMachine extends javax.swing.JFrame {
         this.setVisible(false);
 
     }//GEN-LAST:event_btn_insert_machineActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,7 +234,11 @@ public class SelectMachine extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SelectMachine().setVisible(true);
+                try {
+                    new SelectMachine().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(SelectMachine.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
