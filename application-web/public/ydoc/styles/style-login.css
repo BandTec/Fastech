@@ -79,6 +79,7 @@ body {
     letter-spacing: 1.3vh;
     color: #1890ff;
     margin-bottom: 1.4vh;
+    cursor: pointer;
 }
 
 
@@ -164,7 +165,7 @@ a:hover {
     cursor: pointer;
     background-color: white;
     width: 20%;
-    height: 6vh;
+    height: 33px;
     border: 1px solid #1890ff;
     border-radius: 3px;
     transition: 0.5s ease;
@@ -181,36 +182,33 @@ a:hover {
 /* RESPOSIVIDADE */
 
 @media (max-width: 952px) {
+    .container {
+        margin-left: 9%;
+        margin-top: 70%;
+    }
     label.logo {
         font-size: 30px;
         padding-left: 50px;
     }
-    nav ul li a {
-        font-size: 16px;
+    .line {
+        margin-bottom: 1%;
+        color: #8f8f8f;
+        font-family: "Abel", sans-serif;
+        font-size: 0.9em;
+        text-align: center;
+        white-space: nowrap;
+        /* overflow: hidden; */
+        width: 9.2em;
+        margin-left: 2%;
     }
 }
 
 @media (max-width: 883px) {
-    .checkbtn {
-        display: block;
-        z-index: 999;
-    }
-    ul {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: rgba(5, 0, 4, 0.986);
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
-        z-index: 999;
-    }
-    nav ul li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-        z-index: 999;
+    .titulo-login {
+        text-align: initial;
+        padding-top: 7%;
+        font-size: 7vh;
+        margin-right: 70px;
     }
     nav ul li a {
         font-size: 20px;
@@ -218,27 +216,65 @@ a:hover {
     a:hover,
     a.active {
         background: none;
-        color: white;
+        color: #1890ff;
     }
     #check:checked~ul {
         left: 0;
     }
-    button {
-        margin-left: -12px;
-    }
-    .input-padrao {
-        margin: 5%;
+    .input-padrao-login {
+        margin: 3%;
         padding: 0% 0% 0% 1%;
-        height: 40px;
-        width: 292px;
+        height: 9%;
+        width: 69%;
+        display: inline-block;
+        vertical-align: middle;
     }
-    .btn-cadastro {
-        margin-left: 5%;
-        padding: 1%;
+    .blocoIcones {
+        width: 300px;
+    }
+    .icone-olho {
+        display: none;
+        /* width: 30px;
+        height: 32px;
+        display: inline-block;
+        vertical-align: middle;
+        box-sizing: border-box;
+        float: right !important;
+        margin-right: 3%;
+        margin-right: 20%;
+        margin-top: 3.4%; */
+    }
+    #btn_entrar-login {
+        margin-left: 6%;
+        margin-top: 4%;
         cursor: pointer;
-        font-size: 15px;
+        float: left;
+        width: 38%;
     }
-    #btn_entrar {
-        margin-left: 26%;
+    #btn_voltar {
+        width: 68%;
+        border: none;
+        text-transform: uppercase;
+        background-color: transparent;
+        cursor: pointer;
+        display: none;
+    }
+    #btn_cadastrar {
+        float: left;
+        position: unset;
+        margin-top: 3%;
+    }
+    .line {
+        display: none;
+    }
+    #form_login {
+        width: 300px;
+    }
+    .contato {
+        align-items: center;
+        justify-content: center;
+    }
+    body {
+        height: 390px;
     }
 }
