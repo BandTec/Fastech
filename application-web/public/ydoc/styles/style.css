@@ -95,7 +95,7 @@ h6,
 
 @media screen and (max-width: 960px) {
      ::-webkit-scrollbar {
-        /*隐藏滚轮*/
+        /* rolagem oculta */
         display: none;
     }
 }
@@ -266,6 +266,9 @@ a:visited {
 }
 
 @media screen and (max-width: 600px) {
+    .m-section-box {
+        flex-flow: column nowrap;
+    }
     .col-xs-1 {
         width: 8.33333%;
         float: left;

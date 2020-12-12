@@ -27,7 +27,7 @@
             <div class="formulario">
                 <form id="form_cadastro" method="post" onsubmit="return cadastrar();">
                     <label for="registerNome"></label>
-                    <h1 class="titulo-login">Fastech</h1>
+                    <h1 onclick="location.href='index.html'" class="titulo-login">Fastech</h1>
 
                     <p class="line typing-animation1">Por favor insira seu nome</p>
                     <input type="text" id="registerNome" name="registerNome" class="input-padrao" autofocus="autofocus" placeholder="Nome completo" required minlength="4" />
@@ -42,7 +42,7 @@
                     <p class="line typing-animation2">Agora o número de seu cpf</p>
 
                     <input type="text" id="registerCpf" name="registerCpf" class="input-padrao" placeholder="CPF para usuario" required minlength="11" /><br />
-                    
+
                     <label for="senha"></label>
                     <p class="line typing-animation3">E por fim, a sua senha e a repita logo abaixo </p>
                     <div class="blocoIcones">
@@ -55,8 +55,8 @@
                     <div class="div-input-olho"><input id="registerSenha2" onblur="verify()" type="password" name="confirma-senha" class="input-padrao" placeholder="Confirme sua senha" required minlength="4" /> </div>
 
                     <div>
-                    <select class="combo-box" id="companyBranch" name="registerCompany">
-                        <option value="" >Selecione sua empresa</option>
+                        <select class="combo-box" id="companyBranch" name="registerCompany">
+                        <option value=""> <span class="option-1" > Selecione sua empresa </span></option>
                     </select>
                     </div>
 
@@ -115,9 +115,11 @@
             document.getElementById("btn_entrar").disabled = false;
             document.getElementById("btn_entrar").style.cursor = "pointer";
 
-            
+
         }
     }
 </script>
 <script src="./js/scripts.js"></script>
-<script>show_company();</script>
+<script>
+    show_company();
+</script>

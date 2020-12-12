@@ -20,7 +20,7 @@
         <div class="formulario pag-login">
 
             <div class="box-login">
-                <h1 class="titulo-login">Fastech</h1>
+                <h1 onclick="location.href='index.html'" class="titulo-login">Fastech</h1>
                 <p class="line typing-animation-login">Por favor insira seu login!</p>
 
                 <div class="login-formu">
@@ -33,8 +33,7 @@
 
                         <div class="blocoIcones">
                             <img id="olho" class="icone-olho" src="./ydoc/images/olho-cinza.svg">
-                            <input onblur="olhoCinza()" onfocus="olhoAzul()" id="senha" name="senha" placeholder="Senha"
-                                type="password" class="input-padrao-login">
+                            <input onblur="olhoCinza()" onfocus="olhoAzul()" id="senha" name="senha" placeholder="Senha" type="password" class="input-padrao-login">
                         </div>
 
                         <button id="btn_voltar" class="btn-links"> <a href="index.html"> Voltar</a> </button>
@@ -64,17 +63,17 @@
 
 <script>
     // Ver senha
-    document.getElementById('olho').addEventListener('mousedown', function () {
+    document.getElementById('olho').addEventListener('mousedown', function() {
         document.getElementById('senha').type = 'text';
         document.getElementById('olho').style.transformScale = (1);
     });
 
-    document.getElementById('olho').addEventListener('mouseup', function () {
+    document.getElementById('olho').addEventListener('mouseup', function() {
         document.getElementById('senha').type = 'password';
     });
 
     // Para que o password não fique exposto apos mover a imagem.
-    document.getElementById('olho').addEventListener('mousemove', function () {
+    document.getElementById('olho').addEventListener('mousemove', function() {
         document.getElementById('senha').type = 'password';
     });
 

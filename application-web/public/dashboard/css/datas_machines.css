@@ -13,6 +13,14 @@
     font-size: 1.4em;
 }
 
+#network_data{
+    color: green;
+    padding-bottom: 2px;
+    font-weight: bold;
+    margin: 4px;
+    margin-top: -4px;
+}
+
 .fa-plug{
     color: #ffffff;
     font-size: 1.3em;
