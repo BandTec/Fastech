@@ -1,5 +1,8 @@
 package fastech.services;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -38,7 +41,7 @@ public class TakingDataServices {
     }
 
     public Integer getMemory() {
-        
+
         long available = hal.getMemory().getAvailable();
         long total = hal.getMemory().getTotal();
 
@@ -50,7 +53,7 @@ public class TakingDataServices {
     }
 
     public Integer getAvailableDiskSpace() {
-        
+
         List<OSFileStore> fileStore = os.getFileSystem().getFileStores();
 
         long available = fileStore.get(0).getFreeSpace();
@@ -63,11 +66,52 @@ public class TakingDataServices {
         return diskUsage;
     }
 
+    public Integer getPing() throws IOException, IOException {
+        Process p = Runtime.getRuntime().exec("curl https://api.hackertarget.com/nping/?q=8.8.8.8");
+        BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+        String lineOut;
+        String resultCmd = "";
+        while ((lineOut = input.readLine()) != null) {
+            resultCmd += lineOut;
+        }
+        String[] avgCmdArray = resultCmd.split("Avg rtt:");
+        String[] pingCmdArray = avgCmdArray[1].split("ms");
+        Double pingDouble = Double.valueOf(pingCmdArray[0].trim());
+        return pingDouble.intValue();
+    }
+
     public String dateNow() {
         LocalDateTime myDateObj = LocalDateTime.now();
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String formattedDate = myDateObj.format(myFormatObj);
         return formattedDate;
     }
+    
+    // Ajustar o formato da hora by Carroça Gabriel
+    
+//    public PrintWriter gerarLogs() throws IOException {;
+//        LocalDate localDate = LocalDate.now();
+//        Integer ano = localDate.getYear();
+//        Integer mes = localDate.getMonthValue();
+//        Integer dia = localDate.getDayOfMonth();
+//        String data = ano + "-" + mes + "-" + dia;
+//        FileWriter  arq = new FileWriter("d:\\log " + data + ".txt",true);
+//
+//        SystemInfo si = new SystemInfo();
+//        OperatingSystem os = si.getOperatingSystem();
+//
+//        PrintWriter gravarArq = new PrintWriter(arq);
+//
+//        //testes:
+//        gravarArq.printf("\nLog session: ");
+//        gravarArq.printf("\nVersão da aplicação: v1.0");
+//        gravarArq.printf("\nSistema Operacional: " + os);
+//        System.out.println("gerando log....");
+//
+//        gravarArq.printf("\nretornando informações do SO\n");
+//        gravarArq.append("oi");
+//        arq.close();
+//        return gravarArq;
 
 }

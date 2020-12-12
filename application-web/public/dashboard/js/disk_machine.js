@@ -1,68 +1,75 @@
+function getDisk() {
+    fetch(`/data/datas_disk/${sessionStorage.id_company}/${sessionStorage.machineId}`, { cache: 'no-store' })
+        .then(res => {
+            if (res.ok) {
+
+                res.json().then((json) => {
+                    console.log(json[0]);
+
+                    name_disk.innerHTML = `${json[0].Componente}`;
+
+                    plotDisk();
+                });
+            }
+        });
+}
+
 var disk = {
-    type: 'line',
+    type: 'doughnut',
     data: {
-        labels: ['momento 1', 'momento 2', 'momento 3', 'momento 3', 'momento 4', 'momento 6', 'momento 7'],
         datasets: [{
-            label: 'Disco Rígido',
-            backgroundColor: "#3B5998",
-            borderColor: "#3B5998",
-            data: [
-                randomize(),
-                randomize(),
-                randomize(),
-                randomize(),
-                randomize(),
-                randomize(),
-                randomize()
+            data: [],
+            backgroundColor: [
+                '#333333',
+                '#252baf'
             ],
-            fill: false,
-        }]
+            label: 'Disco Rígido'
+        }],
+        labels: [
+            'Espaço Usado',
+            'Espaço Livre'
+        ]
     },
     options: {
-        responsive: true,
-        title: {
-            display: true,
-            text: 'Máquina tal'
-        },
-        tooltips: {
-            mode: 'index',
-            intersect: false,
-        },
-        hover: {
-            mode: 'nearest',
-            intersect: true
-        },
-        scales: {
-            xAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    labelString: 'Horário'
-                }
-            }],
-            yAxes: [{
-                display: true,
-                scaleLabel: {
-                    display: true,
-                    labelString: 'Valor'
-                }
-            }]
-        }
+        responsive: true
     }
-}
-
-window.onload = function() {
-    var ctx = document.getElementById('disk_history').getContext('2d');
-    window.historico_disk = new Chart(ctx, disk);
 };
 
-setInterval(() => {
-    var ctx = document.getElementById('disk_history').getContext('2d');
-    window.historico_disk = new Chart(ctx, disk);    
-}, 3000);
+function updateDisk() {
+    fetch(`/data/datas_disk/${sessionStorage.id_company}/${sessionStorage.machineId}`).then(res => {
+        if (res.ok) {
+            res.json().then((json) => {
 
-function randomize(){
-    return (Math.random()*100).toFixed(2);
+                disk.options.title.text = `${json[0].Name_Machine}`;
+
+
+                let freeSpaces = 100 - (json[0].Metrica);
+               
+                disk.data.datasets[0].data.shift();
+                disk.data.datasets[0].data.shift();
+
+
+                disk.data.datasets[0].data.push(json[0].Metrica);
+                disk.data.datasets[0].data.push(freeSpaces);
+
+
+
+                window.historico_disk.update();
+
+
+
+            });
+        }
+    });
 }
 
+function plotDisk() {
+    var ctx = document.getElementById('disk_history').getContext('2d');
+    window.historico_disk = new Chart(ctx, disk);
+}
 
+window.onload = plotDisk(); updateDisk();
+
+setInterval(() => {
+    updateDisk();
+}, 60 * 1000);

@@ -44,13 +44,14 @@ router.post('/cadastrar', function (req, res, next) {
 	var user_cpf = req.body.registerCpf;
 	var user_login = req.body.registerLogin;
 	var user_senha = req.body.registerSenha;
+	var user_company = req.body.registerCompany;
 	Usuario.create({
 		nome: user_nome,
 		cpf: user_cpf,
 		login: user_login,
 		senha: user_senha,
 		office: 'Gerente',
-		fkestabelecimento: 1
+		fkestabelecimento: user_company
 	}).then(() => {
 		let instrucaoSql = `select * from Collaborator where login='${user_login}' and password='${user_senha}'`;
 		console.log(instrucaoSql);
@@ -119,7 +120,7 @@ router.get('/sessao/:login', function (req, res, next) {
 
 	if (tem_sessao) {
 		let mensagem = `Usuário ${login} possui sessão ativa!`;
-		console.log(mensagem);
+		// console.log(mensagem);
 		res.send(mensagem);
 	} else {
 		res.sendStatus(403);
@@ -141,6 +142,25 @@ router.get('/sair/:login', function (req, res, next) {
 	sessoes = nova_sessoes;
 	res.send(`Sessão do usuário ${login} finalizada com sucesso!`);
 });
+
+/* empresas */
+router.get('/select_company', function (req, res, next) {
+	let instrucaoSql = `SELECT Name as 'nome', idCompanyBranch as 'codCompany' FROM CompanyBranch cb;`;
+
+	sequelize.query(instrucaoSql, {
+		model: Usuario
+	}).then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+	
+	
+});
+
+
 
 
 /* Recuperar todos os usuários */

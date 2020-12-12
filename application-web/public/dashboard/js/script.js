@@ -1,22 +1,15 @@
 
-let var_name;
-let var_cpf;
-let var_login = sessionStorage.user_login;
-let var_office;
-let var_company;
-let var_id_company;
-
 
 function setVars() {
-    fetch(`/usuarios/user/${var_login}`, { cache: 'no-store' })
+    fetch(`/usuarios/user/${sessionStorage.user_login}`, { cache: 'no-store' })
         .then(res => {
             if (res.ok) {
                 res.json().then((json) => {
-                    var_company = json.NameCompany;
-                    var_cpf = json.cpf;
-                    var_name = json.name;
-                    var_office = json.office;
-                    var_id_company = json.idCompany;
+                    sessionStorage.company = json.NameCompany;
+                    sessionStorage.cpf = json.cpf;
+                    sessionStorage.name = json.name;
+                    sessionStorage.office = json.office;
+                    sessionStorage.id_company = json.idCompany;
                     loginUser();
                 })
             } else {
@@ -25,65 +18,228 @@ function setVars() {
         });
 }
 
-function showMachine() {
-    fetch(`/data/machine/${var_id_company}`, { cache: 'no-store' })
+function searchMachine(nameMachine) {
+    machines.innerHTML = "";
+    fetch(`/data/search/${nameMachine}/${sessionStorage.id_company}`, { cache: 'no-store' })
         .then(res => {
             if (res.ok) {
                 res.json().then((json) => {
-                    for(let i = 0; i < json.length; i++){
-
+                    for (let i = 0; i < json.length; i++) {
                         machines.innerHTML += `
-                        <div class="col-md-4 col-sm-12">
+                        <div class="col-md-4 col-sm-12"  onclick ="redirect(${json[i].IdMachine})">
                             <div class="card" id="${json[i].Status}">
                                 <div class="card-body">
                 
                                     <div class="card-title">
                                         ${json[i].nameMachine}
                                     </div>
-                
+
+                                    <input type="hidden" id="idMachine" value = "${json[i].IdMachine}">
+
                                     <i class="fas fa-plus"></i><span
                                         class="sr-only">Redirecionar</span>
                                 </div>
                             </div>
                         </div>
-                    `;
+                        `;
+                    }
+
+                });
+            }
+        });
+}
+
+function showMachine() {
+    fetch(`/data/machine/${sessionStorage.id_company}`, { cache: 'no-store' })
+        .then(res => {
+            if (res.ok) {
+                res.json().then((json) => {
+                    for (let i = 0; i < json.length; i++) {
+
+                        machines.innerHTML += `
+                            <div class="col-md-4 col-sm-12" onclick ="redirect(${json[i].IdMachine})">
+                                <div class="card" id="${json[i].Status}">
+                                    <div class="card-body">
+                    
+                                        <div class="card-title">
+                                            ${json[i].nameMachine}
+                                        </div>
+
+                                        <i class="fas fa-plus"></i><span
+                                            class="sr-only">Redirecionar</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
                     }
                 });
             }
         });
 }
 
-function showGoodCount(){
-    fetch(`/data/status_good/${var_id_company}`, { cache: 'no-store' })
-    .then(res => {
-        if(res.ok){
-            res.json().then((json) => {
-                status_good.innerHTML = json[0].statusCount;
-            });
-        }
-    });
+function redirect(machine) {
+    sessionStorage.machineId = machine;
+    window.location = 'machines_individual_datas.html';
 }
 
-function showWarningCount(){
-    fetch(`/data/status_warning/${var_id_company}`, { cache: 'no-store' })
-    .then(res => {
-        if(res.ok){
-            res.json().then((json) => {
-                status_warning.innerHTML = json[0].statusCount;
-            });
-        }
-    });
+function showGoodCount() {
+    fetch(`/data/status_good/${sessionStorage.id_company}`, { cache: 'no-store' })
+        .then(res => {
+            if (res.ok) {
+                res.json().then((json) => {
+                    status_good.innerHTML = json[0].statusCount;
+                });
+            }
+        });
 }
 
-function showDangerCount(){
-    fetch(`/data/status_danger/${var_id_company}`, { cache: 'no-store' })
-    .then(res => {
-        if(res.ok){
-            res.json().then((json) => {
-                status_danger.innerHTML = json[0].statusCount;
-            });
-        }
-    });
+function showWarningCount() {
+    fetch(`/data/status_warning/${sessionStorage.id_company}`, { cache: 'no-store' })
+        .then(res => {
+            if (res.ok) {
+                res.json().then((json) => {
+                    status_warning.innerHTML = json[0].statusCount;
+                });
+            }
+        });
+}
+
+function showDangerCount() {
+    fetch(`/data/status_danger/${sessionStorage.id_company}`, { cache: 'no-store' })
+        .then(res => {
+            if (res.ok) {
+                res.json().then((json) => {
+                    status_danger.innerHTML = json[0].statusCount;
+                });
+            }
+        });
+}
+
+function showDangerDisk() {
+    fetch(`/data/disk_danger/${sessionStorage.id_company}`, { cache: 'no-store' })
+        .then(res => {
+            if (res.ok) {
+                res.json().then((json) => {
+                    full_disk.innerHTML = json[0].diskDanger;
+                });
+            }
+        });
+}
+
+function showOnlyDanger() {
+    machines.innerHTML = '';
+    fetch(`/data/only_danger/${sessionStorage.id_company}`, { cache: 'no-store' })
+        .then(res => {
+            if (res.ok) {
+                res.json().then((json) => {
+                    for (let i = 0; i < json.length; i++) {
+
+                        machines.innerHTML += `
+                            <div class="col-md-4 col-sm-12" onclick ="redirect(${json[i].IdMachine})">
+                                <div class="card" id="${json[i].Status}">
+                                    <div class="card-body">
+                    
+                                        <div class="card-title">
+                                            ${json[i].nameMachine}
+                                        </div>
+
+                                        <i class="fas fa-plus"></i><span
+                                            class="sr-only">Redirecionar</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            }
+        });
+}
+
+function showOnlyWarning() {
+    machines.innerHTML = '';
+    fetch(`/data/only_warning/${sessionStorage.id_company}`, { cache: 'no-store' })
+        .then(res => {
+            if (res.ok) {
+                res.json().then((json) => {
+                    for (let i = 0; i < json.length; i++) {
+
+                        machines.innerHTML += `
+                            <div class="col-md-4 col-sm-12" onclick ="redirect(${json[i].IdMachine})">
+                                <div class="card" id="${json[i].Status}">
+                                    <div class="card-body">
+                    
+                                        <div class="card-title">
+                                            ${json[i].nameMachine}
+                                        </div>
+
+                                        <i class="fas fa-plus"></i><span
+                                            class="sr-only">Redirecionar</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            }
+        });
+}
+
+function showOnlyGood() {
+    machines.innerHTML = '';
+    fetch(`/data/only_good/${sessionStorage.id_company}`, { cache: 'no-store' })
+        .then(res => {
+            if (res.ok) {
+                res.json().then((json) => {
+                    for (let i = 0; i < json.length; i++) {
+
+                        machines.innerHTML += `
+                            <div class="col-md-4 col-sm-12" onclick ="redirect(${json[i].IdMachine})">
+                                <div class="card" id="${json[i].Status}">
+                                    <div class="card-body">
+                    
+                                        <div class="card-title">
+                                            ${json[i].nameMachine}
+                                        </div>
+
+                                        <i class="fas fa-plus"></i><span
+                                            class="sr-only">Redirecionar</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            }
+        });
+}
+
+function showOnlyDangerDisk() {
+    machines.innerHTML = '';
+    fetch(`/data/only_danger_disk/${sessionStorage.id_company}`, { cache: 'no-store' })
+        .then(res => {
+            if (res.ok) {
+                res.json().then((json) => {
+                    for (let i = 0; i < json.length; i++) {
+
+                        machines.innerHTML += `
+                            <div class="col-md-4 col-sm-12" onclick ="redirect(${json[i].IdMachine})">
+                                <div class="card" id="${json[i].Status}">
+                                    <div class="card-body">
+                    
+                                        <div class="card-title">
+                                            ${json[i].nameMachine}
+                                        </div>
+
+                                        <i class="fas fa-plus"></i><span
+                                            class="sr-only">Redirecionar</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            }
+        });
 }
 
 function loginUser() {
@@ -94,30 +250,24 @@ function loginUser() {
     showGoodCount();
     showWarningCount();
     showDangerCount();
+    showDangerDisk();
 }
 
 function validateUser() {
-    if (var_login == null || var_login == undefined || var_login == "") {
+    if (sessionStorage.user_login == null || sessionStorage.user_login == undefined || sessionStorage.user_login == "") {
         window.location.href = '/';
     }
 }
 
-setInterval(() => {
-    machines.innerHTML = '';
-    showMachine();
-    showGoodCount();
-    showWarningCount();
-    showDangerCount();
-}, 10*1000);
 
 function userPrint() {
 
-    user_name.innerHTML = var_name;
-    user.innerHTML = var_name;
-    email.innerHTML = var_login;
-    cpf.innerHTML = var_cpf;
-    company.innerHTML = var_company;
-    office.innerHTML = var_office;
+    user_name.innerHTML = sessionStorage.name;
+    user.innerHTML = sessionStorage.name;
+    email.innerHTML = sessionStorage.user_login;
+    cpf.innerHTML = sessionStorage.cpf;
+    company.innerHTML = sessionStorage.company;
+    office.innerHTML = sessionStorage.office;
 }
 
 function redirecionar_login() {
@@ -131,7 +281,7 @@ function logoff() {
 }
 
 function validar_sessao() {
-    fetch(`/usuarios/sessao/${var_login}`, { cache: 'no-store' })
+    fetch(`/usuarios/sessao/${sessionStorage.user_login}`, { cache: 'no-store' })
         .then(resposta => {
             if (resposta.ok) {
                 resposta.text().then(texto => {
@@ -145,5 +295,5 @@ function validar_sessao() {
 }
 
 function finalizar_sessao() {
-    fetch(`/usuarios/sair/${var_login}`, { cache: 'no-store' });
+    fetch(`/usuarios/sair/${sessionStorage.user_login}`, { cache: 'no-store' });
 }

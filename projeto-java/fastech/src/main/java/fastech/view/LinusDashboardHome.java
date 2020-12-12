@@ -22,10 +22,11 @@ public class LinusDashboardHome extends javax.swing.JFrame {
     SystemInfo si = new SystemInfo();
     HardwareAbstractionLayer hal = si.getHardware();
     OperatingSystem os = si.getOperatingSystem();
+    Boolean initDashboard = false;
 
     public LinusDashboardHome() throws Exception {
         initComponents();
-
+        initDashboard = true;
         printValues();
         
          Uteis ut = new Uteis();
@@ -87,6 +88,8 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblPingValue = new javax.swing.JLabel();
         btn_charts = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         btn_profile = new javax.swing.JLabel();
@@ -291,6 +294,13 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Rede");
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
+        jLabel2.setText("ms");
+
+        lblPingValue.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
+        lblPingValue.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblPingValue.setText("0");
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -299,8 +309,13 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel23)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(lblPingValue, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel23))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,6 +324,10 @@ public class LinusDashboardHome extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel27))
+                .addGap(46, 46, 46)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPingValue, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -339,6 +358,11 @@ public class LinusDashboardHome extends javax.swing.JFrame {
 
         btn_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit.png"))); // NOI18N
         btn_exit.setText("jLabel7");
+        btn_exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_exitMouseClicked(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 51, 51));
@@ -456,19 +480,20 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_profileMouseClicked
 
+    private void btn_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_exitMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btn_exitMouseClicked
+
     public void printValues() throws Exception {
         DefaultTableModel model = (DefaultTableModel) tblProcess.getModel();
-        Integer cpuCount = si.getHardware().getProcessor().getLogicalProcessorCount();
-        Long totalMem = si.getHardware().getMemory().getTotal();
         Integer c = 0;
-        for (OSProcess process : si.getOperatingSystem().getProcesses()) {
-            if (process.getProcessID() > 0) {
+        for (OSProcess process : si.getOperatingSystem().getProcesses(50,OperatingSystem.ProcessSort.CPU)) {
+            if (process.getProcessID() > 0 && !(process.getName().isEmpty())) {
                 model.addRow(new Object[]{
                     process.getProcessID(),
-                    String.format("%.1f%%", 10.0 * process.getProcessCpuLoadCumulative() / cpuCount),
-                    String.format("%.1f%%", 10.0 * process.getResidentSetSize() / totalMem),
+                    String.format("%.1f%%",10d * (process.getKernelTime() + process.getUserTime()) / process.getUpTime()),
+                    String.format("%.1f%%", 100d * process.getResidentSetSize() / hal.getMemory().getTotal()),
                     process.getName()
-
                 });
                 c++;
             }
@@ -478,6 +503,7 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         printValueCpu();
         printValueMemory();
         printValueDisk();
+        printValuePing();
     }
 
     public void printValueCpu() throws Exception {
@@ -497,7 +523,12 @@ public class LinusDashboardHome extends javax.swing.JFrame {
         jpbValueDisk.setValue(diskValue);
         getController().insertData("Disk");
     }
-
+    
+    public void printValuePing() throws Exception {
+        Integer pingValue = dataServices.getPing();
+        lblPingValue.setText(pingValue.toString());
+        getController().insertData("Network");
+    }
     /**
      * @param args the command line arguments
      */
@@ -548,6 +579,7 @@ public class LinusDashboardHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -569,6 +601,7 @@ public class LinusDashboardHome extends javax.swing.JFrame {
     private javax.swing.JProgressBar jpbValueCpu;
     private javax.swing.JProgressBar jpbValueDisk;
     private javax.swing.JProgressBar jpbValueMemory;
+    private javax.swing.JLabel lblPingValue;
     private javax.swing.JLabel lbl_name_user;
     private javax.swing.JTable tblProcess;
     // End of variables declaration//GEN-END:variables
