@@ -36,7 +36,15 @@ function getCpu() {
                     cpu.options.title.text = `${json[0].Name_Machine}`;
 
                     for (let i = 0; i < 8; i++) {
-                        cpu.data.labels.push(json[i].Moment);
+
+                        var date = new Date(json[i].Moment);
+                        console.log(date);
+                        var hr = date.getHours()
+                        var m = date.getMinutes()
+                        var ss = date.getSeconds()
+                        var d = `${ hr }: ${ m }: ${ ss }`;
+
+                        cpu.data.labels.push(d);
                         cpu.data.datasets[0].data.push(json[i].Metrica);
 
                         increment++;
@@ -97,7 +105,7 @@ function updateCpu() {
     fetch(`/data/datas_cpu/${sessionStorage.id_company}/${sessionStorage.machineId}`).then(res => {
         if (res.ok) {
             res.json().then((json) => {
-               
+
                 cpu.options.title.text = `${json[0].Name_Machine}`;
 
                 $("#progress_cpu").each(function () {
@@ -117,17 +125,25 @@ function updateCpu() {
                     });
                 });
                 value_Cpu.innerHTML = `${json[0].Metrica}`;
-
+                var dateD = new Date(json[0].Moment);
+                var    hrD = dateD.getHours()
+                var    mD = dateD.getMinutes()
+                var    ssD = dateD.getSeconds()
+                var    dD = `${hrD}: ${mD}: ${ssD}`;
+                
                 if (increment < 8) {
-                    cpu.data.labels.push(json[0].Moment);
+                    console.log(dateD)
+                    
+                        
+                    cpu.data.labels.push(dD);
                     cpu.data.datasets[0].data.push(json[0].Metrica);
 
                     increment++;
                 } else {
                     cpu.data.labels.shift();
                     cpu.data.datasets[0].data.shift();
-
-                    cpu.data.labels.push(json[0].Moment);
+                        
+                    cpu.data.labels.push(dD);
                     cpu.data.datasets[0].data.push(json[0].Metrica);
                 }
 
@@ -136,17 +152,17 @@ function updateCpu() {
 
 
             });
-        } 
+        }
     });
 }
 
-function plotCpu() {
-    var ctx = document.getElementById('cpu_history').getContext('2d');
-    window.historico_cpu = new Chart(ctx, cpu);
-}
+    function plotCpu() {
+        var ctx = document.getElementById('cpu_history').getContext('2d');
+        window.historico_cpu = new Chart(ctx, cpu);
+    }
 
-window.onload = plotCpu();
+    window.onload = plotCpu();
 
-setInterval(() => {
-    updateCpu();
-}, 1500);
+    setInterval(() => {
+        updateCpu();
+    }, 1500);
