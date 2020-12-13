@@ -18,10 +18,6 @@
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <title>Introdução-Documentação</title>
     <link rel="stylesheet" href="../ydoc/styles/style.css" />
-    <meta name="author" content="DK" />
-    <meta name="keywords" />
-    <meta name="description" content="qunar scan tool" />
-    <meta id="releativePath" content=".." />
     <link rel="stylesheet" href="../ydoc/ydoc-plugin-search/search.css" />
 </head>
 
@@ -47,18 +43,18 @@
                                 </div>
                             </li>
                             <li class="item">
-                                <div class="m-summary-block"><a href="course.html" class="href">Tutorial</a>
+                                <div class="m-summary-block"><a href="course.html" class="href">Download</a>
                                     <ul class="m-summary-list indent">
-                                        <li class="item"><a href="course.html#%e9%85%8d%e7%bd%ae" class="href">Configuração</a></li>
+                                        <li class="item"></li>
                                         <li class="item">
-                                            <div class="m-summary-block"><a href="course.html#%e8%b0%83%e7%94%a8%e6%96%b9%e5%bc%8f" class="href">Método de chamada</a>
+                                            <div class="m-summary-block">
                                                 <ul class="m-summary-list indent">
-                                                    <li class="item"><a href="course.html#%e8%b0%83%e7%94%a8%e6%96%b9%e5%bc%8f-%e5%91%bd%e4%bb%a4%e8%a1%8c%e8%b0%83%e7%94%a8" class="href">Chamada de linha de comando</a></li>
-                                                    <li class="item"><a href="course.html#%e8%b0%83%e7%94%a8%e6%96%b9%e5%bc%8f-%e4%bd%9c%e4%b8%ba-node-%e6%a8%a1%e5%9d%97%e4%bd%bf%e7%94%a8" class="href">Use como um módulo do node</a></li>
+                                                    <li class="item"></li>
+                                                    <li class="item"></li>
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li class="item"><a href="course.html#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%a8%a1%e5%bc%8f" class="href">Modo personalizado</a></li>
+                                        <li class="item"></li>
                                     </ul>
                                 </div>
                             </li>
@@ -101,7 +97,7 @@
                     <ul class="m-header-items">
                         <li class="item active"><a class="href" href="">Documentação</a></li>
                         <li class="item "><a class="href" href="../usage/index.html">Sobre</a></li>
-                        <li class="item "><a class="href" onclick="init()" id="login">Login | Cadastro</a></li>
+                        <li class="item "><a class="href" href="../login.html" id="login">Login | Cadastro</a></li>
                     </ul>
                 </nav>
                 <div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div>
@@ -116,7 +112,7 @@
                     <h2 id="如何使用">Como usar</h2>
                     <ul>
                         <li><a href="install.html">Dependências de instalação</a>: Para usar o Linus, você precisa preparar alguns equipamentos e instalar algumas ferramentas com antecedência</li>
-                        <li><a href="course.html">Use o tutorial</a>: Uso específico</li>
+                        <li><a href="course.html">Download</a>: Para fazer os Downloads</li>
                     </ul>
                 </div>
                 <div class="m-content-container m-paging">
@@ -139,18 +135,6 @@
             $content.scrollTop = sessionStorage.contentScrollTop;
         }
         sessionStorage.setItem('locationPathname', window.location.pathname);
-
-
-        // SCRIPT DO LOGIN  ABRINDO EM OUTRA ABA NO BROWSER 
-
-        function init() {
-            "use strict";
-            var btnlogin = window.document.getElementById("login");
-            btnlogin.addEventListener("click", function() {
-                window.open("../login.html", "login");
-            });
-        }
-        window.addEventListener("load", init);
     </script>
     <script src="../ydoc/scripts/plugins/dollar.min.js"></script>
     <script src="../ydoc/scripts/plugins/responsive-nav.min.js"></script>
