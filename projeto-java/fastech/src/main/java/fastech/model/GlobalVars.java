@@ -11,6 +11,7 @@ public class GlobalVars {
     private Machine machine;
     private List<Component> fkComponent;
     private List<Types> listTypes;
+    private Collaborator collaborator;
 
     public Integer getFkCompany() {
         return fkCompany;
@@ -43,6 +44,16 @@ public class GlobalVars {
     public void setListTypes(List<Types> listTypes) {
         this.listTypes = listTypes;
     }
+
+    public Collaborator getCollaborator() {
+        return collaborator;
+    }
+
+    public void setCollaborator(Collaborator collaborator) {
+        this.collaborator = collaborator;
+    }
+    
+    
 
 
 }
