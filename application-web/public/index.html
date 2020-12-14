@@ -16,12 +16,12 @@
     <meta name="theme-color" content="#ffffff" />
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="description" content="Solução de monitoramento baseada na nossa API Linus." />
+    <meta name="keywords" content="Fastech, monitoramento, Linus, Java, Bandtec" />
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Fastech">
     <title>Fastech</title>
     <link rel="stylesheet" href="ydoc/styles/style.css" />
-    <meta name="author" content="DK" />
-    <meta name="keywords" />
-    <meta name="description" content="qunar scan tool" />
-    <meta id="releativePath" content="" />
     <link rel="stylesheet" href="ydoc/ydoc-plugin-search/search.css" />
 </head>
 
@@ -50,7 +50,7 @@
                             <a class="href" href="usage/index.html">Sobre</a>
                         </li>
                         <li class="item">
-                            <a class="href" onclick="init()" id="login">Login | Cadastro</a>
+                            <a class="href" href="login.html" id="login">Login | Cadastro</a>
                         </li>
                     </ul>
                 </nav>
@@ -177,18 +177,6 @@
                 $content.scrollTop = sessionStorage.contentScrollTop;
             }
             sessionStorage.setItem("locationPathname", window.location.pathname);
-
-
-            // SCRIPT DO LOGIN  ABRINDO EM OUTRA ABA NO BROWSER 
-
-            function init() {
-                "use strict";
-                var btnlogin = window.document.getElementById("login");
-                btnlogin.addEventListener("click", function() {
-                    window.open("login.html", "login");
-                });
-            }
-            window.addEventListener("load", init);
         </script>
         <script src="ydoc/scripts/plugins/dollar.min.js"></script>
         <script src="ydoc/scripts/plugins/responsive-nav.min.js"></script>
