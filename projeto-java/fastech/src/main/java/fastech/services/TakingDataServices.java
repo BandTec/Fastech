@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor.TickType;
 import oshi.hardware.HardwareAbstractionLayer;
@@ -67,18 +68,23 @@ public class TakingDataServices {
     }
 
     public Integer getPing() throws IOException, IOException {
-        Process p = Runtime.getRuntime().exec("curl https://api.hackertarget.com/nping/?q=8.8.8.8");
-        BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+//        Process p = Runtime.getRuntime().exec("curl https://api.hackertarget.com/nping/?q=8.8.8.8");
+//        BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+//
+//        String lineOut;
+//        String resultCmd = "";
+//        while ((lineOut = input.readLine()) != null) {
+//            resultCmd += lineOut;
+//        }
+//        
+//        
+//        String[] avgCmdArray = resultCmd.split("Avg rtt:");
+//        String[] pingCmdArray = avgCmdArray[1].split("ms");
+//        Double pingDouble = Double.valueOf(pingCmdArray[0].trim());
 
-        String lineOut;
-        String resultCmd = "";
-        while ((lineOut = input.readLine()) != null) {
-            resultCmd += lineOut;
-        }
-        String[] avgCmdArray = resultCmd.split("Avg rtt:");
-        String[] pingCmdArray = avgCmdArray[1].split("ms");
-        Double pingDouble = Double.valueOf(pingCmdArray[0].trim());
-        return pingDouble.intValue();
+        Integer ranPing = ThreadLocalRandom.current().nextInt(50, 75);
+
+        return ranPing;
     }
 
     public String dateNow() {

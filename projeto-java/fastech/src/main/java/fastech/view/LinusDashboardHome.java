@@ -57,7 +57,7 @@ public class LinusDashboardHome extends javax.swing.JFrame {
 
     }
     
-    private void LinusDashboardHome(java.awt.event.WindowEvent evt) throws Exception {                                  ;
+    private void LinusDashboardHome(java.awt.event.WindowEvent evt) throws Exception {                                  
         printValues();
     }
     
