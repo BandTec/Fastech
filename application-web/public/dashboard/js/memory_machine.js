@@ -32,7 +32,13 @@ function getMem() {
                     mem.options.title.text = `${json[0].Name_Machine}`;
 
                     for (let i = 0; i < 8; i++) {
-                        mem.data.labels.push(json[i].Moment);
+                        var dateM = new Date(json[i].Moment);
+                        var hrM = dateM.getHours()
+                        var mM = dateM.getMinutes()
+                        var ssM = dateM.getSeconds()
+                        var dM = `${ hrM }: ${ mM }: ${ ssM }`;
+
+                        mem.data.labels.push(dM);
                         mem.data.datasets[0].data.push(json[i].Metrica);
 
                         incrementMem++;
@@ -80,6 +86,12 @@ var mem = {
                 scaleLabel: {
                     display: true,
                     labelString: 'Valor'
+                },
+                ticks: {
+                    beginAtZero: true,
+                    steps: 10,
+                    stepValue: 10,
+                    max: 100
                 }
             }]
         }
@@ -110,9 +122,14 @@ function updateMem() {
                     });
                 });
                 value_Mem.innerHTML = `${json[0].Metrica}`;
+                var dateDM = new Date(json[0].Moment);
+                var    hrDM = dateDM.getHours()
+                var    mDM = dateDM.getMinutes()
+                var    ssDM = dateDM.getSeconds()
+                var    dDM = `${hrDM}: ${mDM}: ${ssDM}`;
 
                 if (incrementMem < 8) {
-                    mem.data.labels.push(json[0].Moment);
+                    mem.data.labels.push(dDM);
                     mem.data.datasets[0].data.push(json[0].Metrica);
 
                     incrementMem++;
@@ -120,7 +137,7 @@ function updateMem() {
                     mem.data.labels.shift();
                     mem.data.datasets[0].data.shift();
 
-                    mem.data.labels.push(json[0].Moment);
+                    mem.data.labels.push(dDM);
                     mem.data.datasets[0].data.push(json[0].Metrica);
                 }
 

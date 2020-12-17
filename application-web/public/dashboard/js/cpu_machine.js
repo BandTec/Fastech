@@ -36,9 +36,7 @@ function getCpu() {
                     cpu.options.title.text = `${json[0].Name_Machine}`;
 
                     for (let i = 0; i < 8; i++) {
-
                         var date = new Date(json[i].Moment);
-                        console.log(date);
                         var hr = date.getHours()
                         var m = date.getMinutes()
                         var ss = date.getSeconds()
@@ -94,6 +92,12 @@ var cpu = {
                 scaleLabel: {
                     display: true,
                     labelString: 'Valor'
+                },
+                ticks: {
+                    beginAtZero: true,
+                    steps: 10,
+                    stepValue: 10,
+                    max: 100
                 }
             }]
         }
@@ -132,9 +136,6 @@ function updateCpu() {
                 var    dD = `${hrD}: ${mD}: ${ssD}`;
                 
                 if (increment < 8) {
-                    console.log(dateD)
-                    
-                        
                     cpu.data.labels.push(dD);
                     cpu.data.datasets[0].data.push(json[0].Metrica);
 

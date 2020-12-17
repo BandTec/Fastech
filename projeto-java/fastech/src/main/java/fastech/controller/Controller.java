@@ -7,7 +7,6 @@ import fastech.model.Machine;
 import fastech.model.Types;
 import static fastech.services.AppSlack.slackSendMessage;
 import fastech.services.Connection;
-import fastech.services.ConnectionAwsDataBase;
 import fastech.services.TakingDataServices;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,9 +32,7 @@ public class Controller {
     }
 
     Connection config = new Connection();
-    ConnectionAwsDataBase configAws = new ConnectionAwsDataBase();
     JdbcTemplate con = new JdbcTemplate(config.getDatasource());
-    JdbcTemplate conAws = new JdbcTemplate(configAws.getDatasourceAws());
     SystemInfo si = new SystemInfo();
     HardwareAbstractionLayer hal = si.getHardware();
     OperatingSystem os = si.getOperatingSystem();
@@ -105,7 +102,6 @@ public class Controller {
 
         String addMachine = String.format("insert into Machine(Name , fkCompanyBranch ) values ('%s', ?);", nameMachine);
         con.update(addMachine, globalVars.getFkCompany());
-        conAws.update(addMachine, globalVars.getFkCompany());
 
         setGlobalMachine(nameMachine);
 
@@ -118,13 +114,6 @@ public class Controller {
         addComponents.append(String.format("insert into Component (Name ,fkMachine ,fkType) values ('%s', ?, 4);", "Network"));
 
         con.update(addComponents.toString(),
-                globalVars.getMachine().getIdMachine(),
-                globalVars.getMachine().getIdMachine(),
-                globalVars.getMachine().getIdMachine(),
-                globalVars.getMachine().getIdMachine()
-        );
-
-        conAws.update(addComponents.toString(),
                 globalVars.getMachine().getIdMachine(),
                 globalVars.getMachine().getIdMachine(),
                 globalVars.getMachine().getIdMachine(),
@@ -166,7 +155,6 @@ public class Controller {
                 tkDataServices.dateNow());
 
         con.update(insertData, valueComponent, idComponent, globalVars.getMachine().getIdMachine());
-        conAws.update(insertData, valueComponent, idComponent, globalVars.getMachine().getIdMachine());
 
     }
 
